@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 400" role="img" aria-labelledby="title"><title id="title">관찰 수첩을 든 어린이동물원 사육사 · 창작 캐릭터</title>
+<defs><linearGradient id="shirt" x2="1" y2="1"><stop stop-color="#b1bd88"/><stop offset="1" stop-color="#748b60"/></linearGradient><linearGradient id="skin" x2="1" y2="1"><stop stop-color="#ffdfb4"/><stop offset="1" stop-color="#e8ab82"/></linearGradient></defs>
+<ellipse cx="140" cy="385" rx="84" ry="10" fill="#172e2822"/>
+<g stroke="#423e32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M97 271h87l-8 95h-33l-4-70-11 70H96z" fill="#786e54"/><path d="M94 356h35v24H78q-5-16 16-24m50 0h33l21 13v11h-54z" fill="#4b493d"/>
+<path d="M86 173q-27 9-33 58l18 32 22-12-13-25 23-30m78-20q29 5 38 53l-18 27-23-16 16-18-21-27" fill="url(#shirt)"/>
+<path d="M95 168l34-12h24l33 15 8 111q-48 17-105-1z" fill="url(#shirt)"/><path d="M125 148v21l15 17 17-18v-25" fill="url(#skin)"/>
+<path d="m122 164 18 22-22 11-11-25m50-8-17 22 18 11 14-24" fill="#e5dbb1"/><path d="M140 188v88" fill="none" stroke="#627751"/>
+<rect x="96" y="206" width="31" height="28" rx="3" fill="#9aaa7c"/><path d="M96 211h31l-15 10z" fill="#d6d6aa"/>
+<rect x="153" y="204" width="25" height="18" rx="3" fill="#fff2c9" stroke-width="2"/><path d="m160 214 4-6 5 6-5 3z" fill="#4b7861" stroke="none"/>
+<path d="M91 267h98v11H91z" fill="#4d5240"/><rect x="130" y="265" width="18" height="16" rx="2" fill="#d9c489"/>
+<ellipse cx="93" cy="105" rx="12" ry="18" fill="url(#skin)"/><ellipse cx="187" cy="105" rx="12" ry="18" fill="url(#skin)"/>
+<path d="M94 86q4-53 48-53 51 1 48 59l-8 43q-12 27-41 28-29-1-43-28z" fill="url(#skin)"/>
+<path d="M93 94q-13-53 41-58 49-7 59 40l-7 24-9-28q-39 17-66-3l-8 30" fill="#493a2e"/>
+<path d="M112 100q9-6 17-2m24 0q9-5 17 2" fill="none" stroke-width="3"/><ellipse cx="121" cy="110" rx="3.5" ry="5" fill="#3c3931" stroke="none"/><ellipse cx="161" cy="110" rx="3.5" ry="5" fill="#3c3931" stroke="none"/>
+<path d="m140 113-3 10h6m-19 10q17 19 33 0" fill="#fff5df" stroke="#946145" stroke-width="2"/>
+<ellipse cx="110" cy="125" rx="8" ry="4" fill="#df917c" stroke="none" opacity=".5"/><ellipse cx="173" cy="125" rx="8" ry="4" fill="#df917c" stroke="none" opacity=".5"/>
+<path d="M92 60q2-39 49-41 45 1 49 41z" fill="#b6bd83"/><path d="M78 58q62-19 124 1l6 14q-64 14-136 0z" fill="#cbd2a0"/><path d="M93 56q49-11 96 0" stroke="#758358" stroke-width="8" fill="none"/>
+<g transform="rotate(10 159 254)"><rect x="121" y="222" width="80" height="87" rx="5" fill="#8b6548"/><rect x="128" y="230" width="66" height="69" rx="2" fill="#fff3d6" stroke-width="1"/><rect x="143" y="217" width="30" height="13" rx="4" fill="#d4b984"/><path d="M139 249h43m-43 13h43m-43 13h32m-32 13h38" stroke="#9eb1a3" stroke-width="2"/></g>
+<path d="m78 245 25-1q17 0 24 12l-6 12-35-4q-15-4-8-19m125-6-12 5-8 14q-3 14 8 14l22-19q5-13-10-14" fill="url(#skin)"/>
+</g></svg>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MATH TOUR 콘텐츠 연결 대기</title>
+    <style>
+      :root {
+        font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+        color: #eef7ff;
+        background: #04132f;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        place-items: center;
+        padding: 24px;
+        background:
+          radial-gradient(circle at 50% 20%, rgba(255, 205, 52, 0.3), transparent 28rem),
+          radial-gradient(circle at 10% 90%, rgba(62, 203, 255, 0.22), transparent 30rem),
+          #04132f;
+      }
+
+      main {
+        width: min(760px, 100%);
+        padding: clamp(30px, 6vw, 64px);
+        border: 2px solid rgba(255, 215, 71, 0.42);
+        border-radius: 32px;
+        text-align: center;
+        background: rgba(7, 29, 66, 0.88);
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+      }
+
+      .bus { font-size: 4rem; }
+      .eyebrow { color: #ffd447; font-weight: 900; letter-spacing: 0.2em; }
+      h1 { margin: 12px 0 8px; font-size: clamp(2rem, 7vw, 4rem); }
+      h2 { margin: 0; color: #ffd447; font-size: clamp(1.35rem, 4vw, 2.2rem); }
+      p { color: #c7d7e9; line-height: 1.7; }
+
+      button {
+        margin-top: 20px;
+        padding: 15px 28px;
+        border: 2px solid #fff2a8;
+        border-radius: 999px;
+        color: #071a3a;
+        background: linear-gradient(#ffe978, #f5b522);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+        font: 900 1rem/1 inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="bus" aria-hidden="true">🚌</div>
+      <p class="eyebrow">MATH TOUR ARRIVAL</p>
+      <h1 id="siteName">관광지</h1>
+      <h2 id="regionName">인천</h2>
+      <p>
+        서해·검단의 새로운 수학 여행을 준비하고 있어요.<br />
+        준비가 끝나면 이곳에서 여행을 시작할 수 있어요.
+      </p>
+      <button type="button" onclick="location.href='../index.html?region=seohae-geomdan'">← 게임 지도로 돌아가기</button>
+    </main>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      document.querySelector("#siteName").textContent = params.get("site") || "관광지";
+      document.querySelector("#regionName").textContent = params.get("region") || "인천";
+    </script>
+  </body>
+</html>

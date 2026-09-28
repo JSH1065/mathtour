@@ -1,0 +1,37 @@
+body[data-course=central] .game-layout{grid-template-columns:minmax(0,1.9fr) minmax(285px,1fr)}
+body[data-course=central] #game .game-layout aside{padding:20px;gap:13px;overflow:auto}
+body[data-course=central] #game .game-layout aside h2{font-size:25px;line-height:1.4;margin:0}
+.central-scale-board{display:flex;flex-direction:column;background:#e6ead8;border:1px solid #b9c5ae;overflow:hidden;min-height:0}
+.central-scale-conditions{display:flex;gap:22px;background:#1e5157;color:#fff9e5;padding:17px 22px;flex-shrink:0}
+.central-scale-conditions>span{display:flex;flex-direction:column;gap:5px;font-size:16px;flex:1}.central-scale-conditions strong{font-size:30px;color:#fff;font-variant-numeric:tabular-nums}
+.central-map-space{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;background:#dfe7d1;padding:8px;overflow:hidden}
+.central-geographic-map{width:100%;aspect-ratio:1.52;position:relative;overflow:hidden;border-radius:6px;container-type:inline-size}
+.central-geographic-map>img{width:100%;height:100%;display:block;object-fit:fill}
+.central-geographic-map>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.central-geographic-map:not(.mini) .sailing-position{display:none}
+.geo-label{position:absolute;transform:translate(-50%,-50%);font-size:clamp(12px,2.1cqw,18px);font-weight:700;line-height:1.25;background:#fff9e9f5;color:#22444b;padding:5px 8px;box-shadow:0 2px 7px #183b4538;border:1px solid #b2aa85;border-radius:5px;white-space:nowrap;text-align:center}
+.geo-label small{display:block;font-size:.77em;margin-top:2px}.geo-label.dock{color:#fff;background:#1f5259}.geo-label.rabbit{background:#9d462f;color:#fff}.map-north{position:absolute;top:3%;left:3%;font-size:26px;background:#fff9e6e8;border-radius:6px;padding:2px 9px;color:#17444c}.map-north b{font-size:12px;display:block;text-align:center}.map-bar{position:absolute;bottom:3%;right:4%;font-size:11px;background:#fff9e6ef;padding:5px 9px;color:#17444c;text-align:center}.map-bar i{display:block;width:6.58cqw;border:2px solid #17444c;border-top:0;height:7px;margin-bottom:3px}
+.central-scale-caption{font-size:12px;text-align:center;line-height:1.55;padding:8px 12px;background:#f7f4e6;color:#596857;flex-shrink:0}
+.central-scale-question{font-size:23px;line-height:1.6!important}.central-scale-answer{display:flex;gap:10px;align-items:center}.central-scale-answer input{width:75%;height:58px;font-size:30px}.central-scale-answer span{font-size:24px}.central-scale-aside small{line-height:1.6}
+body[data-course=central] .boat-hud{flex-wrap:wrap;gap:8px}.boat-hud .location-readout{font-size:14px;padding:10px 12px;max-width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.central-mini-map{position:absolute;right:13px;bottom:98px;width:clamp(138px,23%,200px);background:#fff8e3;border:2px solid #fff5cf;border-radius:8px;overflow:hidden;box-shadow:0 3px 15px #173b4566;z-index:2;cursor:pointer;padding:0;min-height:0}
+.central-mini-map>span{display:block;font-size:11px;background:#153e4c;color:#fff5da;padding:5px}.central-mini-map .central-geographic-map{border-radius:0}
+.boat-landmark{position:absolute;left:14px;bottom:105px;max-width:58%;padding:11px 15px;border-left:4px solid #e4bf6f;background:#f8f3e5ee;color:#22434b;border-radius:3px;pointer-events:none;z-index:2}.boat-landmark strong{display:block;font-size:18px}.boat-landmark p{font-size:13px;margin:4px 0 0;line-height:1.45;white-space:normal}
+.central-route-progress{display:grid;gap:7px;border-top:1px solid #d4c8ab;padding-top:11px;font-size:13px}.central-route-progress>span{color:#7b897e}.central-route-progress .passed{color:#2e7057}.central-route-progress .current{color:#214e59;font-weight:700}.central-route-progress>span:before{content:'○';margin-right:8px}.central-route-progress .passed:before{content:'✓'}.central-route-progress .current:before{content:'●'}
+body[data-course=central] .boat-condition{font-size:18px}.boat-condition strong{font-size:25px}.boat-unavailable{display:grid;place-content:center;padding:30px;text-align:center;color:#fff4d8}.central-arrived{background:linear-gradient(#132e4255,#132e42c9),url('central-route-illustration.webp') center/cover}.central-arrived p{max-width:90%;line-height:1.7}
+#centralRouteDialog{width:min(1140px,95vw);max-height:94dvh;padding:18px;overflow:auto}#centralRouteDialog header{margin-bottom:12px}#centralRouteDialog .central-geographic-map{max-height:68dvh}#centralRouteDialog p{font-size:16px}#centralRouteDialog>small{font-size:11px}
+@media(max-width:900px){body[data-course=central] #game{overflow:auto}body[data-course=central] .game-layout{display:flex;flex-direction:column;overflow:visible;flex:none}body[data-course=central] #board{height:480px;flex:none}body[data-course=central] .game-layout aside{overflow:visible!important}body[data-course=central] .game-footer{flex-shrink:0}body[data-course=central] .central-scale-board{height:auto!important;min-height:395px}body[data-course=central] .central-map-space{flex:none;padding:5px}.central-scale-conditions strong{font-size:26px}.central-scale-conditions{padding:14px 15px;gap:12px}}
+@media(max-width:600px){body[data-course=central] #board.moon-board{height:485px}.central-scale-conditions strong{font-size:24px}.central-scale-conditions span{font-size:14px}.geo-label{padding:3px 4px;font-size:11px}.map-north{font-size:20px}.map-north b{font-size:10px}.map-bar{font-size:9px}.boat-landmark{bottom:205px;max-width:88%;padding:8px 10px}.boat-landmark strong{font-size:15px}.boat-landmark p{font-size:12px}.boat-hud .location-readout{max-width:60%;font-size:12px}.boat-hud>button{font-size:11px;padding:8px;margin-left:0}.central-mini-map{width:132px;bottom:98px}.boat-inputs{gap:5px;left:7px;right:7px}.boat-inputs button{padding:8px 13px}.boat-inputs #boatPause{min-width:125px}.lane-guide{top:82px;left:5%;right:5%;gap:7px}.lane-guide strong{font-size:19px}.lane-guide span{padding:5px}.central-scale-caption{font-size:10px}#centralRouteDialog .central-geographic-map{min-width:0}#centralRouteDialog{padding:12px}#centralRouteDialog p{font-size:13px}}
+/* Keep the complete map and all problem rows visible, including on short screens. */
+body[data-course=central] #game .game-layout aside{display:flex;flex-direction:column}
+body[data-course=central] #game .game-layout aside>*{flex-shrink:0}
+.central-map-space{container-type:size}
+.central-map-space>.central-geographic-map{width:min(100cqw,152cqh);flex-shrink:0}
+.central-mini-map{display:block}
+.central-mini-map .central-geographic-map{width:100%;aspect-ratio:1.52}
+#centralRouteDialog .central-geographic-map{width:min(100%,103.36dvh);max-height:none;margin:auto}
+.geo-label.rabbit{background:#79502b;border-color:#ffe397;box-shadow:0 0 15px #ffdf7399}
+@media(max-width:900px){.central-map-space{container-type:normal}.central-map-space>.central-geographic-map{width:100%}}
+body[data-course=central] #board{scroll-margin-top:94px}
+.lane-guide .boat-task-strip{display:none}
+@media(max-width:900px){.lane-guide .boat-task-strip{display:block;grid-column:1/-1;justify-self:center;padding:7px 13px;font-size:15px;white-space:nowrap}.boat-task-strip b{font-size:18px;color:#fff0b8}}

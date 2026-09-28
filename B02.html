@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>B02 | 부평향교 · 걸어서 찾는 수학의 빛</title><style>:root{--paper:#f4f0e6;--ink:#30382f;--red:#80352e;--gold:#b99a53;--green:#4d6650;--line:#d7ccb4;--muted:#817760}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#fffaf0,transparent 60%),#eee9dd;color:var(--ink);font-family:"Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.6}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer;color:inherit;background:#fffaf0;border:1px solid var(--line);border-radius:7px;padding:10px 15px;font-size:14px;font-weight:700;touch-action:manipulation}button:disabled{cursor:default;opacity:.45}button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid #479888;outline-offset:3px}button:active:not(:disabled){filter:brightness(.92)}a{color:inherit}h1,h2,h3,p{margin:0;word-break:keep-all}img{display:block;max-width:100%}button img{pointer-events:none}[hidden]{display:none!important}.screen{display:none}.screen.active{display:block}.app-shell{width:min(1440px,100%);margin:auto;padding:0 24px}.primary{background:var(--red);border:1px solid #b19357;color:#fff8e6;font-weight:700;border-radius:6px;padding:12px 21px;text-decoration:none;display:inline-block;font-size:15px;box-shadow:0 3px 0 #5e2824}.primary:disabled{box-shadow:none;background:#d6d1c4;color:#756f61;border-color:#c8c0ae}.topbar{display:flex;align-items:center;gap:22px;padding:18px 0;border-bottom:1px solid var(--line);margin-bottom:18px}.brand{display:flex;gap:9px;align-items:center;text-decoration:none;line-height:1.1;font-family:Georgia,serif;color:#653e2d;letter-spacing:.08em}.brand>span{font-size:35px;color:var(--gold)}.brand b{font-size:21px}.brand small{font-size:10px;display:block;letter-spacing:.18em;margin-top:5px}.chapter{font-size:12px;color:#7a6b53}.chapter span{margin:0 12px;color:#b19c78}.toolbar{margin-left:auto;display:flex;gap:8px}.toolbar button{font-size:12px;padding:9px 12px}.toolbar b{color:var(--red);margin-left:5px}.page-heading{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:18px 0}.page-heading small,.eyebrow{display:block;color:#9b7d3d;font-size:10px;letter-spacing:.16em;font-weight:800}.page-heading h1{font-family:"Batang",Georgia,serif;font-size:clamp(23px,2.6vw,34px);line-height:1.4;margin-top:4px;letter-spacing:-.05em;color:#503e2a}.page-heading>p{font-size:13px;color:var(--muted);max-width:370px}.mission-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#8d7a57;font-size:11px}.mission-heading button{padding:7px 12px;font-size:12px;background:transparent}.screen{outline:0}footer{padding:17px 0;margin:22px 0 10px;border-top:1px solid var(--line);font-size:10px;color:#8d8069;display:flex;justify-content:space-between;gap:20px}footer details{max-width:570px}footer summary{cursor:pointer;text-align:right}footer p{margin-top:10px}
+/* Familiar story frame */
+.intro-scene{position:relative;aspect-ratio:16/9;min-height:600px;max-height:800px;overflow:hidden;border-radius:11px;background:#1b2823;border:1px solid var(--gold)}.intro-bg,.intro-shade{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.intro-bg{filter:brightness(.5) saturate(.7)}.intro-shade{background:linear-gradient(#111e2855,transparent 55%,#111e28aa)}.intro-label{position:absolute;top:23px;left:26px;font-size:10px;color:#ecd99c;letter-spacing:.12em;border:1px solid #b99a5380;background:#14211ec9;padding:7px 12px;border-radius:4px}.skip{position:absolute;top:22px;right:25px;font-size:11px;color:#fff5d1;border-color:#b99a5380;background:#14211ec9}.intro-title{position:absolute;top:13%;left:20%;right:20%;text-align:center;color:#fff9e5}.intro-title small{font-size:12px;color:#ebd5a1;letter-spacing:.12em}.intro-title h1{font-family:"Batang",serif;font-size:clamp(36px,5vw,64px);line-height:1.2;font-weight:700;margin:12px 0}.intro-title p{font-size:14px;color:#e7dbc4}.story-character{position:absolute;bottom:145px;width:210px;height:260px;object-fit:contain;filter:drop-shadow(0 8px 8px #0004)}.story-character.boy{left:6%}.story-character.girl{right:6%}.story-character.inactive{filter:brightness(.6);opacity:.65}.dialogue{position:absolute;bottom:23px;left:6%;right:6%;background:#132029f2;border:1px solid #c7a95f;border-radius:6px;padding:18px 24px;color:#fffaf0}.dialogue>b{color:#e4c880;font-size:13px}.dialogue p{font-size:clamp(16px,1.8vw,21px);min-height:58px;margin:6px 0;line-height:1.65}.dialogue>div{display:flex;align-items:center;justify-content:space-between;gap:10px}.dialogue span{font-size:11px;color:#b5a68b}.dialogue button{font-size:12px;padding:8px 15px}
+/* Walking map: the character and labels share the exact image coordinate system. */
+.walk-layout{display:grid;grid-template-columns:minmax(0,1fr) 235px;gap:18px}.walk-main{min-width:0}.map-frame{position:relative;width:100%;aspect-ratio:3/2;overflow:hidden;border:1px solid #b6a37c;border-radius:10px;isolation:isolate;background:#829365;touch-action:none;user-select:none}.map-frame>img{width:100%;height:100%;object-fit:fill;pointer-events:none}.map-labels{position:absolute;inset:0;pointer-events:none}.map-label{position:absolute;transform:translate(-50%,-50%);padding:2px 7px;font-size:clamp(9px,1vw,13px);font-weight:800;border:1px solid #967945aa;border-radius:4px;color:#503b23;background:#fff7dfed;white-space:nowrap;box-shadow:0 2px 5px #332a1826}.map-label>span{color:#8c3030;font-size:.8em;margin-right:3px}.map-label.mission{border-color:#773b2e;background:#79392be8;color:#fff5d9}.map-label.mission>span{color:#edd9a0}.map-label.complete{background:#46644ee8;border-color:#a5c38f}.map-label.near{box-shadow:0 0 0 3px #fff3b1a0}.map-label.locked{background:#53574fe8;border-color:#8b8975}.map-corner{position:absolute;top:12px;left:14px;background:#ffffe7de;border:1px solid #a9956d;padding:8px 11px;border-radius:5px;font-family:"Batang",serif;font-weight:700;font-size:14px;pointer-events:none}.map-corner small{display:block;font:9px "Malgun Gothic",sans-serif;color:#7c715b;margin-top:2px}.player{position:absolute;width:4.8%;min-width:30px;max-width:65px;transform:translate(-50%,-100%);z-index:10;pointer-events:none}.player>img{width:100%;height:auto;transform-origin:bottom center;filter:drop-shadow(0 1px 1px #302510cc)}.player.walking>img{animation:walk-bob .22s infinite alternate}.player.facing-left>img{scale:-1 1}.player-shadow{position:absolute;left:15%;right:15%;bottom:-2px;height:10%;border-radius:50%;background:#242e2077;filter:blur(2px)}.player-name{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:9px;background:#1d3426e8;color:#ffefd0;padding:1px 7px;border-radius:3px}.destination-ring{position:absolute;width:6%;aspect-ratio:2/1;border:2px solid #ffeab0;box-shadow:0 0 12px #ffe399;transform:translate(-50%,-50%);border-radius:50%;animation:ring-glow 1.3s infinite;pointer-events:none}.walk-controls{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-top:12px;padding:12px 18px;background:#fffaf0;border:1px solid var(--line);border-radius:9px;min-height:135px}.joystick-wrap{display:flex;align-items:center;gap:18px}.joystick{width:108px;height:108px;position:relative;border-radius:50%;background:radial-gradient(circle,#cfc5ad 0 34%,#e9e0ce 36% 64%,#c6b99c 66%,#f4eddc 68%);border:2px solid #b9a883;box-shadow:inset 0 3px 9px #53432b1a;touch-action:none;user-select:none;flex-shrink:0}.joy-knob{position:absolute;left:50%;top:50%;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 40% 30%,#947451,#5b4430);border:2px solid #483622;box-shadow:0 6px 9px #3227144d,inset 0 2px 0 #e1c18b66;transform:translate(-50%,-50%);pointer-events:none}.joy-cross{position:absolute;inset:10px;border-radius:50%;background:linear-gradient(90deg,transparent 48%,#94866644 49% 51%,transparent 52%),linear-gradient(0deg,transparent 48%,#94866644 49% 51%,transparent 52%)}.dpad{display:grid;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(2,36px);gap:3px}.dpad button{padding:0;border-radius:5px;background:#f3e9d3;border-color:#baac8e;color:#69533d;font-size:14px;touch-action:none;user-select:none}.dpad [data-direction=up]{grid-column:2}.dpad [data-direction=left]{grid-column:1;grid-row:2}.dpad [data-direction=down]{grid-column:2;grid-row:2}.dpad [data-direction=right]{grid-column:3;grid-row:2}.nearby-panel{max-width:440px;text-align:right}.nearby-panel>small{color:#a58135;font-size:10px;letter-spacing:.08em}.nearby-panel p{font-size:14px;margin:2px 0 7px;line-height:1.4}.nearby-panel button{font-size:13px;padding:9px 16px;min-width:165px}.quest-panel{background:#e7e2d5;border:1px solid #cbbfa4;border-radius:9px;padding:22px 18px;display:flex;flex-direction:column}.quest-panel h2{font-family:"Batang",serif;font-size:27px;color:#65442c;line-height:1.3;margin:7px 0 14px}.quest-panel>p{font-size:12px;color:#73644e}.quest-list{padding:0;margin:22px 0;list-style:none;display:grid;gap:16px}.quest-list li{display:flex;gap:9px;align-items:center;color:#76664f}.quest-list li>span{font-size:10px;color:#a29375;border:1px solid #b9a986;border-radius:50%;width:25px;height:25px;display:grid;place-items:center;flex-shrink:0}.quest-list li b{font-size:13px}.quest-list li small{display:block;font-size:10px;color:#8c7d64}.quest-list li i{margin-left:auto;font-style:normal;font-size:14px;color:#466d49}.quest-list li.complete>span{background:#4d6950;color:#ffedc6;border-color:#4d6950}.quest-list li.active b{color:#8c3030}.inventory{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:auto}.inventory>span{font-size:11px;border:1px solid #c7b99b;background:#f5eddd;border-radius:5px;padding:9px;text-align:center}.inventory b{display:block;font-size:10px;font-weight:400;color:#9f9075}.inventory .acquired{background:#e5eddc;border-color:#819373}.inventory .acquired b{color:#496344;font-weight:700}.quest-panel .control-note{font-size:10px;margin-top:18px;color:#8c7c63}
+/* Mathematical manipulation */
+.puzzle-layout{display:grid;grid-template-columns:minmax(0,1fr) 265px;gap:22px}.gate-workshop,.window-workshop{background:#fffaf0;border:1px solid var(--line);border-radius:9px;overflow:hidden}.gate-scene{position:relative;max-height:320px;overflow:hidden;background:#d7cfba}.gate-scene img{width:100%;max-height:320px;object-fit:contain}.door-guide{position:absolute;left:57%;top:35%;height:46%;width:20px;border-right:3px solid #ffe18f;filter:drop-shadow(1px 1px 2px #2c221b)}.door-guide:before,.door-guide:after{content:"";position:absolute;right:-7px;width:13px;height:3px;background:#ffe18f}.door-guide:after{bottom:0}.door-guide span{position:absolute;left:28px;top:40%;color:#ffe79a;font-size:22px;font-weight:900;white-space:nowrap}.photo-caption{position:absolute;left:12px;bottom:10px;background:#16261dcc;color:#fff6d5;padding:4px 8px;font-size:10px;border-radius:4px}.ruler-workbench{padding:22px}.ruler-target-label{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#947d55}.ruler-target-label b{color:#573a26;font-size:17px}.ruler-track{height:64px;position:relative;background:repeating-linear-gradient(90deg,#bcab8730 0px,#bcab8730 1px,transparent 1px,transparent 16.66%),linear-gradient(#e7dfc7,#f9f3df);border:1px solid #b6a17a;border-radius:5px;margin:16px 0 32px;touch-action:none;overflow:visible}.ruler-goal{position:absolute;top:-9px;bottom:-9px;left:75%;border-left:2px dashed #a34b39;pointer-events:none}.ruler-zero,.ruler-end{position:absolute;bottom:-24px;font-size:12px;color:#987951}.ruler-zero{left:0}.ruler-end{left:75%;transform:translateX(-50%);color:#8c3030;font-weight:800}#rulerSegments{position:absolute;inset:5px 0;display:flex;pointer-events:none}.placed-length{height:100%;display:grid;place-items:center;background:repeating-linear-gradient(90deg,transparent 0 9px,#98703d22 9px 10px),linear-gradient(#e9c77e,#cfa35e);border:1px solid #8d693a;border-radius:3px;color:#62401e;font-size:14px;font-weight:800;flex-shrink:0;box-shadow:0 3px 4px #71552a25}.placed-length:nth-child(even){background:linear-gradient(#b7c4a0,#91a781)}.ruler-track.over .placed-length:last-child{background:#e4a58e}.length-tray{display:flex;align-items:end;gap:10px;flex-wrap:wrap}.length-piece{border:1px solid #a1804c;background:repeating-linear-gradient(90deg,transparent 0 9px,#93703c26 9px 10px),linear-gradient(#ead39d,#d3b479);border-radius:4px;width:128px;min-height:63px;padding:9px 8px;box-shadow:0 3px 0 #967546;touch-action:none;user-select:none}.length-piece b{display:block;font-size:20px;color:#63401e}.length-piece span{display:block;font-size:9px;font-weight:400;color:#977346}.length-piece.short{width:94px}.length-piece.long{width:160px}.live-feedback{font-size:14px;line-height:1.6;border-left:3px solid #b39454;background:#f4edde;padding:12px 15px;margin-top:20px;min-height:48px;color:#6d5537}.live-feedback.success{border-color:#6d8558;color:#406039;background:#edf2e5}.live-feedback.warning{border-color:#ab503a;color:#843d29;background:#fbebe3}.workbench-actions{display:flex;align-items:center;gap:9px;margin-top:14px;justify-content:flex-end}.workbench-actions button{font-size:12px;padding:7px 11px}.workbench-actions>span{margin-right:auto;font-size:14px;font-weight:800;color:#60724e}.lesson-card{padding:25px 22px;background:#e9e4d7;border:1px solid #cdbf9f;border-radius:8px;overflow:hidden}.lesson-card>small{font-size:10px;color:#9d7f43}.lesson-card h2{font-family:"Batang",serif;font-size:25px;color:#694a2d;line-height:1.45;margin:8px 0 18px}.lesson-card p{font-size:14px;color:#7b6a51;line-height:1.8}.lesson-card .small-note{font-size:11px}.lesson-character{height:180px;width:100%;object-fit:contain;margin:26px auto 0}.unit-example{display:flex;justify-content:space-between;align-items:center;font-size:23px;color:#865630;margin:24px 0;border-block:1px solid #d0c0a0;padding:16px 0}.unit-example span{color:#ad9975}.window-reference{height:200px;position:relative;background:#e0dac9;overflow:hidden}.window-reference img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}.window-reference>span{position:absolute;bottom:10px;left:12px;background:#15251cdb;color:#fff3d3;border-radius:4px;padding:4px 8px;font-size:10px}.window-board{padding:16px 14px 0;touch-action:none}.window-board svg{width:100%;height:auto;display:block;border:1px solid #c3ad85;border-radius:5px;touch-action:none}.window-workshop .live-feedback,.window-workshop .workbench-actions{margin:14px 20px 20px}.corner-handle{fill:#fff5d7;stroke:#875335;stroke-width:4;cursor:grab;touch-action:none}.corner-handle:active{cursor:grabbing;fill:#ecd094}.angle-label{font-size:15px;fill:#934b33;font-weight:bold;pointer-events:none}.angle-label.correct{fill:#416842}.angle-example{font-size:50px;color:#56724c;margin:20px 0}.angle-example b{font-size:30px}.drag-ghost{position:fixed!important;z-index:1000!important;margin:0!important;pointer-events:none!important;opacity:.94;box-shadow:0 15px 22px #22180f50;transform:none!important;min-width:0!important;min-height:0!important}.drag-source{opacity:.3!important}.drop-active{filter:drop-shadow(0 0 8px #fff1a8)!important}
+/* Real material props layered over new architectural paintings. */
+.room-scene,.hall-stage{position:relative;aspect-ratio:3/2;max-width:1080px;margin:auto;isolation:isolate;overflow:hidden;border-radius:10px;border:1px solid #90704b;background:#30261e;touch-action:pan-y}.room-bg,.hall-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:-3}.room-vignette{position:absolute;inset:0;z-index:-2;background:linear-gradient(0deg,#21170f70,transparent 60%);pointer-events:none}.wood-chest{position:absolute;right:12%;top:36%;width:32%;height:30%;filter:drop-shadow(10px 14px 8px #1e120b88);perspective:650px;background:repeating-linear-gradient(1deg,transparent 0 3px,#0002 3px 4px),linear-gradient(90deg,#3e2419,#764d2c 45%,#422819);border:clamp(4px,.7vw,9px) solid #3c2519;border-radius:3px;box-shadow:inset 0 0 0 3px #b2844d44}.chest-top{position:absolute;top:-13px;left:-5%;width:110%;height:14px;background:linear-gradient(#6b492c,#3c2619);border:2px solid #2d1b13;box-shadow:0 3px 2px #0006}.chest-drawer{position:absolute;left:4%;right:4%;height:39%;border:2px solid #352217;background:repeating-linear-gradient(1deg,transparent 0 4px,#0002 4px 5px),linear-gradient(90deg,#50311e,#8c6139,#69432a);box-shadow:inset 0 0 0 4px #a77b4540}.chest-drawer.fixed{top:5%}.chest-drawer.secret{top:51%;transform-origin:top;transition:none}.drawer-front{position:absolute;inset:0;background:repeating-linear-gradient(1deg,transparent 0 5px,#0002 5px 6px),linear-gradient(90deg,#69462c,#946d43 45%,#53331f);border:2px solid #352217;z-index:3;transform:translateY(var(--drawer-pull,0px));box-shadow:0 5px 7px #0005}.drawer-inside{position:absolute;inset:0;background:#1b120ded;box-shadow:inset 0 10px 12px #000b;overflow:hidden}.brass-pull{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(40px,6vw,68px);height:clamp(30px,4vw,44px);padding:0;border:5px solid #987b4f;border-top:9px solid #b09860;border-radius:8px 8px 45% 45%;background:#30201b;box-shadow:0 2px 0 #3c2b15,inset 0 0 0 2px #624829;touch-action:none}.brass-corner{position:absolute;top:0;bottom:0;width:12px;background:linear-gradient(90deg,#76623f,#b19a62,#71603c);border:1px solid #443820}.brass-corner.left{left:0}.brass-corner.right{right:0}.chest-feet{position:absolute;bottom:-14%;left:7%;right:7%;height:15%;border-inline:18px solid #3b251a}.antique-lock{position:absolute;left:50%;top:22%;transform:translateX(-50%);width:22%;height:39%;min-width:42px;border:3px solid #6f5c36;background:linear-gradient(110deg,#8e7340,#d1b875 45%,#92723d);border-radius:4px;z-index:5;box-shadow:1px 5px 5px #0007;display:grid;place-items:center}.antique-lock:before{content:"";position:absolute;width:64%;height:40%;bottom:100%;left:18%;border:5px solid #a68b51;border-bottom:0;border-radius:50% 50% 0 0}.antique-lock span{font:700 clamp(11px,1.5vw,20px) "Batang",serif;color:#5e4622}.antique-lock i{position:absolute;width:5px;height:10px;border-radius:50%;background:#473015;bottom:8%}.antique-lock.unlocked{opacity:0;transition:opacity .4s}.room-tray{position:absolute;bottom:11%;left:6%;width:30%;max-width:330px;min-height:115px;padding:15px 20px;background:#eee2c2ed;border:1px solid #a1844d;border-radius:8px;box-shadow:0 10px 16px #21170f5e}.room-tray>span{display:block;font-size:11px;color:#735435;margin-bottom:10px}.number-key{width:140px;height:58px;position:relative;background:none;border:0;padding:0;touch-action:none;box-shadow:none}.number-key b{position:absolute;left:0;top:0;width:57px;height:57px;background:linear-gradient(135deg,#cfb871,#8f763e);border:4px solid #7d642d;border-radius:50%;display:grid;place-items:center;font-size:18px;color:#48351e;box-shadow:inset 0 1px 2px #fff8}.number-key i{position:absolute;left:52px;top:23px;width:80px;height:12px;background:linear-gradient(#d5bd79,#947539);border:1px solid #806227}.number-key i:after{content:"";position:absolute;right:4px;top:5px;width:25px;height:18px;border-right:8px solid #ae8d48;border-left:8px solid #ae8d48}.scene-feedback{position:absolute;left:3%;right:3%;bottom:2%;padding:11px 16px;color:#fff4d9;background:#241c14dd;border:1px solid #a58b5777;border-radius:6px;text-align:center;font-size:clamp(12px,1.5vw,17px);line-height:1.5;pointer-events:none;z-index:7}.small-candle{position:absolute!important;bottom:5%;left:45%;width:18px!important;height:43px!important;transform:rotate(65deg)}.wood-locker{position:absolute;right:16%;top:18%;width:26%;height:48%;background:#30221a;border:9px solid #3e2a1d;perspective:800px;filter:drop-shadow(9px 14px 9px #24150c99)}.locker-crown{position:absolute;left:-10%;right:-10%;top:-16px;height:16px;background:linear-gradient(#7f5935,#3f291b);border:2px solid #342116;z-index:4}.locker-cavity{position:absolute;inset:0;background:linear-gradient(90deg,#2d2118,#57412b);box-shadow:inset 0 0 20px #000b;display:grid;place-items:center}.wood-door{position:absolute;inset:0;border:5px solid #51321f;background:repeating-linear-gradient(90deg,transparent 0 4px,#16100a20 4px 5px),linear-gradient(90deg,#69452c,#805a37 35%,#4c3020);transform:rotateY(var(--door-angle,0deg));transform-origin:left center;transform-style:preserve-3d;box-shadow:inset 0 0 0 4px #9e77444d}.wood-door-panel{position:absolute;inset:8% 10%;border:8px ridge #694728;box-shadow:inset 0 0 18px #21140d88}.locker-pull{position:absolute;right:10%;top:42%;width:32px;height:55px;border:5px solid #a48851;border-radius:40%;background:#483323;box-shadow:2px 3px 3px #0007;touch-action:none;padding:0}.shape-lock{position:absolute;left:28%;top:35%;width:36%;height:23%;border:5px solid #9f8145;border-radius:5px;background:linear-gradient(130deg,#dbc586,#a3894c);display:grid;place-items:center;box-shadow:0 5px 7px #0005}.shape-lock span{width:68%;height:45%;background:#3a2b20;border:2px solid #73532d}.shape-lock.unlocked{opacity:0;transition:opacity .4s}.locker-base{position:absolute;left:-5%;right:-5%;bottom:-8%;height:9%;background:#432b1b;border:2px solid #2a1a12}.shape-key{width:150px;height:60px;background:none;border:0;padding:0;touch-action:none}.shape-key>span{display:block;width:120px;height:36px;border:5px ridge #bea259;background:linear-gradient(100deg,#d6bc74,#a38842);box-shadow:0 3px 2px #624c29;color:#634a26}.shape-key small{display:block;color:#6d5030;font-size:10px;margin:5px 0}.wax-candle{position:relative;width:32px;height:88px;display:block;border:1px solid #ab8e50;border-radius:45% 45% 5px 5px/6px 6px 5px 5px;background:linear-gradient(90deg,#b99752 0,#e7d097 16%,#fff1c8 43%,#dcc184 85%,#b18b45);box-shadow:inset 1px 0 2px #fff9,2px 4px 6px #281a1244;padding:0;touch-action:none;user-select:none}.wax-candle:before{content:"";position:absolute;top:0;left:0;right:0;height:9px;border-radius:50%;background:radial-gradient(ellipse,#8a693b 0 10%,#e6cb8c 15% 65%,#f7e5b5 70%);border:1px solid #cfb374}.wax-candle:after{content:"";position:absolute;top:3px;left:4px;width:6px;height:32%;border-radius:0 0 4px 4px;background:linear-gradient(#f7e7bb,#efda9f);box-shadow:10px 8px 0 -1px #eed5a0}.wick{position:absolute;width:3px;height:11px;left:50%;top:-7px;background:#382a20;border-radius:3px;z-index:3}.matchbox{position:relative;width:150px;height:75px;border:3px solid #987944;border-radius:3px;background:linear-gradient(130deg,#decca3,#b19769);box-shadow:4px 4px 0 #5a3f23;padding:7px;text-align:center}.matchbox>span{display:block;font-family:"Batang",serif;font-size:12px;color:#704b2f;font-weight:bold}.box-striker{position:absolute;left:4%;right:4%;bottom:6px;height:30px;border:1px solid #453523;background:repeating-linear-gradient(45deg,#5d4735 0px,#5d4735 2px,#886d4f 2px,#886d4f 4px);box-shadow:inset 0 2px 4px #27180e99}.hall-stage{max-width:1080px;overflow:hidden}.hall-bg{transition:filter 1.3s;filter:brightness(.86)}.hall-stage.lit .hall-bg{filter:brightness(1.2) saturate(1.14)}.hall-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 49%,#ffc76966,transparent 57%);opacity:0;pointer-events:none;mix-blend-mode:screen;transition:opacity 1.4s}.lit .hall-glow{opacity:1}.candle-stand{position:absolute;left:50%;top:62%;width:9%;height:13%;transform:translate(-50%,-100%);z-index:2;filter:drop-shadow(5px 6px 3px #21170999)}.stand-dish{position:absolute;left:0;right:0;top:18%;height:18%;border:2px solid #795820;border-radius:50%;background:radial-gradient(ellipse,#d6b364 0 35%,#8c6a2e 40%,#b78e3d 65%);z-index:3}.stand-stem{position:absolute;left:44%;right:44%;top:30%;bottom:10%;background:linear-gradient(90deg,#6d4f1e,#d0ad5e,#795923);border-radius:15%}.stand-foot{position:absolute;left:12%;right:12%;bottom:0;height:20%;border:1px solid #795b26;border-radius:50%;background:linear-gradient(#bd9950,#725323)}.stand-target{position:absolute;inset:0;border:2px dashed #f8dfa19e;border-radius:50%;animation:ring-glow 1.4s infinite}.candle-stand .wax-candle{position:absolute;left:50%;bottom:74%;transform:translateX(-50%);width:32%;height:115%;z-index:4}.candle-stand small{position:absolute;left:50%;bottom:-27px;transform:translateX(-50%);white-space:nowrap;color:#ffe8ab;font-size:11px;background:#261b11b3;padding:2px 7px;border-radius:3px}.hall-tool-tray{position:absolute;left:6%;right:6%;bottom:12%;height:19%;display:flex;align-items:end;justify-content:center;gap:clamp(22px,6vw,80px);background:linear-gradient(#f2e4bcf2,#d9c295f2);border:1px solid #b29252;border-radius:7px;box-shadow:0 9px 12px #1b120b6b;padding:22px 20px 12px}.tray-label{position:absolute;left:16px;top:7px;font-size:10px;color:#7e653d}.candle-tool{width:60px;display:flex;flex-direction:column;align-items:center;gap:7px;align-self:end}.candle-tool>.wax-candle{height:clamp(60px,7.5vw,88px);width:30px}.candle-tool>small,.match-tool>small{font-size:10px;color:#765d3b}.match-tool{width:145px;display:flex;flex-direction:column;align-items:center;gap:24px;margin-bottom:0}.match-stick{position:relative;width:130px;height:14px;background:linear-gradient(#f5d4a1,#b89560);border:1px solid #9a7649;border-radius:3px;touch-action:none;padding:0;box-shadow:2px 3px 2px #3a291433;transform:rotate(-8deg);user-select:none}.match-head{position:absolute;left:-3px;top:-3px;width:22px;height:18px;border:1px solid #4d261d;border-radius:55% 35% 35% 55%;background:radial-gradient(ellipse at 45% 30%,#b35637,#793a26 60%,#47291e);z-index:2}.hall-tool-tray .matchbox{margin-bottom:4px;flex-shrink:0}.strike-meter{position:absolute;left:0;right:0;bottom:-9px;height:4px;background:#87693b;border-radius:2px;overflow:hidden}#strikeMeter{height:100%;width:0%;display:block;background:#e4a342;transition:width .1s}.fire-flame{position:absolute;left:50%;bottom:100%;width:28px;height:44px;transform:translateX(-50%);border-radius:70% 35% 60% 50%;background:radial-gradient(ellipse at 50% 80%,#fffceb 0 15%,#ffe07c 28%,#f5a930 56%,#cb521f 76%,transparent 81%);filter:drop-shadow(0 0 7px #ffb731);animation:flame-dance .6s infinite alternate;pointer-events:none;z-index:5}.match-stick .fire-flame{left:8px;bottom:8px;width:25px;height:36px}.hall-note{font-size:10px;color:#93836a;text-align:center;margin-top:9px}
+.modal{position:fixed;inset:0;z-index:1500;background:#152119b8;backdrop-filter:blur(5px);display:grid;place-items:center;padding:22px}.modal>article{width:min(680px,100%);max-height:90dvh;overflow:auto;background:#fff9e9;border:1px solid #b69a5a;border-radius:10px;padding:30px;text-align:center;box-shadow:0 30px 90px #0d171944}.modal small{font-size:10px;letter-spacing:.12em;color:#9a7a39}.modal h2{font-family:"Batang",serif;font-size:clamp(24px,3vw,35px);color:#67442e;line-height:1.4;margin:9px 0 18px}.modal p{font-size:16px;color:#78644c;line-height:1.8}.modal-status{background:#f0e6cd;padding:11px;border-radius:5px;font-size:13px!important;margin:18px 0}.modal-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:22px}.success-star{color:#b28b34;font-size:55px;line-height:1.2}.modal>article>button{margin-top:22px}.journal-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;text-align:left}.journal-cards section{padding:18px;border:1px solid #d1c09a;border-top:3px solid #a69255;background:#f3ecda;border-radius:5px}.journal-cards b{font-size:14px;color:#725136}.journal-cards p{font-size:13px;margin-top:7px}#toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);max-width:min(90%,650px);padding:12px 20px;border:1px solid #c0a365;background:#283829f2;color:#fff4d7;border-radius:7px;z-index:1800;opacity:0;transition:.2s;pointer-events:none;font-size:14px;text-align:center}#toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes walk-bob{from{translate:0 0;rotate:-2deg}to{translate:0 -3px;rotate:2deg}}@keyframes ring-glow{50%{opacity:.45}}@keyframes flame-dance{to{scale:.9 1.08;rotate:5deg}}
+@media(max-width:1100px){.app-shell{padding:0 16px}.walk-layout{grid-template-columns:minmax(0,1fr) 205px;gap:13px}.quest-panel{padding:18px 14px}.quest-panel h2{font-size:24px}.quest-list{gap:12px;margin:16px 0}.walk-controls{padding:10px 12px;gap:10px}.dpad{display:none}.quest-panel .control-note{font-size:9px}.puzzle-layout{grid-template-columns:minmax(0,1fr) 220px;gap:16px}.lesson-card{padding:20px 16px}.lesson-card h2{font-size:22px}.length-piece{width:110px}.length-piece.short{width:84px}.length-piece.long{width:130px}}
+@media(max-width:800px){.topbar{padding:13px 0;margin-bottom:12px;gap:10px}.brand b{font-size:17px}.brand small{font-size:8px}.brand>span{font-size:27px}.chapter{display:none}.toolbar button{font-size:11px;padding:8px 10px}.page-heading{align-items:start;gap:10px;flex-direction:column;margin:13px 0}.page-heading>p{font-size:12px;max-width:none}.walk-layout{display:block}.quest-panel{margin-top:14px;padding:14px;display:block}.quest-panel h2{font-size:19px;margin:5px 0}.quest-panel h2 br{display:none}.quest-list{display:flex;flex-wrap:wrap;gap:12px}.quest-list li{flex:1;min-width:120px}.quest-list li small{font-size:9px}.quest-panel .control-note{display:none}.inventory{max-width:300px}.walk-controls{min-height:127px}.dpad{display:grid;grid-template-columns:repeat(3,29px);grid-template-rows:repeat(2,32px);gap:2px}.joystick-wrap{gap:12px}.joystick{width:100px;height:100px}.joy-knob{width:42px;height:42px}.nearby-panel p{font-size:12px}.nearby-panel button{font-size:12px;min-width:130px;padding:10px}.map-label{font-size:10px;padding:2px 5px}.map-corner{top:8px;left:8px;font-size:11px;padding:5px 8px}.map-corner small{font-size:8px}.player{width:5.5%}.puzzle-layout{grid-template-columns:1fr}.lesson-card{display:none}.gate-scene{max-height:245px}.gate-scene img{max-height:245px}.window-reference{height:170px}.room-scene,.hall-stage{min-height:470px;aspect-ratio:auto}.room-bg,.hall-bg{object-fit:cover;object-position:center}.wood-chest{right:8%;top:31%;width:44%;height:28%}.wood-locker{right:11%;top:16%;width:35%;height:43%}.room-tray{left:5%;bottom:13%;width:38%;padding:12px;min-height:100px}.room-tray>span{font-size:10px}.number-key{scale:.85;transform-origin:left center}.hall-tool-tray{left:4%;right:4%;height:22%;gap:28px;padding:22px 12px 10px;bottom:13%}.match-tool{width:110px;gap:26px}.match-stick{width:108px}.hall-tool-tray .matchbox{width:130px;height:73px}.hall-tool-tray .matchbox>span{font-size:10px}.candle-stand{top:62%;width:11%;height:12%}.scene-feedback{font-size:12px;padding:9px 10px}.intro-scene{min-height:660px;aspect-ratio:auto}.intro-title{top:17%;left:5%;right:5%}.intro-title h1{font-size:48px}.intro-title p{font-size:12px}.intro-label{font-size:9px;left:17px;top:18px}.skip{top:60px;right:17px}.story-character{height:205px;bottom:185px;width:160px}.dialogue{bottom:17px;left:4%;right:4%;padding:16px}.dialogue p{min-height:82px;font-size:17px}.story-character.boy{left:0}.story-character.girl{right:0}}
+@media(max-width:520px){.app-shell{padding:0 10px}.toolbar{gap:5px}.toolbar button{font-size:10px;padding:7px}.page-heading h1{font-size:24px}.walk-controls{padding:10px;gap:8px}.dpad{display:none}.nearby-panel{max-width:210px}.map-label{font-size:8px;padding:1px 3px}.map-corner{font-size:9px;top:6px;left:6px;padding:4px}.map-corner small{display:none}.player{min-width:25px}.player-name{font-size:8px}.map-frame{border-radius:6px}.joystick{width:94px;height:94px}.nearby-panel p{font-size:11px}.nearby-panel button{min-width:125px;padding:9px 10px;font-size:11px}.ruler-workbench{padding:16px}.length-tray{gap:8px}.length-piece{width:calc(50% - 4px);min-height:58px}.length-piece.short,.length-piece.long{width:calc(50% - 4px)}.length-piece b{font-size:18px}.ruler-target-label span{font-size:10px}.live-feedback{font-size:12px}.room-scene,.hall-stage{min-height:470px}.room-tray{width:43%}.wood-chest{width:43%;right:6%;top:33%}.wood-locker{width:43%;right:8%}.hall-tool-tray{gap:18px;justify-content:space-around;height:23%;bottom:14%}.tray-label{left:9px;font-size:8px}.candle-tool{width:32px}.match-tool{width:83px}.match-stick{width:83px;height:12px}.hall-tool-tray .matchbox{width:108px;height:73px}.hall-tool-tray .matchbox>span{font-size:9px}.box-striker{height:29px}.candle-stand{width:16%;height:12%;top:62%}.hall-stage{overflow:visible}.hall-stage>.hall-bg{border-radius:8px}.modal{padding:14px}.modal>article{padding:24px 18px}.modal p{font-size:14px}.journal-cards{grid-template-columns:1fr;gap:10px}.intro-title h1{font-size:42px}.intro-title p{font-size:11px}.dialogue p{font-size:16px}footer{display:block}footer details{margin-top:10px}footer summary{text-align:left}.window-reference{height:145px}.angle-label{font-size:17px}.window-board{padding:12px 7px 0}}
+@media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Place stories come before each mission. Photographs are never cropped. */
+.map-mission-banner{display:flex;align-items:center;gap:12px;padding:14px 18px;margin-bottom:12px;background:#fff8dd;border:1px solid #cbb16e;border-radius:9px;color:#645239;font-size:16px;line-height:1.7}
+.quest-symbol{color:#a87826;font-size:25px;flex-shrink:0}.map-mission-banner strong{color:#80352e;font-size:1.15em;background:#eed49366;border-bottom:2px solid #b98938;padding:1px 5px;margin:0 3px}
+.map-label.current-destination{background:#80352e;color:#fff6dc;border:2px solid #ffe39a;box-shadow:0 0 0 3px #80352e40,0 3px 12px #42351850;z-index:4}.map-label.current-destination span{background:#f0d697;color:#623b25}
+.map-label.label-only{background:#f7f1e2db;color:#665c49;border:1px solid #b5a58b;font-weight:500;box-shadow:none}
+.candle-clue{padding:10px 12px;margin-top:12px;background:#f7e9bc;border:1px solid #c7ad68;border-radius:5px;font-size:11px;color:#6f5530}.candle-clue strong{display:block;font-size:19px;letter-spacing:.2em;color:#80352e}
+#placeModal>article{display:flex;flex-direction:column;width:min(620px,100%);max-height:92dvh;padding:0;overflow:hidden;text-align:left;background:linear-gradient(#fffdf6,#fff5dc)}
+.place-header{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:20px 24px 12px;flex-shrink:0}.place-header h2{margin:5px 0 0;font-size:29px}.place-header small{letter-spacing:0;font-size:11px;color:#85602e}
+#placeDismiss{flex-shrink:0;min-width:44px;min-height:44px;font-size:24px;line-height:1;padding:5px;border-color:#bb9c73;color:#74543a}
+.place-body{padding:0 24px 18px;overflow:auto;overscroll-behavior:contain;min-height:0}.place-figure{margin:0 0 18px;background:#ece4d2;border:1px solid #c5ad7b;border-radius:8px;overflow:hidden}
+#placePhoto{display:block;width:100%;height:auto;max-height:34dvh;object-fit:contain}.place-figure figcaption{font-size:11px;color:#766344;background:#f3ead4;padding:6px 11px}
+.place-section-title{font-size:12px;color:#96733e;margin:0 0 5px}#placeDescription{font-size:16px;line-height:1.85;color:#5f503e}
+.place-observation{margin-top:18px;padding:14px 16px;background:#fff9e7;border:1px solid #dcc278;border-radius:8px}.place-observation>b{font-size:12px;color:#856128}.place-observation p{font-size:14px;line-height:1.7;margin-top:4px;color:#6d5c3e}
+#placeStatus{margin:13px 0 10px;font-size:12px!important;line-height:1.7}.place-credits{font-size:10px;color:#887a65}.place-credits summary{cursor:pointer;min-height:30px;display:list-item;padding:5px 0}.place-credits a{margin-left:5px}
+.place-actions{flex-shrink:0;margin:0;padding:15px 20px;background:#fff9ec;border-top:1px solid #deceb1;justify-content:space-between}.place-actions button{min-height:46px;font-size:13px}.place-actions .primary{flex:1}
+.companion-dialogue{display:grid;gap:12px;margin-top:23px;text-align:left}.companion-line{display:flex;align-items:center;gap:15px}.companion-line>img{width:70px;height:104px;object-fit:contain;flex-shrink:0}.companion-line>div{flex:1;min-width:0;padding:13px 17px;border:1px solid #d9c49b;border-radius:4px 15px 15px;background:#f3e6c9}.companion-line b{font-size:12px;color:#80552c}.companion-line p{font-size:15px;line-height:1.75;margin-top:4px;color:#594c38}
+.companion-line.seoyeon{flex-direction:row-reverse}.companion-line.seoyeon>div{background:#e8ecde;border-color:#c2caaa;border-radius:15px 4px 15px 15px}.companion-line.seoyeon b{color:#526441}
+.candle-inscription{position:absolute;z-index:4;left:50%;top:30%;transform:translateX(-50%);writing-mode:vertical-rl;white-space:nowrap;font-family:"Batang",serif;font-size:9px;font-weight:bold;line-height:1;color:#775531;letter-spacing:.1em;pointer-events:none}.small-candle .candle-inscription{font-size:6px;top:23%}
+.reward-candle-panel{display:flex;align-items:center;justify-content:center;gap:34px;margin:22px 0;padding:22px;background:radial-gradient(ellipse,#fff9dc,#eee0b9);border:1px solid #cfb16d;border-radius:9px}
+.clue-candle{width:58px;height:124px;flex-shrink:0}.clue-candle .candle-inscription{font-size:19px;top:27%;letter-spacing:.18em}.reward-candle-panel p{text-align:left;font-size:12px;line-height:1.8}.reward-candle-panel p strong{font-family:"Batang",serif;display:block;font-size:27px;color:#774a2b}.reward-candle-panel p>span{display:block;font-size:11px;color:#8d6d35}
+@media(max-width:800px){.map-mission-banner{font-size:14px;padding:12px 14px;gap:8px}.place-header{padding:17px 19px 12px}.place-body{padding:0 19px 14px}.place-header h2{font-size:26px}.place-actions{padding:12px 16px}#placePhoto{max-height:32dvh}}
+@media(max-width:520px){.map-mission-banner{font-size:12px;align-items:start}.quest-symbol{font-size:19px}.place-header h2{font-size:23px}#placeDescription{font-size:14px}.place-observation p{font-size:13px}.place-actions{gap:8px}.place-actions button{font-size:12px;padding:10px 12px}.place-actions .primary{flex-basis:100%}.companion-line{gap:8px}.companion-line>img{width:49px;height:81px}.companion-line>div{padding:10px 12px}.companion-line p{font-size:13px}.companion-dialogue{gap:13px}.reward-candle-panel{padding:20px 12px;gap:25px}.clue-candle{height:115px;width:52px}.reward-candle-panel p strong{font-size:24px}}
+
+.quest-list li.locked{opacity:.48}.quest-list li.active{opacity:1}
+
+/* A-series visual novel frame; the scenery and props are PNG artwork. */
+.learning-stage,.episode-scene{position:relative;aspect-ratio:16/9;width:100%;max-width:1200px;margin:auto;border:1px solid #b69b5a;border-radius:10px;overflow:hidden;background:#e4d8bc;isolation:isolate}
+.learning-background{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:-1}
+.episode-art{position:absolute;inset:0;z-index:-1;isolation:isolate}.episode-location,.episode-back{position:absolute;top:18px;background:#101f2cef;border:1px solid #bea25b;color:#fff4d2;font-size:12px;padding:9px 15px;border-radius:5px}.episode-location{left:20px}.episode-back{right:20px}
+.episode-character{position:absolute;bottom:22%;width:24%;height:55%;object-fit:contain;filter:drop-shadow(0 8px 6px #0004);transition:filter .2s,opacity .2s}.episode-character.boy{left:10%}.episode-character.girl{right:10%}.episode-character.inactive{filter:brightness(.57) saturate(.7);opacity:.85}
+.episode-dialogue{position:absolute;bottom:8%;left:6%;right:6%;width:88%;min-height:23%;padding:27px 65px 34px 28px;background:linear-gradient(90deg,#071625f7,#112436f0);border:1px solid #d5b961;border-radius:6px;color:#fffdf4;text-align:left;box-shadow:0 10px 25px #17243255}
+.episode-speaker{position:absolute;top:-19px;left:23px;padding:5px 21px;min-width:98px;border:1px solid #d3b567;border-radius:4px;background:#883737;color:#fff3d0;text-align:center;font-family:"Batang",serif;font-size:16px}.episode-text{display:block;font-size:clamp(16px,1.7vw,22px);line-height:1.7;word-break:keep-all}.episode-hint{position:absolute;bottom:10px;right:18px;font-size:11px;color:#e2cb89}.episode-arrow{position:absolute;right:23px;top:40%;color:#e8c86d;font-size:23px}.episode-pagination{position:absolute;bottom:1.5%;left:6%;right:6%;display:flex;align-items:center;justify-content:space-between;color:#fff3d6;font-size:11px;text-shadow:0 1px 4px #17201d}.episode-pagination button{background:#102536d9;border-color:#c9b276;color:#fff3d6;padding:4px 12px;font-size:11px;min-height:32px}
+.found-note{position:absolute;left:33%;top:24%;width:34%;padding:22px 16px;background:#fff3cf;border:1px solid #b1965b;border-radius:3px;box-shadow:0 6px 22px #25302855;rotate:-3deg;text-align:center}.found-note small{font-size:11px;color:#92713d}.found-note p{font-family:"Batang",serif;font-size:clamp(15px,1.9vw,25px);line-height:1.7;margin-top:9px;color:#513d25}
+.episode-key{position:absolute;width:21%;height:20%;object-fit:contain;left:39.5%;top:25%;filter:drop-shadow(0 0 15px #ffe378)}
+.hall-window-focus{position:absolute;left:70.7%;top:35.5%;width:10.5%;height:9%;border:3px solid #ffe498;border-radius:3px;box-shadow:0 0 0 5px #ffe49835;pointer-events:none}.hall-window-focus>span{position:absolute;right:-8%;bottom:calc(100% + 10px);white-space:nowrap;background:#14281bef;color:#fff4c6;border:1px solid #d5b868;padding:5px 9px;border-radius:4px;font-size:12px}.hall-observation .hall-window-focus{z-index:2}
+.learning-scene-note{position:absolute;right:12px;bottom:8px;color:#604a33;background:#fff9e6d9;border-radius:3px;padding:3px 8px;font-size:10px}
+.gate-ladder{position:absolute;left:80%;bottom:23.9%;height:15.4%;width:auto;max-width:none;transform:translateX(-50%);z-index:3;pointer-events:none;transition:filter .15s}.gate-ladder.carried{bottom:27%;filter:drop-shadow(0 0 6px #fff4bc);z-index:6}
+.gate-minwoo{position:absolute;left:20%;bottom:23.8%;height:23.8%;width:15%;transform:translateX(-50%);z-index:5;transition:bottom .45s ease;pointer-events:none}.gate-minwoo>img{width:100%;height:100%;object-fit:contain}.gate-minwoo.on-ladder{bottom:37.4%}.gate-minwoo>b{position:absolute;left:50%;top:-22px;transform:translateX(-50%);white-space:nowrap;background:#182c3cec;border:1px solid #d2b774;color:#fff0c8;font-size:11px;border-radius:4px;padding:3px 7px}.gate-minwoo.walking>img{animation:walk-bob .22s infinite alternate}
+.gate-target{position:absolute;left:44.5%;top:72%;width:11%;height:5%;border:2px dashed #fff0b4;background:#d7aa4438;border-radius:50%;z-index:2;pointer-events:none}.gate-target>span{position:absolute;top:115%;left:50%;transform:translateX(-50%);white-space:nowrap;background:#fff5d7ee;color:#745125;padding:3px 8px;font-size:11px;border-radius:4px}.gate-target.ready{border-color:#deffba;background:#78b04c70}
+.gate-measure{position:absolute;left:61%;top:41.4%;height:33.6%;width:13%;color:#fff8d7;font-size:clamp(11px,1.6vw,18px);font-weight:bold;filter:drop-shadow(0 2px 2px #0006);pointer-events:none}.gate-measure>span{display:flex;align-items:center;position:absolute;left:0;width:100%;height:60%;border-left:3px solid #fff2b5;border-block:2px solid #fff2b5;padding-left:11px;background:#3425117a}.gate-measure>span+span{height:40%;top:60%;border-top:0}
+.gate-roof-key{position:absolute;left:43%;top:23%;width:14%;height:17%;padding:0;background:transparent;border:0;box-shadow:none;filter:drop-shadow(0 0 8px #fff27b);z-index:8}.gate-roof-key>img{height:100%;width:100%;object-fit:contain}.gate-roof-key>span{position:absolute;left:50%;bottom:-12px;transform:translateX(-50%);white-space:nowrap;font-size:12px;background:#fff1b9;border:1px solid #b48529;border-radius:4px;color:#734a18;padding:4px 9px}
+.gate-controls{display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;padding:16px;background:#eee5d1;border:1px solid #cbbb99;border-radius:0 0 8px 8px}.gate-move-buttons{display:flex;align-items:center;gap:12px;margin-right:10px}.gate-move-buttons button{min-height:52px;min-width:62px;font-size:23px;touch-action:none}.gate-move-buttons>span{font-size:12px;color:#786145}.gate-controls>button{min-height:48px;min-width:140px}.gate-instruction{font-size:14px;text-align:center;padding:13px;color:#6c5638;min-height:48px}
+.gate-equation{display:flex;align-items:center;justify-content:center;gap:17px;flex-wrap:wrap;background:#fff6da;border:1px solid #ccb06b;border-radius:9px;padding:20px;margin:0 auto 15px;max-width:950px}.gate-equation label{display:flex;align-items:center;gap:12px;font-size:clamp(18px,2.6vw,29px);font-weight:bold;color:#704629}.gate-equation input{width:100px;min-height:51px;border:2px solid #bc914c;border-radius:6px;background:#fffdfa;color:#703b23;font:700 27px "Malgun Gothic",sans-serif;text-align:center;padding:4px}.gate-equation input[aria-invalid=true]{border-color:#aa4b3d}.gate-equation p{width:100%;text-align:center;color:#7f6542;font-size:14px}.gate-equation button{min-height:49px}
+.hall-note-clue{position:absolute;left:4%;right:4%;bottom:5%;padding:11px 16px;background:#102330eb;color:#fff3ce;border:1px solid #c3a563;border-radius:6px;font-family:"Batang",serif;font-size:clamp(12px,1.7vw,21px);text-align:center}
+.shape-question{background:#fff9e8;border:1px solid #cebb91;padding:22px;border-radius:8px;margin:14px auto;max-width:950px;text-align:center}.shape-question h2{font-size:20px;color:#725137;margin-bottom:18px}.shape-choices{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.shape-choices button{min-height:103px;border:2px solid #d8c494;background:#fffdf6;font-size:16px;color:#6f5131}.shape-choices button>span{display:block;font-family:Arial,sans-serif;font-size:43px;line-height:1.2;color:#8b6f38;margin-bottom:5px}.shape-choices .chosen{border-color:#986b28;background:#f8e9bc}.shape-question p{font-size:14px;color:#806c50;min-height:24px;margin-top:16px}
+.number-key>img{width:100%;height:100%;object-fit:contain;pointer-events:none}.number-key:has(>img){width:155px;height:80px}
+@media(max-width:800px){.episode-dialogue{left:4%;right:4%;width:92%;padding:20px 43px 30px 19px;min-height:27%}.episode-text{font-size:16px}.episode-speaker{font-size:13px;top:-16px;min-width:80px;padding:4px 13px}.episode-character{height:57%;bottom:29%;width:27%}.episode-character.boy{left:7%}.episode-character.girl{right:7%}.episode-location,.episode-back{top:11px;font-size:10px;padding:6px 10px}.episode-location{left:12px}.episode-back{right:12px}.episode-hint{font-size:10px}.episode-arrow{right:15px;font-size:18px}.found-note{left:32%;top:19%;width:36%;padding:13px}.hall-window-focus>span{font-size:10px;padding:4px 6px}.gate-controls{gap:10px;padding:12px}.gate-move-buttons{gap:8px;margin:0}.gate-controls>button{min-width:110px;font-size:12px}.gate-move-buttons button{min-width:49px}.gate-equation{padding:15px}.gate-instruction{font-size:12px}.gate-minwoo>b{font-size:10px;top:-21px}.gate-target>span{font-size:9px}.shape-question h2{font-size:17px}}
+@media(max-width:600px){.episode-scene{aspect-ratio:auto;overflow:visible;background:#193044;padding-bottom:14px}.episode-art{position:relative;aspect-ratio:16/9;border-radius:9px 9px 0 0;overflow:hidden;z-index:0}.episode-character{height:69%;bottom:0;width:30%}.episode-dialogue{position:relative;left:auto;right:auto;bottom:auto;width:94%;margin:0 auto;display:block;min-height:175px;padding:29px 33px 35px 19px}.episode-text{font-size:16px}.episode-pagination{position:relative;bottom:auto;left:auto;right:auto;padding:9px 4% 0}.found-note{top:18%;font-size:12px;width:39%;left:30.5%;padding:10px}.found-note p{font-size:13px}.found-note small{font-size:9px}.episode-key{top:22%;height:27%}.gate-minwoo>b{font-size:8px;top:-17px;padding:2px 5px}.gate-roof-key{width:19%;height:22%;left:40.5%;top:17%}.gate-roof-key>span{font-size:10px}.gate-target>span{font-size:8px}.gate-controls{gap:8px}.gate-move-buttons{width:100%;justify-content:center}.gate-move-buttons button{min-height:49px;min-width:75px}.gate-controls>button{flex:1}.gate-equation label{gap:8px;font-size:20px}.gate-equation input{width:74px;font-size:24px}.gate-equation p{font-size:12px}.learning-scene-note{font-size:7px;bottom:3px;right:5px}.hall-window-focus{border-width:2px}.hall-window-focus>span{font-size:8px;bottom:calc(100% + 4px)}.shape-question{padding:15px}.shape-choices{gap:8px;grid-template-columns:1fr 1fr}.shape-choices button{min-height:86px;font-size:14px}.shape-choices button>span{font-size:33px}.hall-note-clue{font-size:10px;padding:7px;bottom:3%}}
+
+/* A15's illustrated recap cards, followed by A17's one-line farewell and bus. */
+.ending-recap{position:relative;isolation:isolate;overflow:hidden;max-width:1200px;margin:auto;padding:30px 34px 24px;border:1px solid #c3a65d;border-radius:10px;background:#102334;color:#fff8e4}
+.recap-backdrop{position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;filter:brightness(.24) saturate(.65)}
+.recap-heading{text-align:center}.recap-heading>small{font-size:10px;letter-spacing:.18em;color:#ecd389}.recap-heading h1{font-family:"Batang",serif;font-size:clamp(23px,2.6vw,34px);margin:8px 0;color:#fff4ce;line-height:1.45}.recap-heading>p{font-size:13px;color:#e2daca}.recap-mobile-break{display:none}
+.recap-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0}.recap-card{overflow:hidden;background:#fbf5e6;border:1px solid #c6ac68;border-radius:7px;box-shadow:0 9px 20px #0003;color:#514330;animation:recapRise .65s both}.recap-card:nth-child(2){animation-delay:.12s}.recap-card:nth-child(3){animation-delay:.24s}.recap-card>img{width:100%;aspect-ratio:16/9;object-fit:cover}.recap-card>div{padding:18px}.recap-card small{font-size:10px;letter-spacing:.04em;color:#92723b}.recap-card h2{font-size:clamp(16px,1.65vw,21px);color:#803c33;margin:5px 0 9px;line-height:1.5}.recap-card p{font-size:13px;line-height:1.8}.recap-card .recap-formula{margin:12px 0 8px;padding:10px 7px;border-block:1px solid #d8c79f;color:#654827;text-align:center;font-size:13px;font-weight:bold}.recap-note{display:block;font-size:10px;color:#8b775c;line-height:1.6}.recap-message{text-align:center;font-size:14px;line-height:1.9;color:#e8e0cc}.recap-message b{color:#f6db8c}.recap-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:23px;border-top:1px solid #c3a65d66;padding-top:18px}.recap-actions>span{font-size:12px;color:#d9caab}
+.departure-scene{position:relative;isolation:isolate;aspect-ratio:16/9;max-width:1200px;margin:auto;border:1px solid #bfa15d;border-radius:10px;overflow:hidden;background:#14283b;color:#fff5d8}.departure-art{position:absolute;inset:0;overflow:hidden}.departure-background{width:100%;height:100%;object-fit:cover}.departure-location{position:absolute;top:18px;left:20px;border:1px solid #bca263;background:#102334e8;border-radius:4px;padding:7px 12px;font-size:10px;color:#fff0c4;z-index:4}
+.ending-person{--boarding-ground:15%;--boarding-step:22%;position:absolute;left:17%;bottom:26%;width:25%;height:55%;object-fit:contain;transform:translateX(-50%);transform-origin:center bottom;z-index:3;filter:drop-shadow(0 5px 6px #0003);transition:left .75s,bottom .75s,width .75s,height .75s,filter .2s,opacity .25s}.ending-person.seoyeon{left:83%}.ending-person.inactive{filter:brightness(.6) saturate(.65);opacity:.86}
+.ending-dialogue{position:absolute;left:6%;right:6%;bottom:9%;width:88%;min-height:24%;padding:26px 55px 32px 26px;background:linear-gradient(90deg,#071625f7,#112436f5);border:1px solid #d5b961;border-radius:6px;color:#fffdf4;text-align:left;z-index:5;box-shadow:0 9px 25px #12233666}.ending-speaker{position:absolute;top:-19px;left:23px;padding:5px 21px;min-width:98px;border:1px solid #d3b567;border-radius:4px;background:#883737;color:#fff3d0;text-align:center;font-family:"Batang",serif;font-size:16px}.ending-text{display:block;font-size:clamp(16px,1.7vw,22px);line-height:1.7;word-break:keep-all}.ending-hint{position:absolute;bottom:9px;right:17px;font-size:10px;color:#e2cb89}.ending-arrow{position:absolute;right:20px;top:35%;font-size:30px;color:#efcf78}.ending-dialogue-nav{position:absolute;bottom:2%;left:6%;right:6%;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;text-shadow:0 1px 3px #152336;z-index:5}.ending-dialogue-nav button{font-size:11px;min-height:36px;padding:6px 12px;background:#14293ef0;color:#fff0c8;border-color:#bba069}
+.ending-bus{position:absolute;left:50%;bottom:12%;width:78%;transform:translateX(-50%);z-index:2;filter:drop-shadow(0 9px 6px #18200e44)}.ending-bus>img{width:100%}.bus-passengers{position:absolute;left:62%;top:25%;width:13%;height:17%;display:flex;align-items:flex-start;justify-content:center;overflow:hidden}.bus-passengers>img{width:50%;height:240%;max-width:none;object-fit:contain;object-position:top;filter:brightness(.78)}
+.departure-scene[data-phase=arriving] .ending-bus{animation:endingBusArrives 2.8s ease-out both}.departure-scene[data-phase=departing] .ending-bus{animation:endingBusDeparts 3.2s ease-in both}.departure-scene[data-phase=complete] .ending-bus{transform:translateX(150%)}
+.departure-scene:is([data-phase=arriving],[data-phase=parked],[data-phase=boarding],[data-phase=departing],[data-phase=complete]) .ending-person{left:85%;bottom:15%;width:11%;height:23%;filter:drop-shadow(0 3px 3px #0003);opacity:1}.departure-scene:is([data-phase=arriving],[data-phase=parked],[data-phase=boarding],[data-phase=departing],[data-phase=complete]) .ending-person.seoyeon{left:94%}
+.departure-scene[data-phase=boarding] .ending-person.minwoo{animation:endingMinwooBoards 1.2s ease-in-out both}.departure-scene[data-phase=boarding] .ending-person.seoyeon{animation:endingSeoyeonBoards 1.2s .55s ease-in-out both}.departure-scene:is([data-phase=departing],[data-phase=complete]) .ending-person{opacity:0;visibility:hidden}
+.departure-status{position:absolute;left:4%;right:4%;bottom:2%;z-index:5;background:#102334f0;border:1px solid #c8aa62;border-radius:6px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 18px;min-height:66px}.departure-status p{font-size:clamp(13px,1.5vw,18px);line-height:1.6}.departure-status button{font-size:13px;white-space:nowrap;min-height:46px}
+.departure-complete{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:17px;padding:26px;text-align:center;background:#0b1d2bf0;animation:recapRise .6s both}.departure-complete>small{color:#d9bf78;font-size:10px;letter-spacing:.13em}.departure-complete h2{font-family:"Batang",serif;font-size:clamp(27px,3.8vw,46px);line-height:1.4;color:#ffe6a1}.departure-complete p{font-size:clamp(13px,1.5vw,17px);line-height:1.85;color:#f0eadc}.ending-route{padding:10px 16px;border-block:1px solid #b1955066;font-size:12px;color:#dfc684}.departure-complete-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:650px}.departure-complete-actions>a{flex-basis:100%}.departure-complete-actions>button{background:#1a3040;color:#eae0c9;border-color:#927b4b;font-size:12px;min-height:44px}
+@keyframes recapRise{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+@keyframes endingBusArrives{from{transform:translateX(-190%)}to{transform:translateX(-50%)}}
+@keyframes endingBusDeparts{from{transform:translateX(-50%)}to{transform:translateX(150%)}}
+@keyframes endingMinwooBoards{0%{left:85%;bottom:var(--boarding-ground);opacity:1}65%{left:77%;bottom:var(--boarding-ground);opacity:1}100%{left:77%;bottom:var(--boarding-step);opacity:0}}
+@keyframes endingSeoyeonBoards{0%{left:94%;bottom:var(--boarding-ground);opacity:1}65%{left:77%;bottom:var(--boarding-ground);opacity:1}100%{left:77%;bottom:var(--boarding-step);opacity:0}}
+@media(max-width:850px){.ending-recap{padding:25px 20px}.recap-cards{gap:12px}.recap-card>div{padding:13px}.recap-card p{font-size:12px}.recap-card .recap-formula{font-size:12px}.ending-dialogue{padding:22px 37px 31px 19px}.ending-text{font-size:16px}.ending-speaker{font-size:13px;top:-16px}.ending-dialogue-nav{left:4%;right:4%}.departure-complete{gap:12px}.departure-status{padding:10px 12px}.departure-status button{padding:10px}}
+@media(max-width:600px){.ending-recap{padding:23px 16px}.recap-mobile-break{display:block}.recap-cards{grid-template-columns:1fr;margin:19px 0}.recap-card{display:grid;grid-template-columns:33% minmax(0,1fr)}.recap-card>img{height:100%;aspect-ratio:auto}.recap-card h2{font-size:16px}.recap-card .recap-formula{margin:8px 0;padding:7px 3px}.recap-card small{font-size:9px}.recap-message{font-size:12px}.recap-actions{flex-direction:column;text-align:center}.recap-actions>button{width:100%}.departure-scene{aspect-ratio:auto;padding-bottom:14px}.departure-art{position:relative;aspect-ratio:16/9}.departure-location{top:10px;left:10px;font-size:8px;padding:5px 8px}.ending-person{bottom:0;height:65%;width:30%}.ending-dialogue{position:relative;left:auto;right:auto;bottom:auto;display:block;width:94%;margin:0 auto;min-height:168px;padding:27px 32px 32px 19px}.ending-dialogue-nav{position:relative;left:auto;right:auto;bottom:auto;margin:12px 3% 0;flex-wrap:wrap}.ending-dialogue-nav button{min-height:42px;font-size:10px}.ending-dialogue-nav>span{font-size:10px}.departure-status{position:relative;left:auto;right:auto;bottom:auto;margin:10px 3% 0;flex-direction:column;text-align:center;min-height:94px}.departure-status button{width:100%}.ending-bus{bottom:5%}.departure-scene:is([data-phase=arriving],[data-phase=parked],[data-phase=boarding]) .ending-person{bottom:8%}.departure-complete{position:relative;inset:auto;padding:26px 14px;gap:15px}.departure-scene[data-phase=complete] .departure-art{display:none}.departure-complete-actions{width:100%}.departure-complete-actions>a{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.departure-scene[data-phase=arriving] .ending-bus{transform:translateX(-50%)}.departure-scene[data-phase=departing] .ending-bus{transform:translateX(150%)}.departure-scene[data-phase=boarding] .ending-person{opacity:0!important}}
+@media(max-width:600px){.ending-person{--boarding-ground:8%;--boarding-step:15%}}
+</style></head>
+<body><div class="app-shell">
+<header class="topbar"><a class="brand" href="index.html"><span>✦</span><b>MATHTOUR<small>in INCHEON</small></b></a><div class="chapter">계양·부평 <span>/</span> 부평향교</div><div class="toolbar"><button id="journalOpen">탐험 수첩 <b id="journalCount">0/2</b></button><button id="soundToggle" aria-pressed="false">소리 켜짐</button></div></header>
+<main>
+<section class="screen active" id="screen-intro" aria-label="향교 이야기">
+<div class="intro-scene"><img class="intro-bg" src="asset/embedded/c1bac957813216faae6c.webp" alt="학생 원작의 부평향교 정문 사진"><div class="intro-shade"></div><span class="intro-label">BUPYEONG HYANGGYO / 걸어서 만나는 수학</span><button id="storySkip" class="skip">이야기 건너뛰기 →</button><div class="intro-title"><small>두 개의 비밀, 하나의 빛</small><h1>대성전에<br>불을 밝혀라!</h1><p>민우와 함께 걷고, 만지고, 발견하는 향교 여행</p></div><img id="storyBoy" class="story-character boy" src="asset/embedded/5dc420d255b5cefb009b.svg" alt="민우"><img id="storyGirl" class="story-character girl" src="asset/embedded/15cd0f5280210e6bc22b.svg" alt="서연"><div class="dialogue"><b id="storySpeaker">민우</b><p id="storyText"></p><div><span id="storyProgress"></span><button id="storyNext" class="primary">다음 이야기 →</button></div></div></div></section>
+
+<section class="screen" id="screen-map" aria-label="조이스틱으로 걷는 향교 지도">
+<div class="page-heading"><div><small>EXPLORE THE HYANGGYO</small><h1>수학의 빛을 찾아, 한 걸음씩</h1></div><p>조이스틱으로 이동 → 건물 앞에서 탐험</p></div>
+<div class="walk-layout"><div class="walk-main"><p class="map-mission-banner" role="status"><span class="quest-symbol" aria-hidden="true">✦</span><span><span id="mapQuestLead"></span><strong id="mapQuestDestination"></strong><span id="mapQuestTail"></span></span></p><div class="map-frame" id="mapFrame" tabindex="0" aria-label="향교 지도. 방향키 또는 화면 조이스틱으로 이동합니다."><img id="mapArtwork" src="asset/embedded/14b7e1c2f768915b7b11.webp" alt="첨부 배치도를 바탕으로 그린 향교 조감도. 앞쪽 홍살문과 외삼문, 중앙 명륜당과 동재·서재, 뒤쪽 내삼문과 대성전·동무·서무."><div id="mapLabels" class="map-labels"></div><div id="destinationRing" class="destination-ring" hidden></div><div id="player" class="player" aria-label="이동하는 민우"><span class="player-shadow"></span><img src="asset/embedded/5dc420d255b5cefb009b.svg" alt=""><span class="player-name">민우</span></div><div class="map-corner">부평향교 탐험 지도<small>제공된 배치도를 바탕으로 재구성</small></div></div>
+<div class="walk-controls"><div class="joystick-wrap"><div id="joystick" class="joystick" role="group" aria-label="이동 조이스틱"><span class="joy-cross"></span><span id="joyKnob" class="joy-knob"></span></div><div class="dpad" aria-label="방향키"><button data-direction="up" aria-label="위로 이동">▲</button><button data-direction="left" aria-label="왼쪽으로 이동">◀</button><button data-direction="down" aria-label="아래로 이동">▼</button><button data-direction="right" aria-label="오른쪽으로 이동">▶</button></div></div><div class="nearby-panel"><small id="nearbyTag">다음 목적지</small><p id="nearbyText">외삼문 앞으로 걸어가 보세요.</p><button class="primary" id="exploreButton" disabled>건물 앞으로 이동하세요</button></div></div></div>
+<aside class="quest-panel"><small class="eyebrow">오늘의 탐험</small><h2>대성전의<br>지혜의 불</h2><p id="questSummary"></p><ol class="quest-list"><li data-progress="gate"><span>01</span><div><b>외삼문 · 정문</b><small>사다리와 키로 높이 재기</small></div><i></i></li><li data-progress="myeongryun"><span>02</span><div><b>명륜당</b><small>창문 관찰 · 도형 열쇠 만들기</small></div><i></i></li><li data-progress="west"><span>03</span><div><b>서재</b><small>도형 열쇠로 성냥 찾기</small></div><i></i></li><li data-progress="east"><span>04</span><div><b>동재</b><small>양초에 적힌 단서 찾기</small></div><i></i></li><li data-progress="daeseong"><span>05</span><div><b>대성전</b><small>촛불을 놓고 불 밝히기</small></div><i></i></li></ol><div class="inventory"><span id="invCandle">촛불 <b>미발견</b></span><span id="invMatch">성냥 <b>미발견</b></span></div><p id="candleClue" class="candle-clue" hidden>양초에 적힌 글씨 <strong>대성전</strong></p><p class="control-note">태블릿: 조이스틱을 밀거나 방향키를 누르고 있어요.<br>키보드: ↑↓←→ / WASD, 가까이에서 Enter</p></aside></div></section>
+
+<section class="screen" id="screen-episode" aria-label="민우와 서연의 장소 이야기">
+ <div class="episode-scene">
+  <div class="episode-art"><img id="episodeBackground" class="learning-background" alt="향교 일러스트 배경">
+  <span class="episode-location" id="episodeLocation"></span><button id="episodeMap" class="episode-back">← 지도</button>
+  <img id="episodeBoy" class="episode-character boy" src="asset/embedded/5dc420d255b5cefb009b.svg" alt="민우"><img id="episodeGirl" class="episode-character girl" src="asset/embedded/15cd0f5280210e6bc22b.svg" alt="서연">
+  <aside id="episodeNote" class="found-note" hidden><small>명륜당에서 발견한 쪽지</small><p>“열쇠는 명륜당의<br>창문의 모양과 같다.”</p></aside>
+  <div id="episodeWindowFocus" class="hall-window-focus" hidden><span>쪽지가 가리킨 작은 창문</span></div>
+  <img id="episodeKey" class="episode-key" src="asset/embedded/420d2327c480b53960c3.webp" alt="문 위에서 얻은 250 열쇠" hidden></div>
+  <button id="episodeAdvance" class="episode-dialogue" type="button"><b id="episodeSpeaker" class="episode-speaker"></b><span id="episodeText" class="episode-text"></span><span id="episodeHint" class="episode-hint"></span><span aria-hidden="true" class="episode-arrow">▶</span></button>
+  <div class="episode-pagination"><button id="episodePrevious">이전 대사</button><span id="episodeCounter"></span></div>
+ </div>
+</section>
+
+<section class="screen" id="screen-gate" aria-label="민우와 사다리로 문 높이 재기">
+ <div class="mission-heading"><button data-back>← 향교로 돌아가기</button><span>01 / 외삼문</span></div>
+ <div class="page-heading"><div><small>MEASURE WITH MINWOO</small><h1>사다리와 내 키로 문 높이를 재자!</h1></div><p id="gateStep"></p></div>
+ <div id="gateStage" class="learning-stage gate-play-scene">
+  <img id="gateBackground" class="learning-background" alt="외삼문 일러스트 배경">
+  <div id="gateTarget" class="gate-target"><span>문 앞에 사다리 놓는 곳</span></div>
+  <img id="gateLadder" class="gate-ladder" src="asset/embedded/8e59bab6697634b635ad.webp" alt="발판 높이 1m라고 적힌 사다리">
+  <div id="gateMinwoo" class="gate-minwoo"><img src="asset/embedded/5dc420d255b5cefb009b.svg" alt="직접 움직이는 민우"><b>민우 · 150cm</b></div>
+  <div id="gateMeasure" class="gate-measure" aria-label="민우의 키 150cm와 발판 높이 1m" hidden><span>150cm</span><span>1m</span></div>
+  <button id="gateCollectKey" class="gate-roof-key" aria-label="문 위의 250 열쇠 획득" hidden><img src="asset/embedded/420d2327c480b53960c3.webp" alt="250 열쇠"><span>열쇠 가져오기 ✦</span></button>
+  <span class="learning-scene-note">이야기 속 문 높이를 구하는 수학 체험이에요.</span>
+ </div>
+ <div class="gate-controls"><div class="gate-move-buttons" role="group" aria-label="민우 이동"><button data-gate-direction="-1" aria-label="민우 왼쪽으로 이동">◀</button><span>민우 이동</span><button data-gate-direction="1" aria-label="민우 오른쪽으로 이동">▶</button></div><button id="gateCarry">사다리 들기</button><button id="gateClimb" class="primary" disabled>올라가기 ↑</button></div>
+ <p id="gateMoveHint" class="gate-instruction" role="status"></p>
+ <form id="gateEquation" class="gate-equation" hidden><label for="gateAnswer"><span>150cm + 1m =</span> <input id="gateAnswer" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" aria-label="문 높이, 센티미터" aria-describedby="gateFeedback"> <span>cm</span></label><button id="gateCheck" class="primary" type="submit">높이 확인</button><p id="gateFeedback" role="status">단위를 cm로 맞추어 더해 보세요.</p></form>
+</section>
+
+<section class="screen" id="screen-myeongryun" aria-label="명륜당 창문의 도형 열쇠">
+ <div class="mission-heading"><button data-back>← 향교로 돌아가기</button><span>02 / 명륜당</span></div>
+ <div class="page-heading"><div><small>THE WINDOW'S SECRET</small><h1>창문의 모양이 곧 열쇠의 모양!</h1></div><p id="hallPhase"></p></div>
+ <div id="shapeChoicePanel">
+  <div class="learning-stage hall-observation"><img id="hallBackground" class="learning-background" alt="오른쪽 벽에 가로가 긴 창문이 있는 명륜당 일러스트"><div class="hall-window-focus"><span>이 작은 창문을 관찰해요</span></div><p class="hall-note-clue">쪽지의 단서 · “열쇠는 명륜당의 창문의 모양과 같다.”</p></div>
+  <div class="shape-question"><h2>명륜당의 작은 창문은 어떤 도형일까요?</h2><div class="shape-choices"><button data-window-choice="정삼각형"><span aria-hidden="true">△</span>정삼각형</button><button data-window-choice="정사각형"><span aria-hidden="true">□</span>정사각형</button><button data-window-choice="직사각형"><span aria-hidden="true">▭</span>직사각형</button><button data-window-choice="오각형"><span aria-hidden="true">⬠</span>오각형</button></div><p id="shapeChoiceFeedback" role="status">오른쪽 벽의 작은 창문에서 변과 모서리를 살펴보세요.</p></div>
+ </div>
+ <div id="shapeConstructPanel" hidden><div class="puzzle-layout"><div class="window-workshop"><div class="window-reference"><img id="hallWorkshopArt" alt="명륜당 일러스트의 창문"><span>창문과 같은 직사각형 열쇠를 만들어요.</span></div><div id="windowBoard" class="window-board"><svg id="windowSvg" viewBox="0 0 600 340" aria-label="꼭짓점을 움직여 만드는 직사각형 열쇠"><defs><pattern id="windowGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" stroke="#b4a486" stroke-width=".7" fill="none"/></pattern><pattern id="latticePattern" width="25" height="25" patternUnits="userSpaceOnUse"><rect width="25" height="25" fill="#e5c979"/><path d="M0 0H25V25" stroke="#b58a3f" stroke-width="1"/></pattern></defs><rect width="600" height="340" fill="#f6efd9"/><rect x="20" y="20" width="560" height="300" fill="url(#windowGrid)"/><polygon id="windowPolygon" fill="url(#latticePattern)" stroke="#8e642b" stroke-width="11" stroke-linejoin="round"/><g id="rightAngleMarks"></g><g id="cornerHandles"></g><g id="angleLabels"></g></svg></div><p id="windowFeedback" class="live-feedback" aria-live="polite"></p><div class="workbench-actions"><span id="rightAngleCount">직각 0 / 4</span><button id="windowReset">처음 모양으로</button></div></div><aside class="lesson-card"><small>서연의 관찰 수첩</small><h2>이제 열쇠의 모양을<br>직접 맞춰 보자!</h2><p>둥근 손잡이 네 개를 끌어 움직여요. 모서리가 직각이 되면 작은 네모 표시가 생겨요.</p><div class="angle-example">∟ <b>90°</b></div><p class="small-note">정사각형도 직사각형이에요. 이번에는 창문과 같은 가로가 긴 열쇠를 만들어요.</p><img src="asset/embedded/15cd0f5280210e6bc22b.svg" class="lesson-character" alt="서연"></aside></div></div>
+</section>
+
+
+<section class="screen" id="screen-east" aria-label="동재 촛불 찾기"><div class="mission-heading"><button data-back>← 향교로 돌아가기</button><span>04 / 동재</span></div><div class="page-heading"><div><small>THE NUMBER KEY</small><h1>발견한 숫자로 비밀 서랍을 열어요</h1></div><p>250 열쇠를 자물쇠에 끼우고, 서랍 손잡이를 아래로 당기세요.</p></div><div id="eastRoom" class="room-scene"><img class="room-bg" src="asset/embedded/f3a6df2ca4f86cf5dc6e.webp" alt="한지 창과 목재 가구가 있는 유생 생활 공간 상상도"><div class="room-vignette"></div><div class="wood-chest"><div class="chest-top"></div><div class="chest-drawer fixed"><span class="brass-pull"></span></div><div id="secretDrawer" class="chest-drawer secret"><div class="drawer-inside"><div id="candleReward" class="wax-candle small-candle" hidden aria-label="대성전이라고 적힌 양초"><span class="wick"></span><span class="candle-inscription">대성전</span></div></div><div class="drawer-front"><span class="brass-corner left"></span><span class="brass-corner right"></span><button id="drawerHandle" class="brass-pull" aria-label="서랍 손잡이를 아래로 끌어 당기기"></button></div></div><div class="chest-feet"></div><div id="numberLock" class="antique-lock" aria-label="250 열쇠를 넣는 숫자 자물쇠"><span>250</span><i></i></div></div><div class="item-tray room-tray"><span>정문에서 얻은 열쇠</span><button id="numberKey" class="number-key" aria-label="250 숫자 열쇠를 자물쇠로 끌기"><img src="asset/embedded/420d2327c480b53960c3.webp" alt="250 숫자 열쇠"></button></div><p id="eastFeedback" class="scene-feedback" aria-live="polite">단위를 바꾸어 만든 숫자 열쇠를 자물쇠로 옮겨요.</p></div></section>
+
+<section class="screen" id="screen-west" aria-label="서재 성냥 찾기"><div class="mission-heading"><button data-back>← 향교로 돌아가기</button><span>03 / 서재</span></div><div class="page-heading"><div><small>THE SHAPE KEY</small><h1>도형 열쇠를 끼우고 사물함을 열어요</h1></div><p>직사각형 열쇠를 자물쇠에 맞추고, 문 손잡이를 옆으로 당기세요.</p></div><div id="westRoom" class="room-scene"><img class="room-bg" src="asset/embedded/f3a6df2ca4f86cf5dc6e.webp" alt="서재 생활 공간을 상상해 그린 한옥 내부"><div class="room-vignette"></div><div class="wood-locker"><div class="locker-crown"></div><div class="locker-cavity"><div id="matchReward" class="matchbox" hidden><span>지혜의 불</span><div class="box-striker"></div></div></div><div id="lockerDoor" class="wood-door"><div class="wood-door-panel"></div><button id="lockerHandle" class="locker-pull" aria-label="문 손잡이를 왼쪽으로 끌기"></button><div id="shapeLock" class="shape-lock"><span></span></div></div><div class="locker-base"></div></div><div class="item-tray room-tray"><span>명륜당에서 얻은 열쇠</span><button id="shapeKey" class="shape-key" aria-label="직사각형 열쇠를 자물쇠로 끌기"><span></span><small>직사각형</small></button></div><p id="westFeedback" class="scene-feedback" aria-live="polite">네 직각을 가진 도형 열쇠를 자물쇠로 옮겨요.</p></div></section>
+
+<section class="screen" id="screen-daeseong" aria-label="대성전 직접 불 밝히기"><div class="mission-heading"><button data-back>← 향교로 돌아가기</button><span>05 / 대성전</span></div><div class="page-heading"><div><small>BRING BACK THE LIGHT</small><h1>우리 손으로 밝히는 지혜의 불</h1></div><p>촛불 옮기기 → 성냥 긋기 → 심지에 불 붙이기</p></div><div id="hallStage" class="hall-stage"><img class="hall-bg" src="asset/embedded/87fdb014bfe0f047acf7.webp" alt="대성전 제향 공간에서 영감을 받아 그린 목재 제단 상상도"><div id="hallGlow" class="hall-glow"></div><div id="candleStand" class="candle-stand"><span class="stand-target"></span><span class="stand-dish"></span><span class="stand-stem"></span><span class="stand-foot"></span><div id="placedCandle" class="wax-candle" hidden><span class="candle-inscription">대성전</span><span id="candleWick" class="wick"></span><span id="candleFlame" class="fire-flame" hidden></span></div><small id="standLabel">촛불 자리</small></div><div class="hall-tool-tray"><span class="tray-label">찾아온 도구 · 손으로 끌어 사용해요</span><div class="candle-tool"><button id="finalCandle" class="wax-candle" aria-label="대성전이라고 적힌 양초를 잡아 촛대로 끌어 놓기"><span class="wick"></span><span class="candle-inscription">대성전</span></button><small>촛불</small></div><div class="match-tool"><button id="finalMatch" class="match-stick" aria-label="성냥을 잡아 마찰면에 그은 뒤 심지로 옮기기"><span class="match-head"></span><span class="fire-flame match-flame" hidden></span></button><small>성냥</small></div><div id="strikerBox" class="matchbox"><span>성냥을 이 면에 그어요</span><div id="strikerSurface" class="box-striker"></div><div class="strike-meter"><span id="strikeMeter"></span></div></div></div><p id="finalFeedback" class="scene-feedback" aria-live="polite">촛불을 잡아 탁자 위 촛대에 직접 놓아 주세요.</p></div><p class="hall-note">게임 속 수학의 빛을 밝히는 상상 체험입니다.</p></section>
+<section class="screen" id="screen-review" aria-label="부평향교에서 배운 내용 정리">
+<div class="ending-recap">
+  <img id="recapBackdrop" class="recap-backdrop" alt="">
+  <header class="recap-heading"><small>OUR MATH DISCOVERIES · 부평향교</small><h1>향교에서 발견한 수학,<br class="recap-mobile-break"> 우리 손으로 밝힌 빛</h1><p>문을 재고, 창문을 살피고, 두 열쇠의 비밀을 풀었어요.</p></header>
+  <div class="recap-cards">
+    <article class="recap-card"><img id="recapGate" alt="민우의 키와 사다리로 높이를 잰 외삼문"><div><small>01 · 외삼문에서 발견한 수학</small><h2>같은 단위로 바꾸어 더하기</h2><p>민우의 키 150cm에 발판 높이 1m를 더했어요. 먼저 <b>1m를 100cm</b>로 바꾸어야 해요.</p><p class="recap-formula" id="endingLength">150cm + 100cm = 250cm</p><span class="recap-note">250cm는 게임 속 문 높이예요.</span></div></article>
+    <article class="recap-card"><img id="recapHall" alt="직사각형 창문을 관찰한 명륜당"><div><small>02 · 명륜당에서 발견한 수학</small><h2>창문 속 직사각형 찾기</h2><p>네 모서리를 움직여 창문과 같은 모양의 열쇠를 만들었어요.</p><p class="recap-formula">네 각은 직각<br>마주 보는 두 변의 길이는 같아요.</p><span class="recap-note">정사각형도 직사각형의 한 종류예요.</span></div></article>
+    <article class="recap-card"><img id="recapLight" alt="양초에 적힌 단서를 따라 찾아간 대성전"><div><small>03 · 수학으로 이어진 탐험</small><h2>발견한 것을 써 보기</h2><p>직사각형 열쇠로 <b>서재의 성냥</b>을, 250 열쇠로 <b>동재의 양초</b>를 찾았어요.</p><p class="recap-formula">양초에 적힌 ‘대성전’<br>마지막 장소로 이어진 단서!</p><span class="recap-note">관찰하고 연결하니 지혜의 불이 켜졌어요.</span></div></article>
+  </div>
+  <p class="recap-message"><b>수학은 문제집 속에만 있는 것이 아니었어요.</b><br>문의 높이와 창문의 모양에도, 우리가 걸어온 길에도 숨어 있었지요.</p>
+  <div class="recap-actions"><span>이제 두 친구의 여행을 마무리해 볼까요?</span><button class="primary" id="reviewContinue">민우·서연과 이야기하기 →</button></div>
+</div>
+</section>
+
+<section class="screen" id="screen-departure" aria-label="민우와 서연의 대화와 매스투어 버스 탑승">
+<div class="departure-scene" id="departureScene" data-phase="idle">
+  <div class="departure-art">
+    <img id="departureBackdrop" class="departure-background" alt="여행을 마치고 다시 만난 부평향교 외삼문 일러스트">
+    <span class="departure-location">BUPYEONG HYANGGYO · 여행의 마지막 장면</span>
+    <div class="ending-bus" id="endingBus" aria-label="노란 매스투어 버스" hidden><img src="asset/embedded/59925c425e25c109a049.webp" alt="차이나타운에서 함께 탔던 노란 매스투어 버스"><div class="bus-passengers" id="busPassengers" hidden><img src="asset/embedded/5dc420d255b5cefb009b.svg" alt="버스에 탄 민우"><img src="asset/embedded/15cd0f5280210e6bc22b.svg" alt="버스에 탄 서연"></div></div>
+    <img class="ending-person minwoo" id="endingMinwoo" src="asset/embedded/5dc420d255b5cefb009b.svg" alt="민우">
+    <img class="ending-person seoyeon" id="endingSeoyeon" src="asset/embedded/15cd0f5280210e6bc22b.svg" alt="서연">
+  </div>
+  <button class="ending-dialogue" id="endingDialogue" aria-label="다음 대사 보기"><b class="ending-speaker" id="endingSpeaker"></b><span class="ending-text" id="endingText" aria-live="polite"></span><span class="ending-arrow" aria-hidden="true">›</span><small class="ending-hint" id="endingHint">터치하거나 Enter · Space</small></button>
+  <div class="ending-dialogue-nav" id="endingDialogueNav"><button id="endingPrevious">← 이전 대사</button><span id="endingProgress"></span><button id="endingSkip">대화 건너뛰고 버스 기다리기 →</button></div>
+  <div class="departure-status" id="departureStatus" hidden><p id="departureStatusText" role="status" aria-live="polite"></p><button class="primary" id="endingBoard" hidden>매스투어 버스에 오르기 →</button></div>
+  <section class="departure-complete" id="departureComplete" hidden aria-labelledby="departureCompleteTitle"><small>BUPYEONG HYANGGYO · MATH TOUR COMPLETE</small><h2 id="departureCompleteTitle">배운 수학을 싣고,<br>다음 여행으로!</h2><p>부평향교의 수학의 빛을 되찾은 두 친구는<br>매스투어 버스에 올라 다음 목적지로 떠났어요.</p><div class="ending-route">외삼문 → 명륜당 → 서재 → 동재 → 대성전</div><div class="departure-complete-actions"><a class="primary" id="endingWorldMap" href="index.html">월드맵에서 다음 여행 고르기 →</a><button id="endingReplay">마무리 장면 다시 보기</button><button id="restart">처음부터 다시 탐험하기</button></div></section>
+</div>
+</section>
+
+</main>
+<footer><span>학생 원작 · 신주원 / 부평향교 수학 탐험</span><details><summary>그림과 장소 안내</summary><p>지도는 제공된 배치도를 참고해 다시 그린 탐험용 조감도입니다. 장소의 상대적 배치를 반영했으며 정밀 실측 지도는 아닙니다. 한옥 실내와 도구는 실제 재료와 형태를 참고한 창작 그림입니다. 장소 소개에는 학생 원작·사용자 제공 사진과 <a href="https://blog.naver.com/gyeyang_gu/221528804239" target="_blank" rel="noopener noreferrer">계양구청 공식 블로그</a>의 실제 사진을 사용했습니다. 민우·서연은 기존 매스투어 캐릭터입니다.</p><p>향교의 동재·서재는 유생들의 생활 공간이며, 대성전은 제향 공간입니다. 서랍·자물쇠·빛 복원은 게임 속 이야기입니다.</p></details></footer>
+</div>
+<div class="modal" id="placeModal" hidden role="dialog" aria-modal="true" aria-labelledby="placeTitle">
+<article class="place-card"><header class="place-header"><div><small id="placeKicker"></small><h2 id="placeTitle"></h2></div><button id="placeDismiss" aria-label="장소 소개 닫기">×</button></header>
+<div class="place-body" id="placeBody"><figure class="place-figure"><img id="placePhoto" src="asset/embedded/c1bac957813216faae6c.webp" alt="부평향교 외삼문 실제 사진"><figcaption id="placeCaption"></figcaption></figure><h3 class="place-section-title">이곳은 어떤 곳일까요?</h3><p id="placeDescription"></p><div class="place-observation"><b>사진 속 관찰 포인트</b><p id="placeObservation"></p></div><p id="placeStatus" class="modal-status"></p><details id="placeCredits" class="place-credits"><summary>사진 출처</summary><span id="placeCredit"></span> <a id="placeSource" target="_blank" rel="noopener noreferrer" hidden>원문 보기 ↗</a></details></div>
+<div class="modal-actions place-actions"><button id="placeClose">더 구경할래요</button><button id="placeStart" class="primary">소개를 읽었어요 · 단서 찾기 →</button></div></article></div>
+<div class="modal" id="infoModal" hidden role="dialog" aria-modal="true" aria-labelledby="infoTitle"><article><small>수학의 단서를 발견했어요</small><h2 id="infoTitle"></h2><p id="infoMessage"></p><div id="rewardCandlePanel" class="reward-candle-panel" hidden><div class="wax-candle clue-candle" role="img" aria-label="양초 몸통에 대성전이라고 적혀 있어요"><span class="wick"></span><span class="candle-inscription">대성전</span></div><p>양초에 새겨진 세 글자<br><strong>대 · 성 · 전</strong><span>다음 목적지를 찾았어요!</span></p></div><div id="transitionDialogue" class="companion-dialogue" hidden><div class="companion-line"><img src="asset/embedded/5dc420d255b5cefb009b.svg" alt="민우"><div><b>민우</b><p id="transitionMinwoo"></p></div></div><div class="companion-line seoyeon"><img src="asset/embedded/15cd0f5280210e6bc22b.svg" alt="서연"><div><b>서연</b><p id="transitionSeoyeon"></p></div></div></div><button id="infoClose" class="primary">향교로 돌아가기 →</button></article></div>
+<div class="modal" id="journalModal" hidden role="dialog" aria-modal="true" aria-labelledby="journalTitle"><article><small>MY MATH DISCOVERIES</small><h2 id="journalTitle">부평향교 탐험 수첩</h2><div class="journal-cards"><section><b>01 · 길이의 비밀</b><p id="journalLength"></p></section><section><b>02 · 창문의 비밀</b><p id="journalShape"></p></section></div><button id="journalClose" class="primary">탐험 계속하기</button></article></div>
+<div id="toast" role="status" aria-live="polite"></div><script type="application/json" id="sceneArtData">{"gate":"asset/embedded/858f9e557eea3c054009.webp","myeongryun":"asset/embedded/2778fee01ed469384540.webp"}</script><script type="application/json" id="placePhotoData">{"hongsalmun":"asset/embedded/b2adfdf5d755b32fce7d.webp","gate":"asset/embedded/c1bac957813216faae6c.webp","myeongryun":"asset/embedded/063f2e13fca54e8399be.webp","east":"asset/embedded/7e5b73309c68ce55711d.webp","west":"asset/embedded/3b702c42d37888a07eff.webp","inner":"asset/embedded/67b210395737e9ddc9f9.webp","dongmu":"asset/embedded/b1caad58c8ade16beeea.webp","seomu":"asset/embedded/cdcc6d3617c85e84cea8.webp","daeseong":"asset/embedded/5814c6afb586a2e2ce40.webp"}</script><script>/* Shared chapter completion for the Gyeyang–Bupyeong course. No visit-based unlocks. */
+(function (root) {
+  'use strict';
+  const PREFIX = 'mathtour.gyeyang-bupyeong.chapters-v1.';
+  const RUN_KEY = PREFIX + 'run';
+  const REGION_KEYS = ['mall', 'hyanggyo', 'mountain', 'ending-seen'].map(id => PREFIX + id).concat([
+    'mathtour.bupyeong.course-v6', 'mathtour.bupyeong.course-v5', 'mathtour.bupyeong.travel-v4',
+    'mathtour.bupyeong.hyanggyo-v1', 'mathtour.gyeyang.course-v1', 'mathtour.summit.best.v1'
+  ]);
+  const chapters = [
+    { id: 'mall', number: 1, title: '부평지하상가 & 굴포천', file: 'B01.html' },
+    { id: 'hyanggyo', number: 2, title: '부평향교', file: 'B02.html' },
+    { id: 'mountain', number: 3, title: '계양산', file: 'B03.html' }
+  ];
+  function validCompletion(id, value) {
+    if (!value || typeof value !== 'object') return false;
+    if (id === 'mall') return value.version === 6 && value.hasCamera === true && value.departed === true && value.returned === true &&
+      Array.isArray(value.progress) && value.progress.length === 3 && value.progress.every(v => v === true) &&
+      value.gulpo?.version === 1 && Array.isArray(value.gulpo.placed) && value.gulpo.placed.length === 6 &&
+      value.gulpo.finalSeen === true && value.gulpo.tripFinished === true;
+    if (id === 'hyanggyo') return value.finalCompleted === true && value.departed === true &&
+      ['gate', 'myeongryun', 'west', 'east', 'daeseong'].every(key => value.progress?.[key] === true);
+    if (id === 'mountain') return value.version === 1 && value.jar === true && value.camera === true && value.departed === true &&
+      Number.isFinite(value.score) && value.score >= 90 && value.score <= 100;
+    return false;
+  }
+  function createStore(storage, now = () => Date.now()) {
+    const memory = new Map(), unsaved = new Set();
+    function read(key) { if (!storage || unsaved.has(key)) return memory.get(key); try { const raw = storage.getItem(key); return raw ? JSON.parse(raw) : undefined; } catch (_) { return memory.get(key); } }
+    function write(key, value) { memory.set(key, value); try { storage?.setItem(key, JSON.stringify(value)); unsaved.delete(key); } catch (_) { unsaved.add(key); } }
+    const liveRun = () => read(RUN_KEY)?.id || '';
+    let run = liveRun();
+    const isCurrentRun = () => run === liveRun();
+    const acceptsSave = value => !!value && (value._regionRun || '') === liveRun();
+    const stampSave = value => ({ ...value, _regionRun: run });
+    function recorded(id) { const item = read(PREFIX + id); return acceptsSave(item) && item.version === 1 && item.completed === true; }
+    function importLegacy() {
+      if (!isCurrentRun()) return;
+      for (const [id, key] of [['mall', 'mathtour.bupyeong.course-v6'], ['mountain', 'mathtour.gyeyang.course-v1']]) {
+        const value = read(key);
+        if (!recorded(id) && acceptsSave(value) && validCompletion(id, value)) write(PREFIX + id, stampSave({ version: 1, completed: true, completedAt: now(), imported: true }));
+      }
+    }
+    function status() {
+      importLegacy();
+      let previousComplete = true;
+      const items = chapters.map(chapter => {
+        const unlocked = previousComplete, completed = unlocked && recorded(chapter.id);
+        previousComplete = completed;
+        return { ...chapter, unlocked, completed };
+      });
+      return { items, completed: items.filter(item => item.completed).length, allComplete: previousComplete,
+        endingSeen: acceptsSave(read(PREFIX + 'ending-seen')) && read(PREFIX + 'ending-seen').seen === true };
+    }
+    function complete(id, evidence) {
+      const current = status().items.find(item => item.id === id);
+      if (!isCurrentRun() || !current?.unlocked || !validCompletion(id, evidence)) return false;
+      if (!recorded(id)) write(PREFIX + id, stampSave({ version: 1, completed: true, completedAt: now() }));
+      return true;
+    }
+    function acknowledgeEnding() { if (isCurrentRun() && status().allComplete) write(PREFIX + 'ending-seen', stampSave({ seen: true, at: now() })); }
+    function resetRegion() {
+      // Mark the new journey first: an old open tab cannot re-import or save its old progress.
+      const next = { id: String(now()) + '-' + Math.random().toString(36).slice(2) };
+      try {
+        storage?.setItem(RUN_KEY, JSON.stringify(next));
+        memory.set(RUN_KEY, next); unsaved.delete(RUN_KEY); run = next.id;
+        for (const key of REGION_KEYS) { storage?.removeItem(key); memory.delete(key); unsaved.delete(key); }
+        return true;
+      } catch (_) { return false; }
+    }
+    return { status, complete, acknowledgeEnding, resetRegion, isCurrentRun, acceptsSave, stampSave, syncRun: () => { run = liveRun(); } };
+  }
+  if (typeof module === 'object' && module.exports) module.exports = { PREFIX, RUN_KEY, REGION_KEYS, chapters, validCompletion, createStore };
+  if (!root.document) return;
+  const document = root.document;
+  let storage; try { storage = root.localStorage; } catch (_) { /* unavailable in some file viewers */ }
+  const store = createStore(storage);
+  const assetScript = document.currentScript?.src;
+  const packageRoot = assetScript ? new URL('../', assetScript) : new URL('./', root.location.href);
+  const mapURL = new URL('index.html?region=gyeyang-bupyeong', packageRoot).href;
+  const videoURL = new URL('asset/ending/B.mp4', packageRoot).href;
+  const posterURL = new URL('asset/ending/B-poster.webp', packageRoot).href;
+  const isMap = /\/index\.html$/i.test(root.location.pathname);
+  let courseFinished = false, autoOpened = false, endingDialog = null, activeCourse = null;
+  function style() {
+    if (document.getElementById('mt-chapter-style')) return;
+    const link = document.createElement('link'); link.id = 'mt-chapter-style'; link.rel = 'stylesheet';
+    link.href = new URL('asset/mathtour-chapters.css', packageRoot).href; document.head.append(link);
+  }
+  function announce() { root.dispatchEvent(new CustomEvent('mathtour:chapters-changed')); }
+  function dialog(id, contents) {
+    style(); const el = document.createElement('dialog'); el.id = id; el.className = 'mt-dialog';
+    el.innerHTML = contents; document.body.append(el); return el;
+  }
+  // Keep arrows/Space inside our modal from also moving the bus or advancing a story.
+  root.addEventListener('keydown', event => {
+    if (!document.querySelector('.mt-dialog[open]')) return;
+    event.stopImmediatePropagation();
+  }, true);
+  function enterCourse(id) {
+    style();
+    document.querySelectorAll('a[href="index.html"]').forEach(link => { link.href = mapURL; });
+    activeCourse = id;
+    const toolbar = document.querySelector('.topbar .toolbar, .topbar .header-actions, .topbar nav');
+    if (toolbar) {
+      let link = toolbar.querySelector('a[href="' + mapURL + '"]');
+      if (!link) { link = document.createElement('a'); toolbar.append(link); }
+      link.href = mapURL; link.classList.add('mt-region-map-link'); link.textContent = '지역 월드맵';
+      link.title = '계양·부평 챕터 지도로 돌아가기';
+    }
+    const item = store.status().items.find(chapter => chapter.id === id);
+    if (!item) return false;
+    if (item.unlocked) return true;
+    const first = store.status().items.find(chapter => !chapter.completed);
+    const gate = dialog('mt-chapter-lock', `<div class="mt-dialog-card"><small>계양·부평 MATH TOUR</small><h2>앞선 챕터의 빛을 먼저 찾아요</h2><p>챕터 ${item.number} · ${item.title}는<br>챕터 ${item.number - 1}을 완료하면 열립니다.</p><p>지금은 <strong>챕터 ${first.number} · ${first.title}</strong>부터 여행해 주세요.</p><a class="mt-primary" href="${mapURL}">챕터 지도로 돌아가기 →</a></div>`);
+    gate.setAttribute('aria-label', '아직 잠긴 챕터'); gate.addEventListener('cancel', e => e.preventDefault()); gate.showModal();
+    return false;
+  }
+  function goToMap() {
+    root.dispatchEvent(new CustomEvent('mathtour:before-map'));
+    root.location.href = mapURL;
+  }
+  document.addEventListener('click', event => {
+    const link = event.target.closest?.('a');
+    if (!activeCourse || link?.href !== mapURL || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault(); goToMap();
+  });
+  function confirmRegionReset(container, onSelect) {
+    let modal = document.getElementById('mt-region-reset');
+    if (modal?.open) return;
+    modal?.remove();
+    modal = dialog('mt-region-reset', '<div class="mt-dialog-card"><small>계양·부평 지역 초기화</small><h2>이 지역 여행을 처음부터 시작할까요?</h2><p>세 챕터의 미션 진행과 완료 기록, 엔딩 감상 기록을 지웁니다.<br>챕터 1부터 다시 시작하며, 챕터 2·3은 잠깁니다.<br>다른 지역의 기록은 그대로 유지됩니다.</p><p class="mt-reset-error" role="alert" hidden></p><div class="mt-reset-actions"><button type="button" class="mt-reset-cancel" autofocus>취소 · 계속 여행하기</button><button type="button" class="mt-primary mt-reset-confirm">초기화하기</button></div></div>');
+    modal.setAttribute('aria-label', '계양·부평 지역 초기화 확인');
+    const close = () => { modal.close(); container.querySelector('.mt-region-reset')?.focus(); };
+    modal.querySelector('.mt-reset-cancel').addEventListener('click', close);
+    modal.addEventListener('cancel', event => { event.preventDefault(); close(); });
+    modal.querySelector('.mt-reset-confirm').addEventListener('click', () => {
+      if (!store.resetRegion()) {
+        const error = modal.querySelector('.mt-reset-error'); error.hidden = false;
+        error.textContent = '이 브라우저에 초기화를 저장하지 못했어요. 저장 공간 설정을 확인하고 다시 시도해 주세요.'; return;
+      }
+      courseFinished = false; autoOpened = false;
+      if (endingDialog?.open) { endingDialog.querySelector('video').pause(); endingDialog.close(); }
+      modal.close(); announce(); renderChapters(container, onSelect);
+      const notice = document.createElement('p'); notice.className = 'mt-reset-notice'; notice.setAttribute('role', 'status');
+      notice.textContent = '계양·부평 여행을 초기화했어요. 챕터 1부터 다시 출발해요.'; container.append(notice);
+      container.querySelector('[data-chapter="mall"]')?.focus();
+    });
+    modal.showModal(); modal.querySelector('.mt-reset-cancel').focus();
+  }
+  function renderChapters(container, onSelect) {
+    style(); const status = store.status(); container.hidden = false; container.replaceChildren();
+    const heading = document.createElement('div'); heading.className = 'mt-chapter-heading';
+    heading.innerHTML = `<strong>계양·부평 수학의 빛 <span>${status.completed} / 3</span></strong><span>${status.allComplete ? '세 챕터의 빛이 모두 모였어요!' : '챕터를 차례로 완료하면 다음 여행이 열려요.'}</span>`;
+    container.append(heading);
+    const reset = document.createElement('button'); reset.type = 'button'; reset.className = 'mt-region-reset';
+    reset.textContent = '지역 초기화'; reset.addEventListener('click', () => confirmRegionReset(container, onSelect)); heading.append(reset);
+    const list = document.createElement('div'); list.className = 'mt-chapter-list';
+    status.items.forEach(item => {
+      const button = document.createElement('button'); button.type = 'button'; button.className = 'mt-chapter-card';
+      button.dataset.chapter = item.id; button.dataset.status = item.completed ? 'complete' : item.unlocked ? 'ready' : 'locked';
+      button.disabled = !item.unlocked;
+      button.innerHTML = `<small>CHAPTER ${item.number}</small><strong>${item.title}</strong><span>${item.completed ? '✓ 완료 · 다시 여행하기' : item.unlocked ? '여행 시작 →' : '🔒 챕터 ' + (item.number - 1) + ' 완료 후 해금'}</span>`;
+      button.addEventListener('click', () => { if (store.status().items.find(c => c.id === item.id)?.unlocked) onSelect(item.id); }); list.append(button);
+    });
+    container.append(list);
+    if (status.allComplete) {
+      const replay = document.createElement('button'); replay.type = 'button'; replay.className = 'mt-ending-replay';
+      replay.textContent = '✦ 계양·부평 엔딩 영상 다시 보기'; replay.addEventListener('click', () => showEnding()); container.append(replay);
+    }
+  }
+  function finishCourse(id, evidence, container) {
+    if (!store.complete(id, evidence)) return false;
+    courseFinished = true;
+    announce();
+    if (container) {
+      let banner = container.querySelector('.mt-unlock-banner');
+      if (!banner) { banner = document.createElement('div'); banner.className = 'mt-unlock-banner'; container.append(banner); }
+      const status = store.status(), next = status.items.find(item => !item.completed);
+      banner.innerHTML = next ? `<strong>✦ 챕터 ${chapters.find(c => c.id === id).number} 완료!</strong><span>챕터 ${next.number} · ${next.title} 여행이 열렸어요.</span><a class="mt-primary" href="${mapURL}">다음 챕터로 출발 →</a>` : `<strong>✦ 계양·부평의 수학의 빛을 모두 찾았어요!</strong><button type="button" class="mt-primary">엔딩 영상 다시 보기</button>`;
+      banner.querySelector('button')?.addEventListener('click', () => showEnding());
+    }
+    maybeShowEnding(); return true;
+  }
+  function showEnding() {
+    if (!store.status().allComplete || endingDialog?.open) return false;
+    autoOpened = true;
+    if (!endingDialog) {
+      endingDialog = dialog('mt-region-ending', `<div class="mt-ending-header"><div><small>세 챕터 완료 · 계양·부평</small><h2>수학의 빛이 하나로 모였어요</h2></div><button type="button" class="mt-ending-close">${isMap ? '지도 계속 보기' : '월드맵으로'} →</button></div><video controls playsinline muted preload="metadata" poster="${posterURL}" aria-label="계양·부평 수학의 빛 엔딩 영상"><source src="${videoURL}" type="video/mp4"></video><p class="mt-ending-status" role="status">여러분이 되찾은 빛이 계양·부평을 환하게 밝혀요.</p><button type="button" class="mt-primary mt-ending-play" hidden>▶ 엔딩 영상 재생</button>`);
+      endingDialog.setAttribute('aria-label', '계양·부평 세 챕터 완료 영상');
+      const video = endingDialog.querySelector('video'), status = endingDialog.querySelector('.mt-ending-status'), play = endingDialog.querySelector('.mt-ending-play');
+      const start = () => { play.hidden = true; video.play().catch(() => { play.hidden = false; status.textContent = '재생 버튼을 누르면 엔딩 영상이 시작돼요.'; }); };
+      play.addEventListener('click', () => { if (video.error) video.load(); start(); });
+      video.addEventListener('playing', () => { play.hidden = true; status.textContent = '여러분이 되찾은 빛이 계양·부평을 환하게 밝혀요.'; });
+      video.addEventListener('ended', () => { store.acknowledgeEnding(); status.textContent = '계양·부평 여행 완료! 다음 수학 여행도 함께해요.'; announce(); });
+      const mediaError = () => { status.textContent = '영상을 불러오지 못했어요. 미션 완료 기록은 그대로예요. 다시 재생해 주세요.'; play.hidden = false; play.textContent = '영상 다시 불러오기'; };
+      video.addEventListener('error', mediaError); video.querySelector('source').addEventListener('error', mediaError);
+      const close = () => { video.pause(); store.acknowledgeEnding(); endingDialog.close(); announce(); root.dispatchEvent(new CustomEvent('mathtour:ending-close')); if (!isMap) root.location.href = mapURL; };
+      endingDialog.querySelector('.mt-ending-close').addEventListener('click', close);
+      endingDialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
+    }
+    root.dispatchEvent(new CustomEvent('mathtour:ending-open'));
+    endingDialog.showModal(); const video = endingDialog.querySelector('video'); video.currentTime = 0; video.muted = true;
+    endingDialog.querySelector('.mt-ending-play').hidden = true;
+    video.play().catch(() => { endingDialog.querySelector('.mt-ending-play').hidden = false; });
+    return true;
+  }
+  function maybeShowEnding() {
+    const status = store.status();
+    if (autoOpened || !status.allComplete || status.endingSeen || document.visibilityState === 'hidden' || document.querySelector('dialog[open]')) return false;
+    return showEnding();
+  }
+  root.MathTourChapters = { chapters, status: store.status, enterCourse, finishCourse, renderChapters, maybeShowEnding, showEnding, mapURL, goToMap,
+    canSave: store.isCurrentRun, acceptsSave: store.acceptsSave, stampSave: store.stampSave };
+  function leaveStaleCourse() {
+    if (activeCourse && !store.isCurrentRun()) { root.location.replace(mapURL); return true; }
+    return false;
+  }
+  root.addEventListener('storage', event => {
+    if ((!event.key || event.key === RUN_KEY) && leaveStaleCourse()) return;
+    if (isMap && (!event.key || event.key === RUN_KEY)) { store.syncRun(); autoOpened = false; }
+    if (!event.key || event.key.startsWith(PREFIX) || ['mathtour.bupyeong.course-v6', 'mathtour.gyeyang.course-v1'].includes(event.key)) announce();
+  });
+  root.addEventListener('pageshow', leaveStaleCourse);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState !== 'visible' || leaveStaleCourse()) return; if (isMap || courseFinished) { announce(); maybeShowEnding(); } });
+})(typeof window === 'object' ? window : globalThis);
+</script><script>'use strict';
+const $=id=>document.getElementById(id);
+const state={screen:'intro',progress:{gate:false,myeongryun:false,east:false,west:false,daeseong:false},inventory:{candle:false,match:false},introduced:{gate:false,myeongryun:false},shapeChosen:false,lengthExpression:'',corners:[{x:100,y:70},{x:470,y:110},{x:450,y:270},{x:140,y:240}],numberUnlocked:false,shapeUnlocked:false,drawerPull:0,doorPull:0,candlePlaced:false,matchLit:false,matchHeat:0,finalCompleted:false};
+let muted=false,audioContext=null,storyIndex=0,modalCallback=null,returnFocus=null,pendingPlace=null,toastTimer=null,drag=null,lastFrame=0,frameId=0,activeJoystick=null,pressedDirection=null;
+const keyboard=new Set(),input={x:0,y:0},player={x:315,y:575},WORLD={width:1000,height:667};
+const placeData={
+  hongsalmun:{name:'홍살문',number:1,x:305,y:550,labelX:277,labelY:485},
+  gate:{name:'외삼문 · 정문',number:2,x:392,y:508,labelX:398,labelY:425,mission:true},
+  myeongryun:{name:'명륜당',number:3,x:491,y:410,labelX:495,labelY:323,mission:true},
+  east:{name:'동재',number:4,x:650,y:356,labelX:662,labelY:293,mission:true},
+  west:{name:'서재',number:5,x:436,y:306,labelX:453,labelY:242,mission:true},
+  inner:{name:'내삼문',number:6,x:615,y:241,labelX:619,labelY:179},
+  dongmu:{name:'동무',number:7,x:777,y:195,labelX:784,labelY:148},
+  seomu:{name:'서무',number:8,x:552,y:164,labelX:563,labelY:107},
+  daeseong:{name:'대성전',number:9,x:685,y:155,labelX:684,labelY:72,mission:true},
+  caretaker:{name:'교직사',labelOnly:true,x:553,y:590,labelX:567,labelY:545},
+  toilet:{name:'화장실',labelOnly:true,x:650,y:446,labelX:674,labelY:405}
+};
+const placePhotos=JSON.parse($('placePhotoData').textContent);
+const blogSource='https://blog.naver.com/gyeyang_gu/221528804239';
+const introductions={
+ hongsalmun:{description:'향교 입구에서 만나는 붉은 문이에요. 두 기둥 위에 가로대를 얹고, 그 위로 뾰족한 살을 세웠어요. 지붕 없이 서 있는 이 문은 향교가 소중하고 예의를 갖추어야 하는 공간임을 알려 줘요.',observe:'사진 속 홍살문에는 지붕이 있을까요? 뒤쪽의 기와지붕이 있는 외삼문과 비교해 보세요.',credit:'사용자 제공 사진'},
+ gate:{description:'외삼문은 부평향교 안으로 들어가는 바깥문이에요. 기와지붕 아래 나란히 놓인 세 개의 문과 태극무늬를 볼 수 있어요. 이 문을 지나면 유생들이 공부하던 공간이 펼쳐져요.',observe:'가운데 문과 양옆 문의 높이를 눈으로 비교해 보세요. 문 높이를 다른 단위로 표현할 수도 있을까요?',credit:'학생 원작에 포함된 사진'},
+ myeongryun:{description:'명륜당은 유생들이 모여 배우고 공부하던 강당이에요. 향교의 배움 공간을 대표하는 건물이지요. 기둥과 창문, 처마가 어우러진 모습을 천천히 살펴보세요.',observe:'사진에서 가로가 긴 작은 창문을 찾아보세요. 창문틀의 네 모서리는 어떤 모양인가요?',credit:'학생 원작에 포함된 사진'},
+ west:{description:'서재는 동재와 함께 유생들이 머물며 생활하던 공간이에요. 공부를 마친 유생들이 쉬고 책을 읽던 모습을 떠올려 보세요. 마루 위로 문과 창이 나란히 이어져 있어요.',observe:'문과 창의 모양을 살펴보세요. 명륜당에서 얻은 직사각형 열쇠와 닮은 모양이 보이나요?',credit:'계양구청 공식 블로그',source:blogSource},
+ east:{description:'동재도 유생들이 생활하던 공간이에요. 서재와 마주하는 동재에는 기둥 사이로 마루와 여러 개의 문이 이어져 있어요. 두 건물의 닮은 점과 다른 점을 찾아보세요.',observe:'서재와 비교하면 마루와 문은 어떻게 놓여 있나요? 외삼문에서 얻은 숫자 열쇠도 기억해 두세요.',credit:'사용자 제공 사진 · 계양구청 공식 블로그에도 수록',source:blogSource},
+ inner:{description:'내삼문은 배움의 공간과 성현을 기리는 제향 공간 사이에 있는 문이에요. 바깥의 외삼문처럼 세 개의 문이 나란히 있어요. 이 문 뒤편에 대성전이 자리하고 있어요.',observe:'외삼문과 내삼문에서 닮은 모습을 찾아보세요. 문은 각각 몇 개로 나뉘어 있나요?',credit:'계양구청 공식 블로그',source:blogSource},
+ dongmu:{description:'동무는 대성전 곁에 있는 건물이에요. 서무와 함께 성현들의 위패를 나누어 모시던 공간이었어요. 향교에는 공부하는 곳뿐 아니라 성현을 기리는 곳도 있었답니다.',observe:'사진 속 기둥과 문이 나누는 칸을 살펴보세요. 서무의 모습과 어떻게 닮았나요?',credit:'계양구청 공식 블로그',source:blogSource},
+ seomu:{description:'서무는 동무와 짝을 이루어 대성전의 다른 쪽에 자리한 건물이에요. 성현들을 기리는 공간으로 쓰였어요. 지도에서 대성전·동무·서무의 위치를 함께 살펴보세요.',observe:'대성전을 가운데에 두고 동무와 서무가 어느 쪽에 있는지 지도에서 찾아보세요.',credit:'계양구청 공식 블로그',source:blogSource},
+ daeseong:{description:'대성전은 공자를 비롯한 성현들의 위패를 모시고 제사를 지내던 곳이에요. 향교에서 배움과 함께 소중히 여겼던 공간이지요. 건물 위의 현판과 기둥, 문을 살펴보세요.',observe:'건물의 현판에서 大成殿을 찾아보세요. 동재에서 찾은 양초에 적힌 ‘대성전’이 바로 이곳이에요.',credit:'학생 원작에 포함된 사진'}
+};
+for(const [key,details] of Object.entries(introductions))Object.assign(placeData[key],details);
+const missionOrder=['gate','myeongryun','west','east','daeseong'];
+// Coordinates align with the generated map. Walls leave gaps at both triple gates.
+const boundary=[[104,520],[329,650],[663,593],[907,80],[572,25],[184,388]];
+const walls=[[[199,388],[572,37]],[[572,37],[886,94]],[[886,94],[654,514]],[[199,388],[335,432]],[[464,478],[654,514]],[[436,178],[569,205]],[[674,224],[804,244]]];
+const buildings=[
+ [[404,324],[527,291],[591,329],[572,379],[481,394],[414,369]],
+ [[400,259],[461,222],[498,249],[476,282],[423,298]],
+ [[612,311],[655,269],[699,303],[680,339],[630,349]],
+ [[526,126],[568,91],[600,114],[581,141],[547,153]],
+ [[626,79],[644,52],[748,74],[744,119],[720,139],[625,120]],
+ [[746,150],[789,113],[820,140],[800,173],[754,189]],
+ [[520,543],[573,495],[617,521],[589,563],[543,580]],
+ [[648,416],[664,391],[690,403],[682,433],[656,438]],
+ [[324,348],[371,342],[374,360],[325,368]]
+];
+function inPolygon(x,y,points){let inside=false;for(let i=0,j=points.length-1;i<points.length;j=i++){const a=points[i],b=points[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])inside=!inside;}return inside;}
+function segmentDistance(x,y,a,b){const dx=b[0]-a[0],dy=b[1]-a[1],t=Math.max(0,Math.min(1,((x-a[0])*dx+(y-a[1])*dy)/(dx*dx+dy*dy)));return Math.hypot(x-a[0]-t*dx,y-a[1]-t*dy)}
+function canWalk(x,y){if(!inPolygon(x,y,boundary))return false;if(walls.some(([a,b])=>segmentDistance(x,y,a,b)<5))return false;return !buildings.some(poly=>inPolygon(x,y,poly)||poly.some((p,i)=>segmentDistance(x,y,p,poly[(i+1)%poly.length])<4));}
+function modalOpen(){return !!document.querySelector('.modal:not([hidden])')}
+function unlocked(place){if(placeData[place]?.labelOnly)return false;const index=missionOrder.indexOf(place);if(index<0)return true;return missionOrder.slice(0,index).every(key=>state.progress[key])&&(place!=='daeseong'||(state.inventory.candle&&state.inventory.match));}
+function nextPlace(){return missionOrder.find(key=>!state.progress[key])||'daeseong'}
+function nextTask(){if(state.finalCompleted)return '부평향교의 빛을 되찾았어요!';return {gate:'외삼문에서 수학의 빛을 밝히는 첫 단서를 찾아요.',myeongryun:'명륜당으로 가서 창문 속 다음 단서를 찾아요.',west:'서재에서 직사각형 열쇠를 사용해 보세요.',east:'동재에서 250 열쇠로 마지막 도구를 찾아요.',daeseong:'양초에 적힌 대성전으로 향해요.'}[nextPlace()]}
+function nearestPlace(){let result=null,distance=Infinity;for(const [key,p] of Object.entries(placeData)){const d=Math.hypot(player.x-p.x,player.y-p.y);if(d<distance){result=key;distance=d;}}return distance<48&&!placeData[result]?.labelOnly?result:null;}
+function tone(frequency=550,duration=.13){if(muted)return;try{audioContext??=new(window.AudioContext||window.webkitAudioContext)();if(audioContext.state==='suspended')audioContext.resume().catch(()=>{});const o=audioContext.createOscillator(),g=audioContext.createGain();o.type='sine';o.frequency.value=frequency;g.gain.setValueAtTime(.0001,audioContext.currentTime);g.gain.exponentialRampToValueAtTime(.045,audioContext.currentTime+.02);g.gain.exponentialRampToValueAtTime(.0001,audioContext.currentTime+duration);o.connect(g);g.connect(audioContext.destination);o.start();o.stop(audioContext.currentTime+duration+.02)}catch{}}
+function successSound(){[523,659,784].forEach((n,i)=>setTimeout(()=>tone(n,.25),i*90))}
+function toast(message){$('toast').textContent=message;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2800)}
+function stopMovement(){stopGateMotion();input.x=0;input.y=0;keyboard.clear();activeJoystick=null;pressedDirection=null;$('joyKnob').style.transform='translate(-50%,-50%)';$('player').classList.remove('walking');}
+function showScreen(name){if(state.screen==='departure'&&name!=='departure')cancelEndingTimers();cancelDrag();stopMovement();state.screen=name;document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id==='screen-'+name));const el=$('screen-'+name);el.tabIndex=-1;el.focus({preventScroll:true});window.scrollTo({top:0,behavior:'auto'});if(name==='map'){renderPlayer();updateNearby()}if(name==='myeongryun'){renderWindow();renderHallStage()}if(name==='gate')renderGate();if(name==='daeseong')renderFinal();updateProgress();}
+function openModal(id){stopMovement();returnFocus=document.activeElement;const el=$(id);el.hidden=false;el.querySelector('button:not(:disabled),a')?.focus();}
+function closeModal(id){$(id).hidden=true;returnFocus?.focus?.({preventScroll:true});}
+function showInfo(title,text,callback=()=>showScreen('map')){$('infoTitle').textContent=title;$('infoMessage').textContent=text;$('transitionDialogue').hidden=true;$('rewardCandlePanel').hidden=true;$('infoClose').textContent='향교로 돌아가기 →';modalCallback=callback;openModal('infoModal')}
+const discoveryTalk={
+ west:{title:'성냥을 찾았어요!',summary:()=> '직접 복원한 직사각형이 사물함을 여는 열쇠가 되었어요.',minwoo:'사물함 안에 성냥이 있었네! 이제 불을 붙일 양초가 필요해.',seoyeon:'이번에는 맞은편 동재로 가 보자. 외삼문에서 얻은 250 열쇠를 사용할 차례야.',next:'east'},
+ east:{title:'양초에 다음 목적지가 적혀 있어요!',summary:()=> '250 열쇠로 연 서랍에서 ‘대성전’이라고 적힌 양초를 찾았어요.',minwoo:'양초에 글씨가 있어. ‘대·성·전’! 우리가 찾아갈 장소인가 봐.',seoyeon:'성냥도 양초도 모두 모았어. 내삼문을 지나 대성전으로 가서 수학의 빛을 밝히자!',next:'daeseong'}
+};
+function showDiscovery(key){const talk=discoveryTalk[key];showInfo(talk.title,talk.summary());$('transitionDialogue').hidden=false;$('transitionMinwoo').textContent=talk.minwoo;$('transitionSeoyeon').textContent=talk.seoyeon;$('rewardCandlePanel').hidden=key!=='east';$('infoClose').textContent=placeData[talk.next].name+(['west','east'].includes(talk.next)?'로':'으로')+' 출발 →';}
+function updateProgress(){
+  $('journalCount').textContent=Number(state.progress.gate)+Number(state.progress.myeongryun)+'/2';$('questSummary').textContent=nextTask();
+  const destination=nextPlace();
+  $('mapQuestLead').textContent=state.finalCompleted?'우리 손으로 ':destination==='gate'?'부평향교를 구경하며, ':destination==='daeseong'?'양초에 적힌 장소, ':'다음 단서를 찾아, ';
+  $('mapQuestDestination').textContent=state.finalCompleted?'부평향교':placeData[destination].name.split(' ·')[0];
+  $('mapQuestTail').textContent=state.finalCompleted?'의 수학의 빛을 밝혔어요!':destination==='gate'?'에서 수학의 빛을 밝히는 단서를 찾자.':destination==='daeseong'?'으로 가서 수학의 빛을 밝히자.':(['west','east'].includes(destination)?'로':'으로')+' 가 보자.';
+  document.querySelectorAll('[data-progress]').forEach(el=>{const key=el.dataset.progress;el.classList.toggle('complete',state.progress[key]);el.classList.toggle('active',key===destination&&!state.finalCompleted);el.classList.toggle('locked',!unlocked(key));el.querySelector('i').textContent=state.progress[key]?'✓':unlocked(key)?'':'·'});
+  for(const [key,p] of Object.entries(placeData)){const label=$('label-'+key);if(!label)continue;label.classList.toggle('complete',!!state.progress[key]);label.classList.toggle('locked',p.mission&&!unlocked(key));label.classList.toggle('current-destination',key===destination&&!state.finalCompleted);}
+  for(const [key,id] of [['candle','invCandle'],['match','invMatch']]){$(id).classList.toggle('acquired',state.inventory[key]);$(id).querySelector('b').textContent=state.inventory[key]?'획득':'미발견';}
+  $('candleClue').hidden=!state.inventory.candle;
+  $('journalLength').textContent=state.progress.gate?'민우 150cm + 발판 1m = 150cm + 100cm = 250cm. 같은 단위로 바꾸어 문 높이를 구했어요.':'외삼문에서 1m 사다리와 민우의 키 150cm로 문의 높이를 구해 보세요.';
+  $('journalShape').textContent=state.progress.myeongryun?'네 각이 모두 직각인 직사각형을 복원했어요. 마주 보는 두 변의 길이도 각각 같아요.':'명륜당에서 창문틀의 네 직각을 복원해 보세요.';
+  const target=placeData[nextPlace()];$('destinationRing').hidden=state.finalCompleted;$('destinationRing').style.left=target.x/10+'%';$('destinationRing').style.top=target.y/WORLD.height*100+'%';
+}
+function updateNearby(){const key=nearestPlace();const place=key&&placeData[key];document.querySelectorAll('.map-label').forEach(el=>el.classList.toggle('near',el.id==='label-'+key));$('nearbyTag').textContent=place?'도착한 곳':'다음 목적지';$('nearbyText').textContent=place?place.name+(place.mission&&!unlocked(key)?' · 소개부터 살펴볼 수 있어요':' · 가까이에서 살펴볼까요?'):nextTask();$('exploreButton').disabled=!place;$('exploreButton').textContent=place?place.name+' 살펴보기 →':'건물 앞으로 이동하세요';}
+function renderPlayer(){$('player').style.left=player.x/10+'%';$('player').style.top=player.y/WORLD.height*100+'%';}
+function movePlayer(dt){if(state.screen!=='map'||modalOpen()||document.hidden)return false;let x=input.x,y=input.y;if(keyboard.has('ArrowLeft')||keyboard.has('a'))x-=1;if(keyboard.has('ArrowRight')||keyboard.has('d'))x+=1;if(keyboard.has('ArrowUp')||keyboard.has('w'))y-=1;if(keyboard.has('ArrowDown')||keyboard.has('s'))y+=1;const mag=Math.hypot(x,y);if(mag>.01){if(mag>1){x/=mag;y/=mag}const dx=x*110*Math.min(dt,.05),dy=y*110*Math.min(dt,.05);const oldX=player.x,oldY=player.y;if(canWalk(player.x+dx,player.y))player.x+=dx;if(canWalk(player.x,player.y+dy))player.y+=dy;const moved=player.x!==oldX||player.y!==oldY;$('player').classList.toggle('walking',moved);if(Math.abs(x)>.1)$('player').classList.toggle('facing-left',x<0);renderPlayer();updateNearby();return moved;}$('player').classList.remove('walking');return false;}
+function frame(time){const dt=lastFrame?(time-lastFrame)/1000:0;movePlayer(dt);moveGate(dt);lastFrame=time;frameId=requestAnimationFrame(frame);}
+function initMap(){for(const [key,p] of Object.entries(placeData)){const label=document.createElement('div');label.id='label-'+key;label.className='map-label'+(p.mission?' mission':'')+(p.labelOnly?' label-only':'');label.innerHTML=(p.labelOnly?'':'<span>'+p.number+'</span>')+p.name;label.style.left=p.labelX/10+'%';label.style.top=p.labelY/WORLD.height*100+'%';$('mapLabels').appendChild(label);}renderPlayer();updateProgress();updateNearby();frameId=requestAnimationFrame(frame);}
+function openPlace(){
+ if(state.screen!=='map')return;const key=nearestPlace();if(!key)return;pendingPlace=key;const p=placeData[key];
+ $('placeKicker').textContent='먼저 이곳을 알아봐요 · '+String(p.number).padStart(2,'0');$('placeTitle').textContent=p.name;
+ $('placePhoto').src=placePhotos[key];$('placePhoto').alt='부평향교 '+p.name+' 실제 사진';$('placeCaption').textContent=p.name+' · 실제 사진';
+ $('placeDescription').textContent=p.description;$('placeObservation').textContent=key==='daeseong'&&!state.inventory.candle?'건물의 현판에서 大成殿을 찾아보세요. 어떤 건물을 가리키는지 이름과 연결해 보세요.':p.observe;$('placeCredit').textContent=p.credit;
+ $('placeSource').hidden=!p.source;if(p.source)$('placeSource').href=p.source;else $('placeSource').removeAttribute('href');
+ const ready=unlocked(key);$('placeStatus').textContent=!p.mission?'사진과 이야기를 살펴보고 향교를 더 구경해요.':!ready?'소개는 지금 살펴볼 수 있어요. 수학 미션은 '+placeData[nextPlace()].name+'의 탐험을 마친 뒤 차례로 열려요.':state.progress[key]?'이미 탐험을 마친 장소예요. 발견한 단서를 다시 볼 수 있어요.':'이 장소를 살펴봤나요? 이제 수학의 단서를 찾아봐요.';
+ $('placeStart').hidden=!p.mission;$('placeStart').disabled=!ready;$('placeStart').textContent=state.progress[key]?'발견한 내용 보기':'소개를 읽었어요 · 단서 찾기 →';
+ $('placeCredits').open=false;openModal('placeModal');$('placeBody').scrollTop=0;
+}
+$('exploreButton').addEventListener('click',openPlace);$('placeClose').addEventListener('click',()=>closeModal('placeModal'));$('placeDismiss').addEventListener('click',()=>closeModal('placeModal'));$('placeStart').addEventListener('click',()=>{const key=pendingPlace;if(!key||!unlocked(key)||nearestPlace()!==key)return;closeModal('placeModal');if(state.progress[key]){if(key==='daeseong')showSuccess();else showInfo(placeData[key].name+'에서 찾은 비밀',key==='gate'?$('journalLength').textContent:key==='myeongryun'?$('journalShape').textContent:key==='east'?'250 숫자 열쇠로 서랍을 열었어요. 그 안에서 찾은 양초에 다음 목적지인 ‘대성전’이 적혀 있었어요.':'직사각형 열쇠로 사물함을 열어 성냥을 찾았어요.');return;}beginMission(key);});
+$('joystick').addEventListener('pointerdown',e=>{if(state.screen!=='map'||modalOpen()||activeJoystick!==null)return;e.preventDefault();activeJoystick=e.pointerId;$('joystick').setPointerCapture?.(e.pointerId);updateJoystick(e)});
+function updateJoystick(e){const r=$('joystick').getBoundingClientRect(),radius=r.width*.32;let x=e.clientX-(r.left+r.width/2),y=e.clientY-(r.top+r.height/2);const m=Math.hypot(x,y);if(m>radius){x=x/m*radius;y=y/m*radius}input.x=Math.abs(x)<4?0:x/radius;input.y=Math.abs(y)<4?0:y/radius;$('joyKnob').style.transform=`translate(calc(-50% + ${x}px),calc(-50% + ${y}px))`;}
+$('joystick').addEventListener('pointermove',e=>{if(e.pointerId===activeJoystick)updateJoystick(e)});
+for(const event of ['pointerup','pointercancel','lostpointercapture'])$('joystick').addEventListener(event,e=>{if(e.pointerId===activeJoystick)stopMovement()});
+document.querySelectorAll('[data-direction]').forEach(button=>{const vector={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]}[button.dataset.direction];button.addEventListener('pointerdown',e=>{if(modalOpen()||state.screen!=='map')return;e.preventDefault();stopMovement();pressedDirection=e.pointerId;[input.x,input.y]=vector;button.setPointerCapture?.(e.pointerId)});for(const event of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(event,e=>{if(pressedDirection===e.pointerId)stopMovement()})});
+window.addEventListener('blur',()=>{stopMovement();cancelDrag()});document.addEventListener('visibilitychange',()=>{if(document.hidden){stopMovement();cancelDrag()}});window.addEventListener('resize',()=>{stopMovement();cancelDrag()});
+document.addEventListener('keydown',e=>{if(modalOpen())return;if(state.screen==='map'&&['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d'].includes(e.key)){e.preventDefault();keyboard.add(e.key)}if(state.screen==='map'&&e.key==='Enter'){e.preventDefault();openPlace()}});document.addEventListener('keyup',e=>keyboard.delete(e.key));
+/* Pointer manipulation: a tap never completes a drag interaction. */
+function rectPoint(el){const r=el.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2}}
+function hit(el,x,y,pad=0){const r=el.getBoundingClientRect();return x>=r.left-pad&&x<=r.right+pad&&y>=r.top-pad&&y<=r.bottom+pad;}
+function bindDrag(element,config){element.addEventListener('pointerdown',e=>{
+  if((e.pointerType==='mouse'&&e.button!==0)||drag||modalOpen()||config.allowed?.()===false)return;e.preventDefault();const r=element.getBoundingClientRect();drag={element,config,pointerId:e.pointerId,startX:e.clientX,startY:e.clientY,x:e.clientX,y:e.clientY,prevX:e.clientX,prevY:e.clientY,dx:0,dy:0,moved:false,rect:r,offsetX:e.clientX-r.left,offsetY:e.clientY-r.top,ghost:null};
+  element.setPointerCapture?.(e.pointerId);config.start?.(drag);
+});}
+function dragGhost(d){if(d.config.ghost===false)return;d.ghost=d.element.cloneNode(true);d.ghost.removeAttribute('id');d.ghost.querySelectorAll('[id]').forEach(n=>n.removeAttribute('id'));d.ghost.setAttribute('aria-hidden','true');d.ghost.classList.add('drag-ghost');d.ghost.style.width=d.rect.width+'px';d.ghost.style.height=d.rect.height+'px';document.body.appendChild(d.ghost);d.element.classList.add('drag-source');}
+function cleanDrag(d){d.ghost?.remove();d.element.classList.remove('drag-source');document.querySelectorAll('.drop-active').forEach(el=>el.classList.remove('drop-active'));}
+function cancelDrag(){if(!drag)return;const d=drag;drag=null;d.config.cancel?.(d);cleanDrag(d);}
+window.addEventListener('pointermove',e=>{if(!drag||drag.pointerId!==e.pointerId)return;e.preventDefault();const d=drag;d.prevX=d.x;d.prevY=d.y;d.x=e.clientX;d.y=e.clientY;d.dx=d.x-d.startX;d.dy=d.y-d.startY;if(!d.moved&&Math.hypot(d.dx,d.dy)>7){d.moved=true;dragGhost(d)}if(d.ghost){d.ghost.style.left=d.x-d.offsetX+'px';d.ghost.style.top=d.y-d.offsetY+'px'}if(d.moved)d.config.move?.(d);},{passive:false});
+window.addEventListener('pointerup',e=>{if(!drag||drag.pointerId!==e.pointerId)return;const d=drag;d.x=e.clientX;d.y=e.clientY;d.dx=d.x-d.startX;d.dy=d.y-d.startY;drag=null;if(d.moved)d.config.end?.(d);else{d.config.cancel?.(d);if(d.config.tapMessage)toast(d.config.tapMessage)}cleanDrag(d);});
+window.addEventListener('pointercancel',e=>{if(drag?.pointerId===e.pointerId)cancelDrag()});
+
+/* Restore a non-degenerate, wide rectangle; squares remain mathematically rectangles. */
+const SVG_NS='http://www.w3.org/2000/svg';
+function svgElement(tag,attrs){const el=document.createElementNS(SVG_NS,tag);for(const [key,value] of Object.entries(attrs))el.setAttribute(key,String(value));return el;}
+function cornerAngle(i){const p=state.corners[i],a=state.corners[(i+3)%4],b=state.corners[(i+1)%4],u={x:a.x-p.x,y:a.y-p.y},v={x:b.x-p.x,y:b.y-p.y};const denom=Math.hypot(u.x,u.y)*Math.hypot(v.x,v.y);return denom?Math.acos(Math.max(-1,Math.min(1,(u.x*v.x+u.y*v.y)/denom)))*180/Math.PI:0;}
+function rectangleResult(){const p=state.corners,angles=p.map((_,i)=>cornerAngle(i)),right=angles.filter(a=>Math.abs(a-90)<.2).length,width=Math.hypot(p[1].x-p[0].x,p[1].y-p[0].y),height=Math.hypot(p[3].x-p[0].x,p[3].y-p[0].y);const convex=p.every((v,i)=>{const a=p[(i+1)%4],b=p[(i+2)%4];return (a.x-v.x)*(b.y-a.y)-(a.y-v.y)*(b.x-a.x)>0});return {angles,right,width,height,convex,solved:right===4&&width>=200&&height>=80&&width>height*1.2&&convex};}
+function renderWindow(){const result=rectangleResult();$('windowPolygon').setAttribute('points',state.corners.map(p=>p.x+','+p.y).join(' '));$('rightAngleMarks').replaceChildren();$('angleLabels').replaceChildren();state.corners.forEach((p,i)=>{const handle=$('corner-'+i);handle.setAttribute('cx',p.x);handle.setAttribute('cy',p.y);handle.setAttribute('aria-label',`${i+1}번 모서리, ${Math.round(result.angles[i])}도. 방향키로 조정 가능`);const correct=Math.abs(result.angles[i]-90)<.2;const t=svgElement('text',{x:p.x+(i===0||i===3?-52:16),y:p.y+(i<2?-20:30),class:'angle-label'+(correct?' correct':'')});t.textContent=Math.round(result.angles[i])+'°';$('angleLabels').appendChild(t);if(correct){const a=state.corners[(i+3)%4],b=state.corners[(i+1)%4],la=Math.hypot(a.x-p.x,a.y-p.y),lb=Math.hypot(b.x-p.x,b.y-p.y),u={x:(a.x-p.x)/la*23,y:(a.y-p.y)/la*23},v={x:(b.x-p.x)/lb*23,y:(b.y-p.y)/lb*23};$('rightAngleMarks').appendChild(svgElement('path',{d:`M${p.x+u.x},${p.y+u.y}L${p.x+u.x+v.x},${p.y+u.y+v.y}L${p.x+v.x},${p.y+v.y}`,fill:'none',stroke:'#547344','stroke-width':3}));}});$('rightAngleCount').textContent='직각 '+result.right+' / 4';$('windowFeedback').className='live-feedback'+(result.solved?' success':'');$('windowFeedback').textContent=result.solved?'네 모서리가 모두 직각! 직사각형 열쇠를 완성했어요.':result.right===4?'네 직각을 만들었어요. 사진 속 창문처럼 가로를 세로보다 길게 늘려 보세요.':`직각 ${result.right}곳을 찾았어요. 모서리를 격자에 맞추며 네 각을 모두 직각으로 바꿔 보세요.`;}
+function completeWindow(){if(state.screen!=='myeongryun'||!state.shapeChosen||!state.introduced.myeongryun||!unlocked('myeongryun')||state.progress.myeongryun||!rectangleResult().solved)return;state.progress.myeongryun=true;updateProgress();successSound();setTimeout(()=>playConversation('hallOutro','myeongryun',()=>showScreen('map'),'서재를 향해 지도로 →'),600)}
+function initWindow(){state.corners.forEach((p,i)=>{const circle=svgElement('circle',{id:'corner-'+i,class:'corner-handle',cx:p.x,cy:p.y,r:15,tabindex:0,role:'button'});$('cornerHandles').appendChild(circle);bindDrag(circle,{ghost:false,allowed:()=>state.screen==='myeongryun'&&state.shapeChosen&&!state.progress.myeongryun,start:d=>{d.before={...state.corners[i]}},move:d=>{const r=$('windowSvg').getBoundingClientRect();let x=(d.x-r.left)/r.width*600,y=(d.y-r.top)/r.height*340;x=Math.round(x/10)*10;y=Math.round(y/10)*10;state.corners[i]={x:Math.max(i===0||i===3?60:320,Math.min(i===0||i===3?270:540,x)),y:Math.max(i<2?50:200,Math.min(i<2?140:290,y))};renderWindow()},end:completeWindow,cancel:d=>{if(d.before){state.corners[i]=d.before;renderWindow()}},tapMessage:'모서리의 둥근 손잡이를 잡아 끌어 보세요.'});circle.addEventListener('keydown',e=>{if(state.screen!=='myeongryun'||!state.shapeChosen||modalOpen()||state.progress.myeongryun||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();const delta={ArrowLeft:[-10,0],ArrowRight:[10,0],ArrowUp:[0,-10],ArrowDown:[0,10]}[e.key];const p=state.corners[i];p.x=Math.max(i===0||i===3?60:320,Math.min(i===0||i===3?270:540,p.x+delta[0]));p.y=Math.max(i<2?50:200,Math.min(i<2?140:290,p.y+delta[1]));renderWindow();completeWindow()})});renderWindow();}
+$('windowReset').addEventListener('click',()=>{if(state.progress.myeongryun)return;state.corners=[{x:100,y:70},{x:470,y:110},{x:450,y:270},{x:140,y:240}];renderWindow()});
+
+/* Earned keys are used physically, then the student opens the furniture. */
+bindDrag($('numberKey'),{allowed:()=>state.screen==='east'&&unlocked('east')&&!state.numberUnlocked,move:d=>$('numberLock').classList.toggle('drop-active',hit($('numberLock'),d.x,d.y,20)),end:d=>{if(!hit($('numberLock'),d.x,d.y,20)){toast('250 열쇠를 서랍의 금속 자물쇠에 맞춰요.');return;}state.numberUnlocked=true;$('numberLock').classList.add('unlocked');$('numberKey').hidden=true;$('eastFeedback').textContent='찰칵! 자물쇠가 열렸어요. 서랍 손잡이를 잡아 아래로 당겨 보세요.';tone(750);},tapMessage:'숫자 열쇠를 잡아 자물쇠까지 끌어 옮겨요.'});
+bindDrag($('drawerHandle'),{ghost:false,allowed:()=>state.screen==='east'&&unlocked('east')&&!state.inventory.candle,start:d=>{d.before=state.drawerPull;},move:d=>{if(!state.numberUnlocked){$('eastFeedback').textContent='서랍이 잠겨 있어요. 먼저 250 열쇠를 자물쇠에 끼워요.';return;}const max=$('secretDrawer').getBoundingClientRect().height;state.drawerPull=Math.max(0,Math.min(max,d.before+d.dy));$('secretDrawer').style.setProperty('--drawer-pull',state.drawerPull+'px');},end:()=>{const max=$('secretDrawer').getBoundingClientRect().height;if(!state.numberUnlocked)return;if(state.drawerPull<max*.72){$('eastFeedback').textContent='손잡이를 조금 더 아래로 당겨 서랍을 열어 주세요.';return;}state.inventory.candle=true;state.progress.east=true;$('candleReward').hidden=false;updateProgress();successSound();$('eastFeedback').textContent='양초에 ‘대성전’이라고 적혀 있어요! 다음 목적지의 단서예요.';setTimeout(()=>showDiscovery('east'),700);},cancel:d=>{state.drawerPull=d.before??state.drawerPull;$('secretDrawer').style.setProperty('--drawer-pull',state.drawerPull+'px');},tapMessage:'손잡이를 잡고 아래로 당겨야 서랍이 열려요.'});
+bindDrag($('shapeKey'),{allowed:()=>state.screen==='west'&&unlocked('west')&&!state.shapeUnlocked,move:d=>$('shapeLock').classList.toggle('drop-active',hit($('shapeLock'),d.x,d.y,20)),end:d=>{if(!hit($('shapeLock'),d.x,d.y,20)){toast('직사각형 열쇠를 문에 있는 같은 모양의 자물쇠로 옮겨요.');return;}state.shapeUnlocked=true;$('shapeLock').classList.add('unlocked');$('shapeKey').hidden=true;$('westFeedback').textContent='직사각형 열쇠가 맞았어요. 이제 문 손잡이를 잡아 왼쪽으로 당겨요.';tone(800);},tapMessage:'직사각형 열쇠를 잡아 문 가운데 자물쇠로 옮겨요.'});
+bindDrag($('lockerHandle'),{ghost:false,allowed:()=>state.screen==='west'&&unlocked('west')&&!state.inventory.match,start:d=>{d.before=state.doorPull;d.doorWidth=$('lockerDoor').getBoundingClientRect().width;},move:d=>{if(!state.shapeUnlocked){$('westFeedback').textContent='먼저 직사각형 열쇠로 자물쇠를 열어요.';return;}state.doorPull=Math.max(0,Math.min(1,d.before-d.dx/(d.doorWidth*.65)));$('lockerDoor').style.setProperty('--door-angle',(-state.doorPull*106)+'deg');if(state.doorPull>.3)$('matchReward').hidden=false;},end:()=>{if(!state.shapeUnlocked)return;if(state.doorPull<.72){$('westFeedback').textContent='손잡이를 왼쪽으로 조금 더 당겨 보세요.';return;}state.inventory.match=true;state.progress.west=true;$('matchReward').hidden=false;updateProgress();successSound();$('westFeedback').textContent='사물함 안에서 성냥을 찾았어요!';setTimeout(()=>showDiscovery('west'),700);},cancel:d=>{state.doorPull=d.before??state.doorPull;$('lockerDoor').style.setProperty('--door-angle',(-state.doorPull*106)+'deg');},tapMessage:'문 손잡이를 누른 채 왼쪽으로 당겨 열어요.'});
+
+/* Finale: physical placement, friction, then a short hold at the wick. No click shortcut. */
+function renderFinal(){
+  $('finalCandle').hidden=state.candlePlaced;$('placedCandle').hidden=!state.candlePlaced;
+  $('finalMatch').disabled=!state.candlePlaced||state.finalCompleted;
+  $('finalMatch').style.opacity=state.candlePlaced?'1':'.4';
+  $('candleFlame').hidden=!state.finalCompleted;$('hallStage').classList.toggle('lit',state.finalCompleted);
+  $('candleStand').querySelector('.stand-target').hidden=state.candlePlaced;$('standLabel').textContent=state.candlePlaced?'심지에 불을 붙여요':'촛불 자리';
+}
+function candleBase(d){return {x:d.x-d.offsetX+d.rect.width/2,y:d.y-d.offsetY+d.rect.height};}
+function standPoint(){const r=$('candleStand').getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height*.27};}
+bindDrag($('finalCandle'),{allowed:()=>state.screen==='daeseong'&&unlocked('daeseong')&&!state.candlePlaced,move:d=>{const p=candleBase(d),target=standPoint();$('candleStand').classList.toggle('drop-active',Math.hypot(p.x-target.x,p.y-target.y)<38);},end:d=>{const p=candleBase(d),target=standPoint();if(Math.hypot(p.x-target.x,p.y-target.y)>38){$('finalFeedback').textContent='촛불 아랫부분을 촛대의 둥근 접시 위에 맞춰 내려놓아요.';return;}state.candlePlaced=true;renderFinal();tone(650);$('finalFeedback').textContent='촛불을 잘 놓았어요. 성냥을 잡고 상자의 거친 면을 옆으로 그어 보세요.';},tapMessage:'촛불을 누른 채 촛대까지 직접 끌어 옮겨요.'});
+function matchHead(d,x=d.x,y=d.y){return {x:x-d.offsetX+8,y:y-d.offsetY+d.rect.height/2};}
+function extinguishMatch(){state.matchLit=false;state.matchHeat=0;$('strikeMeter').style.width='0%';$('finalMatch').querySelector('.match-flame').hidden=true;}
+function finishLight(){if(state.finalCompleted||!state.candlePlaced||!state.matchLit)return;state.finalCompleted=true;state.progress.daeseong=true;renderFinal();updateProgress();successSound();$('standLabel').textContent='지혜의 불';$('finalFeedback').textContent='우리가 직접 찾은 수학으로 지혜의 불이 켜졌어요!';setTimeout(showSuccess,1700);}
+function stopWickTimer(d){if(d.wickTimer){clearTimeout(d.wickTimer);d.wickTimer=null;}}
+function holdAtWick(d){const tip=matchHead(d),wick=rectPoint($('candleWick'));const near=state.matchLit&&Math.hypot(tip.x-wick.x,tip.y-wick.y)<28;
+  if(near){$('candleStand').classList.add('drop-active');if(!d.wickTimer)d.wickTimer=setTimeout(()=>{d.wickTimer=null;if(drag===d&&state.matchLit){const h=matchHead(d),w=rectPoint($('candleWick'));if(Math.hypot(h.x-w.x,h.y-w.y)<28){finishLight();cancelDrag();}}},450);$('finalFeedback').textContent='성냥의 불을 심지 가까이에 잠깐 머물러 주세요.';}
+  else{stopWickTimer(d);$('candleStand').classList.remove('drop-active');}
+}
+bindDrag($('finalMatch'),{allowed:()=>state.screen==='daeseong'&&state.candlePlaced&&state.inventory.match&&!state.finalCompleted,start:d=>{extinguishMatch();d.wickTimer=null;},move:d=>{
+  const head=matchHead(d),previous=matchHead(d,d.prevX,d.prevY),surface=$('strikerSurface'),r=surface.getBoundingClientRect();
+  if(!state.matchLit){
+    if(hit(surface,head.x,head.y,6)&&hit(surface,previous.x,previous.y,6)){const horizontal=Math.abs(head.x-previous.x),vertical=Math.abs(head.y-previous.y);if(horizontal>vertical*.7&&horizontal<r.width)state.matchHeat+=horizontal;}
+    const needed=Math.max(35,r.width*.6);$('strikeMeter').style.width=Math.min(100,state.matchHeat/needed*100)+'%';
+    if(state.matchHeat>=needed){state.matchLit=true;d.ghost?.querySelector('.match-flame')?.removeAttribute('hidden');tone(1050,.17);$('finalFeedback').textContent='성냥에 불이 붙었어요! 손을 떼지 말고 타는 끝을 촛불 심지로 옮겨요.';}
+    else if(hit(surface,head.x,head.y,12))$('finalFeedback').textContent='성냥의 붉은 끝을 거친 면에 대고 옆으로 그어 주세요.';
+  }
+  if(state.matchLit)holdAtWick(d);
+},end:d=>{stopWickTimer(d);if(!state.finalCompleted){$('finalFeedback').textContent=state.matchLit?'성냥을 놓아서 불이 꺼졌어요. 다시 긋고, 손을 떼지 않은 채 심지로 가져가요.':'성냥의 붉은 끝을 마찰면에 대고 옆으로 그어 보세요.';extinguishMatch();}},cancel:d=>{stopWickTimer(d);if(!state.finalCompleted)extinguishMatch();},tapMessage:'성냥을 누른 채 마찰면에 그은 뒤 촛불 심지까지 직접 가져가요.'});
+function showSuccess(){startEndingReview()}
+/* Story and general controls. */
+const story=[
+ ['민우','버스에서 내리니 부평향교네! 이번에는 우리가 직접 걸어서 수학의 비밀을 찾아보자.'],
+ ['서연','좋아. 여기에서는 사람들이 배우고 공부했대. 그런데 대성전의 지혜의 불이 꺼져 있어.'],
+ ['민우','외삼문에서 문의 높이를 재고, 명륜당에서 창문의 모양을 찾으면 두 개의 열쇠를 얻을 수 있겠어.'],
+ ['서연','먼저 서재, 그다음 동재로 가 보자. 열쇠로 찾은 도구에 다음 장소의 단서가 있을지도 몰라. 발견한 수학은 탐험 수첩에 기록할게.'],
+ ['민우','마지막에는 촛불도 옮기고 성냥도 직접 그어야 하는 거지? 우리 손으로 빛을 되찾는 거네!'],
+ ['서연','왼쪽 조이스틱을 밀면 민우가 움직여. 먼저 홍살문 뒤쪽, 지붕이 있는 외삼문 앞으로 가 보자.']
+];
+function renderStory(){const [speaker,text]=story[storyIndex];$('storySpeaker').textContent=speaker;$('storyText').textContent=text;$('storyProgress').textContent=`이야기 ${storyIndex+1} / ${story.length}`;$('storyBoy').classList.toggle('inactive',speaker!=='민우');$('storyGirl').classList.toggle('inactive',speaker!=='서연');$('storyNext').textContent=storyIndex===story.length-1?'향교 탐험 시작 →':'다음 이야기 →';}
+$('storyNext').addEventListener('click',()=>{tone();if(storyIndex<story.length-1){storyIndex++;renderStory()}else showScreen('map')});$('storySkip').addEventListener('click',()=>showScreen('map'));
+document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>showScreen('map')));
+$('infoClose').addEventListener('click',()=>{closeModal('infoModal');const fn=modalCallback;modalCallback=null;fn?.()});
+$('journalOpen').addEventListener('click',()=>{updateProgress();cancelDrag();openModal('journalModal')});$('journalClose').addEventListener('click',()=>closeModal('journalModal'));
+$('soundToggle').addEventListener('click',()=>{muted=!muted;$('soundToggle').textContent=muted?'소리 꺼짐':'소리 켜짐';$('soundToggle').setAttribute('aria-pressed',String(muted));if(muted)audioContext?.suspend().catch(()=>{});else tone()});
+$('restart').addEventListener('click',()=>location.reload());
+document.addEventListener('keydown',e=>{const modal=document.querySelector('.modal:not([hidden])');if(!modal)return;if(e.key==='Escape'){e.preventDefault();if(modal.id==='infoModal')$('infoClose').click();else closeModal(modal.id);}if(e.key==='Tab'){const items=[...modal.querySelectorAll('button:not(:disabled),a[href],summary')].filter(el=>!el.closest('[hidden]')&&(!el.closest('details:not([open])')||el.tagName==='SUMMARY')),first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+initMap();initWindow();renderStory();renderFinal();
+
+/* A-series story scenes: one speaker and one line at a time. */
+const sceneArt=JSON.parse($('sceneArtData').textContent);
+const gateGame={x:.20,ladderX:.80,carrying:false,placed:false,climbed:false,solved:false,direction:0,pointer:null};
+let episode=null;
+const conversations={
+ gateIntro:[
+  ['서연','여기가 부평향교의 외삼문이야. 이 문을 지나면 유생들이 공부하던 곳이 나와.'],
+  ['민우','문 위에 반짝이는 게 있어! 먼저 이 문의 높이를 알아보자. 내가 가진 15cm 자로 재 볼게.'],
+  ['민우','한 번, 두 번… 자가 너무 짧아! 이 큰 문을 재려면 여러 번 옮겨야 하고, 위쪽은 손도 닿지 않아.'],
+  ['서연','그래서 길이에 맞는 단위와 기준이 필요해. 큰 길이는 m로 나타내면 편리하지. 1m는 100cm야.'],
+  ['서연','저기 발판 높이가 1m인 사다리가 있어! 네 키는 150cm니까, 사다리와 네 키를 함께 이용해 보자.'],
+  ['민우','내가 사다리까지 걸어가서 문 앞으로 옮길게. 발판 위에 서면 머리끝이 문 위쪽에 딱 닿는지 볼 수 있겠어!']
+ ],
+ gateOutro:[
+  ['민우','1m를 100cm로 바꾸니 150cm + 100cm = 250cm! 이 문의 높이를 구했어.'],
+  ['서연','서로 다른 단위의 길이를 더할 때는 같은 단위로 맞추면 돼. 짧은 자로 여러 번 재지 않아도 알아냈네!'],
+  ['민우','문 위에서 250이 적힌 열쇠도 찾았어. 잘 챙겨 두자!'],
+  ['서연','이제 향교 안으로 더 들어가 보자. 다음은 유생들이 공부하던 명륜당이야!']
+ ],
+ hallIntro:[
+  ['서연','여기는 명륜당이야. 옛날 유생들이 함께 모여 공부하던 강당이래.'],
+  ['민우','잠깐, 여기 쪽지가 있어! 어떤 내용인지 읽어 볼까?', 'note'],
+  ['서연','“열쇠는 명륜당의 창문의 모양과 같다.” 창문이 다음 단서인가 봐!', 'note'],
+  ['민우','오른쪽 벽 위에 작은 창문이 보여. 가로와 세로, 모서리를 잘 살펴보자.', 'window'],
+  ['서연','저 창문은 어떤 도형일까? 창문과 같은 모양을 골라 보자.', 'window']
+ ],
+ hallBuild:[
+  ['민우','가로가 긴 직사각형이었어! 창문 모양이 열쇠의 모양과 같다고 했지?'],
+  ['서연','맞아. 이번에는 열쇠의 네 모서리를 직접 움직여서 창문과 같은 직사각형을 만들어 보자.']
+ ],
+ hallOutro:[
+  ['민우','네 모서리를 모두 직각으로 맞추니 직사각형 열쇠가 완성됐어!'],
+  ['서연','직사각형은 네 각이 모두 직각이야. 마주 보는 두 변의 길이도 각각 같지.'],
+  ['민우','창문을 자세히 관찰한 덕분에 열쇠를 만들 수 있었네!'],
+  ['서연','이 도형 열쇠를 쓸 곳을 찾아보자. 다음 목적지는 유생들이 생활하던 서재야!']
+ ]
+};
+function playConversation(name,place,onComplete,finishLabel){
+ cancelDrag();stopGateMotion();episode={name,place,index:0,lines:conversations[name],onComplete,finishLabel};
+ $('episodeBackground').src=sceneArt[place];$('episodeBackground').alt=place==='gate'?'부평향교 외삼문 일러스트 배경':'부평향교 명륜당 일러스트 배경';
+ $('episodeLocation').textContent=placeData[place].name;showScreen('episode');renderEpisode();$('episodeAdvance').focus({preventScroll:true});
+}
+function renderEpisode(){
+ if(!episode)return;const [speaker,text,detail]=episode.lines[episode.index];
+ $('episodeSpeaker').textContent=speaker;$('episodeText').textContent=text;
+ $('episodeBoy').classList.toggle('inactive',speaker!=='민우');$('episodeGirl').classList.toggle('inactive',speaker!=='서연');
+ $('episodeCounter').textContent=(episode.index+1)+' / '+episode.lines.length;
+ $('episodeHint').textContent=episode.index===episode.lines.length-1?episode.finishLabel:'터치해서 다음 대화 →';
+ $('episodeNote').hidden=detail!=='note';$('episodeWindowFocus').hidden=detail!=='window';
+ $('episodeKey').hidden=episode.name!=='gateOutro';
+}
+function advanceEpisode(){if(state.screen!=='episode'||!episode||modalOpen())return;if(episode.index<episode.lines.length-1){episode.index++;renderEpisode();return;}const done=episode.onComplete;episode=null;done();}
+$('episodeAdvance').addEventListener('click',advanceEpisode);
+$('episodePrevious').addEventListener('click',()=>{if(episode&&episode.index>0){episode.index--;renderEpisode()}});
+$('episodeMap').addEventListener('click',()=>{episode=null;showScreen('map')});
+function beginMission(key){
+ if(!unlocked(key))return;
+ if(key==='gate'&&!state.introduced.gate){playConversation('gateIntro',key,()=>{state.introduced.gate=true;showScreen('gate')},'사다리 옮기기 시작 →');return;}
+ if(key==='myeongryun'&&!state.introduced.myeongryun){playConversation('hallIntro',key,()=>{state.introduced.myeongryun=true;showScreen(key)},'창문 모양 고르기 →');return;}
+ showScreen(key);
+}
+
+/* Carry the PNG stepladder with Minwoo, put it at the door, then climb. */
+function stopGateMotion(){gateGame.direction=0;gateGame.pointer=null;keyboard.clear();$('gateMinwoo').classList.remove('walking');}
+function moveGate(dt){
+ if(state.screen!=='gate'||modalOpen()||document.hidden||gateGame.climbed||gateGame.solved)return;
+ let direction=gateGame.direction+(keyboard.has('ArrowRight')||keyboard.has('d')?1:0)-(keyboard.has('ArrowLeft')||keyboard.has('a')?1:0);
+ direction=Math.sign(direction);if(!direction){$('gateMinwoo').classList.remove('walking');return;}
+ gateGame.x=Math.max(.10,Math.min(.90,gateGame.x+direction*.28*Math.min(dt,.05)));
+ if(gateGame.carrying)gateGame.ladderX=gateGame.x;
+ $('gateMinwoo').classList.add('walking');renderGate();
+}
+function renderGate(){
+ const g=gateGame,near=Math.abs(g.x-g.ladderX)<.09;
+ $('gateMinwoo').style.left=g.x*100+'%';$('gateMinwoo').classList.toggle('on-ladder',g.climbed);
+ $('gateLadder').style.left=g.ladderX*100+'%';$('gateLadder').classList.toggle('carried',g.carrying);
+ $('gateTarget').classList.toggle('ready',g.placed);$('gateTarget').hidden=g.climbed;
+ $('gateCarry').disabled=g.climbed||g.solved||(!g.carrying&&!near);$('gateCarry').textContent=g.carrying?'사다리 내려놓기':'사다리 들기';
+ $('gateClimb').disabled=!g.placed||!near||g.carrying||g.climbed||g.solved;
+ document.querySelectorAll('[data-gate-direction]').forEach(b=>b.disabled=g.climbed||g.solved);
+ $('gateEquation').hidden=!g.climbed;$('gateMeasure').hidden=!g.climbed;$('gateCollectKey').hidden=!g.solved||state.progress.gate;
+ $('gateAnswer').disabled=g.solved;$('gateCheck').disabled=g.solved;
+ $('gateStep').textContent=g.solved?'04 · 문 위의 열쇠를 가져와요':g.climbed?'03 · 같은 단위로 바꿔 높이를 구해요':g.placed?'02 · 사다리 위로 올라가요':g.carrying?'02 · 문 앞 표시까지 사다리를 옮겨요':'01 · 민우를 사다리 가까이 움직여요';
+ if(!g.climbed)$('gateMoveHint').textContent=g.carrying?'왼쪽·오른쪽으로 이동한 뒤, 문 앞에서 사다리를 내려놓아요.':g.placed?'민우가 사다리 가까이에서 ‘올라가기’를 눌러요.':near?'사다리 가까이에 왔어요. ‘사다리 들기’를 눌러요.':'방향키를 누르고 있으면 민우가 걸어요. 오른쪽 사다리로 가 보세요.';
+}
+for(const button of document.querySelectorAll('[data-gate-direction]')){
+ button.addEventListener('pointerdown',e=>{if(state.screen!=='gate'||button.disabled||modalOpen())return;e.preventDefault();stopGateMotion();gateGame.pointer=e.pointerId;gateGame.direction=Number(button.dataset.gateDirection);button.setPointerCapture?.(e.pointerId)});
+ for(const type of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(type,e=>{if(gateGame.pointer===e.pointerId)stopGateMotion()});
+}
+document.addEventListener('keydown',e=>{if(state.screen!=='gate'||modalOpen()||e.target.closest('input,textarea'))return;if(['ArrowLeft','ArrowRight','a','d'].includes(e.key)){e.preventDefault();keyboard.add(e.key)}});
+window.addEventListener('blur',stopGateMotion);window.addEventListener('resize',stopGateMotion);document.addEventListener('visibilitychange',()=>{if(document.hidden)stopGateMotion()});
+$('gateCarry').addEventListener('click',()=>{
+ if(state.screen!=='gate'||gateGame.climbed||gateGame.solved)return;const g=gateGame;
+ if(g.carrying){g.carrying=false;g.placed=Math.abs(g.ladderX-.50)<=.055;stopGateMotion();if(!g.placed)toast('문 앞의 표시 안에 사다리를 내려놓아 보세요.');}
+ else if(Math.abs(g.x-g.ladderX)<.09){g.carrying=true;g.placed=false;g.ladderX=g.x;}
+ renderGate();
+});
+$('gateClimb').addEventListener('click',()=>{
+ const g=gateGame;if(state.screen!=='gate'||!g.placed||g.carrying||Math.abs(g.x-g.ladderX)>=.09||g.climbed)return;
+ stopGateMotion();g.x=g.ladderX;g.climbed=true;renderGate();$('gateMoveHint').textContent='발판 높이와 민우의 키를 더하면 문의 높이예요. 1m는 몇 cm일까요?';$('gateEquation').scrollIntoView?.({block:'center',behavior:'smooth'});$('gateAnswer').focus({preventScroll:true});
+});
+$('gateEquation').addEventListener('submit',e=>{
+ e.preventDefault();if(state.screen!=='gate'||!gateGame.climbed||gateGame.solved||!state.introduced.gate)return;
+ const raw=$('gateAnswer').value.trim();if(!/^\d+$/.test(raw)){ $('gateFeedback').textContent='빈칸에 문 높이를 숫자로 적어 주세요.';return; }
+ if(Number(raw)!==250){$('gateFeedback').textContent=raw==='151'?'1m를 1cm처럼 더했네요. 1m = 100cm로 바꾸어 다시 더해 보세요.':'민우는 150cm, 발판은 1m예요. 1m를 cm로 바꾼 뒤 두 높이를 더해 보세요.';$('gateAnswer').setAttribute('aria-invalid','true');tone(260);return;}
+ gateGame.solved=true;state.lengthExpression='150cm + 1m';$('gateAnswer').removeAttribute('aria-invalid');$('gateFeedback').textContent='맞아요! 150cm + 100cm = 250cm. 문 위에서 반짝이는 열쇠를 가져와요.';successSound();renderGate();$('gateCollectKey').scrollIntoView?.({block:'center',behavior:'smooth'});$('gateCollectKey').focus({preventScroll:true});
+});
+$('gateCollectKey').addEventListener('click',()=>{
+ if(state.screen!=='gate'||!gateGame.solved||!gateGame.climbed||state.progress.gate)return;
+ state.progress.gate=true;updateProgress();renderGate();playConversation('gateOutro','gate',()=>showScreen('map'),'명륜당을 향해 지도로 →');
+});
+
+/* Observe the actual wide window, choose its shape, then construct the key. */
+function renderHallStage(){$('shapeChoicePanel').hidden=state.shapeChosen;$('shapeConstructPanel').hidden=!state.shapeChosen;$('hallPhase').textContent=state.shapeChosen?'02 · 직사각형 열쇠 만들기':'01 · 쪽지의 단서 찾기';}
+document.querySelectorAll('[data-window-choice]').forEach(button=>button.addEventListener('click',()=>{
+ if(state.screen!=='myeongryun'||!state.introduced.myeongryun||state.shapeChosen||!unlocked('myeongryun'))return;
+ const choice=button.dataset.windowChoice;document.querySelectorAll('[data-window-choice]').forEach(b=>b.classList.toggle('chosen',b===button));
+ if(choice!=='직사각형'){$('shapeChoiceFeedback').textContent={정삼각형:'삼각형은 모서리가 3개예요. 창문틀의 모서리는 몇 개인가요?',정사각형:'정사각형은 네 변의 길이가 모두 같아요. 이 창문은 가로가 세로보다 길게 생겼어요.',오각형:'오각형은 변이 5개예요. 창문틀의 변을 다시 세어 보세요.'}[choice];tone(260);return;}
+ $('shapeChoiceFeedback').textContent='맞아요! 가로가 긴 직사각형이에요.';tone(750);
+ playConversation('hallBuild','myeongryun',()=>{state.shapeChosen=true;showScreen('myeongryun')},'열쇠 모양 직접 만들기 →');
+}));
+$('gateBackground').src=sceneArt.gate;$('hallBackground').src=sceneArt.myeongryun;$('hallWorkshopArt').src=sceneArt.myeongryun;
+renderGate();renderHallStage();
+
+/* Read at the learner's pace; bus timers do not depend on animationend. */
+const farewellLines=[
+ ['내레이션','대성전에 지혜의 불이 켜졌어요. 향교를 환하게 밝힌 빛을 뒤로하고, 민우와 서연은 다시 외삼문 앞에 섰어요.'],
+ ['서연','민우야, 우리가 해냈어! 부평향교의 수학의 빛을 되찾았어!'],
+ ['민우','처음엔 15cm 자로 큰 문을 어떻게 재나 했는데… 1m를 100cm로 바꾸니까 내 키와 더할 수 있었어. 그래서 250cm였지!'],
+ ['서연','명륜당 창문도 기억나? 네 각이 모두 직각이고, 마주 보는 두 변의 길이가 같은 직사각형이었어. 우리가 만든 열쇠로 성냥도 찾았잖아.'],
+ ['민우','맞아! 250 열쇠로 찾은 양초에는 ‘대성전’이 적혀 있었고. 따로 보이던 단서가 하나씩 이어지니까 정말 탐험하는 기분이었어!'],
+ ['서연','문의 높이에도, 창문의 모양에도 수학이 숨어 있었네. 다음 장소에는 어떤 수학이 기다릴까? 이제 매스투어 버스를 타러 가자!']
+];
+const ending={phase:'idle',line:0,timers:new Set(),run:0};
+function cancelEndingTimers(){ending.run++;for(const timer of ending.timers)clearTimeout(timer);ending.timers.clear()}
+function setEndingPhase(phase){ending.phase=phase;$('departureScene').dataset.phase=phase}
+function endingLater(ms,callback){const run=ending.run;const timer=setTimeout(()=>{ending.timers.delete(timer);if(run===ending.run&&state.screen==='departure')callback()},ms);ending.timers.add(timer)}
+function endingDuration(ms){return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?Math.min(ms,350):ms}
+function endingFocus(id){if(!modalOpen())$(id).focus({preventScroll:true})}
+function startEndingReview(){
+ if(!state.finalCompleted)return;
+ cancelEndingTimers();setEndingPhase('review');
+ $('recapBackdrop').src=sceneArt.myeongryun;$('recapGate').src=sceneArt.gate;$('recapHall').src=sceneArt.myeongryun;
+ $('recapLight').src=JSON.parse($('placePhotoData').textContent).daeseong;
+ showScreen('review');endingFocus('reviewContinue');
+}
+function startFarewell(){
+ if(!state.finalCompleted||state.screen!=='review')return;
+ cancelEndingTimers();ending.line=0;setEndingPhase('dialogue');
+ $('departureBackdrop').src=sceneArt.gate;$('endingBus').hidden=true;$('busPassengers').hidden=true;$('departureComplete').hidden=true;
+ $('endingDialogue').hidden=false;$('endingDialogueNav').hidden=false;$('departureStatus').hidden=true;$('endingBoard').hidden=true;
+ showScreen('departure');renderFarewell();endingFocus('endingDialogue');
+}
+function renderFarewell(){
+ const [speaker,text]=farewellLines[ending.line];$('endingSpeaker').textContent=speaker;$('endingText').textContent=text;
+ $('endingMinwoo').classList.toggle('inactive',speaker==='서연');$('endingSeoyeon').classList.toggle('inactive',speaker==='민우');
+ $('endingProgress').textContent=(ending.line+1)+' / '+farewellLines.length;$('endingPrevious').disabled=ending.line===0;
+ const last=ending.line===farewellLines.length-1;
+ $('endingHint').textContent=last?'터치하면 버스를 기다려요 →':'터치하거나 Enter · Space';
+ $('endingDialogue').setAttribute('aria-label',last?'대화를 마치고 버스 기다리기':'다음 대사 보기');
+}
+function advanceFarewell(){if(state.screen!=='departure'||ending.phase!=='dialogue'||modalOpen())return;if(ending.line<farewellLines.length-1){ending.line++;renderFarewell()}else startBusArrival()}
+function startBusArrival(){
+ if(state.screen!=='departure'||ending.phase!=='dialogue'||modalOpen())return;
+ setEndingPhase('arriving');$('endingDialogue').hidden=true;$('endingDialogueNav').hidden=true;$('departureStatus').hidden=false;
+ $('departureStatusText').textContent='부릉! 매스투어 버스가 다가오고 있어요. 잠시 기다려요.';
+ $('endingBus').hidden=false;$('endingBoard').hidden=true;
+ $('departureStatus').tabIndex=-1;endingFocus('departureStatus');
+ endingLater(endingDuration(2800),()=>{setEndingPhase('parked');$('departureStatusText').textContent='버스가 멈췄어요! 민우, 서연과 함께 버스에 올라요.';$('endingBoard').hidden=false;endingFocus('endingBoard')});
+}
+function boardEndingBus(){
+ if(state.screen!=='departure'||ending.phase!=='parked'||modalOpen())return;
+ setEndingPhase('boarding');$('endingBoard').hidden=true;$('departureStatusText').textContent='민우가 먼저, 서연도 뒤따라 버스에 올라요.';endingFocus('departureStatus');
+ endingLater(endingDuration(1900),()=>{
+  $('busPassengers').hidden=false;setEndingPhase('departing');$('departureStatusText').textContent='모두 탔어요. 안녕, 부평향교! 다음 수학 여행으로 출발!';
+  endingLater(endingDuration(3200),()=>{setEndingPhase('complete');$('departureStatus').hidden=true;$('departureComplete').hidden=false;endingFocus('endingWorldMap');window.MathTourChapters.finishCourse('hyanggyo',{...state,departed:ending.phase==='complete'},$('departureComplete'))});
+ });
+}
+$('reviewContinue').addEventListener('click',startFarewell);
+$('endingDialogue').addEventListener('click',advanceFarewell);
+$('endingDialogue').addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();advanceFarewell()}});
+$('endingPrevious').addEventListener('click',()=>{if(state.screen==='departure'&&ending.phase==='dialogue'&&ending.line>0&&!modalOpen()){ending.line--;renderFarewell();endingFocus('endingDialogue')}});
+$('endingSkip').addEventListener('click',startBusArrival);
+$('endingBoard').addEventListener('click',boardEndingBus);
+$('endingReplay').addEventListener('click',()=>{if(state.screen==='departure'&&ending.phase==='complete')startEndingReview()});
+
+/* Keep completed discoveries when leaving for the regional chapter map. */
+const hyanggyoSaveKey='mathtour.bupyeong.hyanggyo-v1';
+let hyanggyoSaveEnabled=true;
+function saveHyanggyoJourney(){
+ const api=window.MathTourChapters;
+ if(!hyanggyoSaveEnabled||!api.canSave()||state.screen==='intro')return;
+ const value={version:1,progress:{...state.progress},introduced:{...state.introduced},player:{...player}};
+ try{localStorage.setItem(hyanggyoSaveKey,JSON.stringify(api.stampSave(value)));}catch(_){}
+}
+function restoreHyanggyoJourney(){
+ const api=window.MathTourChapters;
+ let value;try{value=JSON.parse(localStorage.getItem(hyanggyoSaveKey));}catch(_){return;}
+ if(!api.acceptsSave(value)||value.version!==1||!value.progress)return;
+ let ready=true;
+ for(const key of missionOrder){state.progress[key]=ready&&value.progress[key]===true;ready=state.progress[key];}
+ state.inventory.match=state.progress.west;state.inventory.candle=state.progress.east;
+ state.introduced.gate=value.introduced?.gate===true||state.progress.gate;
+ state.introduced.myeongryun=state.progress.gate&&(value.introduced?.myeongryun===true||state.progress.myeongryun);
+ state.shapeChosen=state.progress.myeongryun;
+ if(state.progress.gate){gateGame.solved=true;gateGame.placed=true;gateGame.climbed=true;state.lengthExpression='150+100';}
+ if(state.progress.myeongryun)state.corners=[{x:140,y:70},{x:460,y:70},{x:460,y:270},{x:140,y:270}];
+ state.shapeUnlocked=state.progress.west;state.doorPull=state.progress.west?1:0;
+ state.numberUnlocked=state.progress.east;state.drawerPull=state.progress.east?1:0;
+ state.finalCompleted=state.progress.daeseong;state.candlePlaced=state.finalCompleted;state.matchLit=state.finalCompleted;
+ if(Number.isFinite(value.player?.x)&&Number.isFinite(value.player?.y)&&canWalk(value.player.x,value.player.y))Object.assign(player,value.player);
+ if(state.finalCompleted)startEndingReview();else showScreen('map');
+ toast('이전 탐험을 이어가요. 완료한 미션과 찾은 도구는 그대로예요.');
+}
+window.addEventListener('mathtour:before-map',saveHyanggyoJourney);
+window.addEventListener('pagehide',saveHyanggyoJourney);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)saveHyanggyoJourney();});
+$('restart').addEventListener('click',()=>{hyanggyoSaveEnabled=false;try{localStorage.removeItem(hyanggyoSaveKey);}catch(_){}},true);
+</script><script>if(window.MathTourChapters.enterCourse('hyanggyo'))restoreHyanggyoJourney();</script></body></html>

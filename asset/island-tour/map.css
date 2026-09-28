@@ -1,0 +1,20 @@
+.island-chapter-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.island-chapter-row button{border:1px solid #c2aa75;background:#fff8e4;border-radius:8px;padding:12px;min-height:84px;display:flex;flex-direction:column;gap:6px;text-align:left;color:#254451;cursor:pointer;font-family:inherit}.island-chapter-row button:disabled{opacity:.5;cursor:default}.island-chapter-row button small{font-size:10px;letter-spacing:1px}.island-chapter-row button strong{font-size:14px}.island-chapter-row button span{font-size:11px}.island-reset{padding:10px 15px;min-height:44px;background:#fffaf0;color:#67402c;border:1px solid #bfa070;border-radius:6px;cursor:pointer;margin-top:8px}.island-reset-dialog{border:1px solid #bda066;border-radius:12px;background:#fcf6e7;color:#233f48;padding:28px;max-width:90vw}.island-reset-dialog::backdrop{background:#071927aa}.island-reset-dialog button{padding:13px 20px;min-height:48px;margin-right:10px;border:1px solid #b39b67;border-radius:6px;background:#fff}.island-reset-dialog button[data-reset]{background:#8e4236;color:#fff}.island-reset-dialog h2{font-size:22px}.island-reset-dialog p{margin:20px 0}@media(max-width:600px){.island-chapter-row{gap:6px}.island-chapter-row button{padding:8px}.island-chapter-row button strong{font-size:12px}.island-chapter-row button span{font-size:10px}}
+.standalone-region-screen[data-region="yeongjong-ganghwa"]{overflow:hidden;padding:12px}
+[data-region="yeongjong-ganghwa"] .standalone-region-card{height:calc(100dvh - 24px);max-height:960px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:10px;padding:16px;border-radius:20px}
+[data-region="yeongjong-ganghwa"] .standalone-region-header{margin-bottom:0;gap:12px}
+[data-region="yeongjong-ganghwa"] .standalone-region-icon{height:52px;width:52px;font-size:28px;border-radius:14px}
+[data-region="yeongjong-ganghwa"] .standalone-region-card h2{font-size:30px}
+[data-region="yeongjong-ganghwa"] #regionChapters{display:flex;gap:12px;align-items:center}
+[data-region="yeongjong-ganghwa"] .island-chapter-row{flex:1}
+[data-region="yeongjong-ganghwa"] .island-reset{margin:0;flex-shrink:0}
+[data-region="yeongjong-ganghwa"] .standalone-map-shell{min-height:0;max-height:none;height:100%;aspect-ratio:auto}
+[data-region="yeongjong-ganghwa"] .standalone-region-note{margin:0;font-size:11px}
+@media(max-width:800px){[data-region="yeongjong-ganghwa"] #regionChapters{gap:7px}[data-region="yeongjong-ganghwa"] .island-reset{font-size:11px;padding:8px}[data-region="yeongjong-ganghwa"] .standalone-region-description{font-size:11px}[data-region="yeongjong-ganghwa"] .standalone-region-icon{display:none}[data-region="yeongjong-ganghwa"] .standalone-region-header{grid-template-columns:1fr auto}}
+[data-region="yeongjong-ganghwa"] .attraction-chapter-status{display:block;font-size:10px;font-weight:600;color:#987445;margin-bottom:3px}
+[data-region="yeongjong-ganghwa"] .attraction-marker{min-width:0;padding:5px 9px 5px 5px;gap:6px;border-radius:12px;max-width:225px}
+[data-region="yeongjong-ganghwa"] .attraction-marker-icon{width:40px;height:40px;flex-shrink:0;border-radius:8px}
+[data-region="yeongjong-ganghwa"] .attraction-marker-name{font-size:12px;max-width:142px;line-height:1.4}
+
+/* Four chapters retain large tablet targets. */
+#regionChapters .island-chapter-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:800px){#regionChapters .island-chapter-row{grid-template-columns:repeat(2,minmax(0,1fr))}}

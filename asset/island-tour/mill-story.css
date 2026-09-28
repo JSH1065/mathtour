@@ -1,0 +1,28 @@
+.mill-story-mode>.section-title,.mill-story-mode>.game-layout,.mill-story-mode>.game-footer{display:none}
+.mill-interlude{position:absolute;inset:0;overflow:hidden;background:#263a32}
+.mill-story-shade{position:absolute;inset:0;background:linear-gradient(#12291920,transparent 45%,#142d2966);pointer-events:none}
+.mill-interlude .scene-tag{z-index:1}
+.mill-interlude .person{z-index:1}
+.mill-interlude .dialogue{z-index:2}
+.mill-story-speaker{position:absolute;left:23px;top:-19px;background:#8e4035;color:#fff9df;min-width:100px;text-align:center;border:1px solid var(--gold);padding:6px 15px;letter-spacing:3px}
+.mill-story-count{position:absolute;right:17px;top:10px;color:#ddc694;font-size:11px}
+.mill-interlude .dialogue footer button{min-height:44px}
+.mill-notebook{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(660px,calc(100% - 40px));max-height:calc(100% - 28px);padding:23px 36px;border:2px solid #c6a464;border-radius:10px;background:linear-gradient(90deg,#efe0bf 0,#fff7df 5%,#fff8e6 50%,#fff7df 95%,#ead7af 100%);box-shadow:0 18px 70px #061d20a8,0 0 45px #ffd7816b;color:#54422e;z-index:4;display:grid;gap:12px;text-align:center}
+.mill-notebook header{display:grid;justify-items:center;gap:5px}
+.mill-notebook-symbol{font-size:25px;line-height:1;color:#bf9651;text-shadow:0 0 13px #e8ba73}
+.mill-notebook header small{font-size:12px;letter-spacing:2px;color:#916b3f}
+.mill-notebook h2{margin:0;font:500 30px/1.4 'Batang',Georgia,serif;color:#69462e}
+.mill-notebook p{margin:0}
+.mill-notebook-lead{font-size:16px;line-height:1.65}
+.mill-notebook-equations{display:grid;grid-template-columns:1fr 1fr;gap:9px;border-block:1px solid #c9b38a;padding:12px 0}
+.mill-notebook-equations>div{padding:9px 10px;border:1px solid #dbc79e;background:#fffaf1bd;border-radius:5px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:63px}
+.mill-notebook-equations small{font-size:10px;color:#927248}
+.mill-notebook-equations b{font-size:25px;font-weight:400;color:#774735;white-space:nowrap}
+.mill-notebook-rule{font-size:15px;line-height:1.7;color:#6d563d}
+.mill-notebook footer{display:flex;justify-content:center}
+.mill-notebook footer button{min-width:220px;min-height:48px;font-size:14px}
+.notebook-reading>.backdrop{filter:brightness(.46)}
+.notebook-reading>.person{opacity:.23}
+.notebook-reading>.scene-tag,.notebook-reading>.art-credit{opacity:.3}
+@media(max-height:700px) and (min-width:761px){.mill-notebook{width:min(650px,calc(100% - 40px));padding:15px 30px;gap:8px}.mill-notebook header{gap:3px}.mill-notebook-symbol{font-size:18px}.mill-notebook h2{font-size:25px}.mill-notebook header small{font-size:10px}.mill-notebook-lead{font-size:14px;line-height:1.5}.mill-notebook-equations{padding:8px 0;gap:7px}.mill-notebook-equations>div{min-height:54px;padding:7px 10px}.mill-notebook-equations b{font-size:23px}.mill-notebook-rule{font-size:13px;line-height:1.6}.mill-notebook footer button{min-height:44px}.mill-interlude .dialogue{height:31%;min-height:166px}.mill-interlude .dialogue p{font-size:18px;line-height:1.6}}
+@media(max-width:900px) and (orientation:portrait){.mill-notebook{width:calc(100% - 56px);padding:28px 24px;gap:18px}.mill-notebook h2{font-size:31px}.mill-notebook-lead{font-size:17px}.mill-notebook-equations>div{min-height:78px;flex-direction:column;justify-content:center;gap:8px}.mill-notebook-equations b{font-size:26px}.mill-notebook-rule{font-size:16px;line-height:1.9}.mill-notebook footer button{min-height:50px}.mill-interlude .dialogue{height:29%;min-height:220px}.mill-interlude .person{bottom:32%}.mill-interlude .art-credit{bottom:32%}}

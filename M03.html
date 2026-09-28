@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M03 | 챕터 3 · 수봉공원과 수봉별마루 | MATH TOUR</title><style>:root{--paper:#faf5e9;--ink:#1b3543;--gold:#bda26b;--navy:#142e40;--red:#8d4337;--line:#d9ccae;--muted:#738080}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif}button,input,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer;touch-action:manipulation;border:1px solid var(--line);border-radius:8px;background:#fffcf5;color:var(--ink);padding:12px 18px;font-weight:700;min-height:48px}button:hover:not(:disabled){filter:brightness(1.08)}button:disabled{opacity:.45;cursor:default}button:focus-visible,input:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid #e9b958;outline-offset:4px}[hidden]{display:none!important}h1,h2,p{margin:0}p{line-height:1.75}h1{font:400 clamp(25px,2.4vw,36px)/1.35 Georgia,"Batang",serif}h2{font:700 23px/1.5 Georgia,"Batang",serif}.primary{background:var(--red);border-color:#c6a568;color:#fff6e6;box-shadow:0 3px 0 #643c30}.large{min-height:62px;padding:17px 26px;font-size:17px}.large span{margin-left:40px}.eyebrow{font-size:10px;letter-spacing:2px;color:#9b7544;font-weight:700}.topbar{height:72px;display:flex;align-items:center;gap:26px;padding:10px 3%;border-bottom:1px solid var(--line);background:#fcf8ed}.brand{font-size:22px;line-height:1;text-decoration:none;color:var(--ink);font-weight:800;white-space:nowrap}.brand span{color:var(--gold)}.brand small{display:block;font-size:8px;letter-spacing:4px;margin-top:7px}.course{font-size:14px;border-left:1px solid var(--line);padding-left:22px}.course small{display:block;font-size:10px;color:#98744b;margin-top:5px}.topbar nav{display:flex;gap:9px;align-items:center;margin-left:auto}.topbar nav button{font-size:12px;min-height:44px;padding:10px 15px}.prototype{border:1px solid #d1c09a;padding:5px 9px;font-size:10px;color:#917448;border-radius:20px;margin-right:5px}.screen{min-height:calc(100dvh - 72px);position:relative}.scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.intro{overflow:hidden;min-height:620px;height:calc(100dvh - 72px);color:#fff9e9}.intro-shade{position:absolute;inset:0;background:linear-gradient(90deg,#102533ee,#152c3977 53%,#12233322)}.intro-copy{position:relative;z-index:2;padding:8vh 7%;max-width:950px}.intro-copy .eyebrow{color:#dfc38a}.intro-copy h1{font-size:clamp(40px,4.4vw,66px);line-height:1.35;letter-spacing:-2px;margin:25px 0}.intro-copy em{font-style:normal;color:#f4d693}.intro-desc{color:#dbe2dc;font-size:18px}.intro-steps{display:flex;gap:15px;align-items:center;margin:30px 0;font-size:12px;color:#f6ebd4}.intro-steps b{display:block;color:#c6ac76;font-size:10px;letter-spacing:2px;margin-bottom:7px}.intro-steps i{color:#8b9c9e;font-style:normal}.credit{font-size:10px;opacity:.7;margin-top:18px}.intro-friends{position:absolute;right:7%;bottom:14%;display:flex;align-items:flex-end;gap:14px;height:40%;z-index:2}.intro-friends img{height:100%;width:135px;filter:drop-shadow(0 14px 8px #00101c77)}.intro-friends img+img{height:95%}.art-note{position:absolute;bottom:18px;right:25px;color:#fff0cb;font-size:9px;background:#132f43ce;padding:6px 11px;border-radius:4px}.game-screen{max-width:1560px;margin:0 auto;padding:22px 3% 14px}.section-top{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:19px}.section-top h1{margin-top:7px}.fragments{display:flex;gap:9px}.fragments span{display:block;width:72px;text-align:center;padding:13px 9px;background:#eae8dd;border:1px solid #cecbbd;border-radius:10px;color:#8f9891;font-weight:bold}.fragments span.found-token{background:#fff0c8;border-color:#bea363;color:#946429;box-shadow:0 0 24px #eec36833}.hunt-layout{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:22px;align-items:stretch}.park{position:relative;aspect-ratio:16/9;align-self:center;width:100%;overflow:hidden;border-radius:14px;border:1px solid #a89062;background:#152d3d;touch-action:none;cursor:crosshair;user-select:none}.park>img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}.park-dim{position:absolute;inset:0;background:#061e38;opacity:.48;transition:opacity 1s;pointer-events:none}.park.one-found .park-dim{opacity:.28}.park.both-found .park-dim{opacity:0}.park-label,.map-caption{position:absolute;z-index:2;pointer-events:none}.park-label{top:14px;left:16px;font-size:11px;letter-spacing:1px;background:#122f44db;color:#ffe8b9;border:1px solid #c4a66b77;border-radius:5px;padding:10px 14px}.map-caption{bottom:12px;right:15px;color:#e7e6d6;font-size:9px;text-shadow:0 1px 4px #102733}.detector{position:absolute;left:50%;top:65%;transform:translate(-50%,-50%);height:80px;width:80px;pointer-events:none;z-index:4;color:#f7de9f;filter:drop-shadow(0 4px 8px #071727)}.detector>span{position:absolute;inset:5px;border:2px solid #e6c481;border-radius:50%;box-shadow:0 0 0 6px #142f4270,inset 0 0 22px #e4c06030;background:#132b4b30}.detector>i{position:absolute;inset:18px;border:1px dashed #f2d8a7bb;border-radius:50%;animation:scan-spin 9s linear infinite}.detector>b{position:absolute;inset:0;display:grid;place-items:center;font-size:22px}.detector.hot>span{border-color:#fff6c8;box-shadow:0 0 22px #ffe990bb,inset 0 0 30px #ffe47955}.found{position:absolute;transform:translate(-50%,-50%);z-index:3;font-size:47px;color:#fff0a2;line-height:1;text-shadow:0 0 18px #ffc553,0 0 40px #f4c868;pointer-events:none;animation:star-in .55s ease both}.found small{display:block;font-size:14px;background:#12324a;padding:5px 9px;border-radius:20px;color:#ffe9b7;text-align:center;margin-top:6px}.search-hint{position:absolute;width:20%;aspect-ratio:1;border:2px dashed #f3d18788;background:#d9c16e15;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:2}.discover-toast{position:absolute;z-index:5;bottom:16px;left:16px;padding:12px 18px;background:#fff4d9f2;color:#775b2f;border:1px solid #d6b874;border-radius:9px;font-size:13px;max-width:75%;pointer-events:none}.paper{padding:25px;background:#fffcf3;border:1px solid var(--line);border-radius:13px;box-shadow:0 7px 18px #78634708}.hunt-panel{display:flex;flex-direction:column;gap:14px}.hunt-panel h2{font-size:23px}.signal-readout{display:flex;align-items:baseline;gap:7px;color:#946c32}.signal-readout b{font:400 63px/1 Georgia,serif}.signal-readout>span{font-size:15px}.signal-track{height:7px;background:#e5e6db;border-radius:20px;overflow:hidden}.signal-track i{display:block;width:0;height:100%;background:linear-gradient(90deg,#72a19c,#edc571);transition:width .13s}.hunt-panel>b{font-size:16px}.hunt-panel>p:not(.eyebrow){font-size:13px;min-height:45px;color:#687975}.speech{display:flex;gap:12px;align-items:center;border-top:1px solid #ded8c9;padding-top:18px;margin-top:auto}.speech img{width:43px;height:88px;object-fit:contain}.speech p{font-size:12px;color:#77684d;line-height:1.8}.hunt-panel>button{font-size:12px}.under-note{text-align:center;font-size:11px;color:#7b837b;margin-top:15px}.step-track{list-style:none;display:flex;gap:8px;padding:0;margin:0;counter-reset:step}.step-track li{border:1px solid #d5ccb8;color:#8f9589;border-radius:30px;padding:10px 13px;font-size:11px;white-space:nowrap}.step-track li:before{counter-increment:step;content:counter(step) ' ';font-weight:bold;margin-right:5px}.step-track li.current{background:#193e50;color:#fff1ce;border-color:#a38b54}.step-track li.done{color:#677f67;background:#e9edde}.puzzle-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(290px,1fr);gap:24px;align-items:start}.device-wrap{position:relative;isolation:isolate;background:#12293e;border:1px solid #b69a65;border-radius:16px;overflow:hidden}.device-backdrop{position:absolute;inset:0;background:linear-gradient(#15293add,#142a3bda),url('asset/subong-light/byeolmaru-park.webp') center/cover;z-index:-1}.device-tag{position:absolute;left:18px;top:15px;font-size:10px;letter-spacing:1px;color:#c8c9ad}.device-wrap svg{display:block;width:100%;max-height:calc(100dvh - 280px);min-height:350px;touch-action:none;user-select:none}.device-rim{stroke:#be9a5c;stroke-width:1;fill:#ac895418}.device-groove{stroke:#876e4980;stroke-width:9;fill:none}#moveRail{stroke:#88c5ce;stroke-width:7;stroke-linecap:round;fill:none;opacity:.65}#beam{fill:url(#beamPaint)}#beamEdges{stroke:#ffe2a3;stroke-width:2;fill:none;stroke-dasharray:7 5}#radii{stroke:#93aaae;stroke-width:1.5;stroke-dasharray:6 7;fill:none}#sightLines{stroke:#55babf;stroke-width:2;fill:none}#centralWedge{fill:#dab16424;stroke:#caa66a;stroke-width:2}#pWedge{fill:#4bc8cb25;stroke:#8cd3d1;stroke-width:2}#targetArc{stroke:#f4cb74;stroke-width:7;fill:none;stroke-linecap:round}.fragment-point circle{fill:#263d48;stroke:#e6c887;stroke-width:2}.fragment-point text{fill:#ffe9b6;font-size:17px;font-weight:bold;text-anchor:middle}.fragment-point.lit circle{fill:#ffde81;stroke:#fff9e9;stroke-width:3;filter:drop-shadow(0 0 10px #e7c772)}.fragment-point.lit text{fill:#6d4a2e}.point-label{fill:#d5e4e7;font-size:18px}.angle-label{fill:#f6d89a;text-anchor:middle;font-size:24px;font-weight:bold}.p-angle-label{fill:#a3f2eb;text-anchor:middle;font-size:22px;font-weight:bold}.point-p{cursor:grab;touch-action:none}.point-p circle{fill:#2f6574;stroke:#d9ffff;stroke-width:3;filter:drop-shadow(0 0 11px #83d4df66)}.point-p path{stroke:#fff;fill:#e5ffff}.point-p text{fill:#d7ffff;font-size:16px;text-anchor:middle;font-weight:bold}.diagram-note{font-size:14px;fill:#a6babd;text-anchor:middle}.p-move{display:flex;gap:12px;align-items:center;padding:0 22px;color:#cbd9d3;font-size:11px}.p-move span{white-space:nowrap}.p-move button{border-color:#556d70;color:#e6e6c9;background:#223d4e;font-size:19px;min-width:48px;padding:8px;min-height:46px}.p-move input{flex:1;min-width:40px}.rail-note{text-align:center;font-size:10px;color:#9fb4ba;margin:10px 0 15px}.puzzle-panel{display:flex;flex-direction:column;gap:17px;min-height:480px}.puzzle-panel>p:not(.eyebrow){font-size:15px;color:#5c7374}.readings{display:grid;grid-template-columns:1fr 1fr;gap:10px}.readings>div{padding:17px;background:#eef0e5;border:1px solid #d5ddce;border-radius:9px;text-align:center}.readings small{display:block;font-size:11px;color:#7a887c;margin-bottom:8px}.readings b{font:400 33px Georgia,serif;color:#27737b}.dial-heading{display:flex;align-items:center;justify-content:space-between;margin:4px 0 12px}.dial-heading>span{font-size:13px}.dial-heading output{font:400 39px Georgia,serif;color:#a07836}.dial-controls{display:flex;align-items:center;gap:12px}.dial-controls button{font-size:24px;min-width:54px;height:54px;padding:5px}.dial-controls input{flex:1;min-width:0}.dial-limits{display:flex;justify-content:space-between;font-size:10px;color:#899185;margin:9px 2px}input[type=range]{appearance:none;-webkit-appearance:none;background:transparent;height:44px;touch-action:pan-y;cursor:pointer}input[type=range]::-webkit-slider-runnable-track{height:6px;background:#c7d5ce;border-radius:8px}input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;margin-top:-13px;height:32px;width:32px;border-radius:50%;background:#f4dfa4;border:2px solid #a28b54;box-shadow:0 2px 5px #5a665422}input[type=range]::-moz-range-track{height:6px;background:#c7d5ce;border-radius:8px}input[type=range]::-moz-range-thumb{height:30px;width:30px;border-radius:50%;background:#f4dfa4;border:2px solid #a28b54}.relation{border-left:3px solid #c4a770;background:#f1ecdd;padding:13px 15px;font-size:14px;line-height:1.8}.puzzle-feedback{font-size:13px;line-height:1.7;min-height:45px;color:#617470}.puzzle-feedback.error{color:#9e4f3c}.puzzle-feedback.success{color:#277b65;font-weight:bold}.big{width:100%;font-size:16px;min-height:56px}.text-button{font-size:11px;min-height:35px;background:transparent;border:0;text-decoration:underline;text-underline-offset:5px;padding:5px}.small-speech{display:flex;gap:14px;align-items:center;border-top:1px solid #e4dccb;padding-top:12px;margin-top:auto}.small-speech img{width:33px;height:66px;object-fit:contain}.small-speech p{font-size:11px;color:#7c745e;line-height:1.7}.ending{height:calc(100dvh - 72px);min-height:660px;display:flex;align-items:center;justify-content:center;overflow:hidden}.end-shade{position:absolute;inset:0;background:#10253655}.end-paper{position:relative;z-index:2;text-align:center;padding:30px 48px;background:#fff9e9f5;border:1px solid #cbb175;border-radius:16px;box-shadow:0 30px 90px #07162560;max-width:590px;margin:28px}.light-medal{font-size:64px;color:#bb9348;text-shadow:0 0 30px #e4b95077;margin:7px auto}.end-paper h1{font-size:34px;margin-bottom:18px}.end-paper>p:not(.eyebrow){font-size:14px;color:#62756e}.end-equations{display:flex;flex-direction:column;gap:8px;border-block:1px solid #e1d4b5;padding:18px 0;margin:20px 0;font-size:14px}.end-equations b{color:#9a7137;font-size:19px}.end-concept{margin-bottom:22px}.end-paper>small{display:block;font-size:10px;color:#918f80;margin-top:18px}.celebration{position:absolute;inset:0;pointer-events:none}.celebration i{position:absolute;color:#ffea99;font-size:50px;animation:glint 2s alternate infinite;text-shadow:0 0 25px #edc252;font-style:normal}.celebration i:nth-child(1){left:15%;top:23%}.celebration i:nth-child(2){right:13%;top:18%;animation-delay:.6s}.celebration i:nth-child(3){left:7%;top:65%;animation-delay:1s}.celebration i:nth-child(4){right:9%;top:71%;animation-delay:.4s}.celebration i:nth-child(5){right:24%;top:84%;animation-delay:.8s}dialog{width:min(600px,92vw);border:1px solid #bba068;border-radius:14px;background:#fff9ed;color:var(--ink);padding:28px;max-height:90dvh;box-shadow:0 20px 100px #10253377}dialog::backdrop{background:#081d30bb}.dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.dialog-heading button{font-size:24px;width:48px;padding:5px}dialog ol{padding-left:23px}dialog li{margin:20px 0}dialog li p,dialog>p{font-size:14px;margin-top:10px}.help-note{background:#edf0e4;padding:16px;border-radius:7px;margin-bottom:20px}.dialog-actions{display:flex;gap:12px;justify-content:flex-end;margin-top:22px}#restart{max-width:500px}#restart h2{font-size:22px}
+@keyframes scan-spin{to{transform:rotate(360deg)}}@keyframes star-in{from{opacity:0;transform:translate(-50%,-50%) scale(.3)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}@keyframes glint{to{opacity:.35;transform:scale(.7)}}
+@media(max-width:1100px){.topbar{gap:16px;padding:10px 20px}.course{padding-left:16px;font-size:12px}.brand{font-size:20px}.topbar nav{gap:6px}.topbar nav button{padding:9px 12px}.game-screen{padding:18px 22px}.hunt-layout{grid-template-columns:minmax(0,1fr) 250px;gap:16px}.paper{padding:20px}.hunt-panel{gap:10px}.signal-readout b{font-size:50px}.hunt-panel h2{font-size:21px}.speech{padding-top:12px}.puzzle-layout{grid-template-columns:minmax(0,1.3fr) minmax(280px,1fr);gap:16px}.puzzle-panel{gap:13px;min-height:470px}.puzzle-panel h2{font-size:22px}.puzzle-panel>p:not(.eyebrow){font-size:13px}.step-track{gap:5px}.step-track li{font-size:10px;padding:9px}.device-wrap svg{min-height:330px}.p-move{gap:8px;padding:0 15px}.p-move span{font-size:10px}.p-move button{min-width:44px}.intro-friends{right:4%;height:33%;bottom:12%}.intro-friends img{width:110px}.intro-copy{padding-top:7vh}}
+@media(max-width:850px){.topbar{height:94px;flex-wrap:wrap;gap:5px 15px;padding:10px 18px}.brand{font-size:18px}.course{font-size:11px}.course small{font-size:9px}.topbar nav{margin-left:auto}.topbar nav button{font-size:10px;padding:9px;min-height:42px}.prototype{display:none}.screen{min-height:calc(100dvh - 94px)}.intro{height:calc(100dvh - 94px);min-height:650px}.intro-copy{padding:50px 7%;max-width:650px}.intro-copy h1{font-size:47px}.intro-desc{font-size:16px}.intro-friends{bottom:7%;height:26%;right:7%}.intro-friends img{width:90px}.intro .credit{max-width:70%}.intro-steps{margin:25px 0}.section-top{margin-bottom:16px}.section-top h1{font-size:26px}.eyebrow{font-size:9px;letter-spacing:1.4px}.game-screen{padding:20px 4%}.hunt-layout{grid-template-columns:1fr}.park{max-height:none;aspect-ratio:16/9}.hunt-panel{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}.hunt-panel>.eyebrow,.hunt-panel h2,.signal-readout,.signal-track,.hunt-panel>b,.hunt-panel>p{grid-column:1}.hunt-panel .eyebrow{display:none}.signal-readout{grid-row:2}.signal-track{grid-row:3}.hunt-panel>b{grid-row:4}.hunt-panel>p{grid-row:5;min-height:0!important}.hunt-panel h2{grid-row:1}.speech{grid-column:2;grid-row:1/4;padding:0;border:0;align-self:start}.hunt-panel>button{grid-column:2}.hunt-panel #hint{grid-row:4}.hunt-panel #huntNext{grid-row:5;align-self:end}.signal-readout b{font-size:44px}.puzzle-layout{grid-template-columns:1fr}.device-wrap svg{height:430px;max-height:none;min-height:0}.puzzle-panel{min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:13px 22px}.puzzle-panel>.eyebrow,.puzzle-panel>h2,.puzzle-panel>#taskText{grid-column:1}.puzzle-panel>.eyebrow{grid-row:1}.puzzle-panel>h2{grid-row:2}.puzzle-panel>#taskText{grid-row:3}.puzzle-panel>.relation{grid-column:1;grid-row:4}.puzzle-panel>#observeReadings,.puzzle-panel>#adjuster{grid-column:2;grid-row:1/4}.puzzle-panel>#puzzleFeedback{grid-column:2;grid-row:4}.puzzle-panel>#check{grid-column:2;grid-row:5}.puzzle-panel>#mathHint{grid-column:2;grid-row:6}.puzzle-panel>.small-speech{grid-column:1;grid-row:5/7}.readings{align-self:start}.step-track li{font-size:9px;padding:8px}.step-track li:before{display:none}.device-tag{font-size:9px}.p-move{padding:0 30px}.p-move button{min-width:48px}.ending{height:auto;min-height:calc(100dvh - 94px)}.end-paper{padding:30px;max-width:550px}.end-paper h1{font-size:32px}}
+@media(max-width:540px){.topbar{height:106px}.topbar nav{width:100%;justify-content:flex-end}.course{margin-left:auto}.screen{min-height:calc(100dvh - 106px)}.intro{height:calc(100dvh - 106px);min-height:640px}.intro-copy{padding-top:35px}.intro-copy h1{font-size:37px}.intro-desc{font-size:14px}.intro-steps{font-size:10px;gap:10px}.intro-friends{height:22%;bottom:6%}.intro-friends img{width:70px}.intro .credit{max-width:65%;line-height:1.8}.section-top{align-items:flex-start;flex-wrap:wrap;gap:12px}.section-top h1{font-size:23px}.fragments span{width:47px;padding:9px 5px}.hunt-panel{padding:17px;gap:9px 14px}.hunt-panel h2{font-size:19px}.hunt-panel>b{font-size:14px}.speech img{width:30px;height:75px}.speech{gap:7px}.speech p{font-size:10px}.hunt-panel>p:not(.eyebrow){font-size:11px}.hunt-panel>button{padding:9px;font-size:11px}.park-label{font-size:9px;top:8px;left:9px;padding:7px}.map-caption{font-size:7px;right:8px;bottom:6px}.detector{height:60px;width:60px}.found{font-size:34px}.found small{font-size:10px;padding:3px}.discover-toast{font-size:10px;bottom:10px;padding:8px;left:10px}.under-note{font-size:10px}.step-track{width:100%}.step-track li{flex:1;text-align:center}.device-wrap svg{height:auto;min-height:300px}.device-tag{font-size:8px;top:10px;left:12px}.p-move{padding:0 15px}.p-move>span{display:none}.puzzle-panel{display:flex;gap:15px;padding:20px}.puzzle-panel h2{font-size:23px}.puzzle-panel>.small-speech{display:none}.end-paper{margin:18px;padding:25px 20px}.end-paper h1{font-size:28px}.end-paper>p:not(.eyebrow){font-size:12px}.end-paper .eyebrow{font-size:8px}.art-note{font-size:7px;right:15px;bottom:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(min-width:541px) and (max-width:850px){.device-wrap svg{height:350px}.puzzle-panel{row-gap:10px}}
+/* Two-stage park restoration: scene dialogue, illustrated lawn, receiving device. */
+.park.one-found .park-dim,.park.both-found .park-dim{opacity:.48}
+.park .found{opacity:.75;text-shadow:0 0 15px #e9c67d}
+.mission-badge{white-space:nowrap;color:#677e65;background:#e9edde;border:1px solid #c4cfb9;border-radius:24px;font-size:12px;padding:12px 18px}
+.device-wrap{background:#142d39}.device-wrap svg{max-height:none;min-height:0;height:auto;aspect-ratio:6/5;width:100%}
+.device-tag{z-index:2;background:#112b3dea;padding:8px 12px;border:1px solid #b79e6455;border-radius:5px;top:12px;left:12px;color:#f6e6bf}
+#moveRail{stroke:#b6e6e4;stroke-width:5;opacity:.7;stroke-dasharray:1 10}
+#targetArc{stroke-width:5;filter:drop-shadow(0 0 5px #ffd781)}
+#radii{stroke:#ffe2a2;stroke-width:2;stroke-dasharray:7 6}#sightLines{stroke:#d2f4ea;stroke-width:2;stroke-dasharray:8 6;opacity:.55}
+#centralWedge{fill:#edc66945;stroke:#ffe1a0}#pWedge{fill:#80eae030;stroke:#bef9ed;stroke-width:2;pointer-events:none}
+.lawn-label{text-anchor:middle;font-size:14px;fill:#f0ebcf;paint-order:stroke;stroke:#234237;stroke-width:4px;letter-spacing:1px}
+.angle-label,.point-label,.p-angle-label{paint-order:stroke;stroke:#173432;stroke-width:4px;stroke-linejoin:round;pointer-events:none}.p-angle-label{font-size:18px;fill:#eff8de}
+.fragment-point circle{fill:#5a6158;stroke:#e6c887;stroke-width:2;filter:drop-shadow(0 0 6px #e7c77255)}
+.point-p .receiver-body{fill:url(#receiverMetal);stroke:#f3d796;stroke-width:2;filter:drop-shadow(0 3px 4px #00171f)}
+.point-p .receiver-core{fill:#bce7dd;stroke:#e7e5bd;stroke-width:2;filter:none}.point-p .device-shadow{fill:#07182077;stroke:none}
+.point-p #receiverArms{stroke:#ffe5a4;stroke-width:8;stroke-linecap:round;fill:none;filter:drop-shadow(0 2px 2px #102230)}
+.point-p text{font-size:15px;paint-order:stroke;stroke:#16323a;stroke-width:5;stroke-linejoin:round;fill:#ffedbb;pointer-events:none}
+.point-p.installed .receiver-core{fill:#fff9c6;filter:drop-shadow(0 0 14px #ffdb6d)}.point-p.installed{cursor:default}
+#halo{stroke:none;pointer-events:none}#inbound path{fill:none;stroke:#ffe797;stroke-width:4;filter:drop-shadow(0 0 5px #ffda74)}#inbound circle{fill:#fffbd2;filter:drop-shadow(0 0 9px #fff098)}
+.p-move{padding:8px 18px 0}.rail-note{margin:5px 0 12px}.puzzle-panel{min-height:0;gap:15px}.installation-steps{display:flex;gap:7px;flex-direction:column;font-size:12px;color:#697768;border-bottom:1px solid #ded8c8;padding-bottom:12px}
+.story{height:calc(100dvh - 72px);min-height:640px;overflow:hidden;color:#fff4db;background:#132c3c}.story-shade{position:absolute;inset:0;background:linear-gradient(#10253f77,#051c36a6)}.story.restored .story-shade{background:linear-gradient(#142c3b08,#142c3b33)}
+.story-tag{position:absolute;top:24px;left:3%;background:#112c3fea;color:#ffe4ad;border:1px solid #af955c;padding:13px 20px;border-radius:5px;font-size:13px;z-index:2}
+.story .art-note{bottom:255px;right:4%;z-index:2}.story-person{position:absolute;bottom:252px;width:145px;height:260px;object-fit:contain;object-position:bottom;filter:brightness(.6) drop-shadow(0 5px 10px #081b26);transition:filter .15s}.story-person.speaking{filter:brightness(1) drop-shadow(0 5px 10px #081b26)}.story-person.minwoo{left:11%}.story-person.seoyeon{right:11%}
+.dialogue-box{position:absolute;left:4%;right:4%;bottom:20px;min-height:220px;border:1px solid #bc9d62;background:#0d293aed;border-radius:8px;padding:28px 28px 18px;z-index:3;box-shadow:0 14px 45px #0d202b33}.speaker{position:absolute;top:-18px;left:24px;background:#8d4337;border:1px solid #c9ac6d;border-radius:4px;padding:7px 28px;font:700 17px 'Batang',serif}.dialogue-box>small{position:absolute;top:14px;right:20px;color:#dcca9b;font-size:12px}.dialogue-box>p{font-size:clamp(17px,1.8vw,25px);line-height:1.7;min-height:92px;padding-right:12px}.dialogue-actions{display:flex;justify-content:space-between;gap:16px;margin-top:15px}.dialogue-actions button{background:#142f40;border-color:#b69c63;color:#fff1d4;font-size:13px}.dialogue-actions .primary{background:var(--red)}
+.concept-card{position:absolute;top:77px;left:50%;transform:translateX(-50%);width:380px;border:1px solid #d1b174;border-radius:12px;padding:17px 20px;background:#102d3dec;box-shadow:0 16px 60px #02132155;text-align:center;z-index:2}.concept-card h2{font-size:19px;color:#f4e4b8;margin-top:7px}.concept-card .eyebrow{color:#bfaf87}.concept-card svg{height:162px;max-width:100%}.concept-card>div{font-size:16px;color:#bfece1}.concept-card small{display:block;font-size:10px;color:#c5cbbd;margin-top:8px}
+.illumination{height:calc(100dvh - 72px);min-height:580px;overflow:hidden;color:#fff5d6;background:#102b3f}.light-dim{position:absolute;inset:0;background:#071d39}.light-wave{position:absolute;left:50%;top:52%;width:40vw;height:40vw;border-radius:50%;background:radial-gradient(circle,#fff7c3 0%,#ffe59c55 34%,#ffea9f00 68%);transform:translate(-50%,-50%);pointer-events:none}.light-caption{position:absolute;left:6%;bottom:9%;padding:25px 30px;background:#112b3edb;border-left:3px solid #d4b370}.light-caption .eyebrow{color:#e1c180}.light-caption h1{font-size:clamp(28px,3.5vw,48px);margin:12px 0}.light-caption>p:last-child{font:25px Georgia,serif;color:#ffdf8c}.skip-light{position:absolute;right:25px;top:25px;background:#142e3fee;color:#ffedc5;border-color:#b79e68}
+@media(min-width:851px) and (max-width:1100px){.puzzle-layout{grid-template-columns:minmax(0,1.35fr) minmax(280px,1fr)}.puzzle-panel{gap:11px;padding:17px}.puzzle-panel h2{font-size:22px}.puzzle-panel .relation{font-size:13px;padding:8px 12px}.puzzle-feedback{min-height:43px}.installation-steps{padding-bottom:8px;gap:5px}.story-person{height:235px;width:125px}.concept-card{width:350px}.concept-card svg{height:145px}.dialogue-box>p{font-size:20px}.section-top h1{font-size:26px}}
+@media(max-width:850px){.story{height:calc(100dvh - 94px);min-height:740px}.story-person{bottom:272px;height:225px;width:115px}.story-person.minwoo{left:5%}.story-person.seoyeon{right:5%}.dialogue-box{min-height:240px;padding:26px 24px 18px}.dialogue-box>p{min-height:110px;font-size:21px}.story .art-note{bottom:275px}.concept-card{top:85px;width:340px}.concept-card svg{height:145px}.puzzle-panel{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}.puzzle-panel>.eyebrow{grid-row:1}.puzzle-panel>h2{grid-row:2}.puzzle-panel>#taskText{grid-row:3}.puzzle-panel>.installation-steps{grid-column:1;grid-row:4}.puzzle-panel>.relation{grid-row:5/7}.puzzle-panel>#adjuster{grid-row:1/4}.puzzle-panel>#puzzleFeedback{grid-row:4}.puzzle-panel>#check{grid-row:5}.puzzle-panel>#mathHint{grid-row:6}.device-wrap svg{height:390px;aspect-ratio:auto;min-height:0}.puzzle-layout{gap:12px}.installation-steps{font-size:11px}.illumination{height:calc(100dvh - 94px)}.topbar nav{gap:5px}.topbar nav button{padding:8px;min-height:44px}.under-note{font-size:10px}}
+@media(max-width:540px){.story{height:calc(100dvh - 106px);min-height:760px}.story-tag{top:16px;font-size:11px;padding:10px 12px}.concept-card{top:65px;width:260px;padding:12px}.concept-card h2{font-size:15px}.concept-card svg{height:124px}.concept-card>div{font-size:13px}.concept-card small{font-size:9px}.story-person{height:165px;width:87px;bottom:280px}.dialogue-box{left:3%;right:3%;min-height:255px;padding:30px 18px 16px}.dialogue-box>p{font-size:18px;min-height:122px}.dialogue-actions button{padding:10px;font-size:12px}.speaker{font-size:14px;padding:7px 19px}.story .art-note{bottom:278px;font-size:7px}.story-person.minwoo{left:5%}.story-person.seoyeon{right:5%}.mission-badge{font-size:10px;padding:8px 12px}.puzzle-panel{display:flex}.device-wrap svg{height:auto;aspect-ratio:6/5}.device-tag{font-size:8px;padding:5px}.lawn-label{font-size:14px}.topbar nav{justify-content:space-between}.topbar nav button{font-size:11px}.illumination{height:calc(100dvh - 106px)}}
+@media(min-width:851px){.story-person{width:200px;height:340px}.story-person.minwoo{left:9%}.story-person.seoyeon{right:9%}}
+@media(min-width:541px) and (max-width:850px){.story-person{width:165px;height:300px}}
+
+/* Chapter shell: cream travel notebook, still illustration scenes, large touch targets. */
+.map-link{font-size:12px;color:#765632;text-underline-offset:4px;white-space:nowrap;display:inline-flex;align-items:center;min-height:44px;padding:8px}.topbar{position:relative;z-index:5}.topbar nav button{min-height:44px}body{overflow-x:hidden}.link-button{display:inline-flex;align-items:center;justify-content:center;padding:15px 22px;border:1px solid #c6a568;border-radius:8px;min-height:52px;text-decoration:none;font-size:14px;font-weight:bold}a{color:#886333}
+.bus-scene{height:calc(100dvh - 72px);min-height:640px;overflow:hidden;background:#102b3a;color:#fff7df}.bus-shade{position:absolute;inset:0;background:linear-gradient(90deg,#091d31dc,#102b3d66 60%,#102b3d18)}.chapter-tag{position:absolute;top:28px;left:5%;border-bottom:1px solid #d7bc7a75;padding-bottom:14px;font-size:12px;letter-spacing:2px;color:#e9d49f}.chapter-tag span{margin-left:22px;font-size:10px;color:#d6bd81}.arrival-copy{position:relative;z-index:2;padding:100px 6% 0;max-width:850px}.arrival-copy .eyebrow,.departure-copy .eyebrow{color:#d7bd7e}.arrival-copy h1{font-size:clamp(37px,4.5vw,63px);line-height:1.4;margin:19px 0}.arrival-copy h1 em{font-style:normal;color:#ffe5a2}.arrival-copy>p:not(.eyebrow){font-size:16px;color:#e1e2d5}.arrival-actions{display:flex;align-items:center;gap:12px;margin-top:28px;flex-wrap:wrap}.arrival-actions button{font-size:15px}.arrival-actions #resumeTour{background:#102f40e8;color:#ffebbb;border-color:#b99d65}.arrival-copy>small{display:block;margin-top:12px;color:#d8caaa;min-height:18px;font-size:11px}.tour-bus{position:absolute;right:4%;bottom:30px;width:min(55vw,850px);filter:drop-shadow(0 16px 15px #08121c77);pointer-events:none;object-fit:contain}.arrival-running{animation:bus-arrive 2.1s cubic-bezier(.2,.6,.25,1) both}.bus-scene .art-note{right:4%;bottom:12px;z-index:3;font-size:8px}.arrival-copy{pointer-events:none}.arrival-actions button{pointer-events:auto}.arrival-copy h1{max-width:700px}
+@keyframes bus-arrive{from{transform:translateX(-130vw)}to{transform:translateX(0)}}@keyframes bus-leave{from{transform:translateX(0)}to{transform:translateX(120vw)}}
+.tour-story{height:calc(100dvh - 72px);min-height:660px;background:#132c3c;overflow:hidden;color:#fff3d8}.tour-story-shade{position:absolute;inset:0;background:linear-gradient(#11253718,#11253700 50%,#11253740)}.tour-story.dim .scene{filter:brightness(.36) saturate(.55)}.tour-story.dim .tour-story-shade{background:#0a20342b}.tour-story .story-tag{max-width:43%;line-height:1.6}.tour-story .story-person{height:clamp(225px,36vh,345px);width:190px;bottom:248px}.tour-story .art-note{bottom:246px;right:4%}.tour-story .dialogue-box{min-height:210px}.tour-story .dialogue-box>p{min-height:90px}.scene-photo{position:absolute;top:100px;left:50%;transform:translateX(-50%);z-index:3;background:#102d3fe8;border-color:#bca36f;color:#ffe9ba;min-height:48px;font-size:12px;padding:13px 20px}.skip-story{position:absolute;top:24px;right:3%;background:#142e3feb;border-color:#b69d65;color:#fff1d0;font-size:12px;min-height:48px;z-index:3}.tour-story .scene{transition:none}
+.photo-tour{padding:28px 4% 20px;max-width:1680px;margin:auto}.photo-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:22px}.photo-heading h1{font-size:29px;margin-top:9px}.page-count{border:1px solid #cdb781;border-radius:30px;padding:11px 18px;font:20px Georgia,serif;white-space:nowrap}.photo-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);gap:26px;align-items:stretch}.photo-layout figure{margin:0;background:#142b39;border:1px solid #aa956c;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}.photo-layout figure>img{display:block;width:100%;height:clamp(310px,54vh,650px);object-fit:contain;flex:1;background:#122a39}.photo-layout figcaption{display:flex;justify-content:space-between;gap:12px;padding:12px 17px;font-size:10px;color:#efdfb7;background:#142e40}.photo-layout figcaption a{color:#e3cd9a;text-underline-offset:4px}.photo-paper{padding:28px;background:#fffcf3;border:1px solid #d9ccae;border-radius:12px;display:flex;flex-direction:column;gap:20px}.photo-paper h2{font-size:26px;line-height:1.45}.photo-paper>p:not(.eyebrow){font-size:16px;line-height:1.9;color:#475e60}.look-point{padding:17px 18px;background:#eef0e4;border-left:3px solid #ac985f;border-radius:3px}.look-point>b{font-size:12px;color:#8b683a}.look-point p{font-size:14px;margin-top:7px;line-height:1.8}.photo-speech{display:flex;align-items:center;gap:17px;margin-top:auto;padding-top:14px;border-top:1px solid #ddd3ba}.photo-speech img{width:62px;height:133px;object-fit:contain;flex:none}.photo-speech b{font-size:12px;color:#914a38}.photo-speech p{font-size:14px;margin-top:7px;line-height:1.8}.photo-actions{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:22px}.photo-actions span{font-size:12px;color:#857959}.photo-actions button{min-width:140px;font-size:14px}
+.tour-lesson{display:grid;place-items:center;min-height:calc(100dvh - 72px);padding:35px 20px}.lesson-shade{position:absolute;inset:0;background:#0a2136b3}.lesson-paper{position:relative;width:min(700px,100%);padding:35px 45px;background:#fffaf0f5;border:1px solid #c2a469;border-radius:15px;box-shadow:0 20px 70px #06152280;text-align:center}.lesson-paper h1{font-size:34px;margin:12px 0 20px}.lesson-paper>p:not(.eyebrow){font-size:15px;color:#4b6160;line-height:1.9}.lesson-lead{font-size:18px!important}.detector-guide{display:flex;align-items:flex-end;justify-content:center;gap:20px;padding:25px 0;margin-bottom:12px}.detector-guide>span{font-size:11px;color:#867047}.guide-bars{display:flex;align-items:flex-end;gap:6px;height:62px}.guide-bars i{display:block;width:18px;border-radius:5px 5px 0 0;background:#b9cab7;height:13px}.guide-bars i:nth-child(2){height:21px}.guide-bars i:nth-child(3){height:31px;background:#b7c0a0}.guide-bars i:nth-child(4){height:42px;background:#c5b379}.guide-bars i:nth-child(5){height:52px;background:#d6b66d}.guide-bars i:nth-child(6){height:62px;background:#e0b45f}.lesson-tip{display:flex;align-items:center;justify-content:center;gap:20px;padding:20px 0;margin-top:10px}.lesson-tip img{width:51px;height:103px;object-fit:contain}.lesson-tip p{font-size:14px;text-align:left}.lesson-paper>button{width:100%;margin-top:10px}
+.departure-copy{position:relative;z-index:2;left:6%;top:12%;max-width:70%}.departure-copy h1{font-size:clamp(32px,4vw,54px);margin:20px 0}.departure-copy>p:last-child{font-size:17px;color:#e5dfcd}.departure .tour-bus{bottom:55px;right:6%;width:min(68vw,950px)}.boarding-friends{position:absolute;z-index:2;bottom:50px;right:33%;display:flex;gap:18px;transition:transform 1.2s,opacity .6s}.boarding-friends img{height:150px;width:76px}.departure.boarded .boarding-friends{transform:translate(45px,-30px);opacity:0}.departure.driving .tour-bus{animation:bus-leave 3s ease-in both}
+.course-recap{min-height:calc(100dvh - 72px);padding:35px 20px;display:grid;place-items:center;isolation:isolate;overflow:hidden}.recap-paper{position:relative;text-align:center;padding:32px 46px;background:#fff9eafa;border:1px solid #c2a774;border-radius:15px;max-width:690px;box-shadow:0 25px 80px #00182888}.recap-paper h1{font-size:36px;line-height:1.4}.recap-paper>p:not(.eyebrow){font-size:15px;color:#5a6f68;margin-top:18px}.recap-math{border-block:1px solid #d5c39d;margin-top:22px;padding:20px 0}.recap-math>b{display:block;font-size:14px;color:#526c68}.recap-math>span{display:block;font:32px Georgia,serif;color:#966930;margin-top:12px}.recap-math strong{color:#8d4337}.recap-actions{display:flex;flex-direction:column;gap:10px;margin-top:24px}.recap-actions button{font-size:12px}.recap-paper small{display:block;margin-top:20px;font-size:11px;color:#907c58}.recap-paper .light-medal{font-size:58px;margin:10px}
+#realPhoto{width:min(1100px,94vw);padding:20px 24px}#realPhotoTitle{font-size:22px}#realPhotoImage{display:block;width:100%;height:min(58vh,650px);object-fit:contain;background:#142b39;margin:16px 0;border-radius:6px}#realPhotoCaption{font-size:13px;color:#5b6d64;margin:10px 0}#realPhotoSource{font-size:11px;display:inline-block;margin:10px 15px 10px 0}#realPhoto>.primary{float:right;font-size:12px}#journal>p{font-size:14px;margin:16px 0}#journal>h3{font:26px Batang,serif}#journal .eyebrow{margin-bottom:12px}#journalStatus{padding:18px;background:#edf0e4;border-radius:7px}.journal-math{line-height:1.9;color:#80572c;padding:0 18px 12px}#journal summary{min-height:48px;cursor:pointer;font-size:13px;padding:15px 0}#journal details{border-block:1px solid #ded1b6;margin:22px 0}#journal details p{font-size:11px;padding-bottom:18px}#journal details li{font-size:12px;margin:12px 0}#restartCourseOpen{font-size:12px}.save-notice{position:fixed;z-index:50;left:12px;right:12px;bottom:10px;padding:12px 18px;color:#fff6de;background:#784335;box-shadow:0 4px 15px #0004;border-radius:6px;font-size:12px}
+@media(min-width:851px) and (max-height:800px){.bus-scene{min-height:620px}.arrival-copy{padding-top:92px}.arrival-copy h1{font-size:48px}.arrival-copy>p:not(.eyebrow){font-size:14px}.tour-bus{width:52vw;bottom:18px;right:2%}.arrival-actions{margin-top:20px}.tour-story{min-height:650px}.photo-paper{padding:22px;gap:14px}.photo-paper h2{font-size:23px}.photo-paper>p:not(.eyebrow){font-size:14px}.photo-layout figure>img{height:390px}.photo-speech img{height:110px}.photo-speech p{font-size:13px}}
+@media(max-width:850px){.topbar nav{gap:5px}.topbar{height:auto;min-height:94px}.map-link{font-size:11px;padding:8px}.bus-scene,.tour-story{height:calc(100dvh - 94px);min-height:740px}.chapter-tag{top:26px;left:6%}.arrival-copy{padding-top:104px;max-width:none}.arrival-copy h1{font-size:52px}.arrival-copy>p:not(.eyebrow){font-size:16px}.tour-bus{width:85vw;right:-4%;bottom:38px}.arrival-actions{gap:10px;margin-top:30px}.arrival-actions .large{min-height:55px}.tour-story .story-person{height:285px;width:150px;bottom:280px}.tour-story .dialogue-box{min-height:240px}.tour-story .dialogue-box>p{min-height:110px;font-size:21px}.tour-story .art-note{bottom:273px;font-size:8px}.tour-story .story-tag{top:20px;font-size:12px;padding:12px;max-width:55%}.skip-story{top:20px;font-size:11px}.scene-photo{top:105px}.photo-tour{padding:22px 4%}.photo-heading h1{font-size:26px}.photo-layout{grid-template-columns:1fr;gap:16px}.photo-layout figure>img{height:390px;max-height:40vh}.photo-paper{padding:22px;gap:12px;display:grid;grid-template-columns:1.2fr 1fr;column-gap:24px}.photo-paper>.eyebrow{grid-column:1/-1}.photo-paper h2{font-size:23px;grid-column:1}.photo-paper>p:not(.eyebrow){grid-column:1;font-size:14px;grid-row:3/5}.look-point{grid-column:2;grid-row:2/4;font-size:12px;padding:13px}.look-point p{font-size:12px}.photo-speech{grid-column:2;grid-row:4;gap:12px;padding-top:12px}.photo-speech img{width:37px;height:80px}.photo-speech p{font-size:12px}.photo-actions span{display:none}.photo-actions{margin-top:16px}.tour-lesson{min-height:calc(100dvh - 94px)}.lesson-paper{padding:32px}.departure .tour-bus{width:95vw;right:-10%}.departure-copy{top:12%;max-width:85%}.boarding-friends{right:30%;bottom:52px}.course-recap{min-height:calc(100dvh - 94px)}.recap-paper{padding:30px 38px}.scene-photo{font-size:12px}.course-recap .scene{object-position:30% center}}
+@media(max-width:540px){.topbar{min-height:106px}.topbar nav{justify-content:space-between}.map-link{font-size:10px}.course{font-size:10px;padding-left:12px}.topbar nav button{font-size:11px}.bus-scene{min-height:740px}.arrival-copy{padding-top:108px}.arrival-copy h1{font-size:41px}.arrival-copy .eyebrow{font-size:8px}.arrival-copy>p:not(.eyebrow){font-size:14px}.arrival-actions{display:flex;align-items:stretch;flex-direction:column;width:88%}.arrival-actions button{font-size:14px}.tour-bus{width:108vw;right:-17%;bottom:35px}.chapter-tag{font-size:10px}.chapter-tag span{margin-left:12px;font-size:9px}.tour-story{min-height:780px}.tour-story .story-person{width:100px;height:200px;bottom:286px}.tour-story .dialogue-box{min-height:257px;padding:27px 18px 16px}.tour-story .dialogue-box>p{font-size:18px;min-height:128px}.tour-story .story-tag{font-size:10px;max-width:55%;top:15px;padding:9px}.skip-story{font-size:10px;padding:8px;top:15px}.tour-story .art-note{bottom:282px;font-size:7px}.scene-photo{top:94px;font-size:11px}.photo-heading h1{font-size:22px}.photo-heading{gap:10px}.page-count{padding:9px 13px;font-size:16px}.photo-layout figure>img{height:250px;max-height:35vh}.photo-layout figcaption{font-size:8px;padding:10px}.photo-paper{display:flex;padding:20px}.photo-paper h2{font-size:22px}.photo-paper>.eyebrow{font-size:9px}.photo-speech img{width:40px;height:85px}.photo-actions button{font-size:12px;min-width:110px}.lesson-paper{padding:25px 20px}.lesson-paper h1{font-size:27px}.lesson-lead{font-size:15px!important}.lesson-paper>p:not(.eyebrow){font-size:13px}.detector-guide{gap:12px}.lesson-tip{gap:12px}.lesson-tip p{font-size:12px}.departure-copy h1{font-size:34px}.departure .tour-bus{width:116vw;right:-20%}.boarding-friends img{height:120px;width:62px}.departure-copy>p:last-child{font-size:14px}.recap-paper{padding:26px 20px}.recap-paper h1{font-size:30px}.recap-paper>p:not(.eyebrow){font-size:13px}.recap-math>b{font-size:12px}#realPhoto{padding:15px}#realPhotoTitle{font-size:17px}#realPhoto>.primary{float:none;width:100%;margin-top:12px}}
+</style><script src="asset/michuhol-chapters.js"></script><link rel="stylesheet" href="asset/michuhol-ending.css"><script src="asset/michuhol-ending.js"></script></head><body>
+<header class="topbar"><a class="brand" href="index.html?region=michuhol-jemulpo">M<span>✦</span>TH TOUR<small>IN INCHEON</small></a><div class="course">챕터 3 · 수봉공원<small>학생 원안 · 고세찬, 이도윤</small></div><nav><button id="soundToggle" aria-pressed="true">소리 켜짐</button><button id="journalOpen">빛의 수첩</button><button id="helpOpen" hidden>조작 안내</button><button id="restartOpen" hidden>다시 하기</button><a class="map-link" href="index.html?region=michuhol-jemulpo">지역 월드맵</a></nav></header>
+<main>
+<section id="arrival" class="screen bus-scene" hidden>
+ <img class="scene" src="asset/subong-tour/entrance-night.webp" alt="수봉공원 입구를 참고해 그린 저녁 풍경"><div class="bus-shade"></div>
+ <div class="chapter-tag">미추홀 · 제물포 <span>CHAPTER 03</span></div>
+ <article class="arrival-copy"><p class="eyebrow">문학산에서 내려와, 오늘의 마지막 정류장</p><h1>이번 정류장은<br><em>수봉공원</em>입니다.</h1><p>해가 진 도시, 아직 잠들어 있는 별빛.<br>민우와 서연의 밤 산책이 시작됩니다.</p><div class="arrival-actions"><button id="leaveBus" class="primary large" disabled>버스가 도착하고 있어요…</button><button id="resumeTour" hidden>이어서 여행하기 →</button></div><small id="resumeInfo"></small></article>
+ <img id="arrivalBus" class="tour-bus" src="asset/mathtour-bus-yellow.webp" alt="오른쪽을 향해 도착하는 매스투어 버스"><span class="art-note">실제 입구를 참고한 창작 일러스트 · 매스투어 이야기</span>
+</section>
+<section id="tourStory" class="screen tour-story" hidden>
+ <img id="tourStoryBg" class="scene" alt=""><div class="tour-story-shade"></div><span id="tourStoryTag" class="story-tag"></span><button id="scenePhoto" class="scene-photo">실제 배경 보기</button><button id="skipTourStory" class="skip-story">대화 건너뛰기</button>
+ <img id="tourMinwoo" class="story-person minwoo" src="asset/민우.svg" alt="민우"><img id="tourSeoyeon" class="story-person seoyeon" src="asset/서연.svg" alt="서연"><span class="art-note">실제 장소를 참고한 창작 일러스트</span>
+ <article class="dialogue-box"><span id="tourSpeaker" class="speaker"></span><small id="tourCount"></small><p id="tourText" aria-live="polite"></p><div class="dialogue-actions"><button id="tourPrev">← 이전 대사</button><button id="tourNext" class="primary">다음 →</button></div></article>
+</section>
+<section id="photoTour" class="screen photo-tour" hidden>
+ <header class="photo-heading"><div><p id="tourPhotoLabel" class="eyebrow"></p><h1 id="tourPhotoTitle"></h1></div><span id="tourPhotoCount" class="page-count"></span></header>
+ <div class="photo-layout"><figure><img id="tourPhotoImage" alt=""><figcaption><span>실제 수봉공원 사진</span><a id="tourPhotoSource" target="_blank" rel="noopener">사진 출처 · 인천투어 ↗</a></figcaption></figure><article class="photo-paper"><p class="eyebrow">TRAVEL NOTE · 수봉공원</p><h2 id="photoTitle"></h2><p id="photoText"></p><div class="look-point"><b>함께 살펴봐요</b><p id="photoLook"></p></div><div class="photo-speech"><img id="photoPerson" alt=""><div><b id="photoSpeaker"></b><p id="photoRemark"></p></div></div></article></div>
+ <footer class="photo-actions"><button id="photoPrev">← 이전 사진</button><span>한 장씩 천천히 둘러보세요.</span><button id="photoNext" class="primary">다음 사진 →</button></footer>
+</section>
+<section id="lesson" class="screen tour-lesson" hidden>
+ <img class="scene" src="asset/subong-tour/forest-night.webp" alt="나무 사이로 이어진 별빛 산책로 일러스트"><div class="lesson-shade"></div><article class="lesson-paper"><p class="eyebrow">첫 번째 체험 · 별빛 탐지기</p><h1>빛의 신호에 귀 기울여요.</h1><p class="lesson-lead">그림을 누르거나 손가락으로 훑으며<br>숨어 있는 두 빛 <b>A · B</b>를 찾아주세요.</p><div class="detector-guide"><span>희미한 신호</span><div class="guide-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><span>가까운 빛</span></div><p>빛에 가까워질수록 <b>탐색 정확도가 높아지고 소리가 커져요.</b><br>소리를 끄더라도 숫자와 신호 막대로 찾을 수 있어요.</p><div class="lesson-tip"><img src="asset/서연.svg" alt="서연"><p>“신호가 약해지면 다른 쪽으로 움직여 보자.<br>어렵다면 <b>찾기 도움</b>을 눌러도 돼!”</p></div><button id="beginActivity" class="primary large">두 빛 찾으러 가기 →</button></article>
+</section>
+<section id="departure" class="screen bus-scene departure" hidden><img class="scene" src="asset/subong-tour/entrance-night.webp" alt="빛을 되찾은 수봉공원 입구 일러스트"><div class="bus-shade"></div><article class="departure-copy"><p class="eyebrow">CHAPTER 03 · 별빛을 품고 돌아가는 길</p><h1>안녕, 수봉공원.<br>오늘의 빛을 기억할게.</h1><p id="departureText" aria-live="polite">민우와 서연이 매스투어 버스에 오릅니다.</p></article><div id="boardingFriends" class="boarding-friends"><img src="asset/민우.svg" alt="버스에 오르는 민우"><img src="asset/서연.svg" alt="버스에 오르는 서연"></div><img id="departureBus" class="tour-bus" src="asset/mathtour-bus-yellow.webp" alt="오른쪽으로 출발하는 매스투어 버스"><button id="finishDeparture" class="skip-story">여행 마무리 보기 →</button></section>
+<section id="recap" class="screen course-recap" hidden><img class="scene" src="asset/subong-tour/moon-night.webp" alt="빛나는 초승달과 수봉공원 밤 풍경 일러스트"><div class="end-shade"></div><article class="recap-paper"><p class="eyebrow">CHAPTER 03 COMPLETE · 수봉공원</p><div class="light-medal">✦</div><h1>수봉공원에<br>수학의 빛이 돌아왔어요.</h1><p>신호를 따라 두 빛을 찾고,<br>원주각으로 모아 공원의 밤을 밝혔어요.</p><div class="recap-math"><b>같은 호를 바라보는 원주각 = 중심각 ÷ 2</b><span>60° ÷ 2 = <strong>30°</strong></span></div><p class="recap-note">수봉별마루의 야경과 오늘 찾은 수학의 빛을<br>여행 수첩에 담았습니다.</p><div class="recap-actions"><a class="primary link-button" href="index.html?region=michuhol-jemulpo">미추홀 · 제물포 월드맵 →</a><button id="reviewEnding">마지막 풍경 다시 보기</button></div><small>학생 원안 · 고세찬, 이도윤</small></article></section>
+
+<section id="intro" class="screen intro" hidden><img class="scene" src="asset/subong-light/byeolmaru-park.webp" alt="나무 사이 별빛과 달 조형물이 있는 공원 창작 일러스트"><div class="intro-shade"></div><article class="intro-copy"><p class="eyebrow">SUBONG BYEOLMARU · NIGHT EXPLORER</p><h1>잠든 별빛을<br>깨우는 <em>작은 각도.</em></h1><p class="intro-desc">희미한 두 빛을 찾아 한곳에 모아요.<br>원주각의 비밀로 수봉별마루를 밝혀 주세요.</p><div class="intro-steps"><span><b>01</b> 별빛 탐색</span><i>→</i><span><b>02</b> 원주각의 비밀</span><i>→</i><span><b>03</b> 공원 점등</span></div><button id="start" class="primary large">별빛 탐색 시작 <span>→</span></button><p class="credit">학생 원안의 탐지기 탐색과 원주각 문제를 바탕으로 만들었어요.</p></article><div class="intro-friends"><img src="asset/민우.svg" alt="민우"><img src="asset/서연.svg" alt="서연"></div><span class="art-note">수봉별마루에서 영감을 받은 창작 공간</span></section>
+
+<section id="hunt" class="screen game-screen" hidden><div class="section-top"><div><p class="eyebrow">01 · 학생 원안의 빛 탐지기</p><h1>숲에 흩어진 두 조각을 찾아요.</h1></div><div class="fragments"><span id="tokenA">✧ A</span><span id="tokenB">✧ B</span></div></div><div class="hunt-layout"><div id="park" class="park" tabindex="0" role="application" aria-label="빛 탐지기 지도. 손가락으로 누르거나 움직이세요. 키보드 방향키로도 탐색할 수 있어요."><img src="asset/subong-light/byeolmaru-park.webp" alt="빛의 조각을 탐색하는 공원 일러스트" draggable="false"><div class="park-dim"></div><div class="park-label">수봉별마루 · 별빛 탐색</div><div id="searchHint" class="search-hint" hidden></div><div id="foundA" class="found" hidden>✦<small>A</small></div><div id="foundB" class="found" hidden>✦<small>B</small></div><div id="detector" class="detector"><span></span><i></i><b>✧</b></div><span class="map-caption">체험을 위해 구성한 탐색 그림입니다.</span><div id="discoverToast" class="discover-toast" role="status" hidden></div></div><aside class="hunt-panel paper"><p class="eyebrow">LIGHT DETECTOR</p><h2>별빛의 신호</h2><div class="signal-readout"><b id="signalPercent">0</b><span>%</span></div><div class="signal-track"><i id="signalFill"></i></div><b id="signalTitle">어디에 숨어 있을까요?</b><p id="signalText">그림 위를 누르거나 손가락으로 천천히 훑어보세요.</p><div class="speech"><img src="asset/서연.svg" alt="서연"><p id="huntSpeech">“가까워질수록 소리도 커져. 신호가 가장 강한 곳을 찾아보자!”</p></div><button id="hint">찾기 도움</button><button id="huntNext" class="primary" disabled>빛의 조각 0 / 2</button></aside></div><p class="under-note">그림을 누르거나 훑어보세요. 가까워질수록 신호음과 탐색 정확도가 함께 높아져요.</p></section>
+
+
+<section id="story" class="screen story" hidden>
+  <img class="scene" src="asset/subong-light/byeolmaru-park.webp" alt="수봉별마루에서 영감을 받은 공원 일러스트"><div class="story-shade"></div>
+  <div id="storyTag" class="story-tag"></div><span class="art-note">수봉별마루에서 영감을 받은 창작 공간</span>
+  <div id="conceptCard" class="concept-card" hidden><p class="eyebrow">같은 호 AB를 바라볼 때</p><h2>원 위의 각은, 중심의 각의 절반</h2><svg viewBox="0 0 360 190" aria-label="중심 O와 원 위 P에서 같은 호 AB를 바라보는 그림"><circle cx="180" cy="90" r="72" fill="#60826b22" stroke="#bd9b61"/><path d="M216 152.35L180 90L144 152.35" fill="none" stroke="#d9a452" stroke-width="2"/><path d="M216 152.35L180 18L144 152.35" fill="none" stroke="#6dd8d4" stroke-width="3"/><path d="M216 152.35A72 72 0 0 1 144 152.35" fill="none" stroke="#f2c66f" stroke-width="5"/><g fill="#f9ebcf" font-size="17" text-anchor="middle"><text x="180" y="14">P</text><text x="195" y="91">O</text><text x="228" y="173">A</text><text x="131" y="173">B</text></g><text x="180" y="61" text-anchor="middle" fill="#9cece1">?°</text><text x="180" y="130" text-anchor="middle" fill="#f2c66f">60°</text></svg><div>원주각 ∠APB = 중심각 ∠AOB ÷ 2</div><small>P는 금색 호 AB의 반대편 원호 위에 있어요.</small></div>
+  <img id="storyMinwoo" class="story-person minwoo" src="asset/민우.svg" alt="민우"><img id="storySeoyeon" class="story-person seoyeon" src="asset/서연.svg" alt="서연">
+  <article class="dialogue-box"><span id="speaker" class="speaker"></span><small id="storyCount"></small><p id="storyText" aria-live="polite"></p><div class="dialogue-actions"><button id="storyPrev">← 이전 대사</button><button id="storyNext" class="primary">다음 →</button></div></article>
+</section>
+<section id="puzzle" class="screen game-screen" hidden>
+  <div class="section-top"><div><p class="eyebrow">02 · 원주각으로 두 빛을 한곳에</p><h1>원형 길 위에 빛 모음 장치를 세워요.</h1></div><span class="mission-badge">1단계 완료 ✓</span></div>
+  <div class="puzzle-layout"><div class="device-wrap">
+    <svg id="diagram" viewBox="0 0 720 600" role="img" aria-label="공원의 원형 길에서 두 빛을 모으는 장치를 설치하는 그림">
+      <defs><radialGradient id="receiverMetal"><stop stop-color="#f9e9aa"/><stop offset=".6" stop-color="#ac8448"/><stop offset="1" stop-color="#483e31"/></radialGradient><radialGradient id="receiverGlow"><stop stop-color="#fffacd" stop-opacity=".95"/><stop offset="1" stop-color="#ffe49a" stop-opacity="0"/></radialGradient></defs>
+      <image href="asset/subong-light/circular-lawn-park.webp" x="0" y="-25" width="720" height="720" preserveAspectRatio="none"/>
+      <rect width="720" height="600" fill="#061d30" opacity=".22"/>
+      <circle cx="360" cy="292" r="200" fill="none" stroke="#f5ead0" stroke-width="2" stroke-dasharray="3 8" opacity=".6"/>
+      <path id="moveRail"/><path id="targetArc"/><path id="radii"/><path id="sightLines"/><path id="centralWedge"/>
+      <text x="360" y="262" class="lawn-label">잔디밭 · 설치할 수 없어요</text><circle cx="360" cy="292" r="5" fill="#fff1be"/><text x="343" y="288" class="point-label">O</text><text id="centralText" x="360" y="371" class="angle-label">60°</text>
+      <g id="pointA" class="fragment-point"><circle r="19"/><text y="6">A</text></g><g id="pointB" class="fragment-point"><circle r="19"/><text y="6">B</text></g>
+      <g id="inbound" hidden><path id="rayA"/><path id="rayB"/><circle id="sparkA" r="8"/><circle id="sparkB" r="8"/></g>
+      <g id="pointP" class="point-p"><ellipse cy="8" rx="29" ry="17" class="device-shadow"/><circle id="halo" r="78" fill="url(#receiverGlow)" opacity="0"/><circle r="24" class="receiver-body"/><path id="receiverArms"/><circle r="10" class="receiver-core"/><text y="-37">P · 빛 모음 장치</text></g>
+      <path id="pWedge"/><text id="pAngleText" class="p-angle-label"></text>
+    </svg>
+    <div class="p-move"><span>장치 P의 자리</span><button id="movePLeft" aria-label="장치를 왼쪽으로 이동">←</button><input id="position" aria-label="원형 길 위 장치 P의 위치" type="range" min="170" max="370" step="1" value="270"><button id="movePRight" aria-label="장치를 오른쪽으로 이동">→</button></div>
+    <p class="rail-note">푸른색으로 표시한 길을 누르거나 장치 P를 끌어 옮겨요.</p>
+  </div><aside class="puzzle-panel paper">
+    <p class="eyebrow">빛을 모으는 장치 · 설치 준비</p><h2>중심각 60°, 장치는 몇 도?</h2><p id="taskText">A와 B의 빛을 동시에 받아들이도록 장치의 두 날개를 열어 주세요.</p>
+    <div class="installation-steps"><span>① 원형 길 위에 자리 잡기</span><span>② 각도를 맞추고 설치하기</span></div>
+    <div id="adjuster"><div class="dial-heading"><span>장치가 열리는 각도</span><output id="dialValue">20°</output></div><div class="dial-controls"><button id="minus" aria-label="각도 5도 줄이기">−</button><input id="angle" type="range" min="10" max="70" step="5" value="20" aria-label="장치가 열리는 각도"><button id="plus" aria-label="각도 5도 늘리기">+</button></div><div class="dial-limits"><span>10°</span><span>한 칸은 5°</span><span>70°</span></div></div>
+    <div class="relation">같은 호 AB를 바라보는<br><b>원주각 = 중심각 ÷ 2</b></div><div id="puzzleFeedback" class="puzzle-feedback" role="status">길 위의 자리는 옮겨도 괜찮아요. 알맞은 각도로 장치를 열어 주세요.</div>
+    <button id="check" class="primary big">이 각도로 장치 설치하기</button><button id="mathHint" class="text-button">원주각 설명 다시 보기</button>
+  </aside></div><p class="under-note">수학 체험을 위해 공원 속 잔디밭과 길을 원형으로 구성한 창작 그림입니다.</p>
+</section>
+<section id="illumination" class="screen illumination" hidden><img class="scene" src="asset/subong-light/byeolmaru-park.webp" alt="수학의 빛이 퍼지며 밝아지는 수봉별마루 공원 일러스트"><div id="lightDim" class="light-dim"></div><div id="lightWave" class="light-wave"></div><div class="celebration" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i></div><article class="light-caption"><p class="eyebrow">수학의 빛을 되찾았어요</p><h1>하나로 모인 빛이<br>공원으로 퍼져 나가요.</h1><p>60° ÷ 2 = 30°</p></article><button id="finishLight" class="skip-light">마무리 대화로 →</button></section>
+<section id="ending" class="screen ending" hidden><img class="scene" src="asset/subong-light/byeolmaru-park.webp" alt="밝아진 공원 일러스트"><div class="end-shade"></div><article class="end-paper"><p class="eyebrow">SUBONG BYEOLMARU · LIGHT RESTORED</p><div class="light-medal">✦</div><h1>희미한 두 빛이<br>공원의 별빛이 되었어요.</h1><p>탐색으로 찾고, 원주각으로 모았어요.<br>수봉공원에 수학의 빛이 돌아왔습니다.</p><div class="end-equations"><span>중심각 <b>60°</b> ÷ 2 = 원주각 <b>30°</b></span></div><button id="replay" class="primary large">다시 체험하기 ↻</button><small>이 체험판은 월드맵의 완료 기록을 바꾸지 않습니다.</small></article></section>
+</main>
+<dialog id="help"><div class="dialog-heading"><h2>손가락 하나로 체험해요.</h2><button data-close="help" aria-label="안내 닫기">×</button></div><ol><li><b>빛 탐색</b><p>그림을 누르거나 훑어보세요. 신호가 강한 곳에 조각이 있어요. 가까울수록 소리도 커져요. 위의 소리 버튼으로 끌 수 있어요. 키보드는 그림에 초점을 맞추고 방향키를 쓰세요.</p></li><li><b>원형 길에 자리 잡기</b><p>푸른색 길을 누르거나 P를 끌어 옮겨요. 아래 슬라이더·화살표도 사용할 수 있어요.</p></li><li><b>각도 맞추기</b><p>슬라이더 또는 −·+로 각도를 바꿔요. 큰 설치 버튼을 누르면 두 빛을 모을 수 있는지 확인해요.</p></li></ol><p class="help-note">A·B 사이 금색 호를 피한 반대쪽 원호에서 관찰합니다. 실제 공원 산책로가 정확한 원이라는 뜻은 아니에요.</p><button class="primary" data-close="help">알겠어요</button></dialog>
+<dialog id="restart"><h2>처음부터 다시 체험할까요?</h2><p>이번 체험의 탐색과 각도 맞추기를 다시 시작해요.</p><div class="dialog-actions"><button data-close="restart">계속 체험하기</button><button id="restartConfirm" class="primary">처음부터</button></div></dialog>
+<script>(function(root){
+  'use strict';
+  const RAD=Math.PI/180;
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const point=(degrees,r=200,c={x:360,y:292})=>({x:c.x+r*Math.cos(degrees*RAD),y:c.y+r*Math.sin(degrees*RAD)});
+  function angle(a,p,b){const u={x:a.x-p.x,y:a.y-p.y},v={x:b.x-p.x,y:b.y-p.y};const n=Math.hypot(u.x,u.y)*Math.hypot(v.x,v.y);return Math.acos(clamp((u.x*v.x+u.y*v.y)/n,-1,1))/RAD;}
+  function geometry(central,p=270){const c=clamp(central,40,120),P=point(clamp(p,170,370)),A=point(90-c/2),B=point(90+c/2);return {A,B,P,O:{x:360,y:292},central:c,inscribed:angle(A,P,B)};}
+  function pointerAngle(x,y){let d=Math.atan2(y-292,x-360)/RAD;if(d<170)d+=360;return clamp(d,170,370);}
+  function cone(g,opening){const u={x:g.A.x-g.P.x,y:g.A.y-g.P.y},v={x:g.B.x-g.P.x,y:g.B.y-g.P.y},un=Math.hypot(u.x,u.y),vn=Math.hypot(v.x,v.y);const mid=Math.atan2(u.y/un+v.y/vn,u.x/un+v.x/vn),h=opening*RAD/2,len=Math.max(un,vn)+30;return {left:{x:g.P.x+Math.cos(mid-h)*len,y:g.P.y+Math.sin(mid-h)*len},right:{x:g.P.x+Math.cos(mid+h)*len,y:g.P.y+Math.sin(mid+h)*len},middle:mid};}
+  const targets=[{id:'A',x:.25,y:.72},{id:'B',x:.76,y:.36}];
+  function signal(x,y,found){const candidates=targets.filter(t=>!found.includes(t.id)).map(t=>({...t,distance:Math.hypot(x-t.x,(y-t.y)*.5625)})).sort((a,b)=>a.distance-b.distance);const near=candidates[0];return near?{...near,strength:clamp(1-near.distance/.5,0,1),hit:near.distance<=.055}:null;}
+  const validAnswer=(stage,opening,central)=>stage==='match'&&central===60&&opening===30;
+  const soundLevel=strength=>{const s=clamp(strength,0,1);return {frequency:180+620*s,gain:.004+.09*s*s};};
+  const api={clamp,point,angle,geometry,pointerAngle,cone,targets,signal,validAnswer,soundLevel};root.SubongMath=api;if(typeof module!=='undefined')module.exports=api;
+})(typeof window==='undefined'?globalThis:window);
+</script><script>/* One quiet sine voice, unlocked by a user gesture; never required to play. */
+function createDetectorAudio(onState) {
+  let ctx,osc,gain,timer,enabled=true,unavailable=false,wanted=null;
+  function label(){onState(unavailable?'소리 사용 불가':enabled?'소리 켜짐':'소리 꺼짐',enabled&&!unavailable);}
+  function apply(){
+    if(!ctx||!gain)return;
+    const now=ctx.currentTime,level=SubongMath.soundLevel(wanted??0);
+    gain.gain.cancelScheduledValues(now);
+    gain.gain.setTargetAtTime(enabled&&wanted!==null&&!document.hidden?level.gain:0,now,.06);
+    osc.frequency.setTargetAtTime(level.frequency,now,.06);
+  }
+  function unlock(){
+    if(!enabled||unavailable)return;
+    try {
+      if(!ctx){
+        const Audio=window.AudioContext||window.webkitAudioContext;
+        if(!Audio)throw new Error('AudioContext unavailable');
+        ctx=new Audio();osc=ctx.createOscillator();gain=ctx.createGain();
+        osc.type='sine';gain.gain.value=0;osc.connect(gain);gain.connect(ctx.destination);osc.start();
+      }
+      const result=ctx.resume();
+      Promise.resolve(result).then(apply).catch(()=>{unavailable=true;stop();label();});
+    }catch(e){unavailable=true;stop();label();}
+  }
+  function stop(){clearTimeout(timer);wanted=null;apply();}
+  function scan(strength){
+    if(!enabled)return;
+    unlock();wanted=SubongMath.clamp(strength,0,1);apply();
+    clearTimeout(timer);timer=setTimeout(stop,1100);
+  }
+  function toggle(){stop();enabled=!enabled;if(enabled)unlock();label();}
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+  window.addEventListener('blur',stop);window.addEventListener('pagehide',stop);
+  label();return {unlock,scan,stop,toggle};
+}
+</script><script>(()=>{
+'use strict';
+const M=SubongMath,$=id=>document.getElementById(id);
+let active='intro',found=[],probe={x:.5,y:.66},p=270,opening=20,solved=false,dragProbe=false,dragP=false,toastTimer,raf=0;
+let storyKind='before',storyIndex=0,returnToPuzzle=false;
+const audio=createDetectorAudio((label,on)=>{$('soundToggle').textContent=label;$('soundToggle').setAttribute('aria-pressed',String(on));});
+const dialogue={
+ before:[
+  ['민우','찾았다! 두 빛이 모두 여기 있었어. 그런데 아직 공원을 밝히기에는 너무 희미해.'],
+  ['서연','A와 B의 빛을 한곳에 모아 보자. 빛 모음 장치를 세우면 수학의 빛을 되찾을 수 있을 거야.'],
+  ['민우','가운데는 잔디밭이네. 잔디를 보호해야 하니까 안쪽에는 장치를 설치할 수 없겠어.'],
+  ['서연','그럼 잔디밭 둘레의 원형 길 위에 세우자. 원주각의 개념을 이용하면 두 빛을 받을 각도를 알 수 있어!'],
+  ['민우','원주각? 장치를 세우는 자리와 어떤 관계가 있어?',true],
+  ['서연','원 위의 점 P에서 A와 B를 이었을 때 생기는 각이 원주각이야. 중심 O에서 A와 B를 이으면 중심각이 되고.',true],
+  ['서연','같은 호 AB를 바라보는 원주각은 중심각의 절반이야. 표시된 반대편 길에서는 자리를 옮겨도 원주각이 같아.',true],
+  ['민우','중심각이 60°니까, 그 절반만큼 장치를 열면 되겠네. 잔디를 지키면서 두 빛을 한곳에 모아 보자!',true]
+ ],
+ after:[
+  ['민우','와! 희미했던 두 빛이 장치에 모이더니, 나무 사이와 공원의 길까지 환해졌어!'],
+  ['서연','중심각 60°의 절반인 30°로 장치를 열었더니 두 빛을 함께 받을 수 있었지.'],
+  ['민우','장치를 원형 길 위에 세워서 잔디도 지켰어. 원주각이 우리에게 딱 맞는 각도를 알려 준 거야.'],
+  ['서연','우리가 찾아 모은 수학의 빛이 수봉공원의 별빛이 되었네. 이제 이 환한 풍경을 함께 즐기자!']
+ ]
+};
+function closed(){return !document.querySelector('dialog[open]');}
+function show(id){audio.stop();dragP=dragProbe=false;active=id;if(id==='ending'&&window.SubongHost){window.SubongHost.onComplete(snapshot());return;}document.querySelectorAll('main>.screen').forEach(el=>el.hidden=el.id!==id);window.scrollTo(0,0);notifyHost();}
+function snapshot(){return {version:1,active,found:[...found],probe:{...probe},p,opening,solved,storyKind,storyIndex,returnToPuzzle};}
+function notifyHost(){if(window.SubongHost)queueMicrotask(()=>window.SubongHost?.onChange(snapshot()));}
+function stopAnimation(){cancelAnimationFrame(raf);raf=0;}
+function animate(duration,step,done){
+ stopAnimation();let elapsed=0,last=null;
+ function frame(now){
+  if(last!==null&&!document.hidden&&closed())elapsed+=Math.min(now-last,64);
+  last=now;const t=M.clamp(elapsed/duration,0,1);step(t);
+  if(t<1)raf=requestAnimationFrame(frame);else{raf=0;done();}
+ }
+ raf=requestAnimationFrame(frame);
+}
+function reset(){
+ stopAnimation();clearTimeout(toastTimer);found=[];probe={x:.5,y:.66};p=270;opening=20;solved=false;
+ $('park').classList.remove('one-found','both-found');['A','B'].forEach(id=>{$('found'+id).hidden=true;$('token'+id).classList.remove('found-token');});
+ $('searchHint').hidden=$('discoverToast').hidden=true;$('hint').disabled=false;$('huntNext').disabled=true;$('huntNext').textContent='빛의 조각 0 / 2';
+ $('huntSpeech').textContent='“가까워질수록 소리도 커져. 신호가 가장 강한 곳을 찾아보자!”';paintProbe(false);show('intro');
+}
+function announce(text){$('discoverToast').textContent=text;$('discoverToast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>{$('discoverToast').hidden=true;},2400);}
+M.targets.forEach(t=>{const el=$('found'+t.id);el.style.left=t.x*100+'%';el.style.top=t.y*100+'%';});
+function paintProbe(scan=true){
+ $('detector').style.left=probe.x*100+'%';$('detector').style.top=probe.y*100+'%';const s=M.signal(probe.x,probe.y,found);
+ if(!s){audio.stop();$('signalPercent').textContent='100';$('signalFill').style.width='100%';$('signalTitle').textContent='1단계 완료 · 두 빛을 찾았어요';$('signalText').textContent='아직 희미한 A와 B. 이제 한곳에 모을 방법을 생각해 봐요.';$('detector').classList.remove('hot');return;}
+ const percent=Math.round(s.strength*100);$('signalPercent').textContent=percent;$('signalFill').style.width=percent+'%';$('detector').classList.toggle('hot',s.strength>.78);
+ $('signalTitle').textContent=s.strength>.82?'아주 가까워요!':s.strength>.55?'소리가 점점 커져요':s.strength>.25?'희미한 신호가 들려요':'다른 쪽도 살펴볼까요?';
+ $('signalText').textContent=s.strength>.82?'이 주변을 조금씩 훑어보세요.':'신호가 더 강해지는 쪽으로 손가락을 움직여요.';
+ if(scan)audio.scan(s.strength);
+ if(scan&&s.hit){
+  found.push(s.id);$('found'+s.id).hidden=false;$('token'+s.id).classList.add('found-token');$('park').classList.toggle('one-found',found.length===1);$('park').classList.toggle('both-found',found.length===2);
+  $('searchHint').hidden=true;announce('희미한 빛 '+s.id+' 발견!');$('huntNext').textContent=found.length===2?'두 빛을 모을 방법은? →':'빛의 조각 1 / 2';$('huntNext').disabled=found.length!==2;$('hint').disabled=found.length===2;
+  $('huntSpeech').textContent=found.length===2?'“두 빛이 아직 희미해. 한곳에 모을 방법을 찾아보자!”':'“하나 찾았어! 이번에는 다른 곳을 찾아보자.”';audio.stop();paintProbe(false);
+ }
+}
+function scanPointer(e){const r=$('park').getBoundingClientRect();probe={x:M.clamp((e.clientX-r.left)/r.width,0,1),y:M.clamp((e.clientY-r.top)/r.height,0,1)};paintProbe();}
+$('park').onpointerdown=e=>{if(active!=='hunt'||!closed()||e.button!==0)return;e.preventDefault();dragProbe=true;$('park').setPointerCapture?.(e.pointerId);scanPointer(e);};
+$('park').onpointermove=e=>{if(active==='hunt'&&dragProbe&&closed())scanPointer(e);};
+$('park').onpointerup=$('park').onpointercancel=$('park').onlostpointercapture=()=>{dragProbe=false;};
+$('park').onkeydown=e=>{if(active!=='hunt'||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)||!closed())return;e.preventDefault();probe={x:M.clamp(probe.x+(e.key==='ArrowLeft'?-.025:e.key==='ArrowRight'?.025:0),0,1),y:M.clamp(probe.y+(e.key==='ArrowUp'?-.04:e.key==='ArrowDown'?.04:0),0,1)};paintProbe();};
+$('hint').onclick=()=>{const t=M.targets.find(t=>!found.includes(t.id));if(!t)return;$('searchHint').hidden=false;$('searchHint').style.left=t.x*100+'%';$('searchHint').style.top=t.y*100+'%';$('huntSpeech').textContent='“점선 안에서 신호가 가장 강한 곳을 찾아보자.”';};
+$('start').onclick=()=>{show('hunt');audio.unlock();paintProbe(false);};
+$('huntNext').onclick=()=>{if(found.length===2)startStory('before');};
+function startStory(kind,review=false){storyKind=kind;storyIndex=review?4:0;returnToPuzzle=review;show('story');$('story').classList.toggle('restored',kind==='after');renderStory();}
+function renderStory(){
+ const lines=dialogue[storyKind],line=lines[storyIndex];$('speaker').textContent=line[0];$('storyText').textContent=line[1];$('storyCount').textContent=(storyIndex+1)+' / '+lines.length;
+ $('storyTag').textContent=storyKind==='before'?'두 빛을 모을 방법 · 원형 길에서':'수학의 빛을 되찾은 수봉공원';$('conceptCard').hidden=!line[2];
+ $('storyMinwoo').classList.toggle('speaking',line[0]==='민우');$('storySeoyeon').classList.toggle('speaking',line[0]==='서연');$('storyPrev').disabled=storyIndex===0;
+ $('storyNext').textContent=storyIndex<lines.length-1?'다음 →':storyKind==='before'?(returnToPuzzle?'장치로 돌아가기 →':'빛 모음 장치 설치하기 →'):'체험 마무리 →';
+}
+$('storyPrev').onclick=()=>{if(storyIndex>0){storyIndex--;renderStory();}};
+$('storyNext').onclick=()=>{if(storyIndex<dialogue[storyKind].length-1){storyIndex++;renderStory();}else if(storyKind==='before'){show('puzzle');if(!returnToPuzzle)beginPuzzle();}else show('ending');};
+function path(points){return points.map((pt,i)=>(i?'L':'M')+pt.x.toFixed(3)+' '+pt.y.toFixed(3)).join(' ');}
+function arc(center,r,start,end,sector=false){const a=M.point(start,r,center),b=M.point(end,r,center);return (sector?`M${center.x} ${center.y} L`:'M')+`${a.x} ${a.y} A${r} ${r} 0 ${end-start>180?1:0} 1 ${b.x} ${b.y}`+(sector?' Z':'');}
+function draw(){
+ const g=M.geometry(60,p),c=M.cone(g,opening),direction=c.middle*180/Math.PI;
+ for(const key of ['A','B','P'])$('point'+key).setAttribute('transform',`translate(${g[key].x} ${g[key].y})`);
+ $('moveRail').setAttribute('d',arc(g.O,200,170,370));$('targetArc').setAttribute('d',arc(g.O,200,60,120));$('radii').setAttribute('d',path([g.A,g.O,g.B]));$('sightLines').setAttribute('d',path([g.A,g.P,g.B]));$('centralWedge').setAttribute('d',arc(g.O,49,60,120,true));
+ // The adjustable sector is the receiver's opening, not the fixed mathematical angle APB.
+ $('pWedge').setAttribute('d',arc(g.P,49,direction-opening/2,direction+opening/2,true));
+ const label=M.point(direction,82,g.P);$('pAngleText').setAttribute('x',label.x);$('pAngleText').setAttribute('y',label.y);$('pAngleText').textContent=`장치 ${opening}°`;
+ const local={x:0,y:0};$('receiverArms').setAttribute('d',path([M.point(direction-opening/2,37,local),local,M.point(direction+opening/2,37,local)]));
+ $('position').value=p;$('angle').value=opening;$('dialValue').textContent=opening+'°';$('movePLeft').disabled=solved||p<=170;$('movePRight').disabled=solved||p>=370;
+ $('diagram').setAttribute('aria-label',`공원의 원형 길. 중심각 60도. 장치는 ${opening}도 열려 있습니다. P는 호 AB 반대편 원호 위에 있습니다.`);
+}
+function beginPuzzle(){p=270;opening=20;solved=false;$('inbound').setAttribute('hidden','');$('halo').setAttribute('opacity','0');$('pointP').classList.remove('installed');
+ for(const id of ['position','angle','minus','plus','check'])$(id).disabled=false;
+ $('mathHint').hidden=false;$('check').textContent='이 각도로 장치 설치하기';$('puzzleFeedback').className='puzzle-feedback';$('puzzleFeedback').textContent='길 위의 자리는 옮겨도 괜찮아요. 알맞은 각도로 장치를 열어 주세요.';draw();
+}
+function moveP(value){if(solved)return;p=M.clamp(Number(value),170,370);draw();}
+$('position').oninput=e=>moveP(e.target.value);$('movePLeft').onclick=()=>moveP(p-40);$('movePRight').onclick=()=>moveP(p+40);
+function localSVG(e){const r=$('diagram').getBoundingClientRect(),s=Math.min(r.width/720,r.height/600),ox=(r.width-720*s)/2,oy=(r.height-600*s)/2;return {x:(e.clientX-r.left-ox)/s,y:(e.clientY-r.top-oy)/s};}
+$('diagram').onpointerdown=e=>{if(active!=='puzzle'||!closed()||solved||e.button!==0)return;const pt=localSVG(e),P=M.geometry(60,p).P,r=Math.hypot(pt.x-360,pt.y-292);let angle=Math.atan2(pt.y-292,pt.x-360)*180/Math.PI;if(angle<170)angle+=360;
+ if(Math.hypot(pt.x-P.x,pt.y-P.y)>43&&(Math.abs(r-200)>30||angle>370))return;
+ e.preventDefault();dragP=true;$('diagram').setPointerCapture?.(e.pointerId);moveP(M.pointerAngle(pt.x,pt.y));};
+$('diagram').onpointermove=e=>{if(dragP&&closed()&&!solved){e.preventDefault();const pt=localSVG(e);moveP(M.pointerAngle(pt.x,pt.y));}};
+$('diagram').onpointerup=$('diagram').onpointercancel=$('diagram').onlostpointercapture=()=>{dragP=false;};
+function adjust(value){if(solved)return;opening=M.clamp(Math.round(Number(value)/5)*5,10,70);$('puzzleFeedback').className='puzzle-feedback';$('puzzleFeedback').textContent='A와 B에서 오는 두 선과 장치의 날개가 나란해지는 각도를 찾아요.';draw();}
+$('angle').oninput=e=>adjust(e.target.value);$('minus').onclick=()=>adjust(opening-5);$('plus').onclick=()=>adjust(opening+5);
+$('check').onclick=()=>{
+ if(solved||active!=='puzzle'||!closed())return;
+ if(!M.validAnswer('match',opening,60)){$('puzzleFeedback').className='puzzle-feedback error';$('puzzleFeedback').textContent=opening<30?'아직 너무 좁아요. 같은 호를 보는 중심각 60°의 절반을 생각해 보세요.':'너무 넓게 열렸어요. 같은 호를 보는 중심각 60°의 절반을 생각해 보세요.';return;}
+ solved=true;dragP=false;for(const id of ['position','angle','minus','plus','check','movePLeft','movePRight'])$(id).disabled=true;
+ $('mathHint').hidden=true;$('check').textContent='두 빛이 장치로 모이고 있어요…';$('puzzleFeedback').className='puzzle-feedback success';$('puzzleFeedback').textContent='설치 완료! 60° ÷ 2 = 30°. A와 B의 빛이 P로 모여요.';$('pointP').classList.add('installed');draw();gatherLight();
+};
+function gatherLight(){
+ const g=M.geometry(60,p);$('inbound').removeAttribute('hidden');
+ const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+ animate(reduced?700:2900,t=>{
+  for(const id of ['A','B']){const source=g[id],progress=M.clamp(t*1.4,0,1),end={x:source.x+(g.P.x-source.x)*progress,y:source.y+(g.P.y-source.y)*progress};$('ray'+id).setAttribute('d',path([source,end]));$('spark'+id).setAttribute('cx',end.x);$('spark'+id).setAttribute('cy',end.y);$('spark'+id).setAttribute('opacity',t>.85?'0':'1');}
+  $('halo').setAttribute('opacity',String(M.clamp((t-.55)*2.4,0,1)));
+ },spreadLight);
+}
+function spreadLight(){
+ show('illumination');$('lightDim').style.opacity='.68';$('lightWave').style.transform='translate(-50%,-50%) scale(.1)';
+ const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+ animate(reduced?1100:4200,t=>{$('lightDim').style.opacity=String(.68*(1-t));$('lightWave').style.transform=`translate(-50%,-50%) scale(${.1+t*5})`;$('lightWave').style.opacity=String((1-t)*.7);},finishLight);
+}
+function finishLight(){stopAnimation();startStory('after');}
+$('finishLight').onclick=()=>{if(active==='illumination')finishLight();};$('mathHint').onclick=()=>startStory('before',true);
+$('soundToggle').onclick=()=>audio.toggle();
+function openDialog(id){audio.stop();dragP=dragProbe=false;$(id).showModal();}
+$('helpOpen').onclick=()=>openDialog('help');$('restartOpen').onclick=()=>openDialog('restart');
+ document.querySelectorAll('[data-close]').forEach(el=>el.onclick=()=>$(el.dataset.close).close());
+$('restartConfirm').onclick=()=>{$('restart').close();reset();};$('replay').onclick=reset;
+window.addEventListener('blur',()=>{dragP=dragProbe=false;});document.addEventListener('visibilitychange',()=>{dragP=dragProbe=false;});
+window.SubongActivity={
+ snapshot,
+ pauseAudio(){audio.stop();dragP=dragProbe=false;},
+ stop(){stopAnimation();audio.stop();dragP=dragProbe=false;active='suspended';},
+ start(value){
+  reset();
+  if(!value||value.version!==1){show('hunt');audio.unlock();return;}
+  found=M.targets.map(t=>t.id).filter(id=>Array.isArray(value.found)&&value.found.includes(id));
+  if(Number.isFinite(value.probe?.x)&&Number.isFinite(value.probe?.y))probe={x:M.clamp(value.probe.x,0,1),y:M.clamp(value.probe.y,0,1)};
+  for(const id of found){$('found'+id).hidden=false;$('token'+id).classList.add('found-token');}
+  $('huntNext').disabled=found.length!==2;$('huntNext').textContent=found.length===2?'두 빛을 모을 방법은? →':`빛의 조각 ${found.length} / 2`;$('hint').disabled=found.length===2;paintProbe(false);
+  if(found.length!==2){show('hunt');return;}
+  if(value.solved===true&&value.opening===30){p=Number.isFinite(value.p)?M.clamp(value.p,170,370):270;opening=30;solved=true;startStory('after');if(value.active==='story'&&value.storyKind==='after'){storyIndex=M.clamp(Number(value.storyIndex)||0,0,dialogue.after.length-1);renderStory();}return;}
+  if(value.active==='puzzle'){show('puzzle');beginPuzzle();p=Number.isFinite(value.p)?M.clamp(value.p,170,370):270;opening=Number.isFinite(value.opening)?M.clamp(Math.round(value.opening/5)*5,10,70):20;draw();}
+  else if(value.active==='story'){if(value.returnToPuzzle){beginPuzzle();p=Number.isFinite(value.p)?M.clamp(value.p,170,370):270;opening=Number.isFinite(value.opening)?M.clamp(Math.round(value.opening/5)*5,10,70):20;draw();}startStory('before',!!value.returnToPuzzle);storyIndex=M.clamp(Number(value.storyIndex)||0,0,dialogue.before.length-1);renderStory();}
+  else show('hunt');
+ },
+ unlockAudio:audio.unlock
+};
+for(const name of ['click','input','pointerup','keyup'])document.addEventListener(name,()=>{if(['hunt','story','puzzle','illumination'].includes(active))notifyHost();});
+paintProbe(false);
+})();
+</script><dialog id="realPhoto"><div class="dialog-heading"><h2 id="realPhotoTitle"></h2><button data-close="realPhoto" aria-label="실제 배경 닫기">×</button></div><img id="realPhotoImage" alt=""><p id="realPhotoCaption"></p><a id="realPhotoSource" target="_blank" rel="noopener">사진 출처 · 인천투어 ↗</a><button class="primary" data-close="realPhoto">이야기로 돌아가기</button></dialog>
+<dialog id="journal"><div class="dialog-heading"><h2>별빛 여행 수첩</h2><button data-close="journal" aria-label="수첩 닫기">×</button></div><p class="eyebrow">미추홀 · 제물포 / 챕터 3</p><h3>수봉공원 · 수봉별마루</h3><p id="journalStatus"></p><div id="journalMath" class="journal-math" hidden>같은 호를 바라보는 원주각은 중심각의 절반.<br><b>60° ÷ 2 = 30°</b></div><p>학생 원안 · <b>고세찬, 이도윤</b><br>빛 탐지기로 탐색하고 원주각을 활용하는 아이디어를 바탕으로 구성했습니다.</p><details><summary>관광 자료와 사진 출처</summary><ul><li><a href="https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21121615505259129" target="_blank" rel="noopener">인천투어 · 수봉공원</a></li><li><a href="https://itour.incheon.go.kr/thmtour/thmtour/detail.do?cotId=ITA23082514254900148" target="_blank" rel="noopener">인천투어 · 밤에 만나는 인천</a></li><li><a href="https://www.incheon.go.kr/IC010205/view?curPage=1&amp;repSeq=DOM_0000000002357284" target="_blank" rel="noopener">인천광역시 · 수봉별마루 조성 안내</a></li></ul><p>사진: 인천광역시·인천관광공사 인천투어.<br>일러스트는 실제 장소를 참고한 창작 그림이며, 원형 잔디밭과 빛 모음 장치는 수학 체험을 위한 창작 공간입니다.</p></details><button id="restartCourseOpen">이 챕터 처음부터 다시 하기</button></dialog>
+<dialog id="courseRestart"><h2>수봉공원 여행을 다시 시작할까요?</h2><p>이 챕터의 대화, 게임, 완료 기록이 초기화됩니다.</p><div class="dialog-actions"><button data-close="courseRestart">계속 여행하기</button><button id="restartCourseConfirm" class="primary">처음부터 시작</button></div></dialog>
+<p id="saveNotice" class="save-notice" role="status" hidden>이 브라우저에서 기록을 저장할 수 없어요. 창을 닫기 전까지 여행을 계속할 수 있습니다.</p>
+<script>(function(root){'use strict';
+const asset='asset/subong-tour/';
+const source='https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21121615505259129';
+const nightSource='https://itour.incheon.go.kr/thmtour/thmtour/detail.do?cotId=ITA23082514254900148';
+const press='https://www.incheon.go.kr/IC010205/view?curPage=1&repSeq=DOM_0000000002357284';
+const photo=(image,title,text,look,speaker,remark,src=nightSource)=>({image:asset+image,title,text,look,speaker,remark,source:src,credit:'사진 · 인천투어 / 인천광역시·인천관광공사'});
+const photos={
+ gate:photo('entrance-real.webp','수봉산 자락, 도시 곁의 쉼터','수봉공원은 인천 미추홀구 수봉산 자락에 있는 공원이에요. 숲길과 놀이터, 문화예술 시설이 함께 있어 산책과 쉼을 즐길 수 있지요.','입구에 적힌 수봉공원 이름과 숲으로 이어지는 길을 찾아보세요.','민우','도시 가까이에 이렇게 울창한 숲이 있었구나!',source),
+ memory:photo('memorial-real.webp','풍경과 함께 기억하는 역사','공원에는 현충탑과 여러 기념비가 있어요. 산책하며 쉬는 공간이면서, 나라를 위해 희생한 이들을 기억하는 장소이기도 해요.','곧게 선 현충탑과 그 주변의 나무를 살펴보세요.','서연','아름다운 풍경과 함께 이곳에 담긴 기억도 소중히 해야겠어.',source),
+ forest:photo('forest-real.webp','밤이면 별빛이 내리는 산책로','수봉별마루에서는 숲길과 시설을 비추는 조명, 빛으로 만든 조형물을 만날 수 있어요. 여덟 가지 주제의 야간경관이 공원의 밤을 꾸며요.','길의 가장자리를 따라 이어진 작은 불빛들을 눈으로 따라가 보세요.','서연','원래는 나무 사이와 길이 이렇게 빛났구나. 다시 이 풍경을 만나고 싶어.'),
+ animals:photo('animals-real.webp','잔디밭에서 만나는 빛의 동물들','밤의 공원에서는 말과 사슴 등 동물 모양 조형물이 빛나요. 풀밭 위에 놓인 조형물과 나무가 어우러져 색다른 풍경을 만들어요.','말의 윤곽을 이루는 선과 뒤쪽 사슴의 모습을 찾아보세요.','민우','작은 선들이 모이니까 커다란 동물의 모습이 되네!'),
+ pavilion:photo('pavilion-real.webp','숲 사이에서 빛나는 정자','공원에서 만나는 정자도 밤의 조명을 받으면 다른 모습으로 보여요. 주변에는 나무와 쉼터가 어우러져 있지요.','지붕의 윤곽과 기둥을 따라 이어지는 빛을 살펴보세요.','서연','지붕과 기둥에 빛이 닿으니 건물의 모양도 더 또렷해 보여.'),
+ moon:photo('moon-real.webp','땅 위로 내려온 초승달','수봉별마루에는 달 조형물과 함께 사진을 남길 수 있는 장소가 있어요. 나무 사이의 초승달은 밤 산책의 기억을 담기 좋은 풍경이에요.','하늘의 달이 아니라 땅 위에 놓인 달 조형물이라는 점을 찾아보세요.','민우','사진으로 보던 초승달이야. 이제 우리도 환한 풍경을 즐길 수 있겠어!'),
+ panorama:photo('panorama-real.webp','공원에서 바라보는 도시의 밤','수봉공원에서는 주변 도심의 야경도 바라볼 수 있어요. 가까운 나무 너머로 건물과 도로의 불빛이 펼쳐져요.','가까운 나무, 그 뒤의 건물, 먼 불빛 순서로 풍경을 살펴보세요.','서연','오늘 우리가 여행한 도시도 이렇게 많은 빛으로 이어져 있구나!'),
+ tower:photo('tower-real.webp','별빛으로 이어지는 공원','송신탑과 나무, 놀이 공간에도 야간 조명이 더해져요. 낮에 보던 장소가 밤에는 전혀 다른 느낌으로 다가와요.','하늘을 향해 솟은 탑과 바닥의 둥근 빛을 비교해 보세요.','민우','공원에 다시 빛이 모였어. 오늘의 마지막 풍경을 꼭 기억할래!')
+};
+const scenes={
+ arrival:{art:'entrance-night.webp',photo:'gate',label:'챕터 3 · 문학산에서 수봉공원으로',dim:true,next:'photos:before',action:'수봉공원 사진 살펴보기 →',lines:[
+ ['민우','문학산에서 내려와 버스를 타고 오니 벌써 날이 어두워졌네. 오늘의 마지막 정류장은 수봉공원이야!'],
+ ['서연','수봉공원은 야경으로 유명한 곳이래. 수봉별마루라고 부르는 밤 풍경이 특히 아름답다고 했어.'],
+ ['민우','그런데 이상해. 나무 사이도, 산책길도 어두워. 반짝여야 할 빛이 보이지 않아.'],
+ ['서연','여기도 수학의 빛을 잃어버린 것 같아. 먼저 수첩에 담긴 원래의 풍경을 살펴보자.'],
+ ['민우','어떤 곳인지 알고 나면 잃어버린 빛의 단서도 찾을 수 있겠지?'],
+ ['서연','응! 공원을 둘러보고, 우리 힘으로 수학의 빛을 되찾아 주자.']
+ ]},
+ forest:{art:'forest-night.webp',photo:'forest',label:'별빛 산책로 · 희미한 신호',dim:true,next:'lesson',action:'빛 탐지기 사용법 알아보기 →',lines:[
+ ['민우','사진에서는 이 길의 나무와 난간이 빛나고 있었는데, 지금은 작은 불빛만 희미하게 남아 있어.'],
+ ['서연','수첩 속 빛 탐지기가 반응하고 있어! 공원 어딘가에 아직 사라지지 않은 두 빛이 있나 봐.'],
+ ['민우','가까이 가면 신호가 더 강해지는구나. 소리도 조금씩 커져!'],
+ ['서연','먼저 두 빛의 위치를 찾아보자. 희미한 빛도 한곳에 모으면 공원을 다시 밝힐 수 있을 거야.']
+ ]},
+ moon:{art:'moon-night.webp',photo:'moon',label:'다시 빛나는 수봉별마루 · 달빛 아래',light:true,next:'photos:after',action:'되찾은 야경 둘러보기 →',lines:[
+ ['민우','달 조형물도 다시 환해졌어! 수첩에서 보던 수봉별마루의 밤이 돌아왔네.'],
+ ['서연','신호를 따라 두 빛을 찾고, 원주각으로 한곳에 모았지. 따로 있던 작은 빛들이 커다란 변화를 만들었어.'],
+ ['민우','마지막으로 이 야경을 천천히 둘러보자. 우리가 되찾은 풍경을 오래 기억하고 싶어.']
+ ]},
+ farewell:{art:'entrance-night.webp',photo:'gate',label:'수봉공원 입구 · 빛을 품고 버스로',light:true,next:'departure',action:'매스투어 버스에 오르기 →',lines:[
+ ['서연','다시 입구로 돌아왔어. 매스투어 버스가 우리를 기다리고 있네.'],
+ ['민우','문학산에서 내려올 때는 벌써 어두워져서 아쉬웠는데, 덕분에 수봉공원의 별빛을 만났어.'],
+ ['서연','자세히 살피고, 서로 이어 보니 수학의 빛을 찾을 수 있었지. 이 빛을 수첩에 담아 가자.'],
+ ['민우','안녕, 수봉공원! 다음에 올 때도 이 환한 밤 풍경을 만나고 싶어. 이제 버스에 오르자!']
+ ]}
+};
+const tours={before:{title:'수첩 속, 빛을 잃기 전의 수봉공원',label:'실제 관광 사진으로 먼저 만나요',ids:['gate','memory','forest','animals','pavilion'],next:'story:forest'},after:{title:'수봉별마루의 밤을 걸어요',label:'빛을 되찾고 만나는 실제 야경',ids:['moon','panorama','tower'],next:'story:farewell'}};
+root.SubongTour={asset,source,nightSource,press,photos,scenes,tours};if(typeof module!=='undefined')module.exports=root.SubongTour;
+})(typeof window==='undefined'?globalThis:window);
+</script><script>(function(root){'use strict';
+const KEY='mathtour.michuhol-jemulpo.subong-v1';
+const routes=['arrival','story:arrival','photos:before','story:forest','lesson','activity','story:moon','photos:after','story:farewell','departure','recap'];
+const fresh=()=>({version:1,route:'arrival',index:0,activity:null,light:false,departed:false,finished:false});
+const validLight=a=>a?.version===1&&a.solved===true&&a.opening===30&&Array.isArray(a.found)&&a.found.includes('A')&&a.found.includes('B');
+function restore(s){
+ if(s?.version!==1||!routes.includes(s.route))return fresh();
+ const a=s.activity&&typeof s.activity==='object'?s.activity:null,light=validLight(a);
+ const state={version:1,route:s.route,index:Number.isInteger(s.index)?Math.max(0,s.index):0,activity:a,light,departed:light&&s.departed===true,finished:light&&s.departed===true&&s.finished===true};
+ if(routes.indexOf(state.route)>routes.indexOf('activity')&&!light)state.route='activity';
+ if(state.route==='recap'&&!state.finished)state.route='departure';
+ return state;
+}
+const api={KEY,routes,fresh,restore,validLight};root.SubongTourModel=api;if(typeof module!=='undefined')module.exports=api;
+})(typeof window==='undefined'?globalThis:window);
+</script><script>(()=>{'use strict';
+const D=SubongTour,M=SubongTourModel,$=id=>document.getElementById(id),A=SubongActivity;
+const C=window.MathTourMichuholChapters;A.stop();if(C&&!C.enterCourse('subong'))return;
+let state=M.fresh(),saved=null,currentPhoto=null,sequence=0,frame=0,saving=0;
+try{saved=M.restore(C?C.load('subong'):JSON.parse(localStorage.getItem(M.KEY)));if(saved.route==='arrival')saved=null;}catch{}
+function persist(){try{if(C){if(!C.save('subong',state))throw Error('save unavailable');}else localStorage.setItem(M.KEY,JSON.stringify(state));}catch{$('saveNotice').hidden=false;}}
+function checkpoint(){if(state.route==='activity'){const value=A.snapshot();if(value.active!=='suspended'){state.activity=value;state.light=M.validLight(value);}}persist();}
+function laterSave(){clearTimeout(saving);saving=setTimeout(persist,100);}
+function screens(id){document.querySelectorAll('main>.screen').forEach(el=>el.hidden=el.id!==id);$('helpOpen').hidden=state.route!=='activity';window.scrollTo(0,0);}
+function timer(duration,done){cancelAnimationFrame(frame);let elapsed=0,last=null;const current=sequence;function step(now){if(current!==sequence)return;if(last!==null&&!document.hidden&&!document.querySelector('dialog[open]'))elapsed+=Math.min(now-last,64);last=now;if(elapsed>=duration){frame=0;done();}else frame=requestAnimationFrame(step);}frame=requestAnimationFrame(step);}
+function endBus(){if(state.route!=='departure'||!state.light)return;state.departed=true;state.finished=true;go('recap');}
+function go(route,index=0){
+ sequence++;cancelAnimationFrame(frame);frame=0;
+ if(state.route==='activity'&&route!=='activity'){state.activity=A.snapshot();A.stop();}
+ state.route=route;state.index=index;state.light=M.validLight(state.activity);
+ if(M.routes.indexOf(route)>M.routes.indexOf('activity')&&!state.light){route=state.route='activity';state.index=0;}
+ if(route==='arrival'){screens('arrival');startArrival();}
+ else if(route.startsWith('story:')){screens('tourStory');renderStory();}
+ else if(route.startsWith('photos:')){screens('photoTour');renderPhoto();}
+ else if(route==='lesson')screens('lesson');
+ else if(route==='activity'){A.start(state.activity);$('helpOpen').hidden=false;}
+ else if(route==='departure'){screens('departure');startDeparture();}
+ else if(route==='recap'){screens('recap');}
+ persist();updateJournal();if(route==='recap')C?.finishCourse('subong',state);window.MathTourMichuholEnding?.setContext(route==='recap'?$('recap'):null,{chapter:'subong'});
+}
+function setImage(el,src,alt){if(el.getAttribute('src')!==src)el.src=src;el.alt=alt;}
+function renderStory(){const scene=D.scenes[state.route.split(':')[1]];state.index=Math.min(state.index,scene.lines.length-1);const [who,text]=scene.lines[state.index];
+ setImage($('tourStoryBg'),D.asset+scene.art,scene.label+' 일러스트');$('tourStory').classList.toggle('dim',!!scene.dim);$('tourStoryTag').textContent=scene.label;$('tourSpeaker').textContent=who;$('tourText').textContent=text;$('tourCount').textContent=(state.index+1)+' / '+scene.lines.length;
+ $('tourMinwoo').classList.toggle('speaking',who==='민우');$('tourSeoyeon').classList.toggle('speaking',who==='서연');$('tourPrev').disabled=state.index===0;$('tourNext').textContent=state.index<scene.lines.length-1?'다음 →':scene.action;currentPhoto=scene.photo;
+}
+function renderPhoto(){const tour=D.tours[state.route.split(':')[1]];state.index=Math.min(state.index,tour.ids.length-1);const photo=D.photos[tour.ids[state.index]];
+ $('tourPhotoLabel').textContent=tour.label;$('tourPhotoTitle').textContent=tour.title;$('tourPhotoCount').textContent=(state.index+1)+' / '+tour.ids.length;setImage($('tourPhotoImage'),photo.image,photo.title+' 실제 사진');$('photoTitle').textContent=photo.title;$('photoText').textContent=photo.text;$('photoLook').textContent=photo.look;$('photoSpeaker').textContent=photo.speaker;$('photoRemark').textContent=photo.remark;setImage($('photoPerson'),'asset/'+photo.speaker+'.svg',photo.speaker);$('tourPhotoSource').href=photo.source;$('photoPrev').disabled=state.index===0;$('photoNext').textContent=state.index<tour.ids.length-1?'다음 사진 →':state.route==='photos:before'?'산책로로 들어가기 →':'버스로 돌아가는 길 →';
+}
+function startArrival(){
+ $('leaveBus').disabled=true;$('leaveBus').textContent='버스가 도착하고 있어요…';$('arrivalBus').classList.remove('arrival-running');void $('arrivalBus').offsetWidth;$('arrivalBus').classList.add('arrival-running');$('resumeTour').hidden=!saved;$('resumeInfo').textContent=saved?(saved.finished?'수봉공원 여행을 마쳤어요. 마지막 기록을 다시 볼 수 있어요.':'이전에 여행하던 장면부터 이어갈 수 있어요.'):'학생 원안 · 고세찬, 이도윤';
+ timer(2100,()=>{$('leaveBus').disabled=false;$('leaveBus').textContent='버스에서 내리기 →';});
+}
+function startDeparture(){
+ $('departure').classList.remove('boarded','driving');$('departureText').textContent='민우와 서연이 매스투어 버스에 오릅니다.';
+ timer(800,()=>{$('departure').classList.add('boarded');timer(1400,()=>{$('departureText').textContent='수봉공원의 별빛을 뒤로하고, 버스가 출발합니다.';$('departure').classList.add('driving');timer(3300,endBus);});});
+}
+function modal(id){A.pauseAudio();$(id).showModal();}
+function updateJournal(){const count=state.activity?.found?.length||0;$('journalOpen').textContent=state.light?'빛의 수첩 ✦':'빛의 수첩';$('journalStatus').textContent=state.finished?'✦ 수봉공원의 수학의 빛을 되찾고 여행을 마쳤어요.':state.light?'✦ 수학의 빛을 되찾았어요. 환해진 야경을 둘러보고 버스로 돌아가요.':count?'희미한 빛 '+count+' / 2 발견 · 두 빛을 한곳에 모아 공원을 밝혀 주세요.':'수봉공원의 밤 풍경을 살펴보고, 잃어버린 별빛을 찾아요.';$('journalMath').hidden=!state.light;}
+window.SubongHost={onChange(value){if(state.route!=='activity'||value.active==='intro'||value.active==='suspended')return;state.activity=value;state.light=M.validLight(value);updateJournal();laterSave();if(value.active==='story'&&value.storyKind==='after')$('storyNext').textContent=value.storyIndex===3?'빛을 되찾은 야경 보러 가기 →':'다음 →';},onComplete(value){if(state.route==='activity'&&M.validLight(value)){state.activity=value;state.light=true;go('story:moon');}}};
+$('leaveBus').onclick=()=>{A.unlockAudio();if(saved){modal('courseRestart');return;}go('story:arrival');};
+$('resumeTour').onclick=()=>{if(!saved)return;A.unlockAudio();state=M.restore(saved);saved=null;go(state.route,state.index);};
+$('tourNext').onclick=()=>{const scene=D.scenes[state.route.split(':')[1]];if(state.index<scene.lines.length-1){state.index++;renderStory();persist();}else go(scene.next);};
+$('tourPrev').onclick=()=>{if(state.index>0){state.index--;renderStory();persist();}};
+$('skipTourStory').onclick=()=>go(D.scenes[state.route.split(':')[1]].next);
+$('scenePhoto').onclick=()=>{const photo=D.photos[currentPhoto];$('realPhotoTitle').textContent=photo.title;setImage($('realPhotoImage'),photo.image,photo.title+' 실제 사진');$('realPhotoCaption').textContent=(currentPhoto==='gate'?'실제 입구의 낮 풍경입니다. 이야기 속 저녁 배경은 이 장소를 참고해 그렸어요. ':photo.text+' ')+photo.credit;$('realPhotoSource').href=photo.source;modal('realPhoto');};
+$('photoNext').onclick=()=>{const tour=D.tours[state.route.split(':')[1]];if(state.index<tour.ids.length-1){state.index++;renderPhoto();persist();window.scrollTo(0,0);}else go(tour.next);};
+$('photoPrev').onclick=()=>{if(state.index>0){state.index--;renderPhoto();persist();window.scrollTo(0,0);}};
+$('beginActivity').onclick=()=>{A.unlockAudio();go('activity');};
+$('journalOpen').onclick=()=>{updateJournal();modal('journal');};
+$('restartCourseOpen').onclick=()=>{$('journal').close();modal('courseRestart');};
+$('restartOpen').onclick=()=>modal('courseRestart');
+$('restartCourseConfirm').onclick=()=>{$('courseRestart').close();A.stop();clearTimeout(saving);saved=null;state=M.fresh();go('arrival');};
+$('reviewEnding').onclick=()=>go('story:moon');$('finishDeparture').onclick=endBus;
+document.querySelectorAll('[data-close]').forEach(el=>el.onclick=()=>$(el.dataset.close).close());
+window.addEventListener('pagehide',()=>{if(state.route!=='arrival')checkpoint();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&state.route!=='arrival')checkpoint();});
+document.querySelectorAll('a[href*="index.html"]').forEach(el=>el.addEventListener('click',()=>{if(state.route!=='arrival')checkpoint();}));
+// Show the arrival each visit; preserve the previous checkpoint until the learner chooses to resume or restart.
+A.stop();screens('arrival');startArrival();updateJournal();
+})();
+</script></body></html>
