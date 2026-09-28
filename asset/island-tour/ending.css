@@ -1,0 +1,16 @@
+.yg-ending{box-sizing:border-box!important;width:min(1120px,96vw)!important;max-width:96vw!important;max-height:96dvh!important;margin:auto!important;padding:16px!important;border:1px solid #c3a66c!important;border-radius:14px!important;background:#102c3b!important;color:#fff4d8!important;font:15px/1.5 system-ui,"Malgun Gothic",sans-serif!important;overflow:auto!important}
+.yg-ending::backdrop{background:#061824ed}
+.yg-ending:not([open]),.yg-ending [hidden]{display:none!important}
+.yg-ending header{display:flex!important;align-items:center;justify-content:space-between;gap:12px;padding:0!important;margin:0 0 12px!important;background:none!important;border:0!important}
+.yg-ending small{color:#e8c680;letter-spacing:.12em;font-size:10px}
+.yg-ending h2{margin:4px 0!important;color:#fff4d8!important;font-size:clamp(17px,2.5vw,26px)!important;line-height:1.3!important}
+.yg-ending video{display:block!important;width:100%!important;height:min(56.25vw,calc(96dvh - 224px))!important;max-height:630px!important;object-fit:contain;background:#000;border-radius:8px}
+.yg-ending p{margin:10px 0!important;font-size:13px!important;line-height:1.5!important;color:#e5e9df!important}
+.yg-ending footer{display:flex!important;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.yg-ending button,.yg-ending a,.yg-ending-open{display:inline-flex;align-items:center;justify-content:center;min-height:46px!important;padding:10px 16px!important;border:1px solid #bba474!important;border-radius:7px!important;background:#284a5d!important;color:#fff4d8!important;text-decoration:none;font:600 14px/1.4 system-ui,"Malgun Gothic",sans-serif!important;cursor:pointer;touch-action:manipulation}
+.yg-ending button[data-play],.yg-ending-open{background:#8d4634!important}
+.yg-ending header button{flex-shrink:0}
+.yg-ending button:focus-visible,.yg-ending a:focus-visible,.yg-ending-open:focus-visible{outline:3px solid #ffd56d;outline-offset:3px}
+.yg-map-actions{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
+.yg-map-actions .island-reset{width:100%}
+@media(max-width:800px){.yg-ending{padding:12px!important}.yg-ending button,.yg-ending a,.yg-ending-open{font-size:12px!important;padding:9px 12px!important}.yg-ending video{height:min(56.25vw,calc(96dvh - 224px))!important}.yg-map-actions{gap:4px}}

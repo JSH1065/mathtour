@@ -14,12 +14,49 @@
   const {state,board,controls,confirm}=c;
   const z=state.zoo=M.restoreZoo(state.zoo),$=id=>document.getElementById(id);
   let running=false,frame=0,last=0,lastSaved=-1,destroyed=false;
+  let boostPointer=null,boostKey=null,boundary=-1;
   const calculator={expression:'',result:'',open:false};
   const phase=()=>z.records.length<4?'observe':z.average!==13?'average':!z.bridgeDone?'bridge':!z.briefed?'brief':!z.graphsChecked?'graphs':!z.comparison?'compare':'complete';
   function heading(k,title){$('gameEyebrow').textContent=k;$('gameTitle').textContent=title;}
   function save(){return !destroyed&&c.persist();}
-  function stop(){running=false;cancelAnimationFrame(frame);last=0;}
+  const boosting=()=>running&&(boostPointer!==null||boostKey!==null);
+  function paintSpeed(){
+   const fast=boosting(),button=$('observationFast');
+   if(!button)return;
+   button.disabled=!running;button.setAttribute('aria-pressed',String(fast));
+   button.querySelector('small').textContent=fast?'손을 떼면 1배속':'누르는 동안 2배속';
+   $('watchSpeed').textContent=fast?'2배속':'1배속';
+   board.classList.toggle('zoo-fast',fast);
+  }
+  function releaseBoost(){
+   const pointer=boostPointer,button=$('observationFast');boostPointer=null;boostKey=null;
+   if(pointer!==null&&button?.hasPointerCapture(pointer))button.releasePointerCapture(pointer);
+   paintSpeed();
+  }
+  function stop(){running=false;cancelAnimationFrame(frame);last=0;releaseBoost();}
   function pause(){if(running){stop();if($('observationPlay')){$('observationPlay').textContent='이어서 관찰';$('observationPlay').setAttribute('aria-pressed','false');}if($('watchState'))$('watchState').textContent='일시 정지';save();}}
+  function releaseKey(e){if(e.key===boostKey){boostKey=null;paintSpeed();}}
+  function hidden(){if(document.hidden)pause();}
+  root.addEventListener('blur',pause);
+  root.addEventListener('keyup',releaseKey);
+  document.addEventListener('visibilitychange',hidden);
+  function bindFastButton(){
+   const button=$('observationFast');
+   button.onpointerdown=e=>{
+    if(e.button!==0||e.isPrimary===false||boostPointer!==null||!running||!c.checkRun()||document.hidden)return;
+    e.preventDefault();button.focus({preventScroll:true});boostPointer=e.pointerId;
+    button.setPointerCapture(e.pointerId);paintSpeed();
+   };
+   const releasePointer=e=>{if(e.pointerId===boostPointer){boostPointer=null;if(button.hasPointerCapture(e.pointerId))button.releasePointerCapture(e.pointerId);paintSpeed();}};
+   button.onpointerup=releasePointer;button.onpointercancel=releasePointer;button.onlostpointercapture=releasePointer;
+   button.onkeydown=e=>{
+    if(e.key!==' '&&e.key!=='Enter')return;
+    e.preventDefault();if(e.repeat||!running||!c.checkRun()||document.hidden)return;
+    boostKey=e.key;paintSpeed();
+   };
+   button.onkeyup=releaseKey;button.onblur=releaseBoost;
+   button.onclick=e=>e.preventDefault();button.oncontextmenu=e=>e.preventDefault();
+  }
   function table(values,caption){return `<table class="zoo-record"><caption>${caption}</caption><thead><tr><th scope="col">관찰</th><th scope="col">주변을 살핀 시간</th></tr></thead><tbody>${[0,1,2,3].map(i=>`<tr class="${i===values.length?'current':''}"><th scope="row">${i+1}회</th><td>${values[i]!==undefined?`<strong>${values[i]}</strong> 초`:'<span class="empty-record">—</span>'}</td></tr>`).join('')}</tbody></table>`;}
   function keeper(text){return `<div class="zoo-keeper-note"><img src="${A}keeper.svg" alt="사육사"><p><b>사육사</b>${text}</p></div>`;}
   function focusQuestion(){requestAnimationFrame(()=>{if(!destroyed)$('zooAnswer')?.focus({preventScroll:true});});}
@@ -38,20 +75,21 @@
   }
   function drawObservation(){
    const trial=z.records.length,finished=z.watched[trial]===true;
+   boundary=-1;
    heading('MISSION 01 · 행동 관찰 기록',`${trial+1}회 · 주변을 살핀 시간을 기록해요`);
-   board.innerHTML=`<div class="zoo-observation-head"><span><b>${trial+1}</b> / 4회</span><div class="zoo-clock" aria-label="전체 관찰 타이머"><output id="watchClock">0</output><span> / 20초</span></div><span id="watchState" role="status">관찰 준비</span></div><div class="zoo-habitat"><div class="zoo-behavior" id="behaviorLabel">미어캣을 살펴보세요</div><img id="movingMeerkat" src="${A}meerkat-walk.svg" alt="걷는 미어캣"><div class="zoo-start-mark" id="watchMarker" hidden></div><small>학습용 행동 장면</small></div><div class="zoo-watch-tools"><button id="observationPlay" class="primary" aria-pressed="false">${z.elapsed>0?'이어서 관찰':'관찰 시작 ▶'}</button><button id="observationReplay">처음부터 다시 보기 ↺</button></div>`;
+   board.innerHTML=`<div class="zoo-observation-head"><span><b>${trial+1}</b> / 4회</span><div class="zoo-clock" aria-label="관찰 영상 속 시간"><small>관찰 영상 속 시간</small><output id="watchClock">0</output><span> / 20초</span></div><div class="zoo-watch-status"><span id="watchSpeed" role="status">1배속</span><span id="watchState">관찰 준비</span></div></div><div class="zoo-habitat"><div class="zoo-behavior" id="behaviorLabel">미어캣을 살펴보세요</div><img id="movingMeerkat" src="${A}meerkat-walk.svg" alt="걷는 미어캣"><div class="zoo-start-mark" id="watchMarker" role="status" hidden></div><small>학습용 행동 장면</small></div><div class="zoo-watch-tools"><button id="observationPlay" class="primary" aria-pressed="false">${z.elapsed>0?'이어서 관찰':'관찰 시작 ▶'}</button><button id="observationFast" aria-pressed="false" aria-describedby="watchFastHint" disabled><span>⏩ 빠르게 관찰</span><small>누르는 동안 2배속</small></button><button id="observationReplay">처음부터 다시 보기 ↺</button><small id="watchFastHint">기록은 화면 속 시계로 해요.</small></div>`;
    controls.innerHTML=table(z.records,'나의 관찰 기록지')+form(`${trial+1}회 · 주변을 살핀 시간`);
    $('observationReplay').onclick=()=>{if(!c.checkRun())return;stop();z.elapsed=0;z.watched=z.watched.slice(0,trial);save();drawObservation();confirm.disabled=true;c.feedback('같은 장면을 다시 볼 수 있어요.');};
    $('observationPlay').onclick=()=>{
     if(!c.checkRun()||document.hidden)return;
     if(running){pause();return;}
     if(z.watched[trial])return;
-    running=true;last=0;$('observationPlay').textContent='일시 정지 Ⅱ';$('observationPlay').setAttribute('aria-pressed','true');c.feedback('두 발로 서서 주변을 살피는 동안의 시간을 기록해요.');frame=requestAnimationFrame(tick);
+    running=true;last=0;$('observationPlay').textContent='일시 정지 Ⅱ';$('observationPlay').setAttribute('aria-pressed','true');paintSpeed();c.feedback('화면 속 시계로 기록해요. 빠르게 관찰 버튼을 꾹 누르면 2배속, 손을 떼면 1배속이에요.');frame=requestAnimationFrame(tick);
    };
    $('zooAnswer').disabled=!finished;confirm.disabled=!finished;confirm.textContent='기록 확인';
    if(finished){z.elapsed=20;$('observationPlay').disabled=true;$('observationPlay').textContent='관찰 완료';c.feedback('주변을 살핀 시간을 기록지에 적어 보세요.');}
    else c.feedback('관찰은 한 번에 20초예요. 주변을 살피기 시작할 때와 멈출 때의 시각을 보세요.');
-   paintObservation();bindForm();
+   bindFastButton();paintObservation();paintSpeed();bindForm();
   }
   function paintObservation(){
    const trial=z.records.length;if(trial>=4||!$('movingMeerkat'))return;
@@ -67,12 +105,21 @@
    $('watchClock').textContent=Math.min(20,Math.floor(t+1e-7));
    $('watchState').textContent=finished?'관찰 완료':running?'관찰 중':t>0?'일시 정지':'관찰 준비';
    const label=$('behaviorLabel');label.textContent=finished?'20초 관찰 완료':looking?'주변을 살피는 중':'걷는 중';label.classList.toggle('is-looking',looking);
-   const marker=$('watchMarker');marker.hidden=t<start;marker.textContent=t>=end?`${start}초에 시작 → ${end}초에 멈춤`:`${start}초에 주변 살피기 시작`;
+   const marker=$('watchMarker'),markText=t>=end?`${start}초에 시작 → ${end}초에 멈춤`:`${start}초에 주변 살피기 시작`;
+   marker.hidden=t<start;if(marker.textContent!==markText)marker.textContent=markText;
+   const nextBoundary=t>=end?2:t>=start?1:0;
+   if(nextBoundary!==boundary){
+    if(boundary>=0&&nextBoundary>boundary){
+     const clock=$('watchClock').closest('.zoo-clock');clock.classList.remove('zoo-time-cue');marker.classList.remove('zoo-time-cue');
+     void clock.offsetWidth;clock.classList.add('zoo-time-cue');marker.classList.add('zoo-time-cue');
+    }
+    boundary=nextBoundary;
+   }
   }
   function tick(now){
    if(!running||destroyed)return;
    if(!last)last=now;
-   z.elapsed=Math.min(20,z.elapsed+Math.min(.1,Math.max(0,(now-last)/1000)));last=now;
+   z.elapsed=Math.min(20,z.elapsed+Math.min(.1,Math.max(0,(now-last)/1000))*(boosting()?2:1));last=now;
    if(z.elapsed>=20){z.elapsed=20;z.watched[z.records.length]=true;stop();save();drawObservation();c.tone();focusQuestion();return;}
    paintObservation();
    const sec=Math.floor(z.elapsed);if(sec!==lastSaved){lastSaved=sec;save();if(destroyed||!running)return;}
@@ -143,7 +190,7 @@
    }else if(p==='complete'&&M.solved('park',state))c.next();
   }
   draw();
-  return {pause,help:()=>['brief','graphs','compare','complete'].includes(phase())?graphLesson:root.NamdongData.lessons.park,destroy(){destroyed=true;stop();confirm.onclick=null;}};
+  return {pause,help:()=>['brief','graphs','compare','complete'].includes(phase())?graphLesson:root.NamdongData.lessons.park,destroy(){destroyed=true;stop();root.removeEventListener('blur',pause);root.removeEventListener('keyup',releaseKey);document.removeEventListener('visibilitychange',hidden);confirm.onclick=null;}};
  }
  root.NamdongZoo={mount};
 })(window);
