@@ -134,10 +134,11 @@
   function drawBridge(){
    heading('STORY · 서연이 가져온 관찰 기록','어제는 주변을 더 많이 살폈을까?');
    const line=Math.min(z.bridgeLine||0,bridge.length-1),[who,text]=bridge[line];
-   board.innerHTML=`<div class="zoo-bridge"><div class="zoo-other-record"><small>서연이 가져온 어제 기록</small><span>1회 관찰 <b>25초</b></span><span>평균 주변 살피기 <b>15초</b></span></div><img class="bridge-person bridge-minwoo ${who==='민우'?'speaking':''}" src="asset/민우.svg" alt="민우"><img class="bridge-person bridge-keeper ${who==='사육사'?'speaking':''}" src="${A}keeper.svg" alt="사육사"><img class="bridge-person bridge-seoyeon ${who==='서연'?'speaking':''}" src="asset/서연.svg" alt="어제의 관찰 기록을 가져온 서연"><article class="zoo-bridge-dialogue"><header><strong>${who}</strong><small>${line+1} / ${bridge.length}</small></header><p id="zooBridgeText" aria-live="polite">${text}</p><footer><button id="zooStoryPrev" ${line===0?'disabled':''}>← 이전 대사</button><button id="zooStoryNext" class="primary">${line===bridge.length-1?'비율 알아보기 →':'다음 →'}</button></footer></article></div>`;
+   board.innerHTML=`<div class="zoo-bridge"><div class="zoo-other-record"><small>서연이 가져온 어제 기록</small><span>1회 관찰 <b>25초</b></span><span>평균 주변 살피기 <b>15초</b></span></div><img class="bridge-person bridge-minwoo ${who==='민우'?'speaking':''}" src="asset/민우.svg" alt="민우"><img class="bridge-person bridge-keeper ${who==='사육사'?'speaking':''}" src="${A}keeper.svg" alt="사육사"><img class="bridge-person bridge-seoyeon ${who==='서연'?'speaking':''}" src="asset/서연.svg" alt="어제의 관찰 기록을 가져온 서연"><article class="zoo-bridge-dialogue" tabindex="0"><header><strong>${who}</strong><small>${line+1} / ${bridge.length}</small></header><p id="zooBridgeText" aria-live="polite">${text}</p><footer><button id="zooStoryPrev" ${line===0?'disabled':''}>← 이전 대사</button><button id="zooStoryNext" class="primary">${line===bridge.length-1?'비율 알아보기 →':'다음 →'}</button></footer></article></div>`;
    controls.replaceChildren();confirm.hidden=true;
-   $('zooStoryPrev').onclick=()=>{if(!c.checkRun()||z.bridgeLine===0)return;z.bridgeLine--;save();drawBridge();$('zooStoryPrev').focus({preventScroll:true});};
-   $('zooStoryNext').onclick=()=>{if(!c.checkRun())return;if(line===bridge.length-1){z.bridgeDone=true;save();draw();return;}z.bridgeLine++;save();drawBridge();$('zooStoryNext').focus({preventScroll:true});};
+   $('zooStoryPrev').onclick=()=>{if(!c.checkRun()||z.bridgeLine===0)return;z.bridgeLine--;save();drawBridge();};
+   $('zooStoryNext').onclick=()=>{if(!c.checkRun())return;if(line===bridge.length-1){z.bridgeDone=true;save();draw();return;}z.bridgeLine++;save();drawBridge();};
+   board.querySelector('.zoo-bridge-dialogue').focus({preventScroll:true});
   }
   function drawBrief(){
    heading('MISSION 02 · 사육사의 개념 안내','시간이 달라도, 비율로 비교할 수 있어요');

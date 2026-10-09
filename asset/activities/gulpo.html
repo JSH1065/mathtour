@@ -1,461 +1,924 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>굴포천 · 시간사진기로 찾는 수학의 빛</title><style>:root{--navy:#173749;--ink:#253f47;--paper:#f8f1e0;--gold:#bc9959;--red:#90473e;--teal:#218b89;--line:#d9c9a9;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;color:var(--ink);font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:#f4ecdd}button,a{touch-action:manipulation}button{font:inherit;font-weight:700;color:var(--navy);background:#fff9eb;border:1px solid #cbb68b;border-radius:7px;padding:11px 16px;min-height:44px;cursor:pointer;transition:background .2s,box-shadow .2s}button:hover{background:#f4e5c1}button:disabled{opacity:.45;cursor:default}button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid #e5a32e;outline-offset:3px}.primary{background:var(--red);border-color:#c2a66c;color:#fff5d8;box-shadow:0 3px 0 #642f2d}.primary:hover{background:#a25246}.quiet{background:transparent;border:0;min-height:34px;text-decoration:underline;font-size:12px;padding:7px 0}a{color:#32747a}h1,h2,h3,p{margin-top:0}p{line-height:1.75;word-break:keep-all}img{max-width:100%}[hidden]{display:none!important}.eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;color:#947444;margin-bottom:10px}.topbar{height:72px;display:flex;gap:24px;align-items:center;padding:10px max(20px,4vw);border-bottom:1px solid var(--line);background:#fbf7ea;position:relative;z-index:5}.brand{font-size:20px;font-weight:900;text-decoration:none;color:#253e48;line-height:1.2;white-space:nowrap}.brand span{color:#bd9557}.brand small{display:block;font-size:8px;letter-spacing:.25em}.edition{border-left:1px solid var(--line);padding-left:24px;font-size:14px;font-weight:700}.edition small{display:block;font-size:10px;color:#948267;margin-top:3px}.topbar nav{margin-left:auto;display:flex;gap:8px}.topbar button{font-size:12px;padding:9px 12px;min-height:38px}.screen{min-height:calc(100svh - 72px);position:relative;isolation:isolate}.home{padding:45px max(25px,6vw) 40px;background:radial-gradient(ellipse at top right,#dfe9df,#fbf4e3 64%)}.home-grid{max-width:1370px;min-height:610px;margin:auto;display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}.home h1{font:700 clamp(42px,4.6vw,67px)/1.3 Batang,Georgia,serif;letter-spacing:-.06em;margin-bottom:22px}.home h1 em{color:#80553f;font-style:normal}.home-lead{font-size:19px;color:#6b735f}.camera-token{display:flex;align-items:center;gap:13px;max-width:350px;margin:23px 0;padding:12px 18px;border:1px solid #c6b382;border-radius:9px;background:#fffbef;box-shadow:0 5px 18px #6a5c3510}.camera-token svg{width:56px;height:50px;fill:#8d7862;stroke:#eee0b3;stroke-width:3}.camera-token b{font-size:15px}.camera-token div span{font-size:11px;display:block;margin-top:4px;color:#8d7e69}.sparkle{margin-left:auto;font-size:30px;color:#d1a044}.home-actions{display:flex;flex-wrap:wrap;gap:10px}.home-actions button{padding:15px 23px}.home-note{font-size:12px;color:#9a8c72;margin:10px 0}.credits{max-width:470px;font-size:11px;line-height:1.7;color:#7c7566;margin-top:18px}.credits summary{cursor:pointer}.photo-stack{height:555px;position:relative}.memory-photo{margin:0;position:absolute;width:80%;padding:12px 12px 0;background:#fffef8;box-shadow:0 15px 35px #344e4933;border:1px solid #fff}.memory-photo img{display:block;width:100%;height:215px;object-fit:cover}.memory-photo figcaption{padding:12px 4px;font-size:12px;color:#6d6b5c}.memory-photo figcaption span{font-weight:bold;color:#906437;margin-right:13px}.past-photo{left:0;top:0;transform:rotate(-5deg);filter:saturate(.55)}.now-photo{right:0;top:240px;transform:rotate(4deg)}.home-actors{position:absolute;left:-40px;bottom:-14px;display:flex;z-index:2;filter:drop-shadow(0 10px 5px #29333430)}.home-actors img{height:178px;width:98px}.photo-stamp{position:absolute;right:1%;top:100px;border:2px solid #a6654d;color:#a6654d;border-radius:50%;font:700 16px/1.8 Batang,serif;width:113px;height:113px;display:grid;place-content:center;text-align:center;transform:rotate(13deg);background:#fff2dcce}
+
 .story{background:#132938;height:calc(100svh - 72px);min-height:610px;overflow:hidden}.story-photo-wrap{position:absolute;top:75px;left:6%;right:6%;bottom:222px;text-align:center}.story-photo-wrap img{height:100%;width:100%;object-fit:contain}.photo-tag{position:absolute;bottom:9px;left:50%;transform:translateX(-50%);max-width:90%;font-size:11px;color:#f9edce;background:#132b3be6;padding:7px 14px;border:1px solid #bd9b5980;border-radius:4px;white-space:normal}.story-top{display:flex;align-items:center;justify-content:space-between;padding:19px 5%;gap:10px}.story-top>span{font-size:14px;font-weight:700;color:#eeddb8}.story-top button{background:#18384c;color:#f4e5c4;font-size:11px}.story-actors{position:absolute;bottom:199px;left:7%;right:7%;display:flex;justify-content:space-between;pointer-events:none}.story-actors img{height:126px;max-width:100px;filter:drop-shadow(0 5px 3px #0005)}.story-actors img.inactive{filter:brightness(.55) saturate(.5)}.dialogue{position:absolute;left:6%;right:6%;bottom:23px;padding:29px 27px 18px;border:1px solid #cbb274;background:linear-gradient(100deg,#081e2efa,#17394bfa);border-radius:7px;color:#fff5df;box-shadow:0 10px 25px #0003}.dialogue>b{position:absolute;top:-18px;left:24px;background:#8e433b;border:1px solid #d3b16a;border-radius:4px;padding:7px 24px;font:700 16px Batang,serif}.dialogue>span{position:absolute;top:13px;right:23px;font-size:11px;color:#d1bc8c}.dialogue p{font-size:clamp(17px,1.6vw,22px);line-height:1.65;margin:8px 0 15px;min-height:3.3em}.dialogue-buttons{display:flex;justify-content:space-between}.dialogue-buttons button{background:#16374a;color:#f5e8c4;font-size:12px;min-height:39px}.camera-screen{height:calc(100svh - 72px);min-height:570px;overflow:hidden;background:#143237}.full-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3}.camera-shade{position:absolute;inset:0;background:linear-gradient(#102b388a,transparent 40%,#102b3899);z-index:-2}.camera-heading{padding:35px 6%;color:white}.camera-heading h2{font:700 35px Batang,serif;margin:0 0 12px}.camera-heading p{font-size:14px}.camera-heading .eyebrow{color:#f7dea7}.viewfinder{position:absolute;left:26%;right:26%;top:29%;bottom:24%;pointer-events:none}.viewfinder>i{position:absolute;width:40px;height:40px;border-color:#fff5cc;border-style:solid;border-width:0}.viewfinder>i:nth-child(1){left:0;top:0;border-left-width:3px;border-top-width:3px}.viewfinder>i:nth-child(2){right:0;top:0;border-right-width:3px;border-top-width:3px}.viewfinder>i:nth-child(3){left:0;bottom:0;border-left-width:3px;border-bottom-width:3px}.viewfinder>i:nth-child(4){right:0;bottom:0;border-right-width:3px;border-bottom-width:3px}.viewfinder span{position:absolute;top:-27px;width:100%;text-align:center;color:#fff5d5;font-size:13px}.viewfinder b{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff7cb;font-size:27px;font-weight:400}.shutter{position:absolute;bottom:6%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:13px;border-radius:40px;padding:12px 30px;background:#fffae9;box-shadow:0 4px 0 #978569,0 0 30px #fff5;white-space:nowrap}.shutter-icon{font-size:32px;line-height:1}.camera-credit{position:absolute;right:15px;bottom:13px;color:#fff5d7;font-size:10px}
+
 .puzzle-screen{padding:20px max(16px,4vw) 12px;max-width:1600px;margin:auto;background:#f2eddf}.puzzle-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:13px}.puzzle-heading h2{font:700 clamp(23px,2.8vw,34px) Batang,serif;letter-spacing:-.05em;margin:0 0 7px}.puzzle-heading p{font-size:13px;margin:0;color:#7a7566}.puzzle-heading .eyebrow{font-size:10px;margin-bottom:7px}.progress-card{width:164px;padding:12px 15px;background:#fffdf4;border:1px solid #d4c6a3;border-radius:9px;flex-shrink:0;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}.progress-card>span{font-size:10px;line-height:1.5}.progress-card strong{font-size:21px;color:#827044;white-space:nowrap}.progress-track{height:6px;background:#e2dfd1;border-radius:9px;overflow:hidden;grid-column:1/-1}.progress-track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#469992,#ecc572);transition:width .7s}.game-scene{position:relative;border:1px solid #d6c3a0;border-radius:12px;isolation:isolate;overflow:hidden;box-shadow:0 7px 23px #324b3d19;min-height:443px;--light:0}.scene-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3}.past-scene{z-index:-2;transition:opacity 1.1s;opacity:1}.scene-shade{position:absolute;inset:0;background:linear-gradient(90deg,#142f3520,transparent 45%,#fff8df25);z-index:-1;pointer-events:none}.boards{display:grid;grid-template-columns:42% 58%;padding:18px 4% 32px;gap:0;align-items:start;position:relative}.boards h3{font-size:13px;text-align:center;color:#fffae7;background:#16394aea;border:1px solid #d0b978;border-radius:7px;display:table;margin:0 auto 13px;padding:9px 16px;font-weight:600;box-shadow:0 4px 10px #0001}.boards h3 span{color:#e5bd6c;font-size:10px;margin-right:5px}.source-panel{padding:0 10px;align-self:center}.source-panel>svg{display:block;width:clamp(184px,18vw,248px);height:auto;margin:auto;overflow:visible;touch-action:none;filter:drop-shadow(0 8px 8px #17362c44)}.board-note{text-align:center;background:#17394ad4;color:#fff3cf;padding:6px 10px;border-radius:4px;font-size:10px;display:table;margin:8px auto 0}.target-panel{padding:0 0 0 7%;min-width:0}.target-mat{max-width:460px;margin:auto;padding:9px 10px 0;background:#f7e8c5eb;border:2px solid #a8956d;border-radius:8px;box-shadow:0 8px 12px #58604b35}.target-mat svg{width:100%;height:auto;display:block;touch-action:none;overflow:visible}.target-mat p{font-size:10px;text-align:center;color:#846e48;margin:5px 0 6px;min-height:18px}.selection-card{display:flex;align-items:center;gap:10px;background:#fff8e6ee;border:1px solid #c9b584;border-radius:8px;margin:12px auto 8px;padding:8px 11px;max-width:460px;min-height:67px}.selection-card>svg{width:51px;height:51px;flex-shrink:0}.selection-card>div{flex:1;min-width:0}.selection-card small{font-size:9px;color:#967b51;display:block}.selection-card b{display:block;font-size:12px;margin:3px 0}.selection-card span{font-size:10px;line-height:1.5;display:block;color:#7c7e6e}.selection-card button{font-size:12px;padding:8px 10px;min-height:41px;white-space:nowrap}.piece-palette{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;max-width:460px;margin:auto}.piece-palette button{padding:4px;background:#fffaeccc;position:relative;min-width:0;min-height:47px;border-color:#b9a584}.piece-palette svg{width:100%;height:31px;display:block;pointer-events:none}.piece-palette button span{position:absolute;right:2px;bottom:0;font-size:9px;color:#5a6657}.piece-palette button.selected{border:2px solid #c28e27;background:#ffe4a2}.piece-palette button.placed{background:#dfead4e6}.scene-caption{position:absolute;bottom:7px;right:15px;font-size:9px;color:#faf0d7;background:#203d42b8;padding:3px 7px;border-radius:3px}.piece-hit{cursor:grab;outline:none;touch-action:none}.piece-hit:active{cursor:grabbing}.piece-hit:focus .piece-surface{stroke:#f0bb4a;stroke-width:5}.piece-surface{stroke:#777f79;stroke-width:2.2;stroke-linejoin:round}.piece-selected .piece-surface{stroke:#f5c859;stroke-width:5;filter:drop-shadow(0 0 5px #f7c653)}.piece-selected{opacity:.86}.target-cell{cursor:pointer;outline:none}.target-cell:hover,.target-cell:focus{fill:#f4d887;stroke:#b08632;stroke-width:3}.piece-label{font-size:16px;fill:#41555b;font-weight:bold;pointer-events:none}.piece-grid{stroke:#687572;stroke-opacity:.19;stroke-width:.8;pointer-events:none}.water-flow{animation:waterMove 3.4s linear infinite}.water-shine{animation:shimmer 3s ease-in-out infinite}.ghost-placement{pointer-events:none;opacity:.72}.ghost-valid{fill:#b5d8ae;stroke:#528b60;stroke-dasharray:7 5;stroke-width:3}.ghost-invalid{fill:#e2a293;stroke:#ac503e;stroke-width:3;stroke-dasharray:7 5}.hint-placement{fill:#f7d98388;stroke:#ae7d20;stroke-width:4;stroke-dasharray:8 6;pointer-events:none}.puzzle-toolbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 4px 0}.helper{display:flex;gap:13px;align-items:center;flex:1;min-width:0}.helper img{height:69px;width:42px;flex-shrink:0}.helper b{font-size:11px;color:#986d42}.helper p{font-size:13px;margin:4px 0 0;line-height:1.6;min-height:2.9em}.helper p.error{color:#9f493e}.helper p.success{color:#347d70}.tools{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end;max-width:450px}.tools button{font-size:11px;padding:9px 11px;min-height:39px}.keyboard-note{font-size:10px;text-align:center;color:#9a927d;margin:12px 0 0}.completion{background:linear-gradient(110deg,#1d514f,#193e4c);border:1px solid #cbb15f;border-radius:10px;padding:19px 25px;margin-top:17px;color:#fff6da;display:flex;gap:20px;justify-content:space-between;align-items:center;box-shadow:0 0 24px #cbb45635}.completion .eyebrow{color:#dbca8d;font-size:10px}.completion h3{font:700 26px Batang,serif;margin:0 0 6px}.completion p{font-size:12px;margin:0}.completion button{flex-shrink:0}.drag-ghost{position:fixed;z-index:50;pointer-events:none;width:150px;max-height:150px;filter:drop-shadow(0 8px 7px #20332860);opacity:.9}.drag-ghost svg{display:block;width:100%;height:100%}
+
 .result{display:grid;place-items:center;padding:35px 20px;min-height:calc(100svh - 72px);background:#173f44;overflow:hidden}.result-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;z-index:-1}.result-card{background:#fff8e7f2;border:1px solid #cfb66f;box-shadow:0 15px 60px #092a3850;border-radius:13px;text-align:center;max-width:720px;width:100%;padding:28px 38px}.light-medal{font-size:54px;color:#cfa23f;text-shadow:0 0 24px #efce70;background:radial-gradient(#ffeab9,transparent 68%);width:104px;height:104px;display:grid;place-items:center;margin:0 auto 10px;animation:medalGlow 3s infinite}.result h1{font:700 clamp(26px,3vw,37px)/1.6 Batang,serif;letter-spacing:-.05em;margin:0 0 15px}.result h1 em{font-style:normal;color:#91633b}.result-card>p{font-size:15px;color:#727761}.discovery{padding:15px;background:#ececdb;border:1px solid #d8d4b5;border-radius:8px;margin:20px 0}.discovery b{font-size:12px;color:#947743}.discovery p{font-size:15px;margin:9px 0;color:#385650}.discovery span{font-size:11px;color:#789178}.result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.result-actions button{font-size:12px}
+
 dialog{border:1px solid #c8ad70;border-radius:12px;background:#fbf5e6;color:#314d50;padding:0;max-height:94svh;box-shadow:0 24px 80px #0005}dialog::backdrop{background:#0a2029ba;backdrop-filter:blur(4px)}dialog header{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:18px 23px;border-bottom:1px solid #d6c5a2}dialog header h2{font:700 25px Batang,serif;margin:0}dialog header .eyebrow{font-size:9px;margin-bottom:6px}dialog header>button{font-size:25px;line-height:1;padding:7px 13px;border:0;background:transparent}.photo-dialog{width:min(1080px,95vw)}#photoTabs{display:flex;gap:7px;flex-wrap:wrap;padding:11px 20px}#photoTabs button{font-size:11px;min-height:35px;padding:8px 12px}#photoTabs button[aria-pressed=true],.compare-tabs button[aria-pressed=true]{background:#234657;color:#fff4d5}.photo-viewport{height:52svh;min-height:250px;overflow:auto;background:#162e3a;text-align:center;display:grid;place-items:center}.photo-viewport>img{height:100%;max-height:52svh;width:100%;object-fit:contain}.photo-viewport.zoomed{display:block}.photo-viewport.zoomed>img{height:auto;width:160%;max-width:none;max-height:none;object-fit:initial}#albumDescription{padding:17px 24px 5px;margin:0;font-size:13px}.photo-footer{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:10px 24px 19px;font-size:10px;color:#8e866f}.photo-footer button{font-size:11px;min-height:36px}.compare-dialog{width:min(1140px,95vw)}.compare-tabs{padding:12px 22px;display:flex;gap:8px}.compare-tabs button{font-size:12px}#realComparison{padding:0 22px 22px}.real-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.real-compare-grid figure{margin:0;background:#fffaf0;border:1px solid #cfbf99;border-radius:7px;overflow:hidden}.real-compare-grid b{display:block;font-size:13px;padding:12px 15px;background:#ecdfc4}.real-compare-grid img{display:block;width:100%;height:300px;object-fit:contain;background:#213946}.real-compare-grid figcaption{padding:11px 14px;font-size:12px}.real-compare-grid+p{font-size:11px;margin:11px 0;color:#94856c}#proposalPhoto{font-size:11px;padding:9px 12px;min-height:36px}#artComparison{padding:0 22px 23px}.art-comparison-stage{position:relative;aspect-ratio:16/9;background:#c4c7b7;border-radius:8px;overflow:hidden}.art-comparison-stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}#comparePastArt{clip-path:inset(0 50% 0 0)}#compareDivider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff3c2;box-shadow:0 0 8px #173e39}.before-label,.after-label{position:absolute;top:15px;padding:8px 14px;background:#15394ddb;color:#fff0c5;border:1px solid #dfc280;border-radius:5px;font-size:12px}.before-label{left:15px}.after-label{right:15px}#artComparison label{display:block;font-size:12px;text-align:center;margin-top:14px}#compareRange{width:100%;accent-color:#b59347;cursor:ew-resize;height:28px}#artComparison small{display:block;font-size:10px;text-align:center;color:#91846b}.small-dialog{padding:28px;max-width:440px;width:90vw}.small-dialog h2{font:700 25px Batang,serif}.small-dialog p{font-size:14px}.small-dialog>div{display:flex;gap:12px;justify-content:flex-end}.flash{position:fixed;inset:0;background:#fffde9;pointer-events:none;z-index:80;opacity:0}.flash.on{animation:cameraFlash 1s ease-out}.flash.warm{background:#fff5cb}#toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);background:#173b4af2;color:#fff5d5;border:1px solid #c2a46c;padding:10px 20px;border-radius:8px;z-index:100;font-size:12px;opacity:0;pointer-events:none;max-width:90vw;transition:.25s}#toast.show{opacity:1;transform:translate(-50%,0)}
+
 @keyframes waterMove{to{transform:translateY(32px)}}@keyframes shimmer{50%{opacity:.35}}@keyframes medalGlow{50%{filter:brightness(1.2);transform:scale(1.04)}}@keyframes cameraFlash{0%{opacity:0}18%{opacity:1}40%{opacity:1}100%{opacity:0}}
+
 @media(min-width:900px) and (max-height:820px){.home{padding-top:25px}.home-grid{min-height:550px}.home h1{font-size:52px}.photo-stack{height:490px}.memory-photo img{height:180px}.now-photo{top:211px}.puzzle-screen{padding-top:13px}.puzzle-heading h2{font-size:27px}.boards{padding-top:13px;padding-bottom:28px}.source-panel>svg{width:190px}.game-scene{min-height:390px}.target-mat{max-width:389px}.selection-card{margin-top:8px;padding:5px 9px;min-height:54px}.selection-card>svg{height:42px;width:42px}.piece-palette button{min-height:40px}.piece-palette svg{height:26px}.puzzle-toolbar{padding-top:10px}.helper img{height:58px}.story-photo-wrap{bottom:213px}.dialogue p{font-size:18px}}
+
 @media(max-width:900px){.topbar{gap:12px;padding:10px 18px}.edition{padding-left:12px}.home-grid{gap:25px;grid-template-columns:1fr 1fr}.home h1{font-size:43px}.home-lead{font-size:16px}.photo-stack{height:430px}.memory-photo{width:93%}.memory-photo img{height:156px}.now-photo{top:205px}.photo-stamp{width:88px;height:88px;font-size:12px;top:100px}.home-actors{left:-13px;bottom:-25px}.home-actors img{height:132px;width:76px}.puzzle-screen{padding:15px}.boards{padding:16px 2% 31px;grid-template-columns:38% 62%}.source-panel{padding:0 5px}.source-panel>svg{width:95%;max-width:215px}.target-panel{padding-left:4%}.target-mat{padding:6px 6px 0}.puzzle-toolbar{align-items:flex-start}.tools{max-width:255px}.tools button{font-size:10px}.scene-caption{font-size:8px}.real-compare-grid img{height:240px}}
+
 @media(max-width:600px){.topbar{height:auto;min-height:68px;gap:10px;flex-wrap:wrap;padding:10px 13px}.brand{font-size:16px}.brand small{font-size:7px}.edition{font-size:11px}.edition small{font-size:9px}.topbar nav{gap:4px}.topbar button{font-size:10px;padding:7px 8px;min-height:34px}.screen{min-height:calc(100svh - 100px)}.home{padding:30px 22px}.home-grid{display:flex;flex-direction:column;align-items:stretch;gap:35px}.home h1{font-size:42px}.home-copy>.eyebrow{font-size:9px;letter-spacing:.09em}.camera-token{margin:18px 0}.home-actions button{padding:12px 17px;font-size:13px}.photo-stack{height:420px;max-width:410px;width:100%;margin:auto}.memory-photo{width:87%}.memory-photo img{height:163px}.now-photo{top:188px}.home-actors{bottom:-15px;left:-2px}.credits{font-size:10px}.story{height:calc(100svh - 100px);min-height:615px}.story-top{padding:14px 4%}.story-top>span{font-size:11px}.story-top button{font-size:10px;padding:8px;min-height:35px}.story-photo-wrap{left:3%;right:3%;top:65px;bottom:281px}.photo-tag{font-size:9px;padding:5px 8px;max-width:95%;width:max-content;bottom:2px}.dialogue{left:4%;right:4%;bottom:20px;padding:27px 17px 13px}.dialogue p{font-size:16px;min-height:5em;line-height:1.8}.dialogue>b{font-size:14px;left:16px;min-width:80px;padding:6px 17px}.dialogue>span{font-size:9px;right:17px}.story-actors{bottom:247px;left:5%;right:5%}.story-actors img{height:83px;max-width:60px}.camera-heading{padding:26px 6%}.camera-heading h2{font-size:27px}.camera-heading p{font-size:12px;max-width:280px}.viewfinder{left:12%;right:12%;top:33%;bottom:25%}.camera-credit{font-size:8px;right:8px}.puzzle-screen{padding:16px 10px}.puzzle-heading{gap:8px;align-items:flex-start}.puzzle-heading h2{font-size:22px;line-height:1.35}.puzzle-heading p{font-size:11px}.puzzle-heading .eyebrow{font-size:8px;letter-spacing:0}.progress-card{width:83px;padding:8px;display:block}.progress-card>span{font-size:8px;display:block}.progress-card strong{font-size:19px;display:block;margin:4px 0}.progress-track{height:4px}.boards{display:flex;flex-direction:column;padding:13px 13px 30px;gap:16px;align-items:stretch}.boards h3{font-size:11px;padding:8px 12px;margin-bottom:8px}.source-panel{display:grid;grid-template-columns:1fr 140px;gap:8px;align-items:center;width:100%;padding:0 8px}.source-panel h3{margin:0;text-align:left;grid-column:1;align-self:end}.source-panel>svg{grid-column:2;grid-row:1/3;width:120px;justify-self:center}.source-panel .board-note{font-size:9px;grid-column:1;align-self:start;margin:0;max-width:150px}.target-panel{padding:0}.target-mat{padding:6px 6px 0}.selection-card{padding:7px 9px}.selection-card button{font-size:11px;min-height:42px}.piece-palette{gap:4px}.piece-palette button{min-height:48px}.piece-palette svg{height:34px}.scene-image{object-fit:cover;object-position:34% center}.past-scene{object-position:34% center}.scene-caption{bottom:7px;right:9px;left:9px;text-align:center;font-size:7px}.puzzle-toolbar{display:block}.helper{padding:3px 3px 8px}.helper img{height:58px}.helper p{font-size:12px}.tools{max-width:none;justify-content:stretch;display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.tools button{padding:8px 4px;min-height:42px;font-size:10px}.keyboard-note{display:none}.completion{padding:19px;display:block}.completion h3{font-size:23px}.completion button{width:100%;margin-top:15px;font-size:13px}.result-card{padding:25px 21px}.result h1{font-size:25px}.result-card>p{font-size:13px}.light-medal{height:86px;width:86px;font-size:45px}.result-actions{flex-direction:column}.result-actions button{font-size:12px}.photo-dialog,.compare-dialog{width:96vw;max-height:95svh}dialog header{padding:14px}dialog header h2{font-size:19px}dialog header .eyebrow{font-size:8px}#photoTabs{gap:5px;padding:9px 12px}#photoTabs button{font-size:10px;padding:6px 8px;min-height:33px}.photo-viewport{height:43svh;min-height:200px}.photo-viewport>img{max-height:43svh}#albumDescription{font-size:11px;padding:12px 15px 3px}.photo-footer{padding:10px 15px 15px;font-size:8px}.photo-footer button{font-size:10px;padding:7px 8px;white-space:nowrap}.compare-tabs{padding:10px 13px}.compare-tabs button{font-size:11px;padding:8px 11px;min-height:38px}#realComparison,#artComparison{padding:0 13px 18px}.real-compare-grid{grid-template-columns:1fr;gap:10px}.real-compare-grid b{font-size:11px;padding:9px 11px}.real-compare-grid img{height:190px}.real-compare-grid figcaption{font-size:10px;padding:8px 11px}.real-compare-grid+p{font-size:9px}.before-label,.after-label{font-size:9px;padding:5px 8px;top:8px}.before-label{left:8px}.after-label{right:8px}#artComparison label{font-size:10px}.small-dialog{padding:22px}.small-dialog h2{font-size:22px}}
+
 @media(min-width:900px) and (max-height:820px){.target-mat{max-width:330px}.boards h3{padding:7px 14px;margin-bottom:8px}.selection-card{min-height:46px;max-width:380px;margin-top:7px;padding:5px 8px}.selection-card span{display:none}.selection-card>svg{width:36px;height:36px}.piece-palette{max-width:380px}.progress-card{width:180px}}
+
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.flash.on{opacity:1}}
 
+
+
 .touch-guide{display:flex;align-items:center;gap:14px;font-size:13px;padding:9px 14px;margin:0 0 12px;background:#fff9e9;border:1px solid #d7c5a0;border-radius:8px;color:#765b36}
+
 .touch-guide-note{margin-left:auto;font-size:11px;color:#85846e}
+
 .touch-guide>b{white-space:nowrap}.touch-guide>span:not(.touch-guide-note){color:#b4975b}
+
 .source-panel>svg,.target-mat svg,.piece-palette{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+
 .source-panel>svg,.target-mat svg{touch-action:none}
+
 .drag-ghost{max-height:none;max-width:none;opacity:.75}
+
 .auto-next{border:1px solid #ceb86e;border-radius:8px;padding:13px 18px;background:#153b46;color:#f9e6b4;max-width:260px;font-weight:700;line-height:1.7;margin:0;font-size:13px;flex-shrink:0}
+
 #completion:focus{outline:none}.completion h3{font-size:25px}
+
 @media(pointer:coarse),(max-width:1100px){
+
  button{min-height:48px;-webkit-tap-highlight-color:transparent}
+
  .topbar button{min-height:42px;font-size:12px}
+
  .puzzle-screen{padding:12px}
+
  .puzzle-heading{margin-bottom:8px}.puzzle-heading h2{font-size:26px}.puzzle-heading p{font-size:12px}
+
  .touch-guide{font-size:12px;padding:8px 12px;margin-bottom:8px;gap:10px}.touch-guide-note{font-size:10px}
+
  .boards{grid-template-columns:40% 60%;padding:13px 2% 27px}
+
  .source-panel>svg{width:215px;max-width:100%}
+
  .target-panel{padding-left:3%}.target-mat{max-width:370px;padding:6px 6px 0}
+
  .boards h3{font-size:12px;padding:8px 12px;margin-bottom:10px}
+
  .selection-card{padding:8px 10px;margin-top:8px;min-height:64px;max-width:410px}
+
  .selection-card>svg{width:53px;height:53px}.selection-card small{font-size:10px}.selection-card b{font-size:13px}.selection-card span{display:block;font-size:11px}
+
  .selection-card button{min-height:52px;min-width:102px;padding:10px;font-size:16px;background:#ead49e;border:2px solid #b99b5a;box-shadow:0 2px 0 #ae9255}
+
  .piece-palette{display:none}.selection-card{margin-bottom:0}
+
  .puzzle-toolbar{padding-top:10px;gap:12px}.helper img{height:57px}.helper p{font-size:12px;line-height:1.6}
+
  .tools{max-width:420px;gap:6px}.tools button{font-size:12px;min-height:48px;padding:9px 12px}
+
  .keyboard-note{display:none}.completion{padding:18px 21px}.completion .auto-next{max-width:240px;font-size:12px}
+
 }
+
 @media(max-width:600px){
+
  .touch-guide{flex-wrap:wrap;gap:8px}.touch-guide-note{flex-basis:100%;margin-left:0}
+
  .boards{display:flex;padding:14px 12px 31px}.source-panel{grid-template-columns:1fr 194px;padding:0;display:grid}
+
  .source-panel>svg{width:190px;max-width:100%}.source-panel h3{white-space:normal;font-size:11px;padding:7px 9px}
+
  .target-panel{padding:0}.target-mat{max-width:100%}.selection-card button{min-width:94px}
+
  .puzzle-toolbar{display:block}.tools{max-width:none;grid-template-columns:repeat(2,1fr)}.tools button{min-height:50px}
+
  .completion .auto-next{max-width:none;margin-top:15px}.puzzle-heading h2{font-size:22px}
+
 }
+
+
 
 /* Dialogue characters stand inside the illustrated location; photographs open separately. */
+
 .story-photo-wrap{inset:0;text-align:initial}.story-photo-wrap img{object-fit:cover;object-position:center}
+
 .story::after{content:'';position:absolute;inset:0;background:linear-gradient(#071b3438,transparent 35%,#102e3c15 65%,#102e3c70);pointer-events:none;z-index:-1}
+
 .story-photo-wrap{z-index:-2}.story-top{position:relative;z-index:2}.story-top>span{background:#143447e8;border:1px solid #ceb578;padding:11px 17px;border-radius:7px}
+
 .story-tools{display:flex;gap:8px}.story-tools button{min-height:46px;font-size:12px;padding:10px 14px}
+
 .story-actors{bottom:197px;left:9%;right:9%;align-items:flex-end}.story-actors img{height:clamp(170px,33vh,290px);max-width:200px;width:auto;object-fit:contain;filter:drop-shadow(0 9px 5px #18392b55)}
+
 .story-actors img.inactive{filter:brightness(.85) saturate(.8) drop-shadow(0 9px 5px #18392b55)}
+
 .story .photo-tag{bottom:215px;left:50%;font-size:10px;background:#173a4ec9;z-index:2}
+
 .story.light-found::before{content:'✦';position:absolute;left:50%;top:29%;transform:translateX(-50%);font-size:100px;color:#ffe58b;text-shadow:0 0 25px #fff9c1,0 0 80px #ffc440;animation:lightBreathe 2s ease-in-out infinite}
+
 .dialogue-buttons button{min-height:48px;min-width:92px;font-size:14px}.embedded-course .brand{pointer-events:none}.embedded-course .edition{font-size:12px}
+
 .boarding{height:calc(100svh - 72px);min-height:560px;overflow:hidden}.boarding-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+
 .boarding-heading{position:absolute;top:6%;left:6%;max-width:420px;padding:24px 28px;background:#fff8e9ed;border:1px solid #d6bb7d;border-radius:12px;box-shadow:0 12px 30px #243c2c22}
+
 .boarding-heading h2{font:700 clamp(26px,3.3vw,43px)/1.4 Batang,serif;margin-bottom:15px}.boarding-heading p{font-size:14px;margin-bottom:0;min-height:3.5em}
+
 .boarding-stage{position:absolute;inset:0;pointer-events:none}#returnBus{position:absolute;width:min(60%,710px);left:7%;bottom:9%;transition:transform 2.5s ease-in;filter:drop-shadow(0 13px 5px #13261d45)}#returnBus.leaving{transform:translateX(130vw)}
+
 #boardingMinwoo,#boardingSeoyeon{position:absolute;bottom:13%;height:clamp(100px,23vh,190px);left:74%;transition:left 1s,bottom 1s,opacity .7s,transform 1s}#boardingSeoyeon{left:85%}#boardingMinwoo.aboard,#boardingSeoyeon.aboard{left:43%;bottom:17%;opacity:0;transform:scale(.65)}
+
 .boarding-actions{position:absolute;bottom:22px;left:20px;right:20px;text-align:center}.boarding-actions button{min-height:52px;padding:14px 24px;font-size:16px}
+
 @keyframes lightBreathe{50%{text-shadow:0 0 40px #fffce4,0 0 115px #ffd455;}}
+
 @media(max-width:900px){.story-top{padding:15px 3%}.story-top>span{font-size:12px;max-width:52%}.story-actors{left:5%;right:5%}.story-actors img{height:220px}.boarding-heading{max-width:375px}.embedded-course .edition{display:none}}
+
 @media(max-width:600px){.story-top{flex-wrap:wrap}.story-top>span{max-width:100%;font-size:11px}.story-tools{margin-left:auto}.story-tools button{font-size:11px;padding:8px 11px}.story-actors{bottom:259px}.story-actors img{height:160px;max-width:120px}.story .photo-tag{bottom:272px;font-size:8px;max-width:48%;padding:5px}.boarding-heading{left:5%;right:5%;top:4%;padding:20px}.boarding-heading h2{font-size:28px}#returnBus{width:78%;left:0;bottom:13%}#boardingMinwoo{left:73%}#boardingSeoyeon{left:86%}#boardingMinwoo,#boardingSeoyeon{height:100px;bottom:19%}.boarding-actions button{font-size:13px}.topbar nav{flex-wrap:wrap}.embedded-course .brand{font-size:15px}}
+
 @media(prefers-reduced-motion:reduce){.story.light-found::before{animation:none}#returnBus,#boardingMinwoo,#boardingSeoyeon{transition:none}}
 
+
+
 .scene-photo-button{position:absolute;top:clamp(82px,11vh,108px);left:50%;transform:translateX(-50%);z-index:4;min-height:48px;padding:12px 20px;background:#112435ed;color:#f3e5be;border:1px solid #b99e60;font-size:13px;box-shadow:0 3px 12px #081c2933;white-space:nowrap;touch-action:manipulation}
+
 @media(max-width:600px){.scene-photo-button{top:78px;font-size:12px;padding:11px 17px}.story-top{flex-wrap:nowrap}.story-top>span{max-width:calc(100% - 118px)}.story-tools{flex-shrink:0}}
 
+
+
 @media(max-height:760px) and (min-width:701px){.scene-photo-button{top:58px}}
+
 .connecting{display:grid;place-items:center;isolation:isolate;padding:30px;text-align:center}.connecting-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}.connecting-card{max-width:550px;padding:34px;background:#112b3ceF;color:#fff3d5;border:1px solid #c7a65f;border-radius:10px;box-shadow:0 15px 50px #14232c50}.connecting-card .eyebrow{color:#ead293}.connecting-card h1{font-size:clamp(26px,4vw,40px)}.connecting-card p{line-height:1.8}.connecting-card button{min-height:48px}
-</style></head><body>
+
+</style><link rel="stylesheet" href="../dialogue-controls.css?v=20261006"><script defer src="../dialogue-controls.js?v=20261006"></script><link rel="stylesheet" href="../bus-placement.css?v=20261009-road-v1"><script defer src="../bus-placement.js?v=20261009-road-v1"></script><link rel="stylesheet" href="../viewport-fit.css?v=20261009-fit1">
+</head><body data-fit-page="gulpo">
+
 <header class="topbar"><a class="brand" href="#" id="homeLink">M<span>✦</span>TH TOUR<small>INCHEON · 굴포천</small></a><span class="edition">시간사진기 <small id="chapterLabel">굴포천 여행</small></span><nav><button id="courseJournal" hidden>빛의 수첩</button><button id="soundButton" aria-pressed="false" aria-label="게임 소리 켜기">소리 꺼짐</button></nav></header>
+
 <main>
+
 <section id="connecting" class="screen connecting" hidden aria-labelledby="connectingTitle"><img class="connecting-bg" data-media="streamArt" alt="굴포천 생태하천 일러스트"><div class="connecting-card"><span class="eyebrow">부평에서 굴포천으로</span><h1 id="connectingTitle">굴포천에 도착했어요</h1><p id="connectingStatus" role="status">민우와 서연이 버스에서 내릴 준비를 하고 있어요.</p><button id="retryConnection" class="primary" hidden>여행 이어가기 →</button></div></section>
+
 <section id="home" class="screen home active"><div class="home-grid"><div class="home-copy"><span class="eyebrow">부평에서 받은 신비한 사진기, 두 번째 여행</span><h1>굴포천,<br><em>햇빛을 만나다</em></h1><p class="home-lead">찰칵, 사진 속 과거로!<br>회색 바닥 아래 잠든 물길을 찾아요.</p><div class="camera-token"><svg viewBox="0 0 80 64" aria-hidden="true"><path d="M9 18H25L30 8H51L56 18H71V55H9Z"/><circle cx="41" cy="36" r="14"/><circle cx="41" cy="36" r="7"/><path d="M60 25H65"/></svg><div><b>시간사진기</b><span>부평모두몰 상인에게 받은 선물</span></div><span class="sparkle">✦</span></div><div class="home-actions"><button class="primary" id="startButton">사진기 들고 출발 →</button><button id="resumeButton" hidden>이어서 체험하기</button></div><button class="quiet" id="quickStart">퍼즐 먼저 체험하기</button><p class="home-note">관찰하고 · 옮기고 · 돌려 맞추는 도형 여행</p><details class="credits"><summary>체험판과 자료 안내</summary><p>오서희 학생 원작의 굴포천 여행과 민우·서연 캐릭터를 바탕으로 만든 별도 시안입니다. 부평모두몰에서 시간사진기를 받아 굴포천으로 이어지는 매스투어입니다. 학생 제출 원본은 그대로 보존했습니다.</p><p>실제 사진은 사용자가 제공했습니다. 사진기·시간여행·도형 조각으로 공원을 만드는 과정은 창작이며, 실제 복원 공정을 재현한 것은 아닙니다. 퍼즐 배경은 제공 사진을 참고한 일러스트입니다.</p><p><a href="https://blog.naver.com/withbupyeong/224144576462" target="_blank" rel="noopener">관광 안내 참고 · 부평구청 블로그</a></p></details></div><div class="photo-stack"><figure class="memory-photo past-photo"><img data-media="past" alt="복원 전 주차장과 도로로 덮여 있던 굴포천 구간"><figcaption><span>그때</span>콘크리트 아래 잠든 물길</figcaption></figure><figure class="memory-photo now-photo"><img data-media="stream" alt="물길과 산책로가 보이는 현재 굴포천"><figcaption><span>지금</span>다시 햇빛을 만난 굴포천</figcaption></figure><div class="home-actors"><img data-media="minwoo" alt="민우"><img data-media="seoyeon" alt="서연"></div><span class="photo-stamp">기억을 잇는<br>수학 여행</span></div></div></section>
+
 <section id="story" class="screen story" hidden><div class="story-photo-wrap"><img id="storyImage" alt=""><span id="storyPhotoTag" class="photo-tag"></span></div><div class="story-top"><span id="storyLocation"></span><div class="story-tools"><button id="storySkip">대화 건너뛰기</button></div></div><button id="storyPhoto" class="scene-photo-button">실제 배경 보기</button><div class="story-actors"><img id="storyMinwoo" data-media="minwoo" alt="민우"><img id="storySeoyeon" data-media="seoyeon" alt="서연"></div><div class="dialogue"><b id="speaker"></b><span id="storyCounter"></span><p id="storyText" aria-live="polite"></p><div class="dialogue-buttons"><button id="storyPrev">← 이전</button><button id="storyNext" class="primary">다음 →</button></div></div></section>
+
 <section id="camera" class="screen camera-screen" hidden><img class="full-photo" data-media="streamArt" alt="사진기에 담을 현재 굴포천의 물길 일러스트"><div class="camera-shade"></div><div class="camera-heading"><span class="eyebrow">시간사진기 · 과거를 비추는 렌즈</span><h2>물길에 사진기를 맞춰요</h2><p>지금 보이는 풍경 아래에는 어떤 기억이 숨어 있을까요?</p></div><div class="viewfinder"><i></i><i></i><i></i><i></i><span>굴포천의 기억을 찾았어요</span><b>＋</b></div><button id="shutterButton" class="shutter"><span class="shutter-icon">◎</span>찰칵! 과거로</button><small class="camera-credit">실제 굴포천을 바탕으로 만든 일러스트</small></section>
+
 <section id="puzzle" class="screen puzzle-screen" hidden aria-labelledby="puzzleTitle"><div class="puzzle-heading"><div><span class="eyebrow">과거의 굴포천 · 물길을 되찾는 도형 퍼즐</span><h2 id="puzzleTitle">물길을 깨우고, 공원을 완성해요</h2><p>조각을 옮겨 공원을 빈틈없이 채워 주세요.</p></div><div class="progress-card"><span>돌아온 물길의 빛</span><strong id="progressText">0 / 6</strong><div class="progress-track"><i id="progressBar"></i></div></div></div>
+
 <div class="touch-guide"><b>① 조각을 톡</b><span>→</span><b>② 공원 빈자리를 톡</b><span class="touch-guide-note">끌지 않아도 놓을 수 있어요.</span></div>
+
 <div id="gameScene" class="game-scene"><img class="scene-image present-scene" data-media="presentArt" alt="복원되는 물길과 공원 일러스트"><img id="pastScene" class="scene-image past-scene" data-media="pastArt" alt="콘크리트로 덮인 과거를 표현한 일러스트"><div class="scene-shade"></div><div class="boards"><div class="source-panel"><h3><span>01</span> 물길을 덮은 조각</h3><svg id="sourceBoard" viewBox="-6 -6 268 396" role="group" aria-label="물길 위에서 옮길 회색 도형 6개"></svg><p class="board-note">옮길 조각을 한 번 눌러 주세요.</p></div><div class="target-panel"><h3><span>02</span> 물길 옆 공원 만들기</h3><div class="target-mat"><svg id="targetBoard" viewBox="-6 -6 396 268" role="group" aria-label="가로 여섯 칸 세로 네 칸의 공원 빈자리"></svg><p id="targetNote">겹치지 않게 · 테두리 안에 · 빈틈없이</p></div><div class="selection-card"><svg id="selectedPreview" viewBox="-8 -8 272 272" aria-hidden="true"></svg><div><small>지금 고른 조각</small><b id="selectedName">왼쪽에서 골라 주세요</b><span id="selectedTip">같은 조각도 돌리면 다르게 보여요.</span></div><button id="rotateButton" disabled>↻ 돌리기</button></div><div id="piecePalette" class="piece-palette" aria-label="도형 선택"></div></div></div><div class="scene-caption">사진을 참고한 시간여행 모형 · 실제 공사 과정과 다른 수학 놀이입니다.</div></div>
+
 <div class="puzzle-toolbar"><div class="helper"><img data-media="seoyeon" alt="서연"><div><b>서연</b><p id="feedback" role="status" aria-live="polite">왼쪽 조각을 고르고, 오른쪽 빈칸을 눌러 봐!</p></div></div><div class="tools"><button id="hintButton">✦ 힌트</button><button id="undoButton" disabled>↶ 되돌리기</button><button id="returnPiece" disabled>원래 자리로</button><button id="resetPuzzle">다시 맞추기</button></div></div><div id="completion" class="completion" hidden><div><span class="eyebrow">여섯 조각이 새로운 풍경을 만들었어요</span><h3>물길 옆 공원이 완성됐어요!</h3><p>사진기가 반짝이며 현재의 풍경을 비춰요.</p></div><p id="returnPresent" class="auto-next" role="status">잠시 후 사진기가 우리를 현재로 데려가요…</p></div><p class="keyboard-note">끌어서 옮기기 또는 조각 선택 → 빈칸 누르기 · R: 돌리기 · 방향키: 자리 이동 · Enter: 놓기</p></section>
+
 <section id="result" class="screen result" hidden><img class="result-bg" data-media="waterfallArt" alt="물이 흐르는 현재 굴포천 일러스트"><div class="result-card"><span class="eyebrow">버스에 담은 오늘의 여행</span><div class="light-medal" aria-label="수학의 빛 획득">✦</div><h1>물길이 찾은 햇빛,<br><em>우리가 찾은 수학의 빛</em></h1><p>회색 바닥 아래 잠들었던 물길이<br>햇빛과 사람들을 다시 만났어요.<br>수학의 빛을 챙긴 민우와 서연은 다시 버스에 올랐어요.</p><div class="discovery"><b>여행에서 발견한 수학</b><p>옮기고 돌려도 같은 도형!<br>같은 조각이 모여 새로운 모양이 되었어요.</p><span id="resultStats"></span></div><div class="result-actions"><button id="resultCompare" class="primary">실제 과거·현재 사진 비교하기</button><button id="playAgain">다른 방법으로 다시 만들기</button><button id="resultHome">첫 화면으로</button></div></div></section>
+
 <section id="boarding" class="screen boarding" hidden aria-labelledby="boardingTitle"><img class="boarding-bg" data-media="busArt" alt="굴포천 곁 버스 승차 장소를 상상한 일러스트"><div class="boarding-heading"><span class="eyebrow">수학의 빛과 함께 돌아가는 길</span><h2 id="boardingTitle">오늘의 빛을 담고,<br>다시 버스에 올라요</h2><p id="boardingStatus" role="status">민우와 서연을 기다리는 매스투어 버스예요.</p></div><div class="boarding-stage"><img id="returnBus" data-media="bus" alt="매스투어 버스"><img id="boardingMinwoo" data-media="minwoo" alt="민우"><img id="boardingSeoyeon" data-media="seoyeon" alt="서연"></div><div class="boarding-actions"><button id="boardReturnBus" class="primary">수학의 빛을 챙겨 버스 타기 →</button></div></section></main>
+
 <dialog id="album" class="photo-dialog"><header><div><span class="eyebrow">지금 만난 장소 · 실제 사진</span><h2 id="albumTitle"></h2></div><button data-close="album" aria-label="사진 창 닫기">×</button></header><div class="photo-viewport" id="photoViewport"><img id="albumImage" alt=""></div><p id="albumDescription"></p><div class="photo-footer"><span id="albumCredit"></span><button id="zoomPhoto" aria-pressed="false">사진 확대 ＋</button></div></dialog>
+
 <dialog id="comparison" class="compare-dialog"><header><div><span class="eyebrow">기억과 오늘을 나란히</span><h2>굴포천의 과거와 현재</h2></div><button data-close="comparison" aria-label="비교 창 닫기">×</button></header><div class="compare-tabs"><button id="realCompare" aria-pressed="true">실제 사진 비교</button><button id="artCompare" aria-pressed="false">그림으로 변화 보기</button></div><div id="realComparison"><div class="real-compare-grid"><figure><b>과거 · 복원 전 실제 사진</b><img data-media="past" alt="콘크리트 덮개 위로 주차장과 도로가 있던 복원 전 모습"><figcaption>도시 한가운데, 덮여 있던 물길</figcaption></figure><figure><b>현재 · 복원된 실제 모습</b><img data-media="stream" alt="물이 흐르고 산책길이 이어지는 현재 모습"><figcaption>물길과 산책 공간으로 돌아온 풍경</figcaption></figure></div><p>촬영 위치와 시점이 다른 제공 사진을 나란히 살펴봐요.</p><button id="proposalPhoto">복원 전·예상도 자료도 보기 ↗</button></div><div id="artComparison" hidden><div class="art-comparison-stage"><img data-media="presentArt" alt="복원 후를 표현한 게임 일러스트"><img id="comparePastArt" data-media="pastArt" alt="복원 전을 표현한 게임 일러스트"><div id="compareDivider"></div><span class="before-label">과거</span><span class="after-label">현재</span></div><label for="compareRange">손잡이를 움직여 달라진 풍경을 살펴요.</label><input id="compareRange" type="range" min="0" max="100" value="50"><small>같은 시점으로 그린 창작 일러스트 비교입니다.</small></div></dialog>
+
 <dialog id="resetDialog" class="small-dialog"><h2 id="resetTitle">다시 시작할까요?</h2><p id="resetMessage">지금 맞춘 조각이 처음 자리로 돌아가요.</p><div><button data-close="resetDialog">계속하기</button><button class="primary" id="confirmReset">다시 시작</button></div></dialog>
+
 <div id="flash" class="flash" aria-hidden="true"></div><div id="dragGhost" class="drag-ghost" hidden aria-hidden="true"></div><div id="toast" role="status"></div>
-<script id="courseConfig" type="application/json">{"embedded":true}</script><script id="mediaData" type="application/json">{"past":"../gulpo-camera/past-parking-clean.webp","stream":"../gulpo-camera/present-stream.webp","waterfall":"../gulpo-camera/present-waterfall.webp","spring":"../gulpo-camera/present-spring.webp","proposal":"../gulpo-camera/before-proposal.webp","presentArt":"../gulpo-camera/scene-present.webp","pastArt":"../gulpo-camera/scene-past.webp","streamArt":"../gulpo-camera/story-stream.webp","waterfallArt":"../gulpo-camera/story-waterfall.webp","pastStoryArt":"../gulpo-camera/story-past.webp","busArt":"../gulpo-camera/story-bus.webp","minwoo":"../%EB%AF%BC%EC%9A%B0.svg","seoyeon":"../%EC%84%9C%EC%97%B0.svg","bus":"../mathtour-bus-yellow.webp"}</script><script>/* Six four-cell pieces tile a 4×6 covered channel and a 6×4 riverside park. */
+
+<script id="courseConfig" type="application/json">{"embedded":true}</script><script id="mediaData" type="application/json">{"past":"../gulpo-camera/past-parking-clean.webp","stream":"../gulpo-camera/present-stream.webp","waterfall":"../gulpo-camera/present-waterfall.webp","spring":"../gulpo-camera/present-spring.webp","proposal":"../gulpo-camera/before-proposal.webp","presentArt":"../gulpo-camera/scene-present.webp","pastArt":"../gulpo-camera/scene-past.webp","streamArt":"../gulpo-camera/story-stream.webp","waterfallArt":"../gulpo-camera/story-waterfall.webp","pastStoryArt":"../gulpo-camera/story-past.webp","busArt":"../gulpo-camera/story-bus.webp","minwoo":"../%EB%AF%BC%EC%9A%B0.svg","seoyeon":"../%EC%84%9C%EC%97%B0.svg","bus":"../mathtour-bus-yellow.webp?v=20261009-illustration"}</script><script>/* Six four-cell pieces tile a 4×6 covered channel and a 6×4 riverside park. */
+
 (function(root){
+
  'use strict';
+
  const normalize=cells=>{const mx=Math.min(...cells.map(p=>p[0])),my=Math.min(...cells.map(p=>p[1]));return cells.map(([x,y])=>[x-mx,y-my]).sort((a,b)=>a[1]-b[1]||a[0]-b[0]);};
+
  const rotate=cells=>normalize(cells.map(([x,y])=>[-y,x]));
+
  const key=cells=>normalize(cells).map(p=>p.join(',')).join(';');
+
  const specs=[
+
   ['square','네모 조각',[[0,0],[1,0],[0,1],[1,1]],'#b7afa0'],
+
   ['line','긴 조각',[[0,0],[1,0],[2,0],[3,0]],'#a6ada8'],
+
   ['elbow','굽은 조각',[[0,0],[0,1],[0,2],[1,2]],'#b5ada9'],
+
   ['square2','작은 네모 조각',[[0,0],[1,0],[0,1],[1,1]],'#a9b1ab'],
+
   ['line2','긴 돌 조각',[[0,0],[1,0],[2,0],[3,0]],'#b3b0a4'],
+
   ['elbow2','굽은 돌 조각',[[0,0],[0,1],[0,2],[1,2]],'#abaeb3']
+
  ];
+
  const pieces=specs.map(([id,name,cells,color],i)=>{let r=normalize(cells);const rotations=[];for(let n=0;n<4;n++){if(!rotations.some(p=>key(p)===key(r)))rotations.push(r);r=rotate(r);}return {id,name,color,number:i+1,rotations};});
+
  const piece=id=>pieces.find(p=>p.id===id);
+
  function cellsAt(p){const shape=piece(p.id);if(!shape||!Number.isInteger(p.rotation)||p.rotation<0||p.rotation>=shape.rotations.length)return null;if(!Number.isInteger(p.x)||!Number.isInteger(p.y))return null;return shape.rotations[p.rotation].map(([x,y])=>[p.x+x,p.y+y]);}
+
  function validate(placed,width=6,height=4){if(!Array.isArray(placed)||placed.length>pieces.length)return false;let used=0;const ids=new Set();for(const p of placed){if(!p||ids.has(p.id))return false;ids.add(p.id);const cells=cellsAt(p);if(!cells)return false;for(const [x,y] of cells){if(x<0||y<0||x>=width||y>=height)return false;const bit=1<<(y*width+x);if(used&bit)return false;used|=bit;}}return true;}
+
  function canPlace(placed,p,width=6,height=4){return validate([...placed,p],width,height);}
+
  function solve(placed=[],width=6,height=4){if(!validate(placed,width,height))return null;let used=0;for(const p of placed)for(const [x,y] of cellsAt(p))used|=1<<(y*width+x);const all=(1<<(width*height))-1,remaining=pieces.filter(p=>!placed.some(q=>q.id===p.id));const cache=new Set();
+
   function search(mask,left){if(!left.length)return mask===all?[]:null;const ck=mask+':'+left.map(p=>p.number).join('');if(cache.has(ck))return null;let first=0;while(mask&(1<<first))first++;const fx=first%width,fy=Math.floor(first/width);
+
    for(const p of left)for(let rotation=0;rotation<p.rotations.length;rotation++){const shape=p.rotations[rotation];for(const [ax,ay] of shape){const x=fx-ax,y=fy-ay;let bits=0,valid=true;for(const [sx,sy] of shape){const xx=x+sx,yy=y+sy;if(xx<0||yy<0||xx>=width||yy>=height){valid=false;break;}const bit=1<<(yy*width+xx);if(mask&bit){valid=false;break;}bits|=bit;}if(!valid)continue;const rest=search(mask|bits,left.filter(q=>q.id!==p.id));if(rest)return [{id:p.id,x,y,rotation},...rest];}}
+
    cache.add(ck);return null;
+
   }return search(used,remaining);
+
  }
+
  const source=solve([],4,6);if(!source)throw Error('Source board must tile.');
+
  function outline(cells,unit=64){const set=new Set(cells.map(([x,y])=>x+','+y)),edges=[];for(const [x,y] of cells){if(!set.has(x+','+(y-1)))edges.push([[x,y],[x+1,y]]);if(!set.has((x+1)+','+y))edges.push([[x+1,y],[x+1,y+1]]);if(!set.has(x+','+(y+1)))edges.push([[x+1,y+1],[x,y+1]]);if(!set.has((x-1)+','+y))edges.push([[x,y+1],[x,y]]);}let out='';while(edges.length){const [start,end]=edges.shift();out+='M'+start.map(n=>n*unit).join(' ')+'L'+end.map(n=>n*unit).join(' ');let pos=end,guard=0;while(pos.join()!==start.join()&&guard++<100){const idx=edges.findIndex(e=>e[0].join()===pos.join());if(idx<0)break;const edge=edges.splice(idx,1)[0];pos=edge[1];out+='L'+pos.map(n=>n*unit).join(' ');}out+='Z';}return out;}
+
  const api={pieces,piece,normalize,rotate,key,cellsAt,validate,canPlace,solve,source,outline};
+
  if(typeof module==='object'&&module.exports)module.exports=api;else root.GulpoPuzzle=api;
+
 })(typeof window==='undefined'?globalThis:window);
+
 </script><script>(function () {
+
  'use strict';
+
  const P = window.GulpoPuzzle;
+
  const course=JSON.parse(document.getElementById('courseConfig').textContent);
+
  let coursePaused=false,courseReady=false;
+
  const notifyCourse=(type)=>{if(course.embedded)parent.postMessage({type,saved:snapshot()},'*');};
+
  const media = JSON.parse(document.getElementById('mediaData').textContent);
+
  const $ = id => document.getElementById(id);
+
  const unit = 64, storageKey = 'mathtour.gulpo.camera-prototype-v1';
+
  const clone = value => JSON.parse(JSON.stringify(value));
+
  const state = { phase:'home', placed:[], selected:null, rotation:0, preview:null, hint:null,
+
    history:[], finalSeen:false, tripFinished:false, story:null, drag:null, sound:false, busy:false };
+
  let transitionId = 0, completionToken = 0, suppressClickUntil = 0, resetAction = null, audioContext = null, toastTimer;
+
  const photos = [
+
   {key:'past', tab:'복원 전', title:'복원 전 · 도로와 주차장 아래의 물길', desc:'콘크리트로 덮인 구간 위에 도로와 주차장이 있던 과거 모습이에요. 도시 사이로 길게 이어진 공간을 찾아보세요. 제공 사진의 건물 현수막을 지운 보정본입니다.'},
+
   {key:'stream', tab:'현재 물길', title:'현재 · 물길과 나란히 걷는 산책로', desc:'복원된 구간에는 물길이 드러나고 옆으로 산책 공간이 이어져요. 물, 돌로 쌓은 둑, 분홍빛 길을 사진에서 찾아보세요.'},
+
   {key:'waterfall', tab:'흐르는 물', title:'현재 · 굴포천으로 흘러드는 물', desc:'물이 아래로 떨어져 하천으로 이어지는 모습을 볼 수 있어요. 게임에서 되찾은 물길과 실제 풍경을 비교해 보세요.'},
+
   {key:'spring', tab:'벚꽃 산책길', title:'현재 풍경 · 벚꽃이 핀 굴포천 산책길', desc:'벚꽃과 풀, 물길이 어우러진 굴포천의 봄 풍경이에요. 다른 사진과 촬영 위치가 다른 제공 사진입니다.'},
+
   {key:'proposal', tab:'사진과 예상도', title:'복원 전 실제 사진과 복원 후 예상도', desc:'왼쪽은 복원 전 실제 사진, 오른쪽은 복원 후를 예상해 만든 이미지예요. 오른쪽 그림을 실제 완공 사진과 구분해서 살펴보세요.'}
+
  ];
+
  // Keep riverside dialogue at the same viewpoint; change only for time travel or the bus.
+
  const introduction = [
+
   ['민우','부평모두몰 상인분이 주신 사진기, 잘 챙겼지? 버스를 타고 오니 정말 물소리가 들려!', 'stream'],
+
   ['서연','여기가 굴포천 생태하천이야. 도시 사이로 물이 흐르고, 물길 옆으로 산책길도 이어져 있어.', 'stream'],
+
   ['민우','돌로 쌓은 둑도 있고, 물이 흘러드는 곳도 있네. 지하상가와는 또 다른 풍경이야!', 'stream'],
+
   ['서연','이곳의 일부 구간은 예전에 콘크리트로 덮여 있었대. 그 위를 도로와 주차장으로 사용했고.', 'stream'],
+
   ['민우','지금은 물이 훤히 보이는데? 그때는 어떤 모습이었을까?', 'stream'],
+
   ['서연','상인분이 그러셨잖아. “이 사진기는 장소에 남은 옛 기억을 보여 준단다.” 물길을 한 번 찍어 보자!', 'stream']
+
  ];
+
  const pastStory = [
+
   ['민우','어? 물길이 사라졌어! 자동차가 세워진 길이 길게 이어져 있잖아.', 'past'],
+
   ['서연','사진 속 과거로 들어왔나 봐. 저 콘크리트 아래에 우리가 봤던 물길이 숨어 있는 거야.', 'past'],
+
   ['사진기','굴포천의 기억을 깨워 주세요. 회색 조각을 옮겨 공원을 완성하면, 그 아래 물길이 조금씩 드러납니다.', 'past'],
+
   ['서연','조각을 옮기고 돌려서 빈자리를 채워 보자. 서로 겹치거나 밖으로 나가지 않게!', 'past'],
+
   ['민우','좋아! 같은 조각이 새로운 모양으로 모이면, 굴포천도 다시 햇빛을 만날 수 있을 거야.', 'past']
+
  ];
+
  const ending = [
+
   ['민우','돌아왔어! 사진 속 회색 바닥 자리에 물이 흐르고 있어.', 'stream'],
+
   ['서연','조각은 그대로였는데, 옮기고 돌리니까 길쭉한 모양이 넓은 공원으로 바뀌었어!', 'stream'],
+
   ['민우','물소리도 들리는 것 같아. 가려져 있던 물길이 다시 빛을 만났네.', 'stream'],
+
   ['서연','가려져 있던 물길도, 우리 공원도 환해졌어. 물가에 초록빛이 가득해!', 'stream'],
+
   ['민우','부평에서는 만남의 장소와 상가의 빛을 찾고, 여기서는 물길의 빛을 찾았어!', 'stream'],
+
   ['서연','사진기에서 빛이 나! 우리가 찾은 도형들이 하나로 모여 수학의 빛이 되었어!', 'stream']
+
  ];
+
  const farewell=[
+
   ['민우','만남의 장소를 밝힌 팔각형, 가게에서 세었던 열네 개의 가방, 그리고 우리가 완성한 공원!', 'stream'],
+
   ['서연','서로 다른 곳에서 찾은 수학이 오늘의 여행을 이어 주었네. 시간사진기에 이 풍경도 간직하자.', 'stream'],
+
   ['민우','찰칵! 물길의 햇빛까지 담았어. 이제 상인분께 굴포천에서 찾은 빛 이야기도 들려드리고 싶어.', 'stream'],
+
   ['서연','저기 매스투어 버스가 기다리고 있어. 사진기와 수학의 빛을 챙겨서 다시 버스에 오르자!', 'bus'],
+
   ['민우','안녕, 굴포천! 다음에 올 때도 반짝이는 물길을 보여 줘.', 'bus']
+
  ];
+
  const storyArt={stream:'streamArt',waterfall:'waterfallArt',past:'pastStoryArt',bus:'busArt'};
+
  function snapshot(){return {version:1,placed:clone(state.placed),finalSeen:state.finalSeen,tripFinished:state.tripFinished};}
+
  function loadSnapshot(item){if(item?.version===1&&P.validate(item.placed)){state.placed=clone(item.placed);state.finalSeen=item.finalSeen===true&&state.placed.length===6;state.tripFinished=item.tripFinished===true&&state.finalSeen;}}
+
  document.querySelectorAll('[data-media]').forEach(img => { img.src = media[img.dataset.media]; });
+
  function save() {
+
   if(course.embedded){notifyCourse('gulpo:checkpoint');return;}
+
   try { localStorage.setItem(storageKey, JSON.stringify(snapshot())); }
+
   catch (_) { /* The game remains playable when storage is unavailable. */ }
+
  }
+
  function readSave() {
+
   try {
+
    const item=JSON.parse(localStorage.getItem(storageKey));
+
    if(item && item.version===1 && P.validate(item.placed)) {
+
     state.placed=item.placed.map(({id,x,y,rotation})=>({id,x,y,rotation}));
+
     state.finalSeen=item.finalSeen===true && state.placed.length===6;
+
     state.tripFinished=item.tripFinished===true&&state.finalSeen;
+
    }
+
   } catch (_) { /* Ignore corrupt or unavailable saves. */ }
+
  }
+
  function modalOpen() { return coursePaused||!!document.querySelector('dialog[open]'); }
+
  function later(fn, ms) {
+
   const token=transitionId;
+
   function attempt() { if(token!==transitionId)return; if(modalOpen()){setTimeout(attempt,180);return;} fn(); }
+
   setTimeout(attempt,ms);
+
  }
+
  function showScreen(name) {
+
   transitionId++; cancelDrag(); state.busy=false; $('flash').className='flash';
+
   state.phase=name;
+
   document.querySelectorAll('.screen').forEach(screen=>{screen.hidden=screen.id!==name;screen.classList.toggle('active',screen.id===name);});
+
   if(name==='home')$('resumeButton').hidden=state.placed.length===0;
+
   window.scrollTo({top:0,behavior:'instant'});
+
  }
+
  function announce(text,type='') { $('feedback').textContent=text; $('feedback').className=type; }
+
  function toast(text) { $('toast').textContent=text; $('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2400); }
+
  function sound(kind) {
+
   if(!state.sound)return;
+
   try {
+
    audioContext=audioContext||new (window.AudioContext||window.webkitAudioContext)();
+
    audioContext.resume();
+
    const notes=kind==='finish'?[523,659,784,1046]:kind==='place'?[440,659]:kind==='camera'?[180,880]:[392];
+
    notes.forEach((frequency,i)=>{const o=audioContext.createOscillator(),g=audioContext.createGain(),t=audioContext.currentTime+i*.12;o.type='sine';o.frequency.value=frequency;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.075,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+.2);o.connect(g);g.connect(audioContext.destination);o.start(t);o.stop(t+.23);});
+
   } catch (_) { state.sound=false; updateSound(); }
+
  }
+
  function updateSound() { $('soundButton').textContent=state.sound?'소리 켜짐':'소리 꺼짐';$('soundButton').setAttribute('aria-pressed',String(state.sound));$('soundButton').setAttribute('aria-label',state.sound?'게임 소리 끄기':'게임 소리 켜기'); }
+
  function story(lines,where,done) { state.story={lines,index:0,where,done};showScreen('story');renderStory(); }
+
  function renderStory() {
+
   const s=state.story, [who,text,key]=s.lines[s.index],photo=photos.find(p=>p.key===key);
+
   const backdrop=media[storyArt[key]||'streamArt'];if($('storyImage').getAttribute('src')!==backdrop)$('storyImage').src=backdrop;$('storyImage').alt=(photo?.title||'굴포천 곁 버스 승차 장소')+' 일러스트';
+
   $('storyPhoto').hidden=!photo;
+
   $('storyPhotoTag').textContent=key==='bus'?'굴포천 곁에서 버스를 기다리는 여행 일러스트':'실제 풍경을 바탕으로 만든 일러스트';
+
   $('story').classList.toggle('light-found',s.lines===ending&&s.index===ending.length-1);
+
   $('storyLocation').textContent=s.where;$('speaker').textContent=who;
+
   $('storyText').textContent=text;$('storyCounter').textContent=`${s.index+1} / ${s.lines.length}`;
+
   $('storyMinwoo').classList.toggle('inactive',who!=='민우');$('storySeoyeon').classList.toggle('inactive',who!=='서연');
+
   $('storyPrev').disabled=s.index===0;
+
   $('storyNext').textContent=s.index===s.lines.length-1?'이야기 이어가기 →':'다음 →';
+
  }
+
  function nextStory() { if(state.phase!=='story'||!state.story||modalOpen())return;const s=state.story;if(s.index<s.lines.length-1){s.index++;renderStory();}else s.done(); }
+
  function startStory() { story(introduction,'현재 · 버스에서 내려 만난 굴포천',()=>showScreen('camera')); }
+
  function flashTo(fn,warm=false) {
+
   if(state.busy)return;state.busy=true;cancelDrag();$('flash').className='flash on'+(warm?' warm':'');sound('camera');
+
   later(()=>{state.busy=false;$('flash').className='flash';fn();},700);
+
  }
+
  function toPast() { if(state.phase==='camera')flashTo(()=>story(pastStory,'사진 속 과거 · 물길이 가려져 있던 시절',showPuzzle)); }
+
  function returnPresent() { if(state.phase!=='puzzle'||state.placed.length!==6)return;flashTo(()=>story(ending,'현재 · 다시 햇빛을 만난 굴포천',()=>{state.finalSeen=true;save();notifyCourse('gulpo:light');story(farewell,'수학의 빛을 품고 · 버스로 돌아가는 길',startBoarding);}),true); }
+
  function startBoarding(){showScreen('boarding');$('returnBus').classList.remove('leaving');$('boardingMinwoo').classList.remove('aboard');$('boardingSeoyeon').classList.remove('aboard');$('boardReturnBus').hidden=false;$('boardingStatus').textContent='민우와 서연을 기다리는 매스투어 버스예요.';}
+
  function boardReturn(){if(state.phase!=='boarding'||state.busy||modalOpen())return;state.busy=true;$('boardReturnBus').hidden=true;$('boardingStatus').textContent='시간사진기와 수학의 빛을 챙겨 버스에 올라요.';$('boardingMinwoo').classList.add('aboard');later(()=>$('boardingSeoyeon').classList.add('aboard'),550);later(()=>{$('returnBus').classList.add('leaving');$('boardingStatus').textContent='안녕, 굴포천! 오늘 찾은 수학의 빛을 오래 기억할게.';sound('finish');},1600);later(()=>{state.tripFinished=true;save();if(course.embedded)notifyCourse('gulpo:complete');else showResult();},4100);}
+
  function showResult() { showScreen('result');$('resultStats').textContent='6개의 조각 · 24칸을 빈틈없이 완성'; }
+
  function askReset(action,message) { resetAction=action;$('resetMessage').textContent=message||'지금 맞춘 조각이 처음 자리로 돌아가요.';cancelDrag();$('resetDialog').showModal(); }
+
  function fresh() { state.placed=[];state.selected=null;state.rotation=0;state.preview=null;state.hint=null;state.history=[];state.finalSeen=false;state.tripFinished=false;save(); }
+
  function beginStory() { if(state.placed.length)askReset(()=>{fresh();startStory();},'사진기 이야기부터 다시 시작하면 지금까지 맞춘 조각이 처음 자리로 돌아가요.');else startStory(); }
+
  function showPuzzle() { showScreen('puzzle');renderPuzzle();announce(state.placed.length===6?'공원 완성! 사진기가 우리를 현재로 데려가고 있어.':'조각을 한 번 누른 뒤 공원 빈자리를 톡 눌러 봐! 끌지 않아도 돼.'); }
+
  function resume() { if(state.tripFinished)showResult();else if(state.finalSeen)startBoarding();else showPuzzle(); }
+
  function commit(next) {
+
   if(!P.validate(next))return false;
+
   state.history.push(clone(state.placed));if(state.history.length>40)state.history.shift();
+
   state.placed=clone(next);state.finalSeen=false;state.hint=null;state.preview=null;state.selected=null;save();renderPuzzle();
+
   return true;
+
  }
+
  function shapeMarkup(id,rotation,kind='source',interactive=true) {
+
   const p=P.piece(id),cells=p.rotations[rotation],w=Math.max(...cells.map(c=>c[0]))+1,h=Math.max(...cells.map(c=>c[1]))+1;
+
   const path=P.outline(cells),selected=state.selected===id?' piece-selected':'';
+
   const internal=cells.map(([x,y])=>`<rect x="${x*unit}" y="${y*unit}" width="64" height="64" fill="none" class="piece-grid"/>`).join('');
+
   // A piece's number sits inside one cell, including concave L pieces.
+
   const [cx,cy]=cells[Math.floor(cells.length/2)];
+
   return `<g ${interactive?`data-piece="${id}" role="button" tabindex="0" aria-label="${p.number}번 ${p.name}${kind==='target'?', 공원에 놓인 조각':''}"`:''} class="${interactive?'piece-hit ':''}${selected}"><path d="${path}" class="piece-surface" fill="${kind==='target'?'#d5b894':p.color}"/>${internal}<path d="${path}" fill="none" stroke="#fff8df" stroke-opacity=".45" stroke-width="1" transform="translate(1 1)"/><circle cx="${cx*unit+32}" cy="${cy*unit+32}" r="15" fill="#fff6dc" opacity=".7"/><text x="${cx*unit+32}" y="${cy*unit+38}" text-anchor="middle" class="piece-label">${p.number}</text></g>`;
+
  }
+
  function miniature(id,rotation) {
+
   const cells=P.piece(id).rotations[rotation],w=(Math.max(...cells.map(c=>c[0]))+1)*64,h=(Math.max(...cells.map(c=>c[1]))+1)*64;
+
   return `<svg viewBox="-8 -8 ${w+16} ${h+16}" aria-hidden="true">${shapeMarkup(id,rotation,'source',false)}</svg>`;
+
  }
+
  function renderSource() {
+
   // Restore the original upright board, with calm static water instead of animated wave lines.
+
   $('sourceBoard').innerHTML=`<defs><linearGradient id="riverWater" x1="0" x2="1"><stop stop-color="#386d71"/><stop offset=".45" stop-color="#75bcb2"/><stop offset="1" stop-color="#2c777f"/></linearGradient></defs><rect x="-3" y="-3" width="262" height="390" rx="6" fill="#71827a"/><rect width="256" height="384" rx="4" fill="url(#riverWater)"/>`+
+
    P.source.filter(p=>!state.placed.some(q=>q.id===p.id)).map(p=>`<g transform="translate(${p.x*unit} ${p.y*unit})">${shapeMarkup(p.id,p.rotation)}</g>`).join('');
+
  }
+
  // Anchor the first occupied cell, so an L piece never asks the player to tap its empty corner.
+
  function anchorOf(placement) { const first=P.piece(placement.id).rotations[placement.rotation][0];return {x:placement.x+first[0],y:placement.y+first[1]}; }
+
  function candidateAt(x,y) { const first=P.piece(state.selected).rotations[state.rotation][0];return {id:state.selected,x:x-first[0],y:y-first[1],rotation:state.rotation}; }
+
  function validCandidate(candidate) { return !!candidate.id && P.canPlace(state.placed.filter(p=>p.id!==candidate.id),candidate); }
+
  function renderTarget() {
+
   let content='';
+
   for(let y=0;y<4;y++)for(let x=0;x<6;x++)content+=`<rect class="target-cell" data-x="${x}" data-y="${y}" x="${x*unit+1}" y="${y*unit+1}" width="62" height="62" rx="2" fill="${(x+y)%2?'#e6d4ad':'#ecdcbc'}" stroke="#beaa80" stroke-width="1" role="button" tabindex="0" aria-label="공원 ${y+1}행 ${x+1}열"/>`;
+
   content+=state.placed.map(p=>`<g transform="translate(${p.x*unit} ${p.y*unit})">${shapeMarkup(p.id,p.rotation,'target')}</g>`).join('');
+
   if(state.hint){const anchor=anchorOf(state.hint);content+=`<path class="hint-placement" d="${P.outline(P.cellsAt(state.hint))}"/><circle cx="${anchor.x*64+32}" cy="${anchor.y*64+32}" r="18" fill="#ffe293" stroke="#9d762e" stroke-width="2" pointer-events="none"/><text x="${anchor.x*64+32}" y="${anchor.y*64+39}" text-anchor="middle" fill="#805e28" font-size="22" pointer-events="none">★</text>`;}
+
   if(state.selected&&state.preview){const candidate=candidateAt(state.preview.x,state.preview.y);content+=`<path class="ghost-placement ${validCandidate(candidate)?'ghost-valid':'ghost-invalid'}" d="${P.outline(P.cellsAt(candidate))}"/>`;}
+
   $('targetBoard').innerHTML=content;
+
  }
+
  function renderSelection() {
+
   const p=P.piece(state.selected),placed=state.placed.find(q=>q.id===state.selected);
+
   $('selectedName').textContent=p?`${p.number}번 · ${p.name}`:'왼쪽에서 골라 주세요';
+
   $('selectedTip').textContent=p?(placed?'다른 빈자리를 누르면 다시 옮길 수 있어요.':'공원 빈자리를 톡 눌러 주세요.'):'조각 선택 → 빈자리 누르기';
+
   $('selectedPreview').innerHTML=p?shapeMarkup(p.id,state.rotation,'source',false):'<path d="M64 64H192V192H64Z" fill="none" stroke="#b8ad90" stroke-width="5" stroke-dasharray="10 8"/>';
+
   $('rotateButton').disabled=!p||state.placed.length===6;
+
   $('returnPiece').disabled=!placed||state.placed.length===6;
+
   P.pieces.forEach(p=>{const button=$('piece-'+p.id);button.classList.toggle('selected',p.id===state.selected);button.classList.toggle('placed',state.placed.some(q=>q.id===p.id));button.setAttribute('aria-pressed',String(p.id===state.selected));button.disabled=state.placed.length===6;button.querySelector('span').textContent=state.placed.some(q=>q.id===p.id)?'✓':p.number;});
+
  }
+
  function renderPuzzle() {
+
   const count=state.placed.length;
+
   $('progressText').textContent=`${count} / 6`;$('progressBar').style.width=`${count/6*100}%`;
+
   $('pastScene').style.transition=count===0?'none':'opacity 1.1s';
+
   $('pastScene').style.opacity=String(1-count/6);
+
   $('completion').hidden=count!==6;$('hintButton').disabled=count===6;$('undoButton').disabled=!state.history.length;
+
   $('targetNote').textContent=count===6?'24칸이 빈틈없이 채워졌어요!':'겹치지 않게 · 테두리 안에 · 빈틈없이';
+
   renderSource();renderTarget();renderSelection();
+
   const token=++completionToken;
+
   if(count===6&&state.phase==='puzzle')later(()=>{if(token===completionToken&&state.placed.length===6)returnPresent();},2200);
+
  }
+
  function select(id) {
+
   if(state.phase!=='puzzle'||state.placed.length===6||!P.piece(id))return;
+
   if(state.selected!==id){state.selected=id;state.rotation=(state.placed.find(p=>p.id===id)||P.source.find(p=>p.id===id)).rotation;state.hint=null;state.preview=null;}
+
   renderSource();renderTarget();renderSelection();
+
  }
+
  function rotateSelected() {
+
   if(!state.selected||state.placed.length===6)return;
+
   const p=P.piece(state.selected);state.rotation=(state.rotation+1)%p.rotations.length;state.hint=null;
+
   renderTarget();renderSelection();sound('select');
+
   announce(p.rotations.length===1?'네모는 돌려도 같은 모양이네! 놓을 자리를 찾아보자.':'조각을 돌렸어! 오른쪽 빈칸에 맞는지 살펴보자.');
+
  }
+
  function resolvedCandidate(x,y,snap=false) {
+
   const wanted=candidateAt(x,y);
+
   if(!snap||validCandidate(wanted))return wanted;
+
   // A fingertip can hit any cell of the intended piece. Keep its orientation and find
+
   // the nearest legal placement covering that cell, especially along the board edges.
+
   const alternatives=P.piece(state.selected).rotations[state.rotation].map(([sx,sy])=>({id:state.selected,rotation:state.rotation,x:x-sx,y:y-sy})).filter(validCandidate);
+
   alternatives.sort((a,b)=>(Math.abs(a.x-wanted.x)+Math.abs(a.y-wanted.y))-(Math.abs(b.x-wanted.x)+Math.abs(b.y-wanted.y))||a.y-b.y||a.x-b.x);
+
   return alternatives[0]||wanted;
+
  }
+
  function place(x,y,snap=false) {
+
   if(!state.selected||state.placed.length===6||state.phase!=='puzzle'||state.busy)return false;
+
   const candidate=resolvedCandidate(x,y,snap);
+
   if(!validCandidate(candidate)){state.preview={x,y};renderTarget();announce('이곳에는 놓을 수 없어. 다른 조각과 겹치지 않고 테두리 안에 들어가야 해.','error');return false;}
+
   const old=state.placed.find(p=>p.id===candidate.id);
+
   if(old&&old.x===candidate.x&&old.y===candidate.y&&old.rotation===candidate.rotation){announce('같은 자리야. 다른 빈칸을 찾거나 조각을 돌려 보자.');return false;}
+
   const previousCount=state.placed.length;
+
   commit([...state.placed.filter(p=>p.id!==candidate.id),candidate]);
+
   if(state.placed.length===6){announce('공원 완성! 물길이 다시 빛을 찾았어. 사진기가 현재로 데려가 줄 거야.','success');sound('finish');$('completion').setAttribute('tabindex','-1');$('completion').focus({preventScroll:true});$('completion').scrollIntoView?.({behavior:'smooth',block:'nearest'});}
+
   else{announce(previousCount===state.placed.length?'조각을 새로운 자리로 옮겼어. 남은 빈칸도 살펴보자.':`${state.placed.length}번째 조각 아래에서 물이 보여! 공원도 조금씩 채워지고 있어.`,'success');sound('place');}
+
   return true;
+
  }
+
  function hint() {
+
   if(state.placed.length===6)return;
+
   const solution=P.solve(state.placed);
+
   if(!solution){state.hint=null;state.preview=null;renderTarget();announce('지금 모양으로는 남은 조각이 모두 들어가기 어려워. 놓은 조각을 다시 옮기거나, 「되돌리기」로 한 걸음 돌아가 보자.','error');return;}
+
   const next=solution[0];state.selected=next.id;state.rotation=next.rotation;state.hint=next;state.preview=null;
+
   renderSource();renderTarget();renderSelection();
+
   const anchor=anchorOf(next);
+
   announce(`${P.piece(next.id).number}번 조각을 돌려 두었어. 노란 동그라미 안의 ★ 칸(${anchor.y+1}행 ${anchor.x+1}열)을 눌러 봐!`);
+
   const cell=$('targetBoard').querySelector(`[data-x="${anchor.x}"][data-y="${anchor.y}"]`);cell?.focus({preventScroll:true});
+
  }
+
  function undo() {
+
   if(!state.history.length||state.busy)return;
+
   cancelDrag();state.placed=state.history.pop();state.selected=null;state.hint=null;state.preview=null;state.finalSeen=false;save();renderPuzzle();announce('한 번 전으로 돌아왔어. 조각의 방향과 자리를 바꿔 보자.');
+
  }
+
  function returnPiece() {
+
   if(!state.selected||!state.placed.some(p=>p.id===state.selected)||state.placed.length===6)return;
+
   commit(state.placed.filter(p=>p.id!==state.selected));announce('조각이 물길 위 원래 자리로 돌아갔어. 다른 모양으로 다시 맞춰 보자.');
+
  }
+
  function targetPosition(clientX,clientY,continuous=false) {
+
   const svg=$('targetBoard'),r=svg.getBoundingClientRect();if(!r.width||!r.height||clientX<r.left||clientX>=r.right||clientY<r.top||clientY>=r.bottom)return null;
+
   const scale=Math.min(r.width/396,r.height/268),offsetX=(r.width-396*scale)/2,offsetY=(r.height-268*scale)/2;
+
   const x=((clientX-r.left-offsetX)/scale-6)/64,y=((clientY-r.top-offsetY)/scale-6)/64;
+
   return x>=0&&y>=0&&x<6&&y<4?(continuous?{x,y}:{x:Math.floor(x),y:Math.floor(y)}):null;
+
  }
+
  function cancelDrag() { if(state.drag?.capture?.hasPointerCapture?.(state.drag.pointer))state.drag.capture.releasePointerCapture(state.drag.pointer);state.drag=null;$('dragGhost').hidden=true; }
+
  function dragDestination(clientX,clientY) {
+
   const p=targetPosition(clientX,clientY,true),d=state.drag;if(!p||!d)return null;
+
   const cells=P.piece(d.id).rotations[state.rotation],w=Math.max(...cells.map(c=>c[0]))+1,h=Math.max(...cells.map(c=>c[1]))+1;
+
   const first=cells[0],x=Math.max(0,Math.min(5,Math.round(p.x-d.grabX*w)+first[0])),y=Math.max(0,Math.min(3,Math.round(p.y-d.grabY*h)+first[1]));
+
   return anchorOf(resolvedCandidate(x,y,true));
+
  }
+
  function pointerDown(event) {
+
   const hit=event.target.closest('[data-piece]');if(!hit||event.button!==0||state.placed.length===6||modalOpen())return;
+
   const rect=hit.getBoundingClientRect(),capture=event.currentTarget,id=hit.dataset.piece;
+
   const grabX=rect.width?Math.max(0,Math.min(1,(event.clientX-rect.left)/rect.width)):.25,grabY=rect.height?Math.max(0,Math.min(1,(event.clientY-rect.top)/rect.height)):.25;
+
   // Keep touch capture on the stable board even when selecting redraws the piece.
+
   try{capture.setPointerCapture?.(event.pointerId);}catch(_){}
+
   select(id);state.drag={id,pointer:event.pointerId,startX:event.clientX,startY:event.clientY,moved:false,grabX,grabY,capture};
+
  }
+
  function pointerMove(event) {
+
   const d=state.drag;if(!d||d.pointer!==event.pointerId)return;
+
   if(!d.moved&&Math.hypot(event.clientX-d.startX,event.clientY-d.startY)>9){d.moved=true;try{d.capture?.setPointerCapture?.(event.pointerId);}catch(_){}}
+
   if(!d.moved)return;event.preventDefault();
+
   const cells=P.piece(d.id).rotations[state.rotation],w=Math.max(...cells.map(c=>c[0]))+1,h=Math.max(...cells.map(c=>c[1]))+1,rect=$('targetBoard').getBoundingClientRect(),scale=rect.width?rect.width/396:1;
+
   const width=w*64*scale,height=h*64*scale,ghost=$('dragGhost');ghost.hidden=false;ghost.innerHTML=miniature(d.id,state.rotation);ghost.style.width=width+'px';ghost.style.height=height+'px';ghost.style.left=(event.clientX-width*d.grabX)+'px';ghost.style.top=(event.clientY-height*d.grabY)+'px';
+
   state.preview=dragDestination(event.clientX,event.clientY);renderTarget();
+
  }
+
  function pointerUp(event) {
+
   const d=state.drag;if(!d||d.pointer!==event.pointerId)return;
+
   const moved=d.moved,where=dragDestination(event.clientX,event.clientY);cancelDrag();
+
   if(moved){suppressClickUntil=Date.now()+350;state.preview=null;if(where)place(where.x,where.y,true);else{renderTarget();announce('공원 안에서 놓아 봐. 조각은 원래 자리에 남아 있어.');}}
+
  }
+
  $('sourceBoard').addEventListener('pointerdown',pointerDown);$('targetBoard').addEventListener('pointerdown',pointerDown);
+
  document.addEventListener('pointermove',pointerMove,{passive:false});document.addEventListener('pointerup',pointerUp);
+
  document.addEventListener('pointercancel',()=>{cancelDrag();state.preview=null;if(state.phase==='puzzle')renderTarget();});
+
  window.addEventListener('blur',()=>{cancelDrag();state.preview=null;if(state.phase==='puzzle')renderTarget();});
+
  $('sourceBoard').addEventListener('click',event=>{if(Date.now()<suppressClickUntil)return;const hit=event.target.closest('[data-piece]');if(hit)select(hit.dataset.piece);});
+
  $('targetBoard').addEventListener('click',event=>{
+
   if(Date.now()<suppressClickUntil||state.placed.length===6)return;
+
   const hit=event.target.closest('[data-piece]');if(hit){select(hit.dataset.piece);return;}
+
   const cell=event.target.closest('[data-x]');if(!cell)return;
+
   if(!state.selected){announce('먼저 옮길 조각을 하나 골라 줘.');return;}place(Number(cell.dataset.x),Number(cell.dataset.y),true);
+
  });
+
  document.addEventListener('keydown',event=>{
+
   if(modalOpen()||state.busy)return;
+
   const tag=event.target.tagName;
+
   if(tag==='INPUT'||tag==='TEXTAREA'||event.ctrlKey||event.metaKey||event.altKey)return;
+
   if(state.phase==='story'&&event.key==='ArrowRight'){event.preventDefault();nextStory();return;}
+
   if(state.phase!=='puzzle')return;
+
   const hit=event.target.closest('[data-piece]'),cell=event.target.closest('[data-x]');
+
   if((event.key==='Enter'||event.key===' ')&&hit){event.preventDefault();select(hit.dataset.piece);return;}
+
   if(event.key.toLowerCase()==='r'){event.preventDefault();rotateSelected();return;}
+
   if(event.key==='Escape'){state.selected=null;state.preview=null;state.hint=null;cancelDrag();renderPuzzle();return;}
+
   if(!state.selected||state.placed.length===6)return;
+
   if(event.key.startsWith('Arrow')){
+
    event.preventDefault();const current=state.preview||(state.hint?anchorOf(state.hint):null)||(cell?{x:Number(cell.dataset.x),y:Number(cell.dataset.y)}:{x:0,y:0});
+
    const offsets={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]},offset=offsets[event.key];
+
    if(!offset)return;state.preview={x:Math.max(0,Math.min(5,current.x+offset[0])),y:Math.max(0,Math.min(3,current.y+offset[1]))};state.hint=null;
+
    renderTarget();$('targetBoard').querySelector(`[data-x="${state.preview.x}"][data-y="${state.preview.y}"]`)?.focus({preventScroll:true});
+
   }else if((event.key==='Enter'||event.key===' ')&&(cell||event.target===document.body||event.target===$('targetBoard'))){
+
    event.preventDefault();const pos=state.preview||(state.hint?anchorOf(state.hint):null)||(cell?{x:Number(cell.dataset.x),y:Number(cell.dataset.y)}:{x:0,y:0});place(pos.x,pos.y);
+
   }
+
  });
+
  P.pieces.forEach(p=>{const b=document.createElement('button');b.id='piece-'+p.id;b.setAttribute('aria-label',`${p.number}번 ${p.name} 선택`);b.title=`${p.number}번 ${p.name}`;b.innerHTML=miniature(p.id,0)+'<span></span>';b.addEventListener('click',()=>select(p.id));$('piecePalette').append(b);});
+
  function openPhoto(index=0) {
+
   const photo=photos[index];if(!photo)return;cancelDrag();$('albumTitle').textContent=photo.title;$('albumImage').src=media[photo.key];$('albumImage').alt=photo.title;$('albumDescription').textContent=photo.desc;
+
   $('albumCredit').textContent=photo.key==='proposal'?'사용자 제공 · 왼쪽 실제 사진 / 오른쪽 복원 예상도':photo.key==='past'?'사용자 제공 사진 · 현수막 제거 보정':'사용자 제공 현장 사진';
+
   $('photoViewport').classList.remove('zoomed');$('zoomPhoto').textContent='사진 확대 ＋';$('zoomPhoto').setAttribute('aria-pressed','false');
+
   if(!$('album').open)$('album').showModal();
+
  }
+
  function openCompare() { if(!state.finalSeen)return;cancelDrag();if(!$('comparison').open)$('comparison').showModal(); }
+
  function setComparison(art) {$('realComparison').hidden=art;$('artComparison').hidden=!art;$('realCompare').setAttribute('aria-pressed',String(!art));$('artCompare').setAttribute('aria-pressed',String(art));}
+
  $('storyPhoto').addEventListener('click',()=>{const key=state.story?.lines[state.story.index][2];openPhoto(photos.findIndex(p=>p.key===key));});
+
  $('boardReturnBus').addEventListener('click',boardReturn);
+
  $('courseJournal').addEventListener('click',()=>notifyCourse('gulpo:journal'));
+
  $('resultCompare').addEventListener('click',openCompare);
+
  $('realCompare').addEventListener('click',()=>setComparison(false));$('artCompare').addEventListener('click',()=>setComparison(true));
+
  $('compareRange').addEventListener('input',()=>{const n=Number($('compareRange').value);$('comparePastArt').style.clipPath=`inset(0 ${100-n}% 0 0)`;$('compareDivider').style.left=n+'%';});
+
  $('proposalPhoto').addEventListener('click',()=>{$('comparison').close();openPhoto(4);});
+
  $('zoomPhoto').addEventListener('click',()=>{const zoom=$('photoViewport').classList.toggle('zoomed');$('zoomPhoto').setAttribute('aria-pressed',String(zoom));$('zoomPhoto').textContent=zoom?'사진 축소 －':'사진 확대 ＋';});
+
  document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>$(button.dataset.close).close()));
+
  $('confirmReset').addEventListener('click',()=>{$('resetDialog').close();const action=resetAction;resetAction=null;if(action)action();});
+
  $('soundButton').addEventListener('click',()=>{state.sound=!state.sound;updateSound();if(state.sound)sound('place');});
+
  $('homeLink').addEventListener('click',event=>{event.preventDefault();if(!course.embedded)showScreen('home');});$('resultHome').addEventListener('click',()=>showScreen('home'));
+
  $('startButton').addEventListener('click',beginStory);$('resumeButton').addEventListener('click',resume);
+
  $('quickStart').addEventListener('click',()=>{if(state.placed.length===6)askReset(()=>{fresh();showPuzzle();});else showPuzzle();});
+
  $('storyNext').addEventListener('click',nextStory);$('storyPrev').addEventListener('click',()=>{if(state.story?.index>0){state.story.index--;renderStory();}});
+
  $('storySkip').addEventListener('click',()=>{if(state.phase==='story')state.story.done();});$('shutterButton').addEventListener('click',toPast);
+
  $('rotateButton').addEventListener('click',rotateSelected);$('hintButton').addEventListener('click',hint);$('undoButton').addEventListener('click',undo);$('returnPiece').addEventListener('click',returnPiece);
+
  $('resetPuzzle').addEventListener('click',()=>askReset(()=>{fresh();showPuzzle();}));
+
  $('playAgain').addEventListener('click',()=>askReset(()=>{fresh();showPuzzle();},'같은 여섯 조각으로 또 다른 공원을 만들어 볼까요? 지금 맞춘 조각은 처음 자리로 돌아가요.'));
+
  if(course.embedded){
+
   document.body.classList.add('embedded-course');$('chapterLabel').textContent='03 · 물길의 빛';$('courseJournal').hidden=false;$('homeLink').removeAttribute('href');$('homeLink').setAttribute('tabindex','-1');
+
   const mapButton=document.createElement('button');mapButton.id='courseMap';mapButton.textContent='지역 월드맵';mapButton.title='계양·부평 챕터 지도로 돌아가기';
+
   mapButton.addEventListener('click',()=>{cancelDrag();if(courseReady)save();notifyCourse('gulpo:map');});document.querySelector('.topbar nav').append(mapButton);
+
   window.addEventListener('message',event=>{
+
    if(event.source!==parent)return;const data=event.data;
+
    if(data?.type==='gulpo:pause'){coursePaused=data.paused===true;cancelDrag();return;}
+
    if(data?.type!=='gulpo:init'||courseReady)return;state.sound=data.sound===true;updateSound();loadSnapshot(data.saved);
+
    if(data.replay&&state.placed.length===6){story(ending,'현재 · 다시 햇빛을 만난 굴포천',()=>story(farewell,'수학의 빛을 품고 · 버스로 돌아가는 길',startBoarding));}
+
    else if(state.finalSeen)startBoarding();else if(state.placed.length)showPuzzle();else startStory();
+
    courseReady=true;
+
   });
+
   $('retryConnection').addEventListener('click',()=>notifyCourse('gulpo:ready'));
+
   showScreen('connecting');notifyCourse('gulpo:ready');
+
   setTimeout(()=>{if(!courseReady)notifyCourse('gulpo:ready');},1200);
+
   setTimeout(()=>{if(!courseReady){$('connectingStatus').textContent='잠시 지연되고 있어요. 아래 버튼을 눌러 여행을 이어 주세요.';$('retryConnection').hidden=false;}},6000);
+
  }else{readSave();showScreen('home');renderPuzzle();}
+
 })();
-</script></body></html>
+
+</script><script src="../viewport-fit.js?v=20261009-fit1"></script>
+</body></html>
+

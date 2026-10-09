@@ -1,0 +1,59 @@
+/* One location for progress, video replay and reset across every regional map. */
+#regionScreen #regionChapters { display:grid; gap:8px; }
+#regionScreen #regionChapters[hidden] { display:none; }
+.region-progress-bar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 14px; border:1px solid #c3a36a; border-radius:12px; background:#fff8e5; color:#193e54; }
+.region-progress-copy { min-width:0; }
+.region-progress-copy strong { font-size:15px; }
+.region-progress-copy strong span { color:#9b5924; margin-left:12px; white-space:nowrap; }
+.region-progress-copy p { font-size:12px; line-height:1.4; margin:4px 0 0; }
+.region-progress-actions { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+.region-progress-actions button { min-height:46px; border:1px solid #b99a65; border-radius:8px; padding:10px 16px; cursor:pointer; font:700 13px/1.4 system-ui,"Malgun Gothic",sans-serif; white-space:nowrap; touch-action:manipulation; }
+.region-ending-button { background:#914731; color:#fff9eb; }
+.region-ending-button:disabled { background:#e7e4d9; color:#69746f; cursor:default; }
+.region-reset-button { background:#fffdf5; color:#634f38; }
+.region-chapter-list { display:grid; grid-template-columns:repeat(var(--chapter-count),minmax(0,1fr)); gap:8px; }
+.region-chapter-card { min-width:0; min-height:70px; display:flex; flex-direction:column; gap:3px; text-align:left; padding:8px 12px; background:#fff8e5; color:#214558; border:1px solid #c5b68e; border-radius:10px; font-family:inherit; cursor:pointer; touch-action:manipulation; }
+.region-chapter-card small { font-size:10px; letter-spacing:1px; color:#97662d; }
+.region-chapter-card strong { font-size:14px; line-height:1.4; }
+.region-chapter-card span { font-size:11px; line-height:1.4; }
+.region-chapter-card[data-status="complete"] { background:#edf8ed; border:2px solid #63a48d; padding:7px 11px; }
+.region-chapter-card:disabled { opacity:.6; cursor:default; }
+.tour-reset-dialog { box-sizing:border-box; width:min(530px,92vw); max-height:92dvh; margin:auto; padding:26px; border:1px solid #bfa36b; border-radius:14px; background:#fffaf0; color:#214558; font:15px/1.7 system-ui,"Malgun Gothic",sans-serif; }
+.tour-reset-dialog::backdrop { background:#071c2ac4; }
+.tour-reset-dialog:not([open]),.tour-reset-dialog [hidden] { display:none; }
+.tour-reset-dialog small { color:#9a6540; }
+.tour-reset-dialog h2 { font-size:22px; line-height:1.5; margin:10px 0; }
+.tour-reset-dialog footer { display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; }
+.tour-reset-dialog button { min-height:48px; border:1px solid #bda575; border-radius:8px; padding:10px 16px; font:inherit; background:#fff; color:#214558; cursor:pointer; }
+.tour-reset-dialog [data-confirm] { background:#914731; color:#fff; }
+.tour-reset-dialog [data-error] { color:#b23927; }
+.region-progress-actions button:focus-visible,.region-chapter-card:focus-visible,.tour-reset-dialog button:focus-visible,.world-progress-reset:focus-visible { outline:3px solid #d89426; outline-offset:2px; }
+.map-actions { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px; }
+.map-actions .music-toggle { min-width:48px; }
+.map-actions .music-toggle-label { display:none; }
+.world-progress-reset { grid-column:1/-1; min-height:44px; padding:8px 12px; border:1px solid #c9b393; border-radius:10px; background:#fffaf0; color:#77503b; font:600 13px/1.4 system-ui,"Malgun Gothic",sans-serif; cursor:pointer; touch-action:manipulation; }
+@media(max-width:900px) {
+  .region-progress-bar { padding:8px 10px; gap:8px; }
+  .region-progress-actions button { padding:8px 10px; font-size:12px; }
+  .region-progress-copy strong { font-size:13px; }
+  .region-chapter-card strong { font-size:12px; }
+}
+@media(max-width:600px) {
+  .region-progress-bar { flex-wrap:wrap; }
+  .region-progress-actions { width:100%; }
+  .region-progress-actions button { flex:1; }
+  .region-progress-copy p { font-size:11px; }
+  .region-chapter-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; }
+  .region-chapter-card { min-height:62px; padding:6px 8px; }
+  .region-chapter-card[data-status="complete"] { padding:5px 7px; }
+  .region-chapter-card span { font-size:10px; }
+}
+@media(max-height:560px) and (orientation:landscape) {
+  .map-actions { padding-top:5px; gap:5px; }
+  .guide-card ol { gap:4px; }
+  .guide-card li strong { display:inline; margin-right:4px; }
+  .difficulty-list { gap:2px; }
+  .difficulty-card { padding-top:5px; margin-top:5px; }
+  .region-progress-copy p { display:none; }
+  .region-progress-bar { padding:4px 8px; }
+}

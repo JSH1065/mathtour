@@ -212,6 +212,7 @@
     return showEnding();
   }
   root.MathTourChapters = { chapters, status: store.status, enterCourse, finishCourse, renderChapters, maybeShowEnding, showEnding, mapURL, goToMap,
+    resetRegion() { const ok=store.resetRegion(); if(ok){courseFinished=false;autoOpened=false;if(endingDialog?.open){endingDialog.querySelector('video').pause();endingDialog.close();}announce();}return ok; },
     canSave: store.isCurrentRun, acceptsSave: store.acceptsSave, stampSave: store.stampSave };
   function leaveStaleCourse() {
     if (activeCourse && !store.isCurrentRun()) { root.location.replace(mapURL); return true; }

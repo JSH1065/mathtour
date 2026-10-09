@@ -1,0 +1,12 @@
+.chapter-activity .site-header .brand,.chapter-activity .site-header .location{display:none}
+.chapter-activity .site-header nav>a{display:none}
+.chapter-activity .site-header{height:52px;padding:5px 16px;background:#f2ecd9}
+.chapter-activity .site-header nav{margin-left:auto;width:100%;justify-content:flex-end}
+.chapter-activity .site-header nav>button:first-child{margin-right:auto}
+.chapter-activity .site-header nav button{font-size:11px;min-height:37px;padding:8px 12px}
+.chapter-activity main{height:calc(100dvh - 52px);min-height:0}
+.chapter-activity #chapterContinue{margin:14px auto 0;display:flex;font-size:13px;min-height:45px}
+.chapter-activity #chapterContinue[hidden]{display:none}
+.chapter-activity .ending{bottom:5%;padding:18px 20px}
+.chapter-activity #finishCard{bottom:14%}
+@media(max-width:700px){.chapter-activity .site-header{height:49px;padding:4px 9px}.chapter-activity .site-header nav{gap:4px}.chapter-activity .site-header nav button{font-size:10px;padding:6px 8px;min-height:34px}.chapter-activity main{height:calc(100dvh - 49px);min-height:0}.chapter-activity .ending{padding:14px}.chapter-activity .ending h2{font-size:20px}.chapter-activity .ending p{font-size:11px}.chapter-activity #chapterContinue{font-size:11px;min-height:39px;margin-top:10px}}

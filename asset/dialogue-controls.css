@@ -1,0 +1,11 @@
+.mt-dialogue-input{touch-action:manipulation;cursor:pointer}
+.mt-dialogue-input:focus-visible{outline:3px solid #f4ce79;outline-offset:3px}
+.mt-dialogue-input button{min-height:44px;touch-action:manipulation}
+.intro-scene .dialogue #storyPrev{background:#244757;color:#fff6db;border:1px solid #c6a66b}
+#episodePrevious,#endingPrevious{min-height:44px;touch-action:manipulation}
+.mt-dialogue-help{position:static!important;flex:1;align-self:center;max-width:170px;margin:0 8px!important;font:11px/1.4 system-ui,"Malgun Gothic",sans-serif!important;color:inherit!important;opacity:.8;text-align:center;pointer-events:none;letter-spacing:0!important}
+.mt-legacy-dialogue{padding-bottom:62px!important}
+.mt-legacy-dialogue .mt-dialogue-previous{position:absolute;left:18px;bottom:9px;display:inline-flex;align-items:center;justify-content:center;min-width:105px;min-height:44px;padding:8px 12px;border:1px solid #c6a66b;border-radius:5px;background:#193b4b;color:#fff5d4;font:600 13px/1.2 system-ui,"Malgun Gothic",sans-serif;cursor:pointer}
+.mt-legacy-dialogue .mt-dialogue-previous:disabled{opacity:.4;cursor:default}
+.mt-legacy-dialogue .dialogue-hint{left:140px;right:16px;bottom:23px;text-align:right}
+@media(max-width:600px){.mt-dialogue-help{font-size:9px!important;margin:0 5px!important;max-width:105px}.mt-legacy-dialogue .dialogue-hint{display:block;font-size:9px;bottom:25px}.mt-legacy-dialogue{padding-bottom:60px!important}}

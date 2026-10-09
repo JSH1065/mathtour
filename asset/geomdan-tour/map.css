@@ -9,4 +9,7 @@
 [data-region="seohae-geomdan"] .standalone-map-shell{min-height:0;max-height:none;height:100%;aspect-ratio:auto}
 [data-region="seohae-geomdan"] .standalone-region-note{margin:0;font-size:11px}
 [data-region="seohae-geomdan"] .attraction-chapter-status{display:block;font-size:10px;font-weight:600;color:#987445;margin-bottom:3px}
+/* The stadium already appears on the painted map; keep its auxiliary label clear of chapter cards. */
+[data-region="seohae-geomdan"] .context-landmark img{display:none}
+[data-region="seohae-geomdan"] .context-landmark span{margin-top:0}
 @media(max-width:800px){[data-region="seohae-geomdan"] #regionChapters{gap:7px}[data-region="seohae-geomdan"] .island-reset{font-size:11px;padding:8px}[data-region="seohae-geomdan"] .standalone-region-description{font-size:11px}[data-region="seohae-geomdan"] .standalone-region-icon{display:none}[data-region="seohae-geomdan"] .standalone-region-header{grid-template-columns:1fr auto}[data-region="seohae-geomdan"] .island-chapter-row button strong{font-size:12px}}

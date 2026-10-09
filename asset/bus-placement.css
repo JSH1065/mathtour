@@ -1,0 +1,34 @@
+.mt-bus-road{inset:0!important;width:100%!important;height:100%!important;border:0!important;background:none!important;box-shadow:none!important;pointer-events:none}
+.mt-bus-road::before,.mt-bus-road::after{display:none!important}
+.mt-placed-bus{position:absolute!important;left:var(--mt-bus-x)!important;top:var(--mt-bus-y)!important;right:auto!important;bottom:auto!important;width:var(--mt-bus-width)!important;height:auto!important;max-width:none!important;max-height:none!important;aspect-ratio:2/1;object-fit:contain;pointer-events:none;filter:drop-shadow(0 5px 3px #10213145)!important}
+.mt-placed-bus>img{display:block;width:100%!important;height:auto!important;max-width:none!important;object-fit:contain}
+.mt-bus-scene .arrival-actions,.mt-bus-scene .arrival-prompt,.mt-bus-scene .ending-actions{z-index:30}
+.mt-bus-scene:has(.mt-bus-road)>.arrival-actions{left:auto!important;right:3%!important;bottom:4%!important;width:23%;max-width:none;display:flex;flex-direction:column;gap:8px}
+.mt-bus-scene:has(.mt-bus-road)>.arrival-actions button{min-width:0;width:100%;padding:10px;font-size:15px;min-height:48px}
+.mt-bus-scene:has(>img#arrivalBus.arrival-bus)>.arrival-prompt{left:auto;right:3%;width:28%;bottom:3%;display:block;padding:12px}
+.mt-bus-scene:has(>img#arrivalBus.arrival-bus)>.arrival-prompt>div{margin-top:8px}
+.mt-bus-scene #departKids,.mt-bus-scene .boarding-friends{bottom:var(--mt-ground-bottom)!important}
+#departureScene .mt-bus-scene .ending-person{bottom:var(--mt-ground-bottom);--boarding-ground:var(--mt-ground-bottom);--boarding-step:var(--mt-boarding-step)}
+.mt-bus-scene #endingBoy,.mt-bus-scene #endingGirl,.mt-bus-scene #boardingMinwoo,.mt-bus-scene #boardingSeoyeon{bottom:var(--mt-ground-bottom)!important}
+.mt-bus-scene #endingBoy.boarding,.mt-bus-scene #endingGirl.boarding,.mt-bus-scene #boardingMinwoo.aboard,.mt-bus-scene #boardingSeoyeon.aboard{left:var(--mt-door-x)!important;bottom:var(--mt-boarding-step)!important}
+/* Bupyeong station → Gulpocheon: keep the children readable beside the coach. */
+#ending.mt-bus-scene{--mt-boarding-person-width:clamp(118px,11.5vw,165px)}
+#ending.mt-bus-scene #endingBoy,#ending.mt-bus-scene #endingGirl{width:var(--mt-boarding-person-width)}
+#ending.mt-bus-scene #endingBoy.boarding,#ending.mt-bus-scene #endingGirl.boarding{left:calc(var(--mt-door-x) - var(--mt-boarding-person-width)/2)!important}
+@media(max-width:700px){
+ #ending.mt-bus-scene #endingBoy{left:calc(73% - var(--mt-boarding-person-width)/2)}
+ #ending.mt-bus-scene #endingGirl{left:calc(88% - var(--mt-boarding-person-width)/2)}
+}
+/* Munhak and Subong: preserve the SVG proportions and size the children to the coach. */
+body:is([data-fit-page="M02"],[data-fit-page="M03"]) #departure.mt-bus-scene{--mt-boarding-person-height:clamp(145px,calc(var(--mt-coach-width)*.30),290px)}
+body:is([data-fit-page="M02"],[data-fit-page="M03"]) #departure.mt-bus-scene .boarding-friends{left:calc(var(--mt-door-x) - var(--mt-boarding-person-height)*1.48);right:auto;bottom:calc(var(--mt-ground-bottom) - var(--mt-boarding-person-height)*.055)!important;gap:0}
+body:is([data-fit-page="M02"],[data-fit-page="M03"]) #departure.mt-bus-scene .boarding-friends img{height:var(--mt-boarding-person-height);width:auto;max-width:none;object-fit:contain;flex:none}
+/* Cheongna previously animated `left`, which must now stay tied to its roadway. */
+html:has(script[src*="cheongna-tour/tour.js"]) #bus.mt-placed-bus{animation-name:mt-cheongna-arrive}
+@keyframes mt-cheongna-arrive{from{transform:translateX(-110vw)}to{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){html:has(script[src*="cheongna-tour/tour.js"]) #bus.mt-placed-bus{animation-duration:.01ms}}
+@media(orientation:portrait){
+ .mt-bus-scene:has(.mt-bus-road)>.arrival-actions{left:4%!important;right:4%!important;bottom:2%!important;width:auto;flex-direction:row;flex-wrap:wrap;justify-content:center}
+ .mt-bus-scene:has(.mt-bus-road)>.arrival-actions button{width:auto;max-width:100%;font-size:14px}
+ .mt-bus-scene:has(>img#arrivalBus.arrival-bus)>.arrival-prompt{left:4%;right:4%;bottom:2%;width:auto}
+}

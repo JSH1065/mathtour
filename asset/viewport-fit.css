@@ -1,0 +1,219 @@
+/* Landscape activities: reserve room for instructions and controls first.
+   Artwork takes the remaining height; text and touch targets are not scaled. */
+@media (min-width:901px) {
+  body[data-fit-page] { --fit-height:var(--mt-content-height,calc(100dvh - 72px)); }
+  body[data-fit-page] .mt-unlock-banner,
+  body[data-fit-page] .mj-ending-panel { margin:8px auto 0; padding:10px 18px; gap:12px; }
+  body[data-fit-page] .mt-unlock-banner { flex-direction:row; flex-wrap:wrap; justify-content:center; }
+  body[data-fit-page] .mt-unlock-banner .mt-primary,
+  body[data-fit-page] .mj-ending-panel :is(a,button) { min-height:44px; padding:10px 18px; }
+
+  /* Bupyeong: observation and the three discoveries. */
+  body[data-fit-page="B01"] #observation { height:var(--fit-height); min-height:0; padding:12px 3%; }
+  body[data-fit-page="B01"] #observation .activity-layout { height:100%; display:flex; flex-direction:column; }
+  body[data-fit-page="B01"] .activity-heading { flex:none; margin-bottom:10px; padding:8px 16px; }
+  body[data-fit-page="B01"] .observation-layout { flex:1; min-height:0; }
+  body[data-fit-page="B01"] .observation-art { min-height:0; }
+  body[data-fit-page="B01"] .observation-art>img { flex:1; height:0; min-height:0; object-fit:cover; }
+  body[data-fit-page="B01"] .observation-helper { padding:8px 16px; }
+  body[data-fit-page="B01"] .observation-helper img { height:75px; width:50px; }
+  body[data-fit-page="B01"] .art-caption { padding:8px 16px; }
+  body[data-fit-page="B01"] .observation-workshop { display:flex; flex-direction:column; min-height:0; padding:12px 18px; }
+  body[data-fit-page="B01"] #observationBoard { flex:1; min-height:0; max-height:none; height:0; }
+  body[data-fit-page="B01"] .observation-workshop>:not(svg) { flex:none; }
+  body[data-fit-page="B01"] .shape-choices { margin:6px 0; }
+  body[data-fit-page="B01"] .answer-form { margin:6px 0; }
+  body[data-fit-page="B01"] .number-entry { margin-top:6px; }
+  body[data-fit-page="B01"] .number-entry input { height:48px; }
+  body[data-fit-page="B01"] .observation-workshop .feedback { min-height:32px; margin:6px 0; padding:6px 10px; }
+  body[data-fit-page="B01"] #recap { min-height:0; height:var(--fit-height); padding:12px 4%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px; }
+  body[data-fit-page="B01"] #recap> :is(p,h2,div) { margin-top:0; margin-bottom:0; }
+  body[data-fit-page="B01"] #recap .recap-light { font-size:30px; line-height:1; }
+  body[data-fit-page="B01"] #recap h2 { font-size:clamp(27px,2.4vw,36px); }
+  body[data-fit-page="B01"] #recap .course-path { margin:2px 0; }
+  body[data-fit-page="B01"] #recap .recap-cards { flex:none; width:100%; gap:18px; }
+  body[data-fit-page="B01"] #recap .recap-cards img { height:clamp(80px,14vh,145px); }
+  body[data-fit-page="B01"] #recap .recap-cards article>div { padding:12px 18px; }
+  body[data-fit-page="B01"] #recap .recap-cards h3 { margin:6px 0; font-size:22px; }
+  body[data-fit-page="B01"] #recap .recap-cards b { font-size:20px; }
+  body[data-fit-page="B01"] #recap .handoff-note { padding:8px 24px; line-height:1.65; }
+  body[data-fit-page="B01"] #recap .final-actions { gap:10px; }
+
+  /* Hyanggyo: the map and each room keep their original coordinate system. */
+  body[data-fit-page="B02"] .app-shell { padding:0 18px; }
+  body[data-fit-page="B02"] .topbar { margin-bottom:8px; padding:10px 0; }
+  body[data-fit-page="B02"] main>.screen.active { height:calc(var(--fit-height) - 34px); min-height:0; display:flex; flex-direction:column; gap:8px; padding-bottom:10px; }
+  body[data-fit-page="B02"] .app-shell>footer { height:34px; margin:0; padding:6px 0; position:relative; }
+  body[data-fit-page="B02"] .app-shell>footer details[open] { position:absolute; right:0; bottom:4px; max-width:650px; background:#fff9e8; padding:16px; border:1px solid #b99b60; z-index:20; box-shadow:0 5px 24px #18342c44; }
+  body[data-fit-page="B02"] .page-heading { margin:0; flex:none; }
+  body[data-fit-page="B02"] .page-heading h1 { font-size:clamp(24px,2.3vw,32px); }
+  body[data-fit-page="B02"] .mission-heading { flex:none; }
+  /* Absolute scene contents cannot provide width after aspect-ratio is removed. */
+  body[data-fit-page="B02"] :is(.intro-scene,.episode-scene,.departure-scene) { width:100%; height:100%; min-height:0; max-height:none; aspect-ratio:auto; }
+  body[data-fit-page="B02"] .walk-layout { flex:1; min-height:0; }
+  body[data-fit-page="B02"] .walk-main { min-height:0; display:flex; flex-direction:column; align-items:center; gap:6px; }
+  body[data-fit-page="B02"] .map-mission-banner { flex:none; margin:0; width:100%; padding:7px 12px; }
+  body[data-fit-page="B02"] .map-frame { flex:1; min-height:0; width:auto; max-width:100%; aspect-ratio:3/2; }
+  body[data-fit-page="B02"] .walk-controls { flex:none; width:100%; min-height:0; padding:8px 14px; margin:0; gap:16px; }
+  body[data-fit-page="B02"] .joystick { width:84px; height:84px; }
+  body[data-fit-page="B02"] .joystick-wrap { gap:12px; }
+  body[data-fit-page="B02"] .quest-panel { padding:12px 14px; }
+  body[data-fit-page="B02"] .quest-panel h2 { margin:5px 0 8px; font-size:24px; }
+  body[data-fit-page="B02"] .quest-panel .quest-list { gap:6px; }
+  body[data-fit-page="B02"] #gateStage { flex:1; min-height:0; width:auto; max-width:100%; aspect-ratio:16/9; align-self:center; }
+  body[data-fit-page="B02"] .gate-controls { flex:none; padding:8px 14px; }
+  body[data-fit-page="B02"] #gateMoveHint { margin:0; }
+  body[data-fit-page="B02"] #gateEquation { flex:none; padding:8px 18px; margin:0; }
+  body[data-fit-page="B02"] #shapeChoicePanel { flex:1; min-height:0; display:grid; grid-template-columns:minmax(0,1.5fr) minmax(310px,1fr); gap:16px; align-items:center; }
+  body[data-fit-page="B02"] .hall-observation { min-height:0; height:100%; max-height:100%; aspect-ratio:auto; }
+  body[data-fit-page="B02"] .shape-question { margin:0; padding:18px; }
+  body[data-fit-page="B02"] .shape-question .shape-choices { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  body[data-fit-page="B02"] #shapeConstructPanel { flex:1; min-height:0; }
+  body[data-fit-page="B02"] #shapeConstructPanel .puzzle-layout { height:100%; min-height:0; }
+  body[data-fit-page="B02"] .window-workshop { min-height:0; display:flex; flex-direction:column; }
+  body[data-fit-page="B02"] .window-reference { height:95px; flex:none; }
+  body[data-fit-page="B02"] .window-board { flex:1; min-height:0; padding:6px 12px; }
+  body[data-fit-page="B02"] #windowSvg { height:100%; min-height:0; }
+  body[data-fit-page="B02"] #windowFeedback { margin:6px 0; }
+  body[data-fit-page="B02"] .lesson-card { padding:14px; }
+  body[data-fit-page="B02"] .lesson-card img { height:110px; }
+  body[data-fit-page="B02"] :is(.room-scene,.hall-stage) { flex:1; min-height:0; width:auto; max-width:100%; aspect-ratio:3/2; align-self:center; }
+  body[data-fit-page="B02"] .hall-note { margin:0; flex:none; }
+  body[data-fit-page="B02"] .ending-recap { height:100%; min-height:0; padding:12px 22px; display:flex; flex-direction:column; justify-content:center; gap:6px; }
+  body[data-fit-page="B02"] .recap-cards { margin:0; gap:16px; }
+  body[data-fit-page="B02"] .recap-cards img { height:clamp(80px,15vh,155px); width:100%; object-fit:cover; aspect-ratio:auto; }
+  body[data-fit-page="B02"] .recap-cards article>div { padding:12px 16px; }
+  body[data-fit-page="B02"] .recap-cards h2 { margin:5px 0; }
+  body[data-fit-page="B02"] .recap-formula { margin:6px 0; padding:6px 10px; }
+  body[data-fit-page="B02"] .recap-message { margin:0; padding:8px; }
+  body[data-fit-page="B02"] .recap-actions { margin:0; }
+
+  /* Gyeyang and Michuhol chapter summaries. */
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap { min-height:0; height:var(--fit-height); padding:16px 4%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap>:is(p,h2,div) { margin-top:0; margin-bottom:0; }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap :is(.recap-spark,.recap-light) { font-size:32px; line-height:1; }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap>:is(h1,h2) { font-size:clamp(27px,2.5vw,36px); margin:0; }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap>:is(h1,h2) br { display:none; }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap h2 { font-size:clamp(27px,2.5vw,36px); }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap .recap-cards { width:100%; gap:18px; }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap .recap-cards article>div { padding:14px 18px; }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap .recap-cards img { max-height:180px; object-fit:cover; }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap .recap-cards h3 { margin:6px 0; }
+  body:is([data-fit-page="B03"],[data-fit-page="M01"]) #recap .recap-actions { margin:0; }
+  body[data-fit-page="B03"] #recap { gap:7px; padding:12px 4%; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) #recap { height:var(--fit-height); min-height:0; padding:12px 20px; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .recap-paper { width:min(900px,100%); padding:16px 30px; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .recap-paper :is(.medal,.light-medal) { font-size:36px; margin:5px 0; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .recap-paper h1 { font-size:32px; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .recap-paper h1 br { display:none; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .recap-paper>p { margin:8px 0; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .recap-math { margin:10px 0; padding:10px; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .recap-math span { margin:5px 0; font-size:28px; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .recap-actions { flex-direction:row; justify-content:center; flex-wrap:wrap; margin:12px 0 0; gap:10px; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .recap-paper>small { margin-top:10px; }
+
+  /* Photos and concept cards: the photograph yields height to the text. */
+  body[data-fit-page="M01"] :is(#photoTour,#lesson) { height:var(--fit-height); min-height:0; display:flex; flex-direction:column; padding:12px 3%; gap:10px; }
+  body[data-fit-page="M01"] :is(.section-heading,.lesson-heading) { flex:none; margin:0; padding:0; }
+  body[data-fit-page="M01"] :is(.tour-layout,.lesson-layout) { flex:1; min-height:0; padding:0; gap:18px; }
+  body[data-fit-page="M01"] .tour-layout figure { display:flex; flex-direction:column; min-height:0; margin:0; }
+  body[data-fit-page="M01"] .tour-layout figure>button { flex:1; min-height:0; height:0; }
+  body[data-fit-page="M01"] #tourImage { height:100%; min-height:0; max-height:100%; object-fit:contain; }
+  body[data-fit-page="M01"] :is(.tour-paper,.lesson-paper) { padding:18px 22px; gap:12px; }
+  body[data-fit-page="M01"] .lesson-visual { min-height:0; padding:12px; }
+  body[data-fit-page="M01"] .lesson-visual img { height:100%; min-height:0; object-fit:contain; }
+  body[data-fit-page="M03"] #photoTour { height:var(--fit-height); min-height:0; padding:12px 3%; display:flex; flex-direction:column; gap:10px; }
+  body[data-fit-page="M03"] .photo-heading { flex:none; margin:0; }
+  body[data-fit-page="M03"] .photo-layout { flex:1; min-height:0; gap:18px; }
+  body[data-fit-page="M03"] .photo-layout figure { min-height:0; margin:0; display:flex; flex-direction:column; }
+  body[data-fit-page="M03"] #tourPhotoImage { flex:1; width:100%; height:0; min-height:0; max-height:none; object-fit:contain; }
+  body[data-fit-page="M03"] .photo-paper { padding:18px 22px; gap:12px; }
+  body[data-fit-page="M03"] .photo-actions { flex:none; margin:0; padding:0; }
+  body[data-fit-page="M03"] #lesson { height:var(--fit-height); min-height:0; padding:14px 3%; }
+  body[data-fit-page="M03"] #lesson article { padding:18px 26px; }
+  body[data-fit-page="M03"] .detector-guide { padding:14px; margin:8px 0; }
+  body[data-fit-page="M03"] .lesson-tip { padding:12px; margin:8px 0; }
+  body[data-fit-page="M03"] .lesson-tip img { height:75px; }
+
+  /* Munhak and Subong: keep the workbench and feedback alongside the drawing. */
+  body[data-fit-page="M02"] :is(.bus-scene,.tour-story,.tour-lesson) { height:var(--fit-height); min-height:0; }
+  body[data-fit-page="M03"] .tour-story { height:var(--fit-height); min-height:0; }
+  body[data-fit-page="M02"] :is(#climb,#puzzle),
+  body[data-fit-page="M03"] :is(#hunt,#puzzle) { height:var(--fit-height); min-height:0; padding:12px 3%; display:flex; flex-direction:column; gap:10px; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .section-top { margin:0; flex:none; }
+  body[data-fit-page="M02"] .trail-frame { flex:1; min-height:0; width:100%; }
+  body[data-fit-page="M02"] #trail { height:100%; width:100%; object-fit:contain; aspect-ratio:auto; }
+  body[data-fit-page="M02"] .climb-controls { flex:none; padding:8px 0; }
+  body:is([data-fit-page="M02"],[data-fit-page="M03"]) .puzzle-layout { flex:1; min-height:0; width:100%; align-items:stretch; }
+  body[data-fit-page="M02"] .diagram-wrap { align-self:stretch; min-height:0; display:flex; flex-direction:column; }
+  body[data-fit-page="M02"] .diagram-heading { padding:10px 16px; flex:none; }
+  body[data-fit-page="M02"] #diagram { flex:1; height:0; min-height:0; max-height:none; }
+  body[data-fit-page="M02"] .diagram-legend { padding:8px 12px; flex:none; }
+  body[data-fit-page="M02"] .control-panel { padding:14px 18px; }
+  body[data-fit-page="M02"] .control-panel h2 { font-size:26px; }
+  body[data-fit-page="M02"] .control-panel :is(.tip,.signal-box,.formula-box) { margin:8px 0; padding:10px; }
+  body[data-fit-page="M02"] .control-panel .given { padding:8px 12px; gap:5px; }
+  body[data-fit-page="M02"] .control-panel .tip { padding:0; }
+  body[data-fit-page="M02"] #distancePanel>.eyebrow { margin:0 0 4px; }
+  body[data-fit-page="M02"] #distancePanel>h2 { margin-bottom:6px; }
+  body[data-fit-page="M02"] #distancePanel .formula-card { margin:6px 0; padding:6px; }
+  body[data-fit-page="M02"] #calculator { margin:6px 0; padding:8px; }
+  body[data-fit-page="M02"] #distancePanel .task-label { margin:8px 0; }
+  body[data-fit-page="M02"] #distanceFeedback { margin-top:6px; padding:8px 12px; }
+  body[data-fit-page="M02"] .model-note { margin:0; flex:none; }
+  body[data-fit-page="M03"] .hunt-layout { flex:1; min-height:0; align-items:stretch; container-type:size; }
+  body[data-fit-page="M03"] .park { height:min(100cqh,calc((100cqw - 307px)*.5625)); width:auto; max-width:100%; min-height:0; aspect-ratio:16/9; justify-self:center; }
+  body[data-fit-page="M03"] .hunt-panel { gap:10px; }
+  body[data-fit-page="M03"] .device-wrap { min-height:0; display:flex; flex-direction:column; }
+  body[data-fit-page="M03"] #diagram { flex:1; height:0; min-height:0; max-height:none; }
+  body[data-fit-page="M03"] .p-move { flex:none; padding:6px 12px; }
+  body[data-fit-page="M03"] .puzzle-panel { gap:8px; padding:14px 18px; }
+  body[data-fit-page="M03"] .puzzle-panel .installation-steps { padding-bottom:6px; gap:4px; }
+  body[data-fit-page="M03"] .puzzle-panel .relation { padding:7px 12px; }
+  body[data-fit-page="M03"] .puzzle-panel .dial-heading { margin:0 0 6px; }
+  body[data-fit-page="M03"] .puzzle-panel .puzzle-feedback { min-height:36px; }
+  body[data-fit-page="M03"] .under-note { margin:0; flex:none; }
+
+  /* Embedded Gulpo activity gets the full height of its parent frame. */
+  body[data-fit-page="gulpo"] { --fit-height:var(--mt-content-height,100dvh); }
+  body[data-fit-page="gulpo"] #puzzle { min-height:0; height:var(--fit-height); padding:12px 3%; display:flex; flex-direction:column; gap:8px; }
+  body[data-fit-page="gulpo"] :is(.puzzle-heading,.touch-guide,.puzzle-toolbar,.keyboard-note) { flex:none; margin:0; }
+  body[data-fit-page="gulpo"] .game-scene { flex:1; min-height:0; }
+  body[data-fit-page="gulpo"] .boards { height:100%; min-height:0; padding:10px 3% 24px; }
+  body[data-fit-page="gulpo"] :is(.source-panel,.target-panel) { min-height:0; display:flex; flex-direction:column; }
+  body[data-fit-page="gulpo"] #sourceBoard { flex:1; min-height:0; height:0; }
+  body[data-fit-page="gulpo"] .target-mat { flex:1; min-height:0; }
+  body[data-fit-page="gulpo"] #targetBoard { height:100%; min-height:0; max-height:100%; }
+  body[data-fit-page="gulpo"] .puzzle-toolbar { padding:8px 0; }
+  body[data-fit-page="gulpo"] #result { height:var(--fit-height); min-height:0; padding:12px 20px; }
+  body[data-fit-page="gulpo"] .result-card { padding:16px 28px; }
+  body[data-fit-page="gulpo"] .result-card .light-medal { margin:6px 0; font-size:36px; }
+  body[data-fit-page="gulpo"] .result-card h1 { margin:6px 0; font-size:32px; }
+
+  /* Small overflows in Namdong workbenches. */
+  body[data-fit-page="N01"] .zoo-graphs { padding:8px; gap:6px; }
+  body[data-fit-page="N01"] .zoo-graph-card { padding:6px 12px; }
+  body[data-fit-page="N01"] .zoo-graph-card header { margin-bottom:3px; }
+  body[data-fit-page="N01"] .zoo-record-inline { padding-bottom:3px; }
+  body[data-fit-page="N01"] .zoo-graph-condition { margin:4px 0; }
+  body[data-fit-page="N01"] .zoo-controls { position:relative; }
+  body[data-fit-page="N01"] .zoo-calculator[open] { position:absolute; z-index:5; bottom:10px; left:10px; width:calc(100% - 20px); box-shadow:0 6px 28px #17302355; }
+  body[data-fit-page="N02"][data-course="market"] #game .crab-controls { padding:14px; gap:8px; }
+  body[data-fit-page="N02"] .crab-stats { padding:6px 12px; }
+}
+@media (min-width:901px) and (max-height:800px) {
+  body[data-fit-page="B02"] .recap-cards img { height:88px; }
+  body[data-fit-page="B02"] .recap-cards article>div { padding:8px 16px; }
+  body[data-fit-page="B01"] #recap { gap:6px; }
+  body[data-fit-page="B01"] #recap>.eyebrow { margin-bottom:0; }
+  body[data-fit-page="B01"] #recap .recap-light { display:none; }
+  body[data-fit-page="B01"] #recap .recap-cards img { display:block; height:78px; }
+  body[data-fit-page="B01"] #recap .handoff-note { max-width:1150px; padding:6px 18px; }
+  body[data-fit-page="B01"] #recap .handoff-note br { display:none; }
+  body[data-fit-page="B01"] #recap .mt-unlock-banner { padding:6px 18px; }
+  body[data-fit-page="M03"] .puzzle-panel { gap:5px; padding:12px 18px; }
+  body[data-fit-page="M03"] .puzzle-panel .installation-steps { flex-direction:row; flex-wrap:wrap; gap:4px 12px; }
+  body[data-fit-page="M03"] .puzzle-panel .dial-heading { margin-bottom:4px; }
+  body[data-fit-page="M03"] .puzzle-panel .dial-limits { margin-top:4px; line-height:1.4; }
+  body[data-fit-page="M03"] #mathHint { min-height:44px; }
+}
