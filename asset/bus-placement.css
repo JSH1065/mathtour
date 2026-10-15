@@ -8,7 +8,8 @@
 .mt-bus-scene:has(>img#arrivalBus.arrival-bus)>.arrival-prompt{left:auto;right:3%;width:28%;bottom:3%;display:block;padding:12px}
 .mt-bus-scene:has(>img#arrivalBus.arrival-bus)>.arrival-prompt>div{margin-top:8px}
 .mt-bus-scene #departKids,.mt-bus-scene .boarding-friends{bottom:var(--mt-ground-bottom)!important}
-#departureScene .mt-bus-scene .ending-person{bottom:var(--mt-ground-bottom);--boarding-ground:var(--mt-ground-bottom);--boarding-step:var(--mt-boarding-step)}
+/* Keep farewell dialogue portraits above the text; road alignment starts when the bus arrives. */
+#departureScene:is([data-phase=arriving],[data-phase=parked],[data-phase=boarding],[data-phase=departing],[data-phase=complete]) .mt-bus-scene .ending-person{bottom:var(--mt-ground-bottom);--boarding-ground:var(--mt-ground-bottom);--boarding-step:var(--mt-boarding-step)}
 .mt-bus-scene #endingBoy,.mt-bus-scene #endingGirl,.mt-bus-scene #boardingMinwoo,.mt-bus-scene #boardingSeoyeon{bottom:var(--mt-ground-bottom)!important}
 .mt-bus-scene #endingBoy.boarding,.mt-bus-scene #endingGirl.boarding,.mt-bus-scene #boardingMinwoo.aboard,.mt-bus-scene #boardingSeoyeon.aboard{left:var(--mt-door-x)!important;bottom:var(--mt-boarding-step)!important}
 /* Bupyeong station → Gulpocheon: keep the children readable beside the coach. */

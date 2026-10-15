@@ -145,9 +145,9 @@ dialog{border:1px solid #c8ad70;border-radius:12px;background:#fbf5e6;color:#314
 .connecting{display:grid;place-items:center;isolation:isolate;padding:30px;text-align:center}.connecting-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}.connecting-card{max-width:550px;padding:34px;background:#112b3ceF;color:#fff3d5;border:1px solid #c7a65f;border-radius:10px;box-shadow:0 15px 50px #14232c50}.connecting-card .eyebrow{color:#ead293}.connecting-card h1{font-size:clamp(26px,4vw,40px)}.connecting-card p{line-height:1.8}.connecting-card button{min-height:48px}
 
 </style><link rel="stylesheet" href="../dialogue-controls.css?v=20261006"><script defer src="../dialogue-controls.js?v=20261006"></script><link rel="stylesheet" href="../bus-placement.css?v=20261009-road-v1"><script defer src="../bus-placement.js?v=20261009-road-v1"></script><link rel="stylesheet" href="../viewport-fit.css?v=20261009-fit1">
-</head><body data-fit-page="gulpo">
+<link rel="stylesheet" href="../place-intro.css?v=20261016"><script src="../place-intro.js?v=20261016"></script><script src="../place-intro-data.js?v=20261016"></script></head><body data-fit-page="gulpo">
 
-<header class="topbar"><a class="brand" href="#" id="homeLink">M<span>✦</span>TH TOUR<small>INCHEON · 굴포천</small></a><span class="edition">시간사진기 <small id="chapterLabel">굴포천 여행</small></span><nav><button id="courseJournal" hidden>빛의 수첩</button><button id="soundButton" aria-pressed="false" aria-label="게임 소리 켜기">소리 꺼짐</button></nav></header>
+<header class="topbar"><a class="brand" href="#" id="homeLink">M<span>✦</span>TH TOUR<small>INCHEON · 굴포천</small></a><span class="edition">시간사진기 <small id="chapterLabel">굴포천 여행</small></span><nav><button id="placeIntroButton">관광지 소개</button><button id="courseJournal" hidden>빛의 수첩</button><button id="soundButton" aria-pressed="false" aria-label="게임 소리 켜기">소리 꺼짐</button></nav></header>
 
 <main>
 
@@ -279,7 +279,13 @@ dialog{border:1px solid #c8ad70;border-radius:12px;background:#fbf5e6;color:#314
 
  ];
 
- // Keep riverside dialogue at the same viewpoint; change only for time travel or the bus.
+  const placeIntro=window.MathTourPlaceIntro({
+   title:'굴포천 알아보기',
+   slides:window.MathTourPlaceGuides.gulpo.map(slide=>({...slide,src:media[slide.key]})),
+   onOpen:()=>cancelDrag()
+  });
+  $('placeIntroButton').addEventListener('click',()=>placeIntro.open());
+  // Keep riverside dialogue at the same viewpoint; change only for time travel or the bus.
 
  const introduction = [
 
@@ -457,7 +463,10 @@ dialog{border:1px solid #c8ad70;border-radius:12px;background:#fbf5e6;color:#314
 
  function nextStory() { if(state.phase!=='story'||!state.story||modalOpen())return;const s=state.story;if(s.index<s.lines.length-1){s.index++;renderStory();}else s.done(); }
 
- function startStory() { story(introduction,'현재 · 버스에서 내려 만난 굴포천',()=>showScreen('camera')); }
+  function startStory() {
+   story(introduction.slice(0,2),'현재 · 버스에서 내려 만난 굴포천',()=>placeIntro.open(()=>
+    story(introduction.slice(2),'굴포천 · 물길에 남은 옛 기억',()=>showScreen('camera'))));
+  }
 
  function flashTo(fn,warm=false) {
 

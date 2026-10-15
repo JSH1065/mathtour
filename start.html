@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6ed">
+  <meta name="description" content="MATH TOUR IN INCHEON. 인천의 관광지를 배경으로 수학적 원리 탐구, 생활 속 수학 활용, 게임형 문제 해결을 경험하는 수학 여행입니다.">
+  <title>MATH TOUR IN INCHEON | 인천에서 만나는 수학 여행</title>
+  <link rel="stylesheet" href="asset/start/mathtour-start.css">
+  <script src="asset/start/flow.js" defer></script>
+  <script src="asset/start/mathtour-start.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-bus" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="16" rx="4"/><path d="M4 12h16M8 3v9M16 3v9M7 19v2M17 19v2M8 16h.01M16 16h.01"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 2 2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6Z"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  </svg>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="start.html" aria-label="MATH TOUR IN INCHEON 시작 화면">M<span class="brand-star" aria-hidden="true">✦</span>TH TOUR<small>IN INCHEON</small></a>
+      <nav class="header-actions" aria-label="여행 메뉴"><button class="guide-button" type="button" data-guide><span class="question-mark" aria-hidden="true">?</span>여행 안내</button></nav>
+    </header>
+    <main id="startPage">
+      <section class="hero" aria-labelledby="gameTitle">
+        <div class="hero-copy">
+          <p class="departure"><span class="status-dot" aria-hidden="true"></span>아시아드경기장에서 출발!</p>
+          <p class="hero-kicker">인천을 여행하며, 수학의 빛을 찾아라!</p>
+          <h1 id="gameTitle" aria-label="MATH TOUR IN INCHEON"><span class="title-city">M<span class="brand-star" aria-hidden="true">✦</span>TH TOUR</span> <span class="title-tour">IN INCHEON</span></h1>
+          <p class="hero-description">민우·서연과 함께 인천의 다섯 권역으로!<br>관찰하고, 생각하고, 도전하며<br><strong>나만의 수학 여행을 완성해요.</strong></p>
+          <div class="hero-actions"><button id="gameStartButton" class="start-button" type="button"><span><span id="startLabel">프롤로그 보기</span><small id="startEnglish">WATCH PROLOGUE</small></span><span class="start-arrow" aria-hidden="true"><svg class="icon"><use href="#icon-play"/></svg></span></button><a id="directMapLink" class="start-button continue-button" href="index.html?play=1"><span>여행 이어하기<small>CONTINUE TOUR</small></span><span class="start-arrow" aria-hidden="true"><svg class="icon"><use href="#icon-arrow"/></svg></span></a></div>
+          <p class="start-note"><svg class="icon"><use href="#icon-star"/></svg>작은 발견을 모아, 빛의 수첩을 채워요.</p>
+        </div>
+        <div class="hero-art" aria-label="밝은 인천 풍경과 노란 매스투어 버스 앞에 선 민우와 서연">
+          <div class="art-orbit orbit-one" aria-hidden="true"></div><div class="art-orbit orbit-two" aria-hidden="true"></div>
+          <img class="city-illustration" src="asset/start/mathtour-start-scene.svg" alt="아시아드경기장과 다리, 차이나타운을 잇는 수학 여행" width="760" height="680" fetchpriority="high">
+          <span class="math-mark mark-pi" aria-hidden="true">π</span><span class="math-mark mark-plus" aria-hidden="true">＋</span><span class="math-mark mark-triangle" aria-hidden="true">△</span>
+          <div class="departure-tag"><svg class="icon"><use href="#icon-pin"/></svg><span>오늘의 출발지<strong>아시아드경기장</strong></span></div>
+          <div class="character character-minwoo"><img src="asset/start/민우.svg" alt="민우" width="260" height="320"><span class="character-name">민우</span></div>
+          <div class="character character-seoyeon"><img src="asset/start/서연.svg" alt="서연" width="260" height="320"><span class="character-name">서연</span></div>
+          <span class="character-bubble">같이 출발할까?</span>
+          <button class="notebook" type="button" data-notebook aria-label="빛의 수첩 이야기 알아보기"><span class="book-frame"><svg class="book-star"><use href="#icon-star"/></svg><strong>빛의<br>수첩</strong><span class="book-rule"></span><small>우리의 발견을 모아요</small></span><span class="book-ribbon" aria-hidden="true"></span></button>
+          <span class="notebook-note" aria-hidden="true">수학의 빛을 모아 보자!</span>
+        </div>
+      </section>
+      <section class="experience-strip" aria-label="이번 여행에서 만나는 수학">
+        <div class="strip-intro"><span>이번 여행에서는</span><strong>수학을 이렇게 만나요.</strong></div>
+        <div class="experience"><span class="experience-number">01</span><div><h2>수학적 원리 탐구</h2><p>관찰하며 모양과 규칙을 발견해요</p></div></div>
+        <div class="experience"><span class="experience-number">02</span><div><h2>생활 속 수학 활용</h2><p>배운 수학으로 상황을 풀어봐요</p></div></div>
+        <div class="experience"><span class="experience-number">03</span><div><h2>게임형 문제 해결</h2><p>게임 속 도전에서 방법을 찾아요</p></div></div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>계양·부평 <b>·</b> 서해·검단 <b>·</b> 남동·연수 <b>·</b> 영종·강화 <b>·</b> 미추홀·제물포</span><span class="footer-end">다섯 권역에서 만나는 새로운 발견 <span aria-hidden="true">✦</span></span></footer>
+  </div>
+
+  <dialog id="prologueDialog" class="prologue-dialog" aria-labelledby="prologueTitle">
+    <div id="prologuePlayer">
+    <header class="dialog-header"><div><p class="dialog-eyebrow">OUR JOURNEY BEGINS</p><h2 id="prologueTitle">프롤로그 · 빛의 수첩</h2></div><button class="icon-button" type="button" data-close aria-label="영상 닫고 시작 화면으로"><svg class="icon"><use href="#icon-close"/></svg></button></header>
+    <p class="rotate-note">기기를 가로로 돌리면 대사를 더 크게 볼 수 있어요.</p>
+    <div class="video-frame"><video id="prologueVideo" controls playsinline preload="none" poster="asset/start/prologue-poster.webp" data-src="asset/start/prologue.mp4" aria-label="민우와 서연의 빛의 수첩 프롤로그"></video></div>
+    <div class="player-controls" aria-label="영상 재생 조작"><button id="videoPlay" type="button">▶ 재생</button><button id="videoRestart" type="button">처음부터 보기</button><button id="videoSound" type="button" aria-pressed="true">소리 끄기</button><button id="videoFullscreen" type="button">전체 화면</button></div>
+    <div class="video-footer"><p id="videoStatus" role="status">민우·서연과 함께 빛의 수첩 이야기를 만나 보세요.</p><button id="videoSkip" class="skip-button" type="button">건너뛰고 출발 →</button></div>
+    </div>
+  </dialog>
+  <dialog id="guideDialog" class="info-dialog" aria-labelledby="guideTitle">
+    <header class="dialog-header"><div><p class="dialog-eyebrow">READY TO GO?</p><h2 id="guideTitle">우리들의 여행 방법</h2></div><button class="icon-button" type="button" data-close aria-label="여행 안내 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></header>
+    <ol class="guide-steps"><li><span>01</span><div><h3>버스로 인천을 돌아봐요</h3><p>방향키나 화면의 조이스틱으로 버스를 움직여요. 섬으로 갈 때는 다리를 건너세요.</p></div></li><li><span>02</span><div><h3>반짝이는 권역으로 들어가요</h3><p><kbd>Enter</kbd> 또는 <strong>입장</strong>을 누른 뒤, 권역 안의 챕터를 차례로 여행해요.</p></div></li><li><span>03</span><div><h3>수학의 빛을 모아요</h3><p>수학의 원리를 발견하고, 생활 속에 활용하고, 게임 속 문제에 도전하며 빛의 수첩을 채워요.</p></div></li></ol>
+    <section class="region-guide" aria-labelledby="regionGuideTitle"><h3 id="regionGuideTitle">별로 보는 여행 난이도</h3><ul class="region-list"><li><span><strong>계양·부평</strong><small>초등학교 1~2학년</small></span><span class="region-stars" aria-label="별 1개">★</span></li><li><span><strong>서해·검단</strong><small>초등학교 3~4학년</small></span><span class="region-stars" aria-label="별 2개">★★</span></li><li><span><strong>남동·연수</strong><small>초등학교 5~6학년</small></span><span class="region-stars" aria-label="별 3개">★★★</span></li><li><span><strong>영종·강화</strong><small>중학교 1~2학년</small></span><span class="region-stars" aria-label="별 4개">★★★★</span></li><li><span><strong>미추홀·제물포</strong><small>중학교 3학년</small></span><span class="region-stars" aria-label="별 5개">★★★★★</span></li></ul></section>
+    <button class="dialog-confirm" type="button" data-close>좋아, 준비됐어!<svg class="icon"><use href="#icon-arrow"/></svg></button>
+  </dialog>
+  <dialog id="notebookDialog" class="info-dialog notebook-dialog" aria-labelledby="notebookTitle">
+    <header class="dialog-header"><div><p class="dialog-eyebrow">OUR LITTLE DISCOVERIES</p><h2 id="notebookTitle">빛의 수첩</h2></div><button class="icon-button" type="button" data-close aria-label="빛의 수첩 이야기 닫기"><svg class="icon"><use href="#icon-close"/></svg></button></header>
+    <div class="notebook-story"><svg class="story-star"><use href="#icon-star"/></svg><p>익숙한 곳에서도<br><strong>새로운 발견</strong>은 시작돼요.</p><p class="story-detail">관찰하고, 생각하고, 도전하며 찾은 수학의 빛.<br>민우·서연과 함께 빛의 수첩을 채워 보세요.</p></div><button class="dialog-confirm" type="button" data-close>우리의 빛을 찾아보자<svg class="icon"><use href="#icon-arrow"/></svg></button>
+  </dialog>
+  <noscript><p class="noscript-note">게임을 실행하려면 JavaScript를 켜 주세요.</p></noscript>
+</body>
+</html>

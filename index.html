@@ -8,6 +8,8 @@
       content="매스투어 인 인천 · 버스를 타고 인천의 다섯 권역을 여행하며 수학의 빛을 찾아보세요."
     />
     <title>매스투어 인 인천 | MATH TOUR IN INCHEON</title>
+    <script src="asset/start/flow.js"></script>
+    <script src="asset/start/entry.js"></script>
     <link id="mt-chapter-style" rel="stylesheet" href="asset/mathtour-chapters.css">
 <style>
 :root {
@@ -1250,7 +1252,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; overscroll-behavior: n
             <p class="subtitle">다섯 권역을 여행하며<br> 수학의 빛을 찾아보세요.</p>
           </header>
           <section class="guide-card" aria-labelledby="guideTitle">
-            <h2 id="guideTitle">여행 안내</h2>
+            <h2 id="guideTitle" style="display:flex;align-items:center;justify-content:space-between;gap:8px">여행 안내 <a id="startHomeLink" href="start.html" style="font-size:11px;color:#236875;font-weight:700;text-underline-offset:3px">시작 화면</a></h2>
             <ol>
               <li><strong>버스를 움직여요</strong><span>방향키 또는 왼쪽 조이스틱으로 이동해요.</span></li>
               <li><strong>섬은 다리로 건너요</strong><span>파란 바다와 회색 지역은 지나갈 수 없어요.</span></li>
@@ -2595,6 +2597,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; overscroll-behavior: n
   }
 
   function openRegionPage(region) {
+    window.MathTourEntry?.rememberRegion(region.id);
     const content = standaloneRegionContent[region.id] || { icon: "🚌", description: "새로운 인천 권역에 도착했습니다." };
     resumeMusicAfterRegion = musicWanted;
     musicWanted = false;
@@ -2634,6 +2637,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; overscroll-behavior: n
     window.MathTourRegionControls.clearContext();
     standaloneRegionScreen.hidden = true;
     activeMapRegion = null;
+    window.MathTourEntry?.rememberRegion(null);
     activeRegionCrop = null;
     canvas.focus();
     if (resumeMusicAfterRegion) {
@@ -2822,6 +2826,10 @@ html, body { width: 100%; height: 100%; overflow: hidden; overscroll-behavior: n
     button.addEventListener("pointerleave", stop);
   });
 
+  document.getElementById("startHomeLink").addEventListener("click", () => {
+    try { localStorage.setItem(CHECKPOINT_KEY, JSON.stringify(player)); } catch (_) {}
+    window.MathTourEntry?.enter();
+  });
   enterButton.addEventListener("click", enterRegion);
   resetButton.addEventListener("click", resetPlayer);
   document.getElementById('resetAllProgress').addEventListener('click',()=>window.MathTourRegionControls.confirmAllReset(()=>{

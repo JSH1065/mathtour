@@ -215,9 +215,9 @@ body{background:#eee6d4}button,a.primary{border-radius:6px}.primary{background:#
 @media(prefers-reduced-motion:reduce){.arrival-bus{animation:none}.arrival-prompt,.fixture-art{transition:none}}
 
 </style><link rel="stylesheet" href="asset/dialogue-controls.css?v=20261006"><script defer src="asset/dialogue-controls.js?v=20261006"></script><link rel="stylesheet" href="asset/bus-placement.css?v=20261009-bupyeong-v2"><script defer src="asset/bus-placement.js?v=20261009-bupyeong-v2"></script><link rel="stylesheet" href="asset/viewport-fit.css?v=20261009-fit1">
-</head><body data-fit-page="B01" class="arrival-active">
+<link rel="stylesheet" href="asset/place-intro.css?v=20261016"><script src="asset/place-intro.js?v=20261016"></script><script src="asset/place-intro-data.js?v=20261016"></script></head><body data-fit-page="B01" class="arrival-active">
 
-<header class="topbar"><a class="brand" href="index.html">M<span>✦</span>TH TOUR <small>IN INCHEON</small></a><span class="site-name">부평 · 굴포천 <small>학생 원작 · 오서희</small></span><div class="header-actions"><button id="soundButton" aria-pressed="false">소리 켜기</button><button id="journalButton">빛의 수첩 <span id="stampCount">0/3</span></button><a href="index.html">월드맵</a></div></header>
+<header class="topbar"><a class="brand" href="index.html">M<span>✦</span>TH TOUR <small>IN INCHEON</small></a><span class="site-name">부평 · 굴포천 <small>학생 원작 · 오서희</small></span><div class="header-actions"><button id="placeIntroButton">관광지 소개</button><button id="soundButton" aria-pressed="false">소리 켜기</button><button id="journalButton">빛의 수첩 <span id="stampCount">0/3</span></button><a href="index.html">월드맵</a></div></header>
 
 <main>
 
@@ -1539,6 +1539,12 @@ window.MallTour = (() => {
 
  let missions,world,nearby=null,currentPlace=null,routeKey='',toastTimer,token=0,audioContext;const timers=new Set();
 
+ const placeIntro=window.MathTourPlaceIntro({
+  title:'부평모두몰 알아보기',
+  slides:window.MathTourPlaceGuides.mall.map(slide=>({...photos[slide.key],...slide})),
+  onOpen:()=>{world?.stop();stopJoy();}
+ });
+ $('placeIntroButton').onclick=()=>placeIntro.open();
  const modalOpen=()=>!!document.querySelector('dialog[open]');
 
  function later(fn,ms){const generation=token,id=setTimeout(()=>{timers.delete(id);if(generation!==token)return;if(modalOpen())later(fn,180);else fn();},ms);timers.add(id);}
@@ -1619,7 +1625,10 @@ window.MallTour = (() => {
 
  function beginArrival(){const reduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;later(()=>{if(state.phase!=='home')return;$('home').classList.add('arrived');$('startButton').disabled=false;},reduced?80:2200);}
 
- function intro(){playStory('station','부평역 도착 · 빛을 잃은 지하상가',tour.intro,()=>showScreen('world'));}
+ function intro(){
+  playStory('station','부평역 도착 · 부평모두몰',tour.intro.slice(0,2),()=>placeIntro.open(()=>
+   playStory('entrance','부평모두몰 · 빛을 잃은 지하상가',tour.intro.slice(2),()=>showScreen('world'))));
+ }
 
  let albumIndex=0,albumZoom=false;
 

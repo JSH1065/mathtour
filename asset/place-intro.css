@@ -1,0 +1,48 @@
+/* Scoped styles keep the two chapter themes and activity screens independent. */
+dialog.mt-place-intro{box-sizing:border-box;width:min(1080px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);margin:auto;padding:0;border:1px solid #b69a61;border-radius:14px;background:#fcf7e9;color:#263f46;box-shadow:0 24px 90px #071d3255;overflow:auto;font-family:inherit}
+.mt-place-intro::backdrop{background:#081a2bd9;backdrop-filter:blur(5px)}
+.mt-place-intro *{box-sizing:border-box}
+.mt-place-intro .mt-intro-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;border-bottom:1px solid #d8c8a5;background:#fcf7e9}
+.mt-place-intro .mt-intro-heading span{font-size:11px;letter-spacing:.08em;color:#80673b}
+.mt-place-intro h2{font:700 clamp(23px,2.8vw,32px)/1.35 Batang,serif;margin:6px 0 0;color:#244650}
+.mt-place-intro button{min-height:44px;padding:10px 16px;border:1px solid #c0ad85;border-radius:7px;background:#fffaf0;color:#384a47;font-family:inherit;font-weight:700;font-size:13px;line-height:1.4;cursor:pointer;box-shadow:none;touch-action:manipulation}
+.mt-place-intro button:focus-visible,.mt-place-intro a:focus-visible{outline:3px solid #168c91;outline-offset:3px}
+.mt-place-intro button:disabled{opacity:.4;cursor:default}
+.mt-place-intro [data-intro=close]{flex-shrink:0;font-size:12px}
+.mt-place-intro .mt-intro-body{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,1fr)}
+.mt-place-intro figure{margin:0;min-width:0;background:#e9e4d5}
+.mt-place-intro .mt-intro-photo{display:flex;align-items:center;justify-content:center;height:clamp(270px,48dvh,460px);padding:16px;overflow:auto;overscroll-behavior:contain;background:#182d37}
+.mt-place-intro .mt-intro-photo img{display:block;width:100%;height:100%;max-width:none;object-fit:contain}
+.mt-place-intro .mt-intro-photo.expanded{display:block}
+.mt-place-intro .mt-intro-photo.expanded img{width:max(100%,1000px);height:auto;max-width:none;object-fit:initial}
+.mt-place-intro figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px}
+.mt-place-intro figcaption small{font-size:10px;line-height:1.6;color:#686555}
+.mt-place-intro [data-intro=zoom]{flex-shrink:0;min-height:36px;padding:7px 10px;font-size:11px}
+.mt-place-intro article{display:flex;flex-direction:column;gap:16px;padding:28px;min-width:0}
+.mt-place-intro [data-intro=count]{color:#92723b;font-size:12px;font-weight:700;letter-spacing:.12em}
+.mt-place-intro h3{font-size:24px;line-height:1.45;letter-spacing:-.04em;margin:14px 0;word-break:keep-all}
+.mt-place-intro p{font-size:15px;line-height:1.85;margin:0;word-break:keep-all;overflow-wrap:anywhere}
+.mt-place-intro aside{margin-top:22px;padding:15px 16px;border-left:3px solid #ac925a;background:#f0ecdc;border-radius:0 8px 8px 0}
+.mt-place-intro aside b{font-size:12px;color:#6e613f}
+.mt-place-intro aside p{font-size:13px;margin-top:6px}
+.mt-place-intro [data-intro=source]{font-size:11px;line-height:1.6;color:#657564;margin-top:auto;text-underline-offset:4px}
+.mt-place-intro footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 26px;border-top:1px solid #d8c8a5}
+.mt-place-intro [data-intro=position]{font-size:12px;color:#817457;white-space:nowrap;flex-shrink:0}
+.mt-place-intro [data-intro=next]{background:#244c53;border-color:#244c53;color:#fff6dc;min-width:150px}
+@media(max-width:700px){
+ dialog.mt-place-intro{width:calc(100vw - 16px);max-height:calc(100dvh - 16px);border-radius:10px}
+ .mt-place-intro .mt-intro-heading{display:grid;grid-template-columns:1fr auto;padding:12px 16px 16px;gap:8px}
+ .mt-place-intro .mt-intro-heading>div{display:contents}
+ .mt-place-intro .mt-intro-heading span{grid-column:1;grid-row:1;font-size:9px;letter-spacing:0}
+ .mt-place-intro h2{grid-column:1 / -1;grid-row:2;font-size:23px;margin:0}
+ .mt-place-intro [data-intro=close]{grid-column:2;grid-row:1;font-size:10px;padding:9px}
+ .mt-place-intro .mt-intro-body{grid-template-columns:1fr}
+ .mt-place-intro .mt-intro-photo{height:clamp(190px,32dvh,310px);padding:10px}
+ .mt-place-intro article{padding:18px;gap:15px}
+ .mt-place-intro h3{font-size:22px;margin:8px 0 10px}
+ .mt-place-intro p{font-size:14px;line-height:1.75}
+ .mt-place-intro aside{margin-top:14px;padding:12px}
+ .mt-place-intro footer{position:sticky;bottom:0;padding:12px;background:#fcf7e9;gap:8px}
+ .mt-place-intro footer button{font-size:12px;padding:10px;min-width:0;white-space:nowrap}
+ .mt-place-intro [data-intro=next]{min-width:0}
+}

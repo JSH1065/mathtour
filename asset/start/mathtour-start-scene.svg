@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 680" fill="none">
+  <defs><linearGradient id="sky" x1="410" y1="82" x2="310" y2="480" gradientUnits="userSpaceOnUse"><stop stop-color="#e1f0e9"/><stop offset="1" stop-color="#d6e6cf"/></linearGradient><linearGradient id="bus" x1="500" y1="330" x2="500" y2="470" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe383"/><stop offset="1" stop-color="#efb943"/></linearGradient></defs>
+  <path d="M118 257C99 181 183 99 291 102c53-44 161-45 228 17 99-8 145 69 133 137 97 119 50 267-72 293-101 78-237 49-303 12-151 13-234-59-223-143-33-70-9-132 64-161Z" fill="url(#sky)"/>
+  <circle cx="562" cy="113" r="44" fill="#f6d378"/><path d="M561 53v-9m0 138v-9M501 113h-9m139 0h-9m-17-43 6-6m-98 98 6-6m85 6 7 7m-98-99 6 6" stroke="#d8b765" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#fffdf3"><path d="M190 146c-13-23-49-16-52 8-22-6-38 10-33 25h123c10-18-11-39-29-30l-9-3Z"/><path d="M439 88c-7-20-35-20-43-1-19-7-34 8-30 20h107c2-14-16-25-28-18l-6-1Z"/><path d="M667 245c-8-19-35-18-41 2-19-5-32 10-26 22h96c6-15-14-28-29-24Z"/></g>
+  <ellipse cx="385" cy="483" rx="307" ry="117" fill="#c6d9b7"/>
+  <path d="M82 454c76-82 145-25 246-79s203-60 293-19c78 35 65 74 11 97-76 33-224 53-247 129" stroke="#aebf9e" stroke-width="53" stroke-linecap="round"/>
+  <path d="M82 448c76-82 145-25 246-79s203-60 293-19c78 35 65 74 11 97-76 33-224 53-247 129" stroke="#fff1ca" stroke-width="48" stroke-linecap="round"/>
+  <path d="M82 448c76-82 145-25 246-79s203-60 293-19c78 35 65 74 11 97-76 33-224 53-247 129" stroke="#c6af78" stroke-width="2" stroke-dasharray="10 11" stroke-linecap="round"/>
+  <!-- Bridge, coastal skyline, and Asiad stadium. -->
+  <path d="M120 334c57-26 132-35 204-9" stroke="#a5d0ce" stroke-width="25" stroke-linecap="round"/>
+  <path d="M133 301h175" stroke="#4f827b" stroke-width="10" stroke-linecap="round"/><path d="M180 302v-106m74 106v-86" stroke="#6b9d91" stroke-width="10"/>
+  <path d="m138 296 42-96 38 96m-62 0 24-96 19 96m18 0 37-75 47 75m-64 0 17-75 22 75" stroke="#89aea0" stroke-width="2"/><path d="M174 220h12m62 23h12" stroke="#4c7a70" stroke-width="4"/>
+  <path d="M285 266v-78h26v78m12 0v-105h33v105m13 0v-71h32v71" fill="#c3d7ca" stroke="#a2c0b0" stroke-width="2"/><path d="M331 177v-26h17v26" fill="#a6c5b6"/><path d="M290 200h16m-16 17h16m-16 17h16m24-43h20m-20 17h20m-20 17h20m27-19h16m-16 17h16" stroke="#e6efe1" stroke-width="6"/>
+  <ellipse cx="485" cy="301" rx="112" ry="25" fill="#b1c6ae"/><path d="m380 257 14 43c38 31 141 31 178-2l21-45Z" fill="#f5f2dc" stroke="#7fa093" stroke-width="2"/>
+  <path d="m400 267 7 30m19-23 4 30m22-28 2 31m25-30v33m26-34-2 31m26-32-4 29m25-32-7 30m26-38-10 31" stroke="#9dbdb1" stroke-width="6"/>
+  <ellipse cx="485" cy="251" rx="110" ry="36" fill="#fffdf3" stroke="#7fa093" stroke-width="2"/><ellipse cx="485" cy="251" rx="78" ry="20" fill="#92b6ac"/>
+  <path d="M412 253c42-18 106-18 146-1" stroke="#668f86" stroke-width="4"/><path d="M391 234v-29m190 30v-29m-169 13v-28m148 29v-28" stroke="#729c8c" stroke-width="2"/><path d="M385 203h12m178 0h12m-181-14h12m137 0h12" stroke="#fffdf2" stroke-width="5" stroke-linecap="round"/>
+  <!-- Chinatown gate. -->
+  <ellipse cx="161" cy="401" rx="64" ry="13" fill="#adbf9e"/><path d="M119 398v-69h17v69m52 0v-69h17v69" fill="#ce7660" stroke="#ae6959" stroke-width="2"/><path d="M113 337h98v17h-98z" fill="#d39762" stroke="#a27457" stroke-width="2"/>
+  <path d="M105 330c22-3 30-11 33-20h48c4 10 17 17 33 20-27 9-85 9-114 0Z" fill="#548980" stroke="#416e67" stroke-width="2"/><path d="M138 343h49v16h-49z" fill="#fff0be"/><path d="M147 347h30m-29 5h27" stroke="#a58751" stroke-width="2"/><path d="M124 367h8m60 0h8" stroke="#f6d789" stroke-width="5"/>
+  <g stroke="#789570" stroke-width="3"><path d="M93 369v27m232-77v26m298-26v36m30 92v31m-184 27v24"/></g><g fill="#94b880"><circle cx="93" cy="358" r="17"/><circle cx="325" cy="309" r="15"/><circle cx="623" cy="310" r="21"/><circle cx="653" cy="436" r="19"/><circle cx="469" cy="501" r="13"/></g><g fill="#b2ca92"><circle cx="85" cy="351" r="11"/><circle cx="618" cy="302" r="14"/><circle cx="647" cy="430" r="13"/></g>
+  <!-- Rounded yellow tour bus. -->
+  <g transform="translate(382 346) rotate(-4 120 65)">
+    <ellipse cx="118" cy="123" rx="127" ry="15" fill="#7c986b" opacity=".3"/>
+    <path d="M10 5h208c19 0 32 14 34 32l5 68c1 7-4 11-11 11H8c-8 0-12-5-12-12V20C-4 10 1 5 10 5Z" fill="url(#bus)" stroke="#37575a" stroke-width="3"/>
+    <path d="M6 25c0-4 3-7 7-7h177v46H6Z" fill="#315c6c" stroke="#37575a" stroke-width="2"/><path d="M19 23h29v35H19zm43 0h29v35H62zm43 0h29v35h-29zm43 0h29v35h-29z" fill="#abd8d7"/><path d="m21 25 25 1-25 21m45-22 22 1-22 21m42-22 23 1-23 21m22-22 23 1-23 21" fill="#d2e9df" opacity=".65"/>
+    <path d="M202 19h15c12 0 20 10 22 25l2 22h-39Z" fill="#9ccccc" stroke="#315765" stroke-width="3"/><path d="m208 23 18 2-17 22" fill="#d4eee4"/><path d="M6 75h180v8H6z" fill="#087f80"/><text x="91" y="103" text-anchor="middle" font-family="Malgun Gothic,Apple SD Gothic Neo,sans-serif" font-weight="800" font-size="12" letter-spacing="1" fill="#163343">M<tspan fill="#b69354">✦</tspan>TH TOUR</text>
+    <path d="M199 76h35v34h-35Z" fill="#ecc66b" stroke="#5b725f" stroke-width="2"/><path d="M216 76v34m-12-16h4m18 0h4" stroke="#5b725f" stroke-width="2"/><rect x="242" y="79" width="13" height="11" rx="3" fill="#fff8db" stroke="#476360" stroke-width="2"/><path d="M255 44h9v21" stroke="#315765" stroke-width="3" stroke-linecap="round"/><path d="M14 6h64m20 0h70" stroke="#ffeebb" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="46" cy="114" r="20" fill="#324c54" stroke="#284149" stroke-width="3"/><circle cx="46" cy="114" r="10" fill="#d4ded8"/><circle cx="46" cy="114" r="4" fill="#708e8c"/><circle cx="200" cy="114" r="20" fill="#324c54" stroke="#284149" stroke-width="3"/><circle cx="200" cy="114" r="10" fill="#d4ded8"/><circle cx="200" cy="114" r="4" fill="#708e8c"/>
+  </g>
+  <g fill="#f0be55"><path d="m331 398 4 11 11 4-11 4-4 11-4-11-11-4 11-4Z"/><path d="m636 524 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/><circle cx="143" cy="222" r="4"/><circle cx="598" cy="176" r="3"/></g>
+</svg>
